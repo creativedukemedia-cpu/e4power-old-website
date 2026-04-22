@@ -1,6 +1,4 @@
-- [x] Review the current page files and routing structure for the mirrored site
-- [x] Build a dedicated `/services` page using the service deck content
-- [x] Build dedicated pillar pages for Educate, Empower, Elevate, and Engage
-- [x] Update homepage calls to action so each pillar previews relevant services and links to its breakout page
-- [x] Update the main navigation to include Services and pillar page links while preserving the hero emblem anchor behavior
-- [x] Validate the new pages and navigation flow in preview
+- [x] Inspect how the current site serves nested static routes like `/services/` and `/educate/`
+- [x] Determine whether the dev server or project routing is forcing unknown routes back to the homepage
+- [x] Fix navigation targets so Services and pillar links open the intended dedicated pages
+- [x] Validate the Services page and all four pillar breakout pages in preview

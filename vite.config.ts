@@ -3,6 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { defineConfig, type Plugin, type ViteDevServer } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
@@ -203,6 +204,21 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
+const CLIENT_ROOT = path.resolve(import.meta.dirname, "client");
+
+const htmlEntries = Object.fromEntries(
+  fs
+    .readdirSync(CLIENT_ROOT, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => {
+      const htmlPath = path.join(CLIENT_ROOT, entry.name, "index.html");
+      return fs.existsSync(htmlPath)
+        ? [entry.name, fileURLToPath(new URL(`./client/${entry.name}/index.html`, import.meta.url))]
+        : null;
+    })
+    .filter((entry): entry is [string, string] => entry !== null)
+);
+
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
 
 export default defineConfig({
@@ -215,10 +231,16 @@ export default defineConfig({
     },
   },
   envDir: path.resolve(import.meta.dirname),
-  root: path.resolve(import.meta.dirname, "client"),
+  root: CLIENT_ROOT,
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: fileURLToPath(new URL("./client/index.html", import.meta.url)),
+        ...htmlEntries,
+      },
+    },
   },
   server: {
     port: 3000,
