@@ -3,11 +3,11 @@ from bs4 import BeautifulSoup
 
 BASE = Path('/home/ubuntu/e4powerinc-clone/client')
 
-NAV_HTML = '''<ul class="nav-menu-two w-list-unstyled" role="list"><li><a class="nav-link" href="/services">Services</a></li><li><a class="nav-link" href="/educate">Educate</a></li><li><a class="nav-link" href="/empower">Empower</a></li><li><a class="nav-link" href="/elevate">Elevate</a></li><li><a class="nav-link" href="/engage">Engage</a></li></ul>'''
+NAV_HTML = '''<ul class="nav-menu-two w-list-unstyled" role="list"><li><a class="nav-link" href="/services/">SERVICES</a></li><li><a class="nav-link" href="/educate/">EDUCATE</a></li><li><a class="nav-link" href="/empower/">EMPOWER</a></li><li><a class="nav-link" href="/elevate/">ELEVATE</a></li><li><a class="nav-link" href="/engage/">ENGAGE</a></li></ul>'''
 
 PREVIEW_CSS = '''
 <style id="service-preview-styles">
-.service-preview-shell{margin-top:5rem;border:1px solid rgba(226,178,76,.22);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));padding:2.4rem 2rem;}
+.service-preview-shell{margin-top:5rem;border:1px solid rgba(226,178,76,.22);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));padding:2.7rem 2.3rem;}
 .service-preview-top{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;}
 .service-preview-kicker{color:#e2b24c;text-transform:uppercase;letter-spacing:.18em;font-size:.82rem;}
 .service-preview-title{color:#f7f1e8;margin:.85rem 0 0;text-transform:uppercase;font-size:2.2rem;line-height:1.05;max-width:12ch;}
@@ -17,7 +17,7 @@ PREVIEW_CSS = '''
 .service-preview-card{border:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.18);padding:1.25rem;min-height:11.5rem;}
 .service-preview-card h4{color:#f0bf5d;margin:0 0 .75rem;text-transform:uppercase;font-size:1rem;line-height:1.3;}
 .service-preview-card p{color:#e6dccf;line-height:1.75;margin:0;}
-@media screen and (max-width: 991px){.service-preview-grid{grid-template-columns:1fr;}.service-preview-shell{padding:1.6rem;}.service-preview-title{font-size:1.8rem;max-width:none;}}
+@media screen and (max-width: 991px){.service-preview-grid{grid-template-columns:1fr;}.service-preview-shell{padding:1.8rem;}.service-preview-title{font-size:1.8rem;max-width:none;}}
 </style>
 '''
 
@@ -31,31 +31,31 @@ PREVIEWS = {
             ('Workshops & Training', 'Structured learning programs for grant strategy, proposal review, partnerships, and compliance.'),
             ('AI & Technology Literacy', 'Practical education that helps teams understand modern tools without losing mission focus.'),
         ],
-        'href': '/educate',
+        'href': '/educate/',
         'label': 'Explore Educate',
     },
     'empower': {
         'kicker': 'Broader Services in Empower',
         'title': 'Strategic Services that Increase Competitiveness',
-        'copy': 'Empower can become the clearest bridge between ambition and action by highlighting readiness assessments, intellectual property, proposal strategy, and innovation-minded advisory services.',
+        'copy': 'Empower can become the clearest bridge between ambition and action by highlighting readiness assessments, intellectual property, proposal strategy, innovation-minded advisory services, and the new IT and Application Development tier.',
         'cards': [
             ('Grant Writing', 'Pre-award strategy and proposal-development support from opportunity discovery to submission.'),
             ('Readiness Assessments', 'Institutional reviews that reveal gaps, strengths, and fundable next moves.'),
-            ('Intellectual Property & AI', 'Innovation-protection and modernization services that strengthen long-term growth capacity.'),
+            ('IT & App Development', 'Custom portals, web apps, websites, and IT support that expand client delivery capacity.'),
         ],
-        'href': '/empower',
+        'href': '/empower/',
         'label': 'Explore Empower',
     },
     'elevate': {
         'kicker': 'Broader Services in Elevate',
         'title': 'Execution Services that Protect Awarded Work',
-        'copy': 'Elevate can now show that E4 Power supports what happens after the award through project management, financial stewardship, and grant-management systems that keep institutions on track.',
+        'copy': 'Elevate can now show that E4 Power supports what happens after the award through project management, financial stewardship, grant-management systems, and continuity-minded operational support.',
         'cards': [
             ('Grant Management', 'Post-award reporting, compliance, and closeout support.'),
             ('Project Management', 'Structured delivery systems for complex research and workforce initiatives.'),
             ('Financial Management', 'Budget oversight and fiscal controls aligned with federal expectations.'),
         ],
-        'href': '/elevate',
+        'href': '/elevate/',
         'label': 'Explore Elevate',
     },
     'engage': {
@@ -67,7 +67,7 @@ PREVIEWS = {
             ('Readiness-Led Onboarding', 'Practical entry work that sets a baseline for future strategy and delivery.'),
             ('Team-Led Partnership Model', 'Introductions to the specialists most relevant to a client’s mission and growth stage.'),
         ],
-        'href': '/engage',
+        'href': '/engage/',
         'label': 'Explore Engage',
     },
 }
@@ -102,7 +102,11 @@ def preview_fragment(soup, data):
 
 for html_path in sorted(BASE.glob('**/index.html')):
     text = html_path.read_text(encoding='utf-8')
-    if 'service-preview-styles' not in text:
+    if 'service-preview-styles' in text:
+        start = text.index('<style id="service-preview-styles">')
+        end = text.index('</style>', start) + len('</style>')
+        text = text[:start] + PREVIEW_CSS.strip() + text[end:]
+    else:
         text = text.replace('</head>', PREVIEW_CSS + '\n</head>')
     soup = BeautifulSoup(text, 'html.parser')
 
@@ -114,26 +118,26 @@ for html_path in sorted(BASE.glob('**/index.html')):
     if footer_links is not None:
         footer_links.clear()
         footer_markup = '''
-        <a class="testimonial-text footer-link" href="/services">Services</a>
+        <a class="testimonial-text footer-link" href="/services/">SERVICES</a>
         <div class="testimonial-text footer-link">|</div>
-        <a class="testimonial-text footer-link" href="/educate">Educate</a>
+        <a class="testimonial-text footer-link" href="/educate/">EDUCATE</a>
         <div class="testimonial-text footer-link">|</div>
-        <a class="testimonial-text footer-link" href="/empower">Empower</a>
+        <a class="testimonial-text footer-link" href="/empower/">EMPOWER</a>
         <div class="testimonial-text footer-link">|</div>
-        <a class="testimonial-text footer-link" href="/elevate">Elevate</a>
+        <a class="testimonial-text footer-link" href="/elevate/">ELEVATE</a>
         <div class="testimonial-text footer-link">|</div>
-        <a class="testimonial-text footer-link" href="/engage">Engage</a>
+        <a class="testimonial-text footer-link" href="/engage/">ENGAGE</a>
         '''
         parsed = BeautifulSoup(footer_markup, 'html.parser')
         for child in parsed.contents:
             footer_links.append(child)
 
     if html_path == BASE / 'index.html':
+        for preview in soup.select('.service-preview-shell'):
+            preview.decompose()
         for section_id, data in PREVIEWS.items():
             section = soup.find('section', id=section_id)
             if section is None:
-                continue
-            if section.find(class_='service-preview-shell') is not None:
                 continue
             anchor = section.find(class_='_120-spacer')
             preview = preview_fragment(soup, data)

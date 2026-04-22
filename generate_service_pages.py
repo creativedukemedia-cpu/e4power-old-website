@@ -12,18 +12,18 @@ if not head_match or not footer_match:
 base_head = head_match.group(0)
 base_footer = footer_match.group(0)
 
-nav_html = '''<nav class="navbar-logo-left"><div class="navbar-logo-left-container shadow-three w-nav" data-animation="over-right" data-collapse="all" data-duration="400" data-easing="ease" data-easing2="ease" role="banner"><div class="navbar-container"><div class="navbar-wrapper"><a class="navbar-brand w-nav-brand" href="/"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68bcc54da8714105bb252c7f_e4_logo_white.svg"/></a><div class="navbar-right-div"><div class="socials-div"><a class="social-link-block w-inline-block" href="https://www.instagram.com/e4power_?igsh=bXR4bThxMHh2dHNy&amp;utm_source=qr" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c4ee8e329fe01d525b_instagram.svg"/></a><a class="social-link-block w-inline-block" href="https://www.linkedin.com/company/e4-power-consulting/" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c46c9537fa67bb89bd_linkedin.svg"/></a><a class="social-link-block w-inline-block" href="https://www.tiktok.com/@e4powerconsulting?_t=ZT-90YVLBMkwaT&amp;_r=1" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68f66f4d7a2ffc0d86a72550_tiktok.svg"/></a><a class="social-link-block w-inline-block" href="https://www.facebook.com/profile.php?id=61573544665670&amp;mibextid=wwXIfr&amp;rdid=yOcyRogs7shBnrLD&amp;share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1775G2zRAh%2F%3Fmibextid%3DwwXIfr#" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c48dbb4dd69e849624_facebook.svg"/></a></div><a class="text-link" href="/contact-us">Contact Us</a><div class="menu-button w-nav-button"><div class="hamburger-icon w-icon-nav-menu"></div></div></div><nav class="nav-menu-wrapper w-nav-menu" role="navigation"><ul class="nav-menu-two w-list-unstyled" role="list"><li><a class="nav-link" href="/services">Services</a></li><li><a class="nav-link" href="/educate">Educate</a></li><li><a class="nav-link" href="/empower">Empower</a></li><li><a class="nav-link" href="/elevate">Elevate</a></li><li><a class="nav-link" href="/engage">Engage</a></li></ul></nav></div></div></div></nav>'''
+nav_html = '''<nav class="navbar-logo-left"><div class="navbar-logo-left-container shadow-three w-nav" data-animation="over-right" data-collapse="all" data-duration="400" data-easing="ease" data-easing2="ease" role="banner"><div class="navbar-container"><div class="navbar-wrapper"><a class="navbar-brand w-nav-brand" href="/"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68bcc54da8714105bb252c7f_e4_logo_white.svg"/></a><div class="navbar-right-div"><div class="socials-div"><a class="social-link-block w-inline-block" href="https://www.instagram.com/e4power_?igsh=bXR4bThxMHh2dHNy&amp;utm_source=qr" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c4ee8e329fe01d525b_instagram.svg"/></a><a class="social-link-block w-inline-block" href="https://www.linkedin.com/company/e4-power-consulting/" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c46c9537fa67bb89bd_linkedin.svg"/></a><a class="social-link-block w-inline-block" href="https://www.tiktok.com/@e4powerconsulting?_t=ZT-90YVLBMkwaT&amp;_r=1" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68f66f4d7a2ffc0d86a72550_tiktok.svg"/></a><a class="social-link-block w-inline-block" href="https://www.facebook.com/profile.php?id=61573544665670&amp;mibextid=wwXIfr&amp;rdid=yOcyRogs7shBnrLD&amp;share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1775G2zRAh%2F%3Fmibextid%3DwwXIfr#" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c48dbb4dd69e849624_facebook.svg"/></a></div><a class="text-link" href="/contact-us">Contact Us</a><div class="menu-button w-nav-button"><div class="hamburger-icon w-icon-nav-menu"></div></div></div><nav class="nav-menu-wrapper w-nav-menu" role="navigation"><ul class="nav-menu-two w-list-unstyled" role="list"><li><a class="nav-link" href="/services/">SERVICES</a></li><li><a class="nav-link" href="/educate/">EDUCATE</a></li><li><a class="nav-link" href="/empower/">EMPOWER</a></li><li><a class="nav-link" href="/elevate/">ELEVATE</a></li><li><a class="nav-link" href="/engage/">ENGAGE</a></li></ul></nav></div></div></div></nav>'''
 
 footer_replacements = {
-    'href="#educate"': 'href="/educate"',
-    'href="#empower"': 'href="/empower"',
-    'href="#elevate"': 'href="/elevate"',
-    'href="#engage"': 'href="/engage"',
+    'href="#educate"': 'href="/educate/"',
+    'href="#empower"': 'href="/empower/"',
+    'href="#elevate"': 'href="/elevate/"',
+    'href="#engage"': 'href="/engage/"',
 }
 shared_footer = base_footer
 for old, new in footer_replacements.items():
     shared_footer = shared_footer.replace(old, new)
-shared_footer = shared_footer.replace('</div><div class="socials-div footer">', '<a class="testimonial-text footer-link" href="/services">Services</a><div class="testimonial-text footer-link">|</div></div><div class="socials-div footer">')
+shared_footer = shared_footer.replace('</div><div class="socials-div footer">', '<a class="testimonial-text footer-link" href="/services/">SERVICES</a><div class="testimonial-text footer-link">|</div></div><div class="socials-div footer">')
 
 custom_css = '''
 <style>
@@ -31,15 +31,15 @@ custom_css = '''
 .page-hero { position: relative; min-height: 76vh; display: flex; align-items: end; overflow: hidden; }
 .page-hero-media { position: absolute; inset: 0; background-size: cover; background-position: center; filter: grayscale(1); transform: scale(1.03); }
 .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.72) 68%, #050505 100%); }
-.page-hero-inner { position: relative; z-index: 2; width: 100%; }
+.page-hero-inner { position: relative; z-index: 2; width: 100%; padding-top: 7rem; padding-bottom: 4rem; }
 .page-eyebrow { color: #e2b24c; text-transform: uppercase; letter-spacing: .24em; font-size: .95rem; margin-bottom: 1.1rem; }
 .page-display { color: #f6f1e8; text-transform: uppercase; line-height: .95; max-width: 12ch; margin: 0; }
 .page-intro { color: #ddd0be; max-width: 44rem; font-size: 1.2rem; line-height: 1.8; margin-top: 1.5rem; }
 .page-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(20rem, .8fr); gap: 4rem; align-items: end; }
-.metric-panel { background: rgba(24, 24, 24, 0.75); border: 1px solid rgba(226,178,76,0.28); backdrop-filter: blur(12px); padding: 2.2rem; }
+.metric-panel { background: rgba(24, 24, 24, 0.75); border: 1px solid rgba(226,178,76,0.28); backdrop-filter: blur(12px); padding: 2.4rem; }
 .metric-value { color: #f0bf5d; font-size: 3.25rem; line-height: 1; margin-bottom: .65rem; }
 .metric-copy { color: #efe5d5; font-size: .98rem; line-height: 1.8; }
-.content-section { position: relative; padding: 7rem 0; }
+.content-section { position: relative; padding: 8.5rem 0; }
 .content-section.dark { background: #050505; }
 .content-section.charcoal { background: #130f0a; }
 .content-section .section-label { color: #e2b24c; text-transform: uppercase; letter-spacing: .18em; margin-bottom: 1rem; }
@@ -61,8 +61,8 @@ custom_css = '''
 .case-card .case-kicker { color: #e2b24c; letter-spacing: .18em; text-transform: uppercase; font-size: .8rem; }
 .case-card h4 { color: #f7f1e7; margin: .75rem 0; text-transform: uppercase; }
 .case-card p { color: #cfc2b1; line-height: 1.8; margin: 0; }
-.cta-band { padding: 5rem 0 6rem; background: linear-gradient(180deg, #120f0a 0%, #050505 100%); }
-.cta-panel { border: 1px solid rgba(226,178,76,0.3); background: rgba(255,255,255,0.03); padding: 2.4rem; display: grid; grid-template-columns: 1.2fr auto; gap: 2rem; align-items: center; }
+.cta-band { padding: 6rem 0 7rem; background: linear-gradient(180deg, #120f0a 0%, #050505 100%); }
+.cta-panel { border: 1px solid rgba(226,178,76,0.3); background: rgba(255,255,255,0.03); padding: 2.6rem; display: grid; grid-template-columns: 1.2fr auto; gap: 2rem; align-items: center; }
 .cta-panel h3 { color: #f7f1e8; margin: 0; text-transform: uppercase; }
 .cta-panel p { color: #d5c9b7; margin: .8rem 0 0; line-height: 1.8; max-width: 46rem; }
 .cta-links { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: end; }
@@ -72,6 +72,8 @@ custom_css = '''
   .page-grid, .cta-panel, .service-grid, .relation-grid, .case-grid { grid-template-columns: 1fr; }
   .page-display { max-width: none; }
   .cta-links { justify-content: start; }
+  .page-hero-inner { padding-top: 5.5rem; padding-bottom: 3.5rem; }
+  .content-section { padding: 6rem 0; }
 }
 </style>
 '''
@@ -81,15 +83,15 @@ pages = {
         'title': 'Services | E4 Power',
         'eyebrow': 'Capabilities Overview',
         'heading': 'Full-Lifecycle Services for Institutional Growth',
-        'intro': 'E4 Power supports institutions from early opportunity discovery through funded-program execution. The expanded services architecture brings grant strategy, readiness, intellectual property, financial stewardship, project delivery, and training into one connected partnership model.',
-        'metric_value': '07+',
-        'metric_copy': 'Core service lines now organized into pillar-led pathways so visitors can understand both the breadth of E4 Power and how each capability supports measurable institutional outcomes.',
+        'intro': 'E4 Power supports institutions from early opportunity discovery through funded-program execution. The expanded services architecture brings grant strategy, readiness, intellectual property, financial stewardship, project delivery, training, and digital delivery into one connected partnership model.',
+        'metric_value': '08+',
+        'metric_copy': 'Core service lines are now organized into pillar-led pathways so visitors can understand both the breadth of E4 Power and how each capability supports measurable institutional outcomes.',
         'hero_image': 'https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d8811dee8e329fe0f879dc_elevate%20picture.webp',
         'sections': [
             {
                 'tone': 'charcoal',
                 'label': 'Service Architecture',
-                'title': 'A Services Hub that Mirrors the BRIDGE Mindset',
+                'title': 'An Eight-Tier Services Hub that Mirrors the BRIDGE Mindset',
                 'copy': 'The Services page functions as the capability index for decision-makers. It explains what E4 Power does beyond proposal writing, while also clarifying how those capabilities align with Educate, Empower, Elevate, and Engage.',
                 'cards': [
                     ('Pre-Award Strategy', 'Empower', 'Grant writing, readiness planning, opportunity identification, and proposal-development support for HBCUs, ERIs, MSIs, and nonprofits.', ['Opportunity identification', 'Proposal development', 'Competitive positioning']),
@@ -98,29 +100,31 @@ pages = {
                     ('Readiness Assessments', 'Engage', 'Institutional discovery work that clarifies infrastructure, staffing, and systems gaps before a funding pursuit begins.', ['SWOT review', 'Infrastructure mapping', 'Growth prioritization']),
                     ('Intellectual Property Services', 'Empower', 'Innovation-protection and commercialization support led by IP specialists to help institutions move ideas from lab to market.', ['Patent strategy', 'IP education', 'Commercialization support']),
                     ('Financial Management', 'Elevate', 'Budget development, fiscal oversight, and audit-conscious financial management aligned with federal requirements.', ['Allowable cost tracking', 'Budget oversight', 'Fiscal compliance']),
+                    ('Workshops & Speaking', 'Educate', 'Capacity-building engagements that translate expertise into teachable systems for institutional teams and leadership audiences.', ['Workshop design', 'Speaking engagements', 'Training delivery']),
+                    ('IT & Application Development', 'Empower', 'Technology delivery services that help organizations build the digital infrastructure behind growth, service delivery, and operational efficiency.', ['Custom portals', 'Web apps and websites', 'Ongoing IT support']),
                 ],
                 'relations': [
                     ('Educate', 'Translates expertise into workshops, speaking, and skill-building for faculty, researchers, and leaders.'),
-                    ('Empower', 'Advances competitiveness through strategic planning, proposals, IP, and innovation-enabled growth.'),
-                    ('Elevate', 'Supports funded work through stewardship, execution systems, and outcome visibility.'),
+                    ('Empower', 'Advances competitiveness through strategic planning, proposals, IP, innovation, and digital-product development.'),
+                    ('Elevate', 'Supports funded work through stewardship, execution systems, financial controls, and outcome visibility.'),
                     ('Engage', 'Creates the institutional partnership doorway through discovery, readiness, and advisory collaboration.'),
                 ],
             },
             {
                 'tone': 'dark',
-                'label': 'Additional Capabilities',
-                'title': 'Broader Services Beyond Grant Writing',
-                'copy': 'The capabilities deck also highlights speaking engagements, workshops, and IT solution support including large language model and AI integration. Those services broaden the public story from grant consultant to institutional growth partner.',
+                'label': 'Digital Delivery',
+                'title': 'Technology Services that Extend E4 Power Beyond Advisory Work',
+                'copy': 'The new IT and Application Development tier gives E4 Power a clearer operational offering for partners that need more than strategy. It positions the firm to support custom portals, web applications, websites, and day-to-day IT support in a way that complements institutional growth and modernization.',
                 'cards': [
-                    ('Speaking Engagements', 'Educate', 'Speaker-led engagements that translate technical and strategic experience into motivating, practical sessions for institutional audiences.', ['Leadership talks', 'Research strategy sessions', 'Conference appearances']),
-                    ('Workshops & Training', 'Educate', 'Hands-on learning programs that equip teams with grant strategy, proposal review, partnerships, compliance, and readiness knowledge.', ['Faculty training', 'Workshop curriculum', 'Capacity building']),
-                    ('IT Solutions & AI Integration', 'Empower', 'Technology-forward advisory support that helps institutions explore automation, large language models, and workflow efficiency in a mission-aligned way.', ['Workflow modernization', 'AI integration concepts', 'Strategic technology advisory']),
+                    ('Custom Portals', 'Empower', 'Secure portal experiences for students, partners, internal teams, or community-facing programs that require structured access and workflow support.', ['Partner portals', 'Program dashboards', 'Operational access points']),
+                    ('Web Applications & Websites', 'Empower', 'Digital experiences designed to support outreach, service delivery, internal operations, or public-facing storytelling.', ['Custom web apps', 'Institutional websites', 'Workflow-driven experiences']),
+                    ('IT Support Services', 'Elevate', 'Practical technical support that helps clients maintain systems, resolve issues, and keep new digital infrastructure functioning well after launch.', ['Support and troubleshooting', 'Maintenance guidance', 'Operational continuity']),
                 ],
                 'relations': [],
             },
         ],
         'cases': [
-            ('Full Lifecycle', 'E4 Power is positioned as a single partner from idea to impact, combining readiness, strategy, execution, and financial oversight rather than treating each service in isolation.'),
+            ('Full Lifecycle', 'E4 Power is positioned as a single partner from idea to impact, combining readiness, strategy, execution, financial oversight, and digital delivery rather than treating each service in isolation.'),
             ('Institutional Fit', 'The service structure is especially relevant for HBCUs, ERIs, MSIs, nonprofits, and research-led organizations that need both strategic guidance and operational delivery support.'),
         ],
         'cta': 'Use this page as the top-level entry point in the navigation, then route visitors into the pillar pages for a more focused understanding of how services show up within each part of the E4 Power model.'
@@ -161,27 +165,28 @@ pages = {
     'empower': {
         'title': 'Empower | E4 Power',
         'eyebrow': 'Pillar Page',
-        'heading': 'Empower: Strategy, Opportunity Creation, and Innovation Support',
-        'intro': 'Empower should become the strategy-heavy pillar page. It is where E4 Power explains how it helps institutions move from ambition to competitive action through proposal development, readiness planning, IP support, and innovation-minded advisory services.',
+        'heading': 'Empower: Strategy, Opportunity Creation, Digital Build, and Innovation Support',
+        'intro': 'Empower should become the strategy-heavy pillar page. It is where E4 Power explains how it helps institutions move from ambition to competitive action through proposal development, readiness planning, intellectual property support, digital-product creation, and innovation-minded advisory services.',
         'metric_value': '78%',
-        'metric_copy': 'Proposal-development success and growth-oriented consulting make this pillar the clearest place to show how E4 Power helps clients become more competitive before funding is awarded.',
+        'metric_copy': 'Proposal-development success, modernization strategy, and custom digital delivery make this pillar the clearest place to show how E4 Power helps clients become more competitive before funding is awarded and as new capacity is built.',
         'hero_image': 'https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d86ed2cf005d4f005b60bd_1.webp',
         'sections': [
             {
                 'tone': 'charcoal',
                 'label': 'Empower Services',
-                'title': 'Services that Strengthen Competitive Positioning',
-                'copy': 'Empower should hold the services that improve institutional confidence and competitiveness before or alongside major opportunities. That includes pre-award support, readiness reviews, intellectual property strategy, and carefully framed technology and AI integration support.',
+                'title': 'Services that Strengthen Competitive Positioning and Delivery Capacity',
+                'copy': 'Empower should hold the services that improve institutional confidence and competitiveness before or alongside major opportunities. That includes pre-award support, readiness reviews, intellectual property strategy, carefully framed technology and AI integration support, and the new IT and Application Development tier.',
                 'cards': [
                     ('Grant Writing', 'Pre-Award', 'End-to-end proposal support from opportunity identification through narrative assembly, approvals, and submission discipline.', ['Opportunity scans', 'Proposal writing', 'Submission support']),
                     ('Readiness Assessments', 'Capacity Services', 'Institutional reviews that identify infrastructure gaps, growth priorities, and realistic pathways for future funding.', ['SWOT analysis', 'Infrastructure review', 'Strategic implementation baseline']),
                     ('Intellectual Property', 'Innovation Support', 'Protection and commercialization services that help researchers identify, secure, and position innovation assets.', ['Patent guidance', 'Researcher education', 'Commercialization positioning']),
+                    ('IT & Application Development', 'Digital Delivery', 'Custom technology services for organizations that need portals, web applications, websites, or dependable IT support as part of their broader growth strategy.', ['Custom portals', 'Web apps and websites', 'IT support']),
                     ('IT Solutions & AI Integration', 'Modernization', 'Advisory support for institutions exploring automation, AI, and technology-enabled efficiency as part of long-term research and operational growth.', ['Automation ideas', 'LLM integration framing', 'Process modernization']),
                 ],
                 'relations': [
                     ('Educate', 'Training improves readiness for the strategic work introduced here.'),
-                    ('Empower', 'Primary home for opportunity creation, proposal strategy, and innovation support.'),
-                    ('Elevate', 'Strong pre-award strategy needs equally strong execution after an award is won.'),
+                    ('Empower', 'Primary home for opportunity creation, proposal strategy, innovation support, and digital-product development.'),
+                    ('Elevate', 'Strong pre-award strategy and digital build work still depend on disciplined execution after launch or award.'),
                     ('Engage', 'Discovery conversations and readiness reviews often begin the work shown on this page.'),
                 ],
             }
@@ -190,7 +195,7 @@ pages = {
             ('NSF HBCU-UP', 'The capabilities deck highlights a funded NSF HBCU-UP implementation proposal developed after more than two decades without an NSF award, reinforcing the strategic impact of this pillar.'),
             ('EPA Proposal Development', 'The deck also references leadership on a multi-million-dollar EPA proposal for biogenic building materials, showing that the pillar can support highly technical work as well as institutional strategy.'),
         ],
-        'cta': 'Use Empower as the destination for prospects who want to know how E4 Power improves their competitiveness before the award, especially where funding, innovation, and strategic capacity intersect.'
+        'cta': 'Use Empower as the destination for prospects who want to know how E4 Power improves their competitiveness before the award, especially where funding, innovation, technology, and strategic capacity intersect.'
     },
     'elevate': {
         'title': 'Elevate | E4 Power',
@@ -210,11 +215,12 @@ pages = {
                     ('Grant Management', 'Post-Award', 'Support from award acceptance through reporting and project closeout to protect institutional standing with funding agencies.', ['Reporting coordination', 'Compliance oversight', 'Award closeout']),
                     ('Project Management', 'Program Delivery', 'Structured delivery systems for complex research, workforce, and multi-institution initiatives.', ['Timeline management', 'Cross-team execution', 'Risk-aware coordination']),
                     ('Financial Management', 'Fiscal Oversight', 'Budget and spending oversight aligned with federal expectations so institutions can manage funds with confidence.', ['Drawdown support', 'Cost tracking', 'Audit-conscious stewardship']),
+                    ('IT Support Continuity', 'Operational Support', 'Ongoing support and maintenance that help clients keep newly launched digital systems reliable and useful after delivery.', ['Support workflows', 'Maintenance guidance', 'Operational continuity']),
                 ],
                 'relations': [
                     ('Educate', 'Training can prepare teams for the stewardship responsibilities shown here.'),
-                    ('Empower', 'The strongest strategy still depends on disciplined execution after award.'),
-                    ('Elevate', 'Primary home for award stewardship, project management, and fiscal oversight.'),
+                    ('Empower', 'The strongest strategy and digital build work still depend on disciplined execution after award or launch.'),
+                    ('Elevate', 'Primary home for award stewardship, project management, fiscal oversight, and continuity support.'),
                     ('Engage', 'Ongoing partnerships deepen when E4 Power remains involved after funding is secured.'),
                 ],
             }
@@ -223,7 +229,7 @@ pages = {
             ('UJIMA Collective', 'The deck references post-award management and reporting for a multi-partner NSF collaborative initiative, demonstrating how Elevate supports complex institutional coordination.'),
             ('Federal Oversight', 'Financial oversight examples and project-delivery case studies show how this pillar can speak to both compliance-sensitive administrators and program leaders.'),
         ],
-        'cta': 'Use Elevate as the destination for visitors who need confidence that E4 Power can help protect awarded funding, keep teams aligned, and deliver outcomes responsibly.'
+        'cta': 'Use Elevate as the destination for visitors who need confidence that E4 Power can help protect awarded funding, keep teams aligned, support operational continuity, and deliver outcomes responsibly.'
     },
     'engage': {
         'title': 'Engage | E4 Power',
@@ -242,18 +248,18 @@ pages = {
                 'cards': [
                     ('Institutional Discovery', 'Advisory Entry', 'Early conversations and strategic review sessions that identify goals, constraints, and where E4 Power can create the most value first.', ['Discovery meetings', 'Needs clarification', 'Initial roadmapping']),
                     ('Readiness-Led Onboarding', 'Capacity Services', 'A practical entry service that helps partners understand current systems, staffing, and funding readiness before moving into larger workstreams.', ['Baseline review', 'Gap identification', 'Priority sequencing']),
-                    ('Team-Led Partnership Model', 'People & Expertise', 'A relationship-centered consulting model that introduces prospects to the specialists most relevant to their goals across strategy, finance, IP, project delivery, and training.', ['Executive introductions', 'Specialist alignment', 'Collaborative planning']),
+                    ('Team-Led Partnership Model', 'People & Expertise', 'A relationship-centered consulting model that introduces prospects to the specialists most relevant to their goals across strategy, finance, intellectual property, project delivery, training, and digital build services.', ['Executive introductions', 'Specialist alignment', 'Collaborative planning']),
                 ],
                 'relations': [
                     ('Educate', 'Workshops and speaking engagements can begin the relationship with trust and value.'),
-                    ('Empower', 'Strategic service lines often grow from the discovery and readiness work started here.'),
+                    ('Empower', 'Strategic, innovation, and application-development service lines often grow from the discovery and readiness work started here.'),
                     ('Elevate', 'Longer partnerships frequently continue into execution and post-award stewardship.'),
                     ('Engage', 'Primary home for discovery, readiness-led entry, and partnership orientation.'),
                 ],
             }
         ],
         'cases': [
-            ('Executive Bench', 'The team-led model is supported by leadership across grant strategy, intellectual property, finance, project management, and speaking engagements, which makes Engage a meaningful entry page rather than a simple biography section.'),
+            ('Executive Bench', 'The team-led model is supported by leadership across grant strategy, intellectual property, finance, project management, speaking engagements, and digital delivery, which makes Engage a meaningful entry page rather than a simple biography section.'),
             ('Bridge Onboarding', 'The readiness assessment examples in the deck make a strong case for presenting Engage as the place where institutional alignment begins before deeper service execution.'),
         ],
         'cta': 'Use Engage as the destination for prospects who want to understand the people, the advisory model, and the first step in becoming an E4 Power partner.'
@@ -293,10 +299,10 @@ for slug, page in pages.items():
     page_head = page_head.replace('</head>', custom_css + '\n</head>')
     body = f'''<!-- Design philosophy: Forensic mirror extension. Preserve the original black-and-gold rhythm while expanding the information architecture through dedicated Services and pillar pages. -->
 {page_head}<body class="body page-shell">{nav_html}
-<section class="page-hero"><div class="page-hero-media" style="background-image:url('{page['hero_image']}')"></div><div class="page-hero-overlay"></div><div class="container page-hero-inner"><div class="_120-spacer"></div><div class="page-grid"><div><div class="page-eyebrow">{page['eyebrow']}</div><h1 class="page-display">{page['heading']}</h1><p class="page-intro">{page['intro']}</p></div><aside class="metric-panel"><div class="metric-value">{page['metric_value']}</div><div class="metric-copy">{page['metric_copy']}</div></aside></div><div class="_120-spacer"></div></div></section>
+<section class="page-hero"><div class="page-hero-media" style="background-image:url('{page['hero_image']}')"></div><div class="page-hero-overlay"></div><div class="container page-hero-inner"><div class="page-grid"><div><div class="page-eyebrow">{page['eyebrow']}</div><h1 class="page-display">{page['heading']}</h1><p class="page-intro">{page['intro']}</p></div><aside class="metric-panel"><div class="metric-value">{page['metric_value']}</div><div class="metric-copy">{page['metric_copy']}</div></aside></div></div></section>
 {render_sections(page['sections'])}
 {render_cases(page['cases'])}
-<section class="cta-band"><div class="container"><div class="cta-panel"><div><h3>Build the next conversation around this pillar.</h3><p>{page['cta']}</p></div><div class="cta-links"><a class="cta-link primary" href="/contact-us">Contact Us</a><a class="cta-link" href="/services">Services Hub</a><a class="cta-link" href="/">Back to Homepage</a></div></div></div></section>
+<section class="cta-band"><div class="container"><div class="cta-panel"><div><h3>Build the next conversation around this pillar.</h3><p>{page['cta']}</p></div><div class="cta-links"><a class="cta-link primary" href="/contact-us">Contact Us</a><a class="cta-link" href="/services/">Services Hub</a><a class="cta-link" href="/">Back to Homepage</a></div></div></div></section>
 {shared_footer}'''
     out_dir = BASE / slug
     out_dir.mkdir(parents=True, exist_ok=True)

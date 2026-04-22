@@ -1,4 +1,5 @@
-- [x] Inspect how the current site serves nested static routes like `/services/` and `/educate/`
-- [x] Determine whether the dev server or project routing is forcing unknown routes back to the homepage
-- [x] Fix navigation targets so Services and pillar links open the intended dedicated pages
-- [x] Validate the Services page and all four pillar breakout pages in preview
+- [x] Inspect the current breakout-page CSS and page-generation scripts for nav casing and spacing rules
+- [x] Make all nav menu items render in all caps across the mirrored site and breakout pages
+- [x] Increase breakout-page padding to more closely match the homepage section spacing
+- [x] Add an eighth service tier for IT and Application Development across the Services page and relevant pillar pages
+- [x] Validate the updated nav styling, page spacing, and new service-tier content in preview
