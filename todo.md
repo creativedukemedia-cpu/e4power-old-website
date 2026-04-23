@@ -1,5 +1,4 @@
-- [x] Inspect the current breakout-page CSS and page-generation scripts for nav casing and spacing rules
-- [x] Make all nav menu items render in all caps across the mirrored site and breakout pages
-- [x] Increase breakout-page padding to more closely match the homepage section spacing
-- [x] Add an eighth service tier for IT and Application Development across the Services page and relevant pillar pages
-- [x] Validate the updated nav styling, page spacing, and new service-tier content in preview
+- [x] Inspect the mirrored homepage and breakout-page files to identify where load-in animations should be attached
+- [x] Add motion styles and script behavior that reflect the original site’s understated reveal animations
+- [x] Apply the animation system consistently across the homepage and Services breakout pages
+- [x] Validate animation timing, visibility, and usability in preview
