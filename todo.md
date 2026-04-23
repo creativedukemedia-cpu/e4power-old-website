@@ -1,4 +1,4 @@
-- [x] Inspect the mirrored homepage and breakout-page files to identify where load-in animations should be attached
-- [x] Add motion styles and script behavior that reflect the original site’s understated reveal animations
-- [x] Apply the animation system consistently across the homepage and Services breakout pages
-- [x] Validate animation timing, visibility, and usability in preview
+- [x] Inspect the custom CTA and preview-button styles on the homepage and breakout pages
+- [x] Add hover effects that match the site’s black-and-gold motion language
+- [x] Apply the hover treatment consistently to custom buttons across the Services architecture
+- [x] Validate hover behavior and readability in preview

@@ -103,6 +103,125 @@ html.js-motion .cta-panel{backface-visibility:hidden;}
   html.js-motion [data-reveal]{opacity:1 !important;transform:none !important;transition:none !important;}
 }
 </style>
+
+<style id="button-hover-system">
+.service-preview-cta,
+.cta-link,
+.submit-button.w-button,
+.link-block,
+.text-link {
+  transition: transform 260ms cubic-bezier(.2,.8,.2,1),
+              box-shadow 260ms cubic-bezier(.2,.8,.2,1),
+              background-color 220ms ease,
+              color 220ms ease,
+              border-color 220ms ease,
+              opacity 220ms ease;
+}
+.service-preview-cta,
+.cta-link.primary,
+.submit-button.w-button {
+  box-shadow: 0 0 0 rgba(226,178,76,0);
+}
+.service-preview-cta:hover,
+.service-preview-cta:focus-visible,
+.cta-link.primary:hover,
+.cta-link.primary:focus-visible,
+.submit-button.w-button:hover,
+.submit-button.w-button:focus-visible {
+  transform: translate3d(0,-3px,0);
+  background: #f0c66c;
+  border-color: #f0c66c;
+  color: #120d08;
+  box-shadow: 0 18px 36px rgba(0,0,0,.28), 0 0 0 1px rgba(240,198,108,.45);
+}
+.cta-link,
+.link-block {
+  position: relative;
+  overflow: hidden;
+}
+.cta-link::after,
+.link-block::after,
+.text-link::after {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: .55rem;
+  height: 1px;
+  background: currentColor;
+  opacity: .42;
+  transform: scaleX(.42);
+  transform-origin: left center;
+  transition: transform 260ms cubic-bezier(.2,.8,.2,1), opacity 220ms ease;
+}
+.link-block::after {
+  left: 1.15rem;
+  right: 1.15rem;
+  bottom: .8rem;
+}
+.text-link::after {
+  left: 0;
+  right: 0;
+  bottom: -.18rem;
+}
+.cta-link:hover,
+.cta-link:focus-visible {
+  transform: translate3d(0,-3px,0);
+  border-color: rgba(240,198,108,.9);
+  color: #fff8ee;
+  box-shadow: 0 16px 34px rgba(0,0,0,.22);
+}
+.cta-link:hover::after,
+.cta-link:focus-visible::after,
+.link-block:hover::after,
+.link-block:focus-visible::after,
+.text-link:hover::after,
+.text-link:focus-visible::after {
+  transform: scaleX(1);
+  opacity: .95;
+}
+.link-block:hover,
+.link-block:focus-visible {
+  transform: translate3d(0,-4px,0);
+  box-shadow: 0 14px 28px rgba(0,0,0,.2);
+}
+.text-link:hover,
+.text-link:focus-visible {
+  color: #f0c66c;
+}
+.service-preview-card,
+.case-card,
+.relation-card,
+.service-card {
+  transition: transform 280ms cubic-bezier(.2,.8,.2,1), border-color 220ms ease, box-shadow 280ms cubic-bezier(.2,.8,.2,1);
+}
+.service-preview-card:hover,
+.case-card:hover,
+.relation-card:hover,
+.service-card:hover {
+  transform: translate3d(0,-6px,0);
+  border-color: rgba(240,198,108,.45);
+  box-shadow: 0 18px 34px rgba(0,0,0,.22);
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-preview-cta,
+  .cta-link,
+  .submit-button.w-button,
+  .link-block,
+  .text-link,
+  .service-preview-card,
+  .case-card,
+  .relation-card,
+  .service-card {
+    transition: none !important;
+  }
+  .cta-link::after,
+  .link-block::after,
+  .text-link::after {
+    transition: none !important;
+  }
+}
+</style>
 </head><body class="body page-shell"><nav class="navbar-logo-left"><div class="navbar-logo-left-container shadow-three w-nav" data-animation="over-right" data-collapse="all" data-duration="400" data-easing="ease" data-easing2="ease" role="banner"><div class="navbar-container"><div class="navbar-wrapper"><a class="navbar-brand w-nav-brand" href="/"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68bcc54da8714105bb252c7f_e4_logo_white.svg"/></a><div class="navbar-right-div"><div class="socials-div"><a class="social-link-block w-inline-block" href="https://www.instagram.com/e4power_?igsh=bXR4bThxMHh2dHNy&amp;utm_source=qr" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c4ee8e329fe01d525b_instagram.svg"/></a><a class="social-link-block w-inline-block" href="https://www.linkedin.com/company/e4-power-consulting/" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c46c9537fa67bb89bd_linkedin.svg"/></a><a class="social-link-block w-inline-block" href="https://www.tiktok.com/@e4powerconsulting?_t=ZT-90YVLBMkwaT&amp;_r=1" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68f66f4d7a2ffc0d86a72550_tiktok.svg"/></a><a class="social-link-block w-inline-block" href="https://www.facebook.com/profile.php?id=61573544665670&amp;mibextid=wwXIfr&amp;rdid=yOcyRogs7shBnrLD&amp;share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1775G2zRAh%2F%3Fmibextid%3DwwXIfr#" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c48dbb4dd69e849624_facebook.svg"/></a></div><a class="text-link" href="/contact-us">Contact Us</a><div class="menu-button w-nav-button"><div class="hamburger-icon w-icon-nav-menu"></div></div></div><nav class="nav-menu-wrapper w-nav-menu" role="navigation"><ul class="nav-menu-two w-list-unstyled" role="list"><li><a class="nav-link" href="/services/">SERVICES</a></li><li><a class="nav-link" href="/educate/">EDUCATE</a></li><li><a class="nav-link" href="/empower/">EMPOWER</a></li><li><a class="nav-link" href="/elevate/">ELEVATE</a></li><li><a class="nav-link" href="/engage/">ENGAGE</a></li></ul></nav></div></div></div></nav>
 <section class="page-hero"><div class="page-hero-media" data-reveal="zoom" style="background-image:url('https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d8811dee8e329fe0f879dc_elevate%20picture.webp')"></div><div class="page-hero-overlay"></div><div class="container page-hero-inner"><div class="page-grid"><div><div class="page-eyebrow" data-reveal="soft">Capabilities Overview</div><h1 class="page-display" data-reveal="soft" data-reveal-stagger="1">Full-Lifecycle Services for Institutional Growth</h1><p class="page-intro" data-reveal="soft" data-reveal-stagger="2">E4 Power supports institutions from early opportunity discovery through funded-program execution. The expanded services architecture brings grant strategy, readiness, intellectual property, financial stewardship, project delivery, training, and digital delivery into one connected partnership model.</p></div><aside class="metric-panel" data-reveal="soft" data-reveal-stagger="3"><div class="metric-value">08+</div><div class="metric-copy">Core service lines are now organized into pillar-led pathways so visitors can understand both the breadth of E4 Power and how each capability supports measurable institutional outcomes.</div></aside></div></div></section>
 <section class="content-section charcoal"><div class="container"><div class="section-label" data-reveal="soft">Service Architecture</div><h2 class="section-title" data-reveal="soft" data-reveal-stagger="1">An Eight-Tier Services Hub that Mirrors the BRIDGE Mindset</h2><p class="section-copy" data-reveal="soft" data-reveal-stagger="2">The Services page functions as the capability index for decision-makers. It explains what E4 Power does beyond proposal writing, while also clarifying how those capabilities align with Educate, Empower, Elevate, and Engage.</p><div class="service-grid"><article class="service-card" data-reveal="soft" data-reveal-stagger="1"><div><div class="service-tag">Empower</div><h3>Pre-Award Strategy</h3><p>Grant writing, readiness planning, opportunity identification, and proposal-development support for HBCUs, ERIs, MSIs, and nonprofits.</p></div><ul class="service-points"><li>Opportunity identification</li><li>Proposal development</li><li>Competitive positioning</li></ul></article><article class="service-card" data-reveal="soft" data-reveal-stagger="2"><div><div class="service-tag">Elevate</div><h3>Post-Award Stewardship</h3><p>Grant management, compliance support, and closeout discipline that protect agency relationships after an award is secured.</p></div><ul class="service-points"><li>Award setup and reporting</li><li>Compliance coordination</li><li>Closeout readiness</li></ul></article><article class="service-card" data-reveal="soft" data-reveal-stagger="3"><div><div class="service-tag">Elevate</div><h3>Project &amp; Program Management</h3><p>Structured execution support for research, workforce, and multi-institution initiatives requiring dependable delivery systems.</p></div><ul class="service-points"><li>Risk-aware execution</li><li>Cross-team coordination</li><li>Milestone accountability</li></ul></article><article class="service-card" data-reveal="soft" data-reveal-stagger="4"><div><div class="service-tag">Engage</div><h3>Readiness Assessments</h3><p>Institutional discovery work that clarifies infrastructure, staffing, and systems gaps before a funding pursuit begins.</p></div><ul class="service-points"><li>SWOT review</li><li>Infrastructure mapping</li><li>Growth prioritization</li></ul></article><article class="service-card" data-reveal="soft" data-reveal-stagger="5"><div><div class="service-tag">Empower</div><h3>Intellectual Property Services</h3><p>Innovation-protection and commercialization support led by IP specialists to help institutions move ideas from lab to market.</p></div><ul class="service-points"><li>Patent strategy</li><li>IP education</li><li>Commercialization support</li></ul></article><article class="service-card" data-reveal="soft" data-reveal-stagger="6"><div><div class="service-tag">Elevate</div><h3>Financial Management</h3><p>Budget development, fiscal oversight, and audit-conscious financial management aligned with federal requirements.</p></div><ul class="service-points"><li>Allowable cost tracking</li><li>Budget oversight</li><li>Fiscal compliance</li></ul></article><article class="service-card" data-reveal="soft" data-reveal-stagger="7"><div><div class="service-tag">Educate</div><h3>Workshops &amp; Speaking</h3><p>Capacity-building engagements that translate expertise into teachable systems for institutional teams and leadership audiences.</p></div><ul class="service-points"><li>Workshop design</li><li>Speaking engagements</li><li>Training delivery</li></ul></article><article class="service-card" data-reveal="soft" data-reveal-stagger="8"><div><div class="service-tag">Empower</div><h3>IT &amp; Application Development</h3><p>Technology delivery services that help organizations build the digital infrastructure behind growth, service delivery, and operational efficiency.</p></div><ul class="service-points"><li>Custom portals</li><li>Web apps and websites</li><li>Ongoing IT support</li></ul></article></div><div class="relation-grid"><div class="relation-card" data-reveal="soft" data-reveal-stagger="1"><h4>Educate</h4><p>Translates expertise into workshops, speaking, and skill-building for faculty, researchers, and leaders.</p></div><div class="relation-card" data-reveal="soft" data-reveal-stagger="2"><h4>Empower</h4><p>Advances competitiveness through strategic planning, proposals, IP, innovation, and digital-product development.</p></div><div class="relation-card" data-reveal="soft" data-reveal-stagger="3"><h4>Elevate</h4><p>Supports funded work through stewardship, execution systems, financial controls, and outcome visibility.</p></div><div class="relation-card" data-reveal="soft" data-reveal-stagger="4"><h4>Engage</h4><p>Creates the institutional partnership doorway through discovery, readiness, and advisory collaboration.</p></div></div></div></section><section class="content-section dark"><div class="container"><div class="section-label" data-reveal="soft">Digital Delivery</div><h2 class="section-title" data-reveal="soft" data-reveal-stagger="1">Technology Services that Extend E4 Power Beyond Advisory Work</h2><p class="section-copy" data-reveal="soft" data-reveal-stagger="2">The new IT and Application Development tier gives E4 Power a clearer operational offering for partners that need more than strategy. It positions the firm to support custom portals, web applications, websites, and day-to-day IT support in a way that complements institutional growth and modernization.</p><div class="service-grid"><article class="service-card" data-reveal="soft" data-reveal-stagger="1"><div><div class="service-tag">Empower</div><h3>Custom Portals</h3><p>Secure portal experiences for students, partners, internal teams, or community-facing programs that require structured access and workflow support.</p></div><ul class="service-points"><li>Partner portals</li><li>Program dashboards</li><li>Operational access points</li></ul></article><article class="service-card" data-reveal="soft" data-reveal-stagger="2"><div><div class="service-tag">Empower</div><h3>Web Applications &amp; Websites</h3><p>Digital experiences designed to support outreach, service delivery, internal operations, or public-facing storytelling.</p></div><ul class="service-points"><li>Custom web apps</li><li>Institutional websites</li><li>Workflow-driven experiences</li></ul></article><article class="service-card" data-reveal="soft" data-reveal-stagger="3"><div><div class="service-tag">Elevate</div><h3>IT Support Services</h3><p>Practical technical support that helps clients maintain systems, resolve issues, and keep new digital infrastructure functioning well after launch.</p></div><ul class="service-points"><li>Support and troubleshooting</li><li>Maintenance guidance</li><li>Operational continuity</li></ul></article></div></div></section>

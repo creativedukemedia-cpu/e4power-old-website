@@ -103,6 +103,125 @@ html.js-motion .cta-panel{backface-visibility:hidden;}
   html.js-motion [data-reveal]{opacity:1 !important;transform:none !important;transition:none !important;}
 }
 </style>
+
+<style id="button-hover-system">
+.service-preview-cta,
+.cta-link,
+.submit-button.w-button,
+.link-block,
+.text-link {
+  transition: transform 260ms cubic-bezier(.2,.8,.2,1),
+              box-shadow 260ms cubic-bezier(.2,.8,.2,1),
+              background-color 220ms ease,
+              color 220ms ease,
+              border-color 220ms ease,
+              opacity 220ms ease;
+}
+.service-preview-cta,
+.cta-link.primary,
+.submit-button.w-button {
+  box-shadow: 0 0 0 rgba(226,178,76,0);
+}
+.service-preview-cta:hover,
+.service-preview-cta:focus-visible,
+.cta-link.primary:hover,
+.cta-link.primary:focus-visible,
+.submit-button.w-button:hover,
+.submit-button.w-button:focus-visible {
+  transform: translate3d(0,-3px,0);
+  background: #f0c66c;
+  border-color: #f0c66c;
+  color: #120d08;
+  box-shadow: 0 18px 36px rgba(0,0,0,.28), 0 0 0 1px rgba(240,198,108,.45);
+}
+.cta-link,
+.link-block {
+  position: relative;
+  overflow: hidden;
+}
+.cta-link::after,
+.link-block::after,
+.text-link::after {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: .55rem;
+  height: 1px;
+  background: currentColor;
+  opacity: .42;
+  transform: scaleX(.42);
+  transform-origin: left center;
+  transition: transform 260ms cubic-bezier(.2,.8,.2,1), opacity 220ms ease;
+}
+.link-block::after {
+  left: 1.15rem;
+  right: 1.15rem;
+  bottom: .8rem;
+}
+.text-link::after {
+  left: 0;
+  right: 0;
+  bottom: -.18rem;
+}
+.cta-link:hover,
+.cta-link:focus-visible {
+  transform: translate3d(0,-3px,0);
+  border-color: rgba(240,198,108,.9);
+  color: #fff8ee;
+  box-shadow: 0 16px 34px rgba(0,0,0,.22);
+}
+.cta-link:hover::after,
+.cta-link:focus-visible::after,
+.link-block:hover::after,
+.link-block:focus-visible::after,
+.text-link:hover::after,
+.text-link:focus-visible::after {
+  transform: scaleX(1);
+  opacity: .95;
+}
+.link-block:hover,
+.link-block:focus-visible {
+  transform: translate3d(0,-4px,0);
+  box-shadow: 0 14px 28px rgba(0,0,0,.2);
+}
+.text-link:hover,
+.text-link:focus-visible {
+  color: #f0c66c;
+}
+.service-preview-card,
+.case-card,
+.relation-card,
+.service-card {
+  transition: transform 280ms cubic-bezier(.2,.8,.2,1), border-color 220ms ease, box-shadow 280ms cubic-bezier(.2,.8,.2,1);
+}
+.service-preview-card:hover,
+.case-card:hover,
+.relation-card:hover,
+.service-card:hover {
+  transform: translate3d(0,-6px,0);
+  border-color: rgba(240,198,108,.45);
+  box-shadow: 0 18px 34px rgba(0,0,0,.22);
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-preview-cta,
+  .cta-link,
+  .submit-button.w-button,
+  .link-block,
+  .text-link,
+  .service-preview-card,
+  .case-card,
+  .relation-card,
+  .service-card {
+    transition: none !important;
+  }
+  .cta-link::after,
+  .link-block::after,
+  .text-link::after {
+    transition: none !important;
+  }
+}
+</style>
 </head><body class="body page-shell"><nav class="navbar-logo-left"><div class="navbar-logo-left-container shadow-three w-nav" data-animation="over-right" data-collapse="all" data-duration="400" data-easing="ease" data-easing2="ease" role="banner"><div class="navbar-container"><div class="navbar-wrapper"><a class="navbar-brand w-nav-brand" href="/"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68bcc54da8714105bb252c7f_e4_logo_white.svg"/></a><div class="navbar-right-div"><div class="socials-div"><a class="social-link-block w-inline-block" href="https://www.instagram.com/e4power_?igsh=bXR4bThxMHh2dHNy&amp;utm_source=qr" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c4ee8e329fe01d525b_instagram.svg"/></a><a class="social-link-block w-inline-block" href="https://www.linkedin.com/company/e4-power-consulting/" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c46c9537fa67bb89bd_linkedin.svg"/></a><a class="social-link-block w-inline-block" href="https://www.tiktok.com/@e4powerconsulting?_t=ZT-90YVLBMkwaT&amp;_r=1" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68f66f4d7a2ffc0d86a72550_tiktok.svg"/></a><a class="social-link-block w-inline-block" href="https://www.facebook.com/profile.php?id=61573544665670&amp;mibextid=wwXIfr&amp;rdid=yOcyRogs7shBnrLD&amp;share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1775G2zRAh%2F%3Fmibextid%3DwwXIfr#" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c48dbb4dd69e849624_facebook.svg"/></a></div><a class="text-link" href="/contact-us">Contact Us</a><div class="menu-button w-nav-button"><div class="hamburger-icon w-icon-nav-menu"></div></div></div><nav class="nav-menu-wrapper w-nav-menu" role="navigation"><ul class="nav-menu-two w-list-unstyled" role="list"><li><a class="nav-link" href="/services/">SERVICES</a></li><li><a class="nav-link" href="/educate/">EDUCATE</a></li><li><a class="nav-link" href="/empower/">EMPOWER</a></li><li><a class="nav-link" href="/elevate/">ELEVATE</a></li><li><a class="nav-link" href="/engage/">ENGAGE</a></li></ul></nav></div></div></div></nav>
 <section class="page-hero"><div class="page-hero-media" data-reveal="zoom" style="background-image:url('https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d86ed2cf005d4f005b60bd_1.webp')"></div><div class="page-hero-overlay"></div><div class="container page-hero-inner"><div class="page-grid"><div><div class="page-eyebrow" data-reveal="soft">Pillar Page</div><h1 class="page-display" data-reveal="soft" data-reveal-stagger="1">Empower: Strategy, Opportunity Creation, Digital Build, and Innovation Support</h1><p class="page-intro" data-reveal="soft" data-reveal-stagger="2">Empower should become the strategy-heavy pillar page. It is where E4 Power explains how it helps institutions move from ambition to competitive action through proposal development, readiness planning, intellectual property support, digital-product creation, and innovation-minded advisory services.</p></div><aside class="metric-panel" data-reveal="soft" data-reveal-stagger="3"><div class="metric-value">78%</div><div class="metric-copy">Proposal-development success, modernization strategy, and custom digital delivery make this pillar the clearest place to show how E4 Power helps clients become more competitive before funding is awarded and as new capacity is built.</div></aside></div></div></section>
 <section class="content-section charcoal"><div class="container"><div class="section-label" data-reveal="soft">Empower Services</div><h2 class="section-title" data-reveal="soft" data-reveal-stagger="1">Services that Strengthen Competitive Positioning and Delivery Capacity</h2><p class="section-copy" data-reveal="soft" data-reveal-stagger="2">Empower should hold the services that improve institutional confidence and competitiveness before or alongside major opportunities. That includes pre-award support, readiness reviews, intellectual property strategy, carefully framed technology and AI integration support, and the new IT and Application Development tier.</p><div class="service-grid"><article class="service-card" data-reveal="soft" data-reveal-stagger="1"><div><div class="service-tag">Pre-Award</div><h3>Grant Writing</h3><p>End-to-end proposal support from opportunity identification through narrative assembly, approvals, and submission discipline.</p></div><ul class="service-points"><li>Opportunity scans</li><li>Proposal writing</li><li>Submission support</li></ul></article><article class="service-card" data-reveal="soft" data-reveal-stagger="2"><div><div class="service-tag">Capacity Services</div><h3>Readiness Assessments</h3><p>Institutional reviews that identify infrastructure gaps, growth priorities, and realistic pathways for future funding.</p></div><ul class="service-points"><li>SWOT analysis</li><li>Infrastructure review</li><li>Strategic implementation baseline</li></ul></article><article class="service-card" data-reveal="soft" data-reveal-stagger="3"><div><div class="service-tag">Innovation Support</div><h3>Intellectual Property</h3><p>Protection and commercialization services that help researchers identify, secure, and position innovation assets.</p></div><ul class="service-points"><li>Patent guidance</li><li>Researcher education</li><li>Commercialization positioning</li></ul></article><article class="service-card" data-reveal="soft" data-reveal-stagger="4"><div><div class="service-tag">Digital Delivery</div><h3>IT &amp; Application Development</h3><p>Custom technology services for organizations that need portals, web applications, websites, or dependable IT support as part of their broader growth strategy.</p></div><ul class="service-points"><li>Custom portals</li><li>Web apps and websites</li><li>IT support</li></ul></article><article class="service-card" data-reveal="soft" data-reveal-stagger="5"><div><div class="service-tag">Modernization</div><h3>IT Solutions &amp; AI Integration</h3><p>Advisory support for institutions exploring automation, AI, and technology-enabled efficiency as part of long-term research and operational growth.</p></div><ul class="service-points"><li>Automation ideas</li><li>LLM integration framing</li><li>Process modernization</li></ul></article></div><div class="relation-grid"><div class="relation-card" data-reveal="soft" data-reveal-stagger="1"><h4>Educate</h4><p>Training improves readiness for the strategic work introduced here.</p></div><div class="relation-card" data-reveal="soft" data-reveal-stagger="2"><h4>Empower</h4><p>Primary home for opportunity creation, proposal strategy, innovation support, and digital-product development.</p></div><div class="relation-card" data-reveal="soft" data-reveal-stagger="3"><h4>Elevate</h4><p>Strong pre-award strategy and digital build work still depend on disciplined execution after launch or award.</p></div><div class="relation-card" data-reveal="soft" data-reveal-stagger="4"><h4>Engage</h4><p>Discovery conversations and readiness reviews often begin the work shown on this page.</p></div></div></div></section>
