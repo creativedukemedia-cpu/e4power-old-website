@@ -1,4 +1,4 @@
-- [x] Inspect the custom CTA and preview-button styles on the homepage and breakout pages
-- [x] Add hover effects that match the site’s black-and-gold motion language
-- [x] Apply the hover treatment consistently to custom buttons across the Services architecture
-- [x] Validate hover behavior and readability in preview
+- [ ] Inspect the current Educate, Empower, Elevate, and Engage pages to identify repeated hero, panel, and section patterns
+- [ ] Define a distinct visual direction for each pillar page using different emphasis, section rhythm, and supporting copy treatments
+- [ ] Update the page-generation source so each pillar has a more individual hero and content presentation
+- [ ] Validate the updated pillar pages in preview to ensure they feel distinct without breaking the shared site branding

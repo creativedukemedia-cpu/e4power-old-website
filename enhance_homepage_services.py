@@ -11,12 +11,12 @@ PREVIEW_CSS = '''
 .service-preview-top{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;}
 .service-preview-kicker{color:#e2b24c;text-transform:uppercase;letter-spacing:.18em;font-size:.82rem;}
 .service-preview-title{color:#f7f1e8;margin:.85rem 0 0;text-transform:uppercase;font-size:2.2rem;line-height:1.05;max-width:12ch;}
-.service-preview-copy{color:#d4c8b8;line-height:1.8;max-width:38rem;margin-top:1rem;}
+.service-preview-copy{color:#d4c8b8;font-size:1.08rem;line-height:1.9;max-width:40rem;margin-top:1rem;}
 .service-preview-cta{display:inline-flex;align-items:center;gap:.65rem;color:#0f0b07;background:#e2b24c;border:1px solid #e2b24c;padding:.95rem 1.2rem;text-decoration:none;text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;white-space:nowrap;}
 .service-preview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:2rem;}
 .service-preview-card{border:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.18);padding:1.25rem;min-height:11.5rem;}
 .service-preview-card h4{color:#f0bf5d;margin:0 0 .75rem;text-transform:uppercase;font-size:1rem;line-height:1.3;}
-.service-preview-card p{color:#e6dccf;line-height:1.75;margin:0;}
+.service-preview-card p{color:#e6dccf;font-size:1.03rem;line-height:1.82;margin:0;}
 @media screen and (max-width: 991px){.service-preview-grid{grid-template-columns:1fr;}.service-preview-shell{padding:1.8rem;}.service-preview-title{font-size:1.8rem;max-width:none;}}
 </style>
 '''
