@@ -2,3 +2,9 @@
 - [ ] Define a distinct visual direction for each pillar page using different emphasis, section rhythm, and supporting copy treatments
 - [ ] Update the page-generation source so each pillar has a more individual hero and content presentation
 - [ ] Validate the updated pillar pages in preview to ensure they feel distinct without breaking the shared site branding
+- [ ] Investigate why deployed /services/ on e4power.cdmtesting.site still renders like the homepage while local preview shows a distinct Services page
+- [ ] Compare deployed domain output, local generated client/services/index.html, and static build configuration to identify whether the issue is stale deployment, wrong build output, or routing fallback
+- [ ] Fix the Services-page regression at the source, rebuild if needed, and verify the corrected /services/ page on the live domain before reporting back
+- [ ] Verify the published Manus domain and the custom domain separately to determine whether the live regression affects one domain or both.
+- [ ] Inspect production responses for /services/ and /services/index.html to detect fallback-to-homepage behavior versus missing-file behavior.
+- [ ] Determine whether the latest published site is serving an older artifact, a cached artifact, or a routing fallback despite the current preview being correct.
