@@ -8,3 +8,7 @@
 - [ ] Verify the published Manus domain and the custom domain separately to determine whether the live regression affects one domain or both.
 - [ ] Inspect production responses for /services/ and /services/index.html to detect fallback-to-homepage behavior versus missing-file behavior.
 - [ ] Determine whether the latest published site is serving an older artifact, a cached artifact, or a routing fallback despite the current preview being correct.
+- [ ] Replace the homepage's large inserted service-preview sections with a compact hero interaction where each emblem pillar reveals its related services on hover.
+- [ ] Redesign the pillar breakout pages to follow the provided example layout more closely, using placeholder card media for now.
+- [ ] Add solid gold icons to the bullet-level feature lists on the breakout pages.
+- [ ] Verify the updated homepage hover interaction and the redesigned breakout pages in preview before saving a checkpoint.
