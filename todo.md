@@ -15,3 +15,9 @@
 - [ ] Translate the homepage pillar hover interaction into a mobile-friendly tap interaction with a clear active state and one-open-at-a-time behavior.
 - [ ] Use breakpoint-specific behavior so tablets keep an anchored inline panel while small phones get a more compact disclosure treatment.
 - [ ] Verify the updated homepage pillar interaction on both desktop and mobile-sized preview states before saving a new checkpoint.
+- [ ] Rework the Services hub so it is categorized by service title in the same layout direction as the provided example.
+- [ ] Create service-specific breakout pages that match the example’s visual structure and editorial card layout.
+- [ ] Ensure the Services hub links each category card to its corresponding service breakout page.
+- [ ] Verify the updated Services hub and the new service breakout pages in preview before saving the next checkpoint.
+- [ ] Update the Vite multipage build input so nested /services/* detail pages are emitted into dist/public for publish.
+- [ ] Rebuild and verify that the production artifact contains the new service-detail pages before checkpointing.

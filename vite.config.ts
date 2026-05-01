@@ -206,18 +206,31 @@ function vitePluginStorageProxy(): Plugin {
 
 const CLIENT_ROOT = path.resolve(import.meta.dirname, "client");
 
-const htmlEntries = Object.fromEntries(
-  fs
-    .readdirSync(CLIENT_ROOT, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory())
-    .map((entry) => {
-      const htmlPath = path.join(CLIENT_ROOT, entry.name, "index.html");
-      return fs.existsSync(htmlPath)
-        ? [entry.name, fileURLToPath(new URL(`./client/${entry.name}/index.html`, import.meta.url))]
-        : null;
-    })
-    .filter((entry): entry is [string, string] => entry !== null)
-);
+function collectHtmlEntries(dir: string, relativeDir = ""): Array<[string, string]> {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  const htmlEntries: Array<[string, string]> = [];
+
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+
+    const nextRelativeDir = relativeDir ? path.posix.join(relativeDir, entry.name) : entry.name;
+    const nextAbsoluteDir = path.join(dir, entry.name);
+    const htmlPath = path.join(nextAbsoluteDir, "index.html");
+
+    if (fs.existsSync(htmlPath)) {
+      htmlEntries.push([
+        nextRelativeDir.replace(/[\/]/g, "__"),
+        fileURLToPath(new URL(`./client/${nextRelativeDir}/index.html`, import.meta.url)),
+      ]);
+    }
+
+    htmlEntries.push(...collectHtmlEntries(nextAbsoluteDir, nextRelativeDir));
+  }
+
+  return htmlEntries;
+}
+
+const htmlEntries = Object.fromEntries(collectHtmlEntries(CLIENT_ROOT));
 
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
 
