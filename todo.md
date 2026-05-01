@@ -12,3 +12,6 @@
 - [ ] Redesign the pillar breakout pages to follow the provided example layout more closely, using placeholder card media for now.
 - [ ] Add solid gold icons to the bullet-level feature lists on the breakout pages.
 - [ ] Verify the updated homepage hover interaction and the redesigned breakout pages in preview before saving a checkpoint.
+- [ ] Translate the homepage pillar hover interaction into a mobile-friendly tap interaction with a clear active state and one-open-at-a-time behavior.
+- [ ] Use breakpoint-specific behavior so tablets keep an anchored inline panel while small phones get a more compact disclosure treatment.
+- [ ] Verify the updated homepage pillar interaction on both desktop and mobile-sized preview states before saving a new checkpoint.
