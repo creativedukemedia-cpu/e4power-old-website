@@ -19,5 +19,8 @@
 - [ ] Create service-specific breakout pages that match the example’s visual structure and editorial card layout.
 - [ ] Ensure the Services hub links each category card to its corresponding service breakout page.
 - [ ] Verify the updated Services hub and the new service breakout pages in preview before saving the next checkpoint.
+- [ ] Restructure the Services catalog so each named service is the main group and each group contains four pillar-specific cards together.
+- [ ] Replace the current pillar-first ordering in the Services catalog with a service-first sequence that mirrors the example’s grouped-card logic.
+- [ ] Update service page links and breakout architecture so each service block clearly branches into related detail pages from the new grouped layout.
 - [ ] Update the Vite multipage build input so nested /services/* detail pages are emitted into dist/public for publish.
 - [ ] Rebuild and verify that the production artifact contains the new service-detail pages before checkpointing.
