@@ -22,5 +22,8 @@
 - [ ] Restructure the Services catalog so each named service is the main group and each group contains four pillar-specific cards together.
 - [ ] Replace the current pillar-first ordering in the Services catalog with a service-first sequence that mirrors the example’s grouped-card logic.
 - [ ] Update service page links and breakout architecture so each service block clearly branches into related detail pages from the new grouped layout.
+- [ ] Investigate why taps do not register on mobile on the published domain and determine whether a full-page overlay, hero layer, or menu container is intercepting pointer events.
+- [ ] Verify the homepage, navigation, and hero interactions in a mobile viewport on both preview and the published domain after applying the fix.
+- [ ] Save a checkpoint for the mobile tap fix once the published site is responsive to touch interactions again.
 - [ ] Update the Vite multipage build input so nested /services/* detail pages are emitted into dist/public for publish.
 - [ ] Rebuild and verify that the production artifact contains the new service-detail pages before checkpointing.
