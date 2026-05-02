@@ -27,3 +27,7 @@
 - [ ] Save a checkpoint for the mobile tap fix once the published site is responsive to touch interactions again.
 - [ ] Update the Vite multipage build input so nested /services/* detail pages are emitted into dist/public for publish.
 - [ ] Rebuild and verify that the production artifact contains the new service-detail pages before checkpointing.
+- [ ] Map the provided Speaking Engagements images to the matching Educate, Empower, Elevate, and Engage cards based on the filenames.
+- [ ] Upload the new Speaking Engagements images to managed static storage and replace the placeholder card media on the relevant service page.
+- [ ] Add a default black-and-white treatment that transitions to full color on hover for the Speaking Engagements cards.
+- [ ] Verify the updated Speaking Engagements images and hover behavior in preview before saving the next checkpoint.

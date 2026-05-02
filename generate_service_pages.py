@@ -203,7 +203,14 @@ custom_css = '''
   background-position: center;
   border: 1px solid rgba(255,255,255,0.06);
   filter: grayscale(1);
+  transition: filter .28s ease, transform .28s ease;
   box-shadow: 0 16px 40px rgba(0,0,0,0.26);
+}
+.ref-card-link:hover .ref-card-media,
+.ref-card-link:focus .ref-card-media,
+.ref-card-link:focus-visible .ref-card-media,
+.ref-card:hover .ref-card-media {
+  filter: grayscale(0);
 }
 .ref-card-titleband {
   background: #fff;
@@ -347,7 +354,7 @@ def render_points(points):
 def render_cards(cards):
     items = []
     for card in cards:
-        media = placeholder_svg(card.get('placeholder', card['title']))
+        media = card.get('image') or placeholder_svg(card.get('placeholder', card['title']))
         label = f'<div class="ref-card-label">{html.escape(card["label"])}</div>' if card.get('label') else ''
         note = f'<p class="ref-card-note">{html.escape(card["note"])}</p>' if card.get('note') else ''
         article = (
@@ -382,6 +389,7 @@ def build_service_section(service, include_links=True):
             'note': detail['note'],
             'points': detail['points'],
             'placeholder': f'{service["title"]} {pillar}',
+            'image': detail.get('image'),
             'href': href,
         })
     return (
@@ -421,6 +429,7 @@ def write_detail_page(service):
             'note': detail['note'],
             'points': detail['points'],
             'placeholder': f'{service["title"]} {pillar}',
+            'image': detail.get('image'),
         })
     body = f'''<!-- Design philosophy: Reference-led service detail page. Each service page keeps the example’s editorial layout while presenting the four pillars together under one service heading. -->
 {page_head}<body class="body ref-page-shell">{nav_html}
@@ -454,10 +463,10 @@ services = [
         'closing_copy': 'Speaking Engagements works best when E4 Power needs to create trust quickly, shape the room, and open a broader pathway into training, advisory support, or implementation work.',
         'related_links': [('Services Hub', '/services/'), ('Educate', '/educate/'), ('Contact Us', '/contact-us')],
         'pillars': {
-            'Educate': {'note': 'Use talks and keynote sessions to transfer knowledge, train teams, and introduce new language around innovation and grants.', 'points': ['Conference keynotes', 'Learning-centered sessions', 'Team readiness framing']},
-            'Empower': {'note': 'Position speaking as a strategic catalyst that helps leaders see competitive opportunities and organizational next steps.', 'points': ['Executive briefings', 'Opportunity framing', 'Strategic positioning']},
-            'Elevate': {'note': 'Translate ideas into action by using speaking engagements to reinforce implementation discipline and institutional accountability.', 'points': ['Execution-minded messaging', 'Operational clarity', 'Action-oriented summaries']},
-            'Engage': {'note': 'Open new relationships through visible thought leadership that builds trust before deeper consulting begins.', 'points': ['Relationship-first introductions', 'Advisory entry point', 'Trust-building presence']},
+            'Educate': {'note': 'Use talks and keynote sessions to transfer knowledge, train teams, and introduce new language around innovation and grants.', 'points': ['Conference keynotes', 'Learning-centered sessions', 'Team readiness framing'], 'image': '/manus-storage/SpeakingEngagementsEducate_c4effd85.jpg'},
+            'Empower': {'note': 'Position speaking as a strategic catalyst that helps leaders see competitive opportunities and organizational next steps.', 'points': ['Executive briefings', 'Opportunity framing', 'Strategic positioning'], 'image': '/manus-storage/SpeakingEngagementsEmpower_3fc5583d.jpg'},
+            'Elevate': {'note': 'Translate ideas into action by using speaking engagements to reinforce implementation discipline and institutional accountability.', 'points': ['Execution-minded messaging', 'Operational clarity', 'Action-oriented summaries'], 'image': '/manus-storage/SpeakingEngagementsElevate_18d2199e.jpg'},
+            'Engage': {'note': 'Open new relationships through visible thought leadership that builds trust before deeper consulting begins.', 'points': ['Relationship-first introductions', 'Advisory entry point', 'Trust-building presence'], 'image': '/manus-storage/SpeakingEngagementsEngage_85977d11.jpg'},
         },
     },
     {
