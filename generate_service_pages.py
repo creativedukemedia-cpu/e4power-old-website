@@ -491,10 +491,10 @@ services = [
         'closing_copy': 'Technology & AI Literacy is the right starting point when organizations need confidence, context, and a human-centered approach before moving into deeper digital implementation.',
         'related_links': [('Services Hub', '/services/'), ('Empower', '/empower/'), ('Contact Us', '/contact-us')],
         'pillars': {
-            'Educate': {'note': 'Teach foundational concepts in plain language so teams understand what AI and digital systems actually mean in practice.', 'points': ['AI readiness education', 'Digital-literacy training', 'Common-language building']},
-            'Empower': {'note': 'Connect literacy to strategy by helping leaders spot where technology can strengthen competitiveness.', 'points': ['Strategic tool evaluation', 'Innovation positioning', 'Opportunity prioritization']},
-            'Elevate': {'note': 'Apply literacy to operations by clarifying workflows, governance needs, and practical system use.', 'points': ['Workflow translation', 'Governance-aware adoption', 'Operational clarity']},
-            'Engage': {'note': 'Use technology conversations to open thoughtful, trust-based advisory relationships with cautious or curious organizations.', 'points': ['Discovery-led technology talks', 'Human-centered alignment', 'Low-pressure entry point']},
+            'Educate': {'note': 'Teach foundational concepts in plain language so teams understand what AI and digital systems actually mean in practice.', 'points': ['AI readiness education', 'Digital-literacy training', 'Common-language building'], 'image': '/manus-storage/TechnologyEducate_ddab685d.jpg'},
+            'Empower': {'note': 'Connect literacy to strategy by helping leaders spot where technology can strengthen competitiveness.', 'points': ['Strategic tool evaluation', 'Innovation positioning', 'Opportunity prioritization'], 'image': '/manus-storage/TechnologyEmpower_b7f31cc8.jpg'},
+            'Elevate': {'note': 'Apply literacy to operations by clarifying workflows, governance needs, and practical system use.', 'points': ['Workflow translation', 'Governance-aware adoption', 'Operational clarity'], 'image': '/manus-storage/TechnologyElevate_138a698f.jpg'},
+            'Engage': {'note': 'Use technology conversations to open thoughtful, trust-based advisory relationships with cautious or curious organizations.', 'points': ['Discovery-led technology talks', 'Human-centered alignment', 'Low-pressure entry point'], 'image': '/manus-storage/TechnologyEngage_d37c12cc.jpg'},
         },
     },
     {

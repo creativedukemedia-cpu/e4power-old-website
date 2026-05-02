@@ -35,3 +35,7 @@
 - [ ] Upload the new Workshops images to managed static storage and replace the placeholder card media on the relevant service page.
 - [ ] Reuse the grayscale-to-color hover treatment for the Workshops cards so they match the Speaking Engagements interaction.
 - [ ] Verify the updated Workshops images and hover behavior in preview before saving the next checkpoint.
+- [ ] Map the provided Technology & AI Literacy images to the matching Educate, Empower, Elevate, and Engage cards based on the filenames.
+- [ ] Upload the new Technology & AI Literacy images to managed static storage and replace the placeholder card media on the relevant service page.
+- [ ] Reuse the grayscale-to-color hover treatment for the Technology & AI Literacy cards so they match the Speaking Engagements and Workshops interactions.
+- [ ] Verify the updated Technology & AI Literacy images and hover behavior in preview before saving the next checkpoint.
