@@ -31,3 +31,7 @@
 - [ ] Upload the new Speaking Engagements images to managed static storage and replace the placeholder card media on the relevant service page.
 - [ ] Add a default black-and-white treatment that transitions to full color on hover for the Speaking Engagements cards.
 - [ ] Verify the updated Speaking Engagements images and hover behavior in preview before saving the next checkpoint.
+- [ ] Map the provided Workshops images to the matching Educate, Empower, Elevate, and Engage cards based on the filenames.
+- [ ] Upload the new Workshops images to managed static storage and replace the placeholder card media on the relevant service page.
+- [ ] Reuse the grayscale-to-color hover treatment for the Workshops cards so they match the Speaking Engagements interaction.
+- [ ] Verify the updated Workshops images and hover behavior in preview before saving the next checkpoint.

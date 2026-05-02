@@ -477,10 +477,10 @@ services = [
         'closing_copy': 'Workshops & Training is most effective when organizations need shared language, stronger internal readiness, and a practical bridge from learning into action.',
         'related_links': [('Services Hub', '/services/'), ('Educate', '/educate/'), ('Contact Us', '/contact-us')],
         'pillars': {
-            'Educate': {'note': 'Build understanding through hands-on learning sessions that increase team knowledge and confidence.', 'points': ['Grant-writing workshops', 'Team learning cohorts', 'Capacity-building sessions']},
-            'Empower': {'note': 'Turn training into strategic momentum by focusing workshops on opportunity creation and competitive readiness.', 'points': ['Proposal strategy labs', 'Innovation workshops', 'Readiness acceleration']},
-            'Elevate': {'note': 'Use training to strengthen execution systems, role clarity, and post-award stewardship habits.', 'points': ['Compliance training', 'Delivery workflows', 'Execution support routines']},
-            'Engage': {'note': 'Create a collaborative entry point through workshops that align stakeholders before larger engagements begin.', 'points': ['Cross-team sessions', 'Partnership-building facilitation', 'Stakeholder alignment']},
+            'Educate': {'note': 'Build understanding through hands-on learning sessions that increase team knowledge and confidence.', 'points': ['Grant-writing workshops', 'Team learning cohorts', 'Capacity-building sessions'], 'image': '/manus-storage/WorkshopsEducate_b45793c3.jpg'},
+            'Empower': {'note': 'Turn training into strategic momentum by focusing workshops on opportunity creation and competitive readiness.', 'points': ['Proposal strategy labs', 'Innovation workshops', 'Readiness acceleration'], 'image': '/manus-storage/WorkshopsEmpower_1c7c419c.jpg'},
+            'Elevate': {'note': 'Use training to strengthen execution systems, role clarity, and post-award stewardship habits.', 'points': ['Compliance training', 'Delivery workflows', 'Execution support routines'], 'image': '/manus-storage/WorkshopsElevate_4dfab6d9.jpg'},
+            'Engage': {'note': 'Create a collaborative entry point through workshops that align stakeholders before larger engagements begin.', 'points': ['Cross-team sessions', 'Partnership-building facilitation', 'Stakeholder alignment'], 'image': '/manus-storage/WorkshopsEngage_4153d98d.jpg'},
         },
     },
     {
