@@ -519,10 +519,10 @@ services = [
         'closing_copy': 'Readiness Assessments work best when an organization needs a disciplined view of what is ready now, what is missing, and what path deserves priority.',
         'related_links': [('Services Hub', '/services/'), ('Empower', '/empower/'), ('Contact Us', '/contact-us')],
         'pillars': {
-            'Educate': {'note': 'Use the assessment to teach teams where capacity gaps exist and what internal development should happen next.', 'points': ['Capability awareness', 'Learning priorities', 'Readiness education'], 'image': '/manus-storage/readiness-assessments-educate_dd7baa17.jpeg'},
-            'Empower': {'note': 'Clarify the strategic path forward by identifying where competitiveness and growth can be strengthened.', 'points': ['Gap identification', 'Infrastructure mapping', 'Priority sequencing'], 'image': '/manus-storage/readiness-assessments-empower_da8a7b93.jpeg'},
-            'Elevate': {'note': 'Translate findings into better execution systems, accountability, and operational sequencing.', 'points': ['Execution baseline', 'Workflow visibility', 'Delivery planning'], 'image': '/manus-storage/readiness-assessments-elevate_42a1dcc7.jpeg'},
-            'Engage': {'note': 'Use assessments as an advisory entry service that creates clarity before larger commitments are made.', 'points': ['Discovery-led onboarding', 'Trust-building diagnosis', 'Relationship-fit review'], 'image': '/manus-storage/readiness-assessments-engage_d6a4b088.jpeg'},
+            'Educate': {'note': 'Use the assessment to teach teams where capacity gaps exist and what internal development should happen next.', 'points': ['Capability awareness', 'Learning priorities', 'Readiness education'], 'image': '/manus-storage/readiness-assessments-educate_8cfcac33.jpg'},
+            'Empower': {'note': 'Clarify the strategic path forward by identifying where competitiveness and growth can be strengthened.', 'points': ['Gap identification', 'Infrastructure mapping', 'Priority sequencing'], 'image': '/manus-storage/readiness-assessments-empower_45928b64.jpg'},
+            'Elevate': {'note': 'Translate findings into better execution systems, accountability, and operational sequencing.', 'points': ['Execution baseline', 'Workflow visibility', 'Delivery planning'], 'image': '/manus-storage/readiness-assessments-elevate_fdd3c036.jpg'},
+            'Engage': {'note': 'Use assessments as an advisory entry service that creates clarity before larger commitments are made.', 'points': ['Discovery-led onboarding', 'Trust-building diagnosis', 'Relationship-fit review'], 'image': '/manus-storage/readiness-assessments-engage_a98215f4.jpg'},
         },
     },
     {
@@ -533,10 +533,10 @@ services = [
         'closing_copy': 'Intellectual Property becomes more valuable when it is not isolated as a legal concern, but connected to funding strategy, institutional execution, and innovation partnerships.',
         'related_links': [('Services Hub', '/services/'), ('Empower', '/empower/'), ('Contact Us', '/contact-us')],
         'pillars': {
-            'Educate': {'note': 'Teach researchers and teams how innovation protection works in practical, decision-oriented language.', 'points': ['Inventor education', 'Protection basics', 'Innovation literacy'], 'image': '/manus-storage/intellectual-property-educate_184ea221.jpeg'},
-            'Empower': {'note': 'Use IP strategy to improve competitive position, strengthen value creation, and support opportunity development.', 'points': ['Protection strategy', 'Commercial positioning', 'Research-value framing'], 'image': '/manus-storage/intellectual-property-empower_b8c9293e.jpeg'},
-            'Elevate': {'note': 'Support the operational side of innovation by aligning process, documentation, and execution pathways.', 'points': ['Documentation readiness', 'Workflow coordination', 'Execution support'], 'image': '/manus-storage/intellectual-property-elevate_c796b8de.jpeg'},
-            'Engage': {'note': 'Open relationship-led conversations around innovation ecosystems, partnerships, and institutional growth.', 'points': ['Innovation advisory entry', 'Partnership conversations', 'Long-term strategic fit'], 'image': '/manus-storage/intellectual-property-engage_32f2cafd.jpeg'},
+            'Educate': {'note': 'Teach researchers and teams how innovation protection works in practical, decision-oriented language.', 'points': ['Inventor education', 'Protection basics', 'Innovation literacy'], 'image': '/manus-storage/intellectual-property-educate_15920b4d.jpg'},
+            'Empower': {'note': 'Use IP strategy to improve competitive position, strengthen value creation, and support opportunity development.', 'points': ['Protection strategy', 'Commercial positioning', 'Research-value framing'], 'image': '/manus-storage/intellectual-property-empower_7ace54f6.jpg'},
+            'Elevate': {'note': 'Support the operational side of innovation by aligning process, documentation, and execution pathways.', 'points': ['Documentation readiness', 'Workflow coordination', 'Execution support'], 'image': '/manus-storage/intellectual-property-elevate_1840c229.jpg'},
+            'Engage': {'note': 'Open relationship-led conversations around innovation ecosystems, partnerships, and institutional growth.', 'points': ['Innovation advisory entry', 'Partnership conversations', 'Long-term strategic fit'], 'image': '/manus-storage/intellectual-property-engage_f87e60f0.jpg'},
         },
     },
     {
@@ -547,10 +547,10 @@ services = [
         'closing_copy': 'IT Solutions is strongest when E4 Power needs to turn advisory thinking into practical systems, whether that means education, workflow enablement, or full digital delivery.',
         'related_links': [('Services Hub', '/services/'), ('Empower', '/empower/'), ('Contact Us', '/contact-us')],
         'pillars': {
-            'Educate': {'note': 'Use IT Solutions to help teams understand systems, tools, and digital possibilities before full implementation begins.', 'points': ['Technology orientation', 'Tool literacy', 'Digital-confidence building'], 'image': '/manus-storage/it-solutions-educate_c5e1addf.jpeg'},
-            'Empower': {'note': 'Position IT Solutions as a competitive growth service through custom apps, portals, and strategic digital buildouts.', 'points': ['Custom portals', 'Web app delivery', 'Strategic digital infrastructure'], 'image': '/manus-storage/it-solutions-empower_3db0fc06.jpeg'},
-            'Elevate': {'note': 'Strengthen execution through operational systems that improve workflows, visibility, and continuity after launch.', 'points': ['Workflow automation', 'Operational dashboards', 'Maintenance planning'], 'image': '/manus-storage/it-solutions-elevate_779515d5.jpeg'},
-            'Engage': {'note': 'Use digital solution conversations to open advisory relationships built around listening, fit, and institutional needs.', 'points': ['Discovery-led scoping', 'Stakeholder alignment', 'Partnership-first planning'], 'image': '/manus-storage/it-solutions-engage_e4fc07cb.jpeg'},
+            'Educate': {'note': 'Use IT Solutions to help teams understand systems, tools, and digital possibilities before full implementation begins.', 'points': ['Technology orientation', 'Tool literacy', 'Digital-confidence building'], 'image': '/manus-storage/it-solutions-educate_6a8e2cf8.jpg'},
+            'Empower': {'note': 'Position IT Solutions as a competitive growth service through custom apps, portals, and strategic digital buildouts.', 'points': ['Custom portals', 'Web app delivery', 'Strategic digital infrastructure'], 'image': '/manus-storage/it-solutions-empower_467be857.jpg'},
+            'Elevate': {'note': 'Strengthen execution through operational systems that improve workflows, visibility, and continuity after launch.', 'points': ['Workflow automation', 'Operational dashboards', 'Maintenance planning'], 'image': '/manus-storage/it-solutions-elevate_9fe8b38b.jpg'},
+            'Engage': {'note': 'Use digital solution conversations to open advisory relationships built around listening, fit, and institutional needs.', 'points': ['Discovery-led scoping', 'Stakeholder alignment', 'Partnership-first planning'], 'image': '/manus-storage/it-solutions-engage_0f24fbf1.jpg'},
         },
     },
     {
@@ -561,10 +561,10 @@ services = [
         'closing_copy': 'Grant Management matters because winning funding is only the beginning; this service protects the credibility, reporting rhythm, and stewardship needed to sustain success.',
         'related_links': [('Services Hub', '/services/'), ('Elevate', '/elevate/'), ('Contact Us', '/contact-us')],
         'pillars': {
-            'Educate': {'note': 'Use grant-management support to teach teams the systems and habits required for responsible post-award work.', 'points': ['Post-award education', 'Reporting literacy', 'Compliance awareness'], 'image': '/manus-storage/grant-management-educate_ac5ba83c.jpeg'},
-            'Empower': {'note': 'Strengthen future competitiveness by proving the institution can manage awards with discipline and credibility.', 'points': ['Stewardship positioning', 'Funders-confidence building', 'Future-opportunity readiness'], 'image': '/manus-storage/grant-management-empower_e33f52b4.jpeg'},
-            'Elevate': {'note': 'Center execution through award oversight, reporting coordination, and compliance-driven workflows.', 'points': ['Reporting coordination', 'Compliance oversight', 'Award closeout support'], 'image': '/manus-storage/grant-management-elevate_3b5d089f.jpeg'},
-            'Engage': {'note': 'Build durable client relationships by supporting institutions after the award, not just before it.', 'points': ['Longer-term advisory trust', 'Operational partnership', 'Continuation planning'], 'image': '/manus-storage/grant-management-engage_6c9069c6.jpeg'},
+            'Educate': {'note': 'Use grant-management support to teach teams the systems and habits required for responsible post-award work.', 'points': ['Post-award education', 'Reporting literacy', 'Compliance awareness'], 'image': '/manus-storage/grant-management-educate_e38adbf6.jpg'},
+            'Empower': {'note': 'Strengthen future competitiveness by proving the institution can manage awards with discipline and credibility.', 'points': ['Stewardship positioning', 'Funders-confidence building', 'Future-opportunity readiness'], 'image': '/manus-storage/grant-management-empower_c2434eaf.jpg'},
+            'Elevate': {'note': 'Center execution through award oversight, reporting coordination, and compliance-driven workflows.', 'points': ['Reporting coordination', 'Compliance oversight', 'Award closeout support'], 'image': '/manus-storage/grant-management-elevate_6fe29bfa.jpg'},
+            'Engage': {'note': 'Build durable client relationships by supporting institutions after the award, not just before it.', 'points': ['Longer-term advisory trust', 'Operational partnership', 'Continuation planning'], 'image': '/manus-storage/grant-management-engage_eb2ba404.jpg'},
         },
     },
     {
@@ -575,10 +575,10 @@ services = [
         'closing_copy': 'Project Management is essential when ambitious work needs more than strategy alone and requires disciplined coordination across people, timelines, and decisions.',
         'related_links': [('Services Hub', '/services/'), ('Elevate', '/elevate/'), ('Contact Us', '/contact-us')],
         'pillars': {
-            'Educate': {'note': 'Teach teams how structured delivery works so responsibilities, milestones, and expectations become clearer.', 'points': ['Delivery education', 'Role clarity', 'Project literacy'], 'image': '/manus-storage/project-management-educate_3a21e8d0.jpeg'},
-            'Empower': {'note': 'Use project-management framing to turn strategic ambition into a phased, achievable plan.', 'points': ['Milestone mapping', 'Strategic sequencing', 'Ownership definition'], 'image': '/manus-storage/project-management-empower_6fd53d29.jpeg'},
-            'Elevate': {'note': 'Support active delivery through coordination systems, issue visibility, and measurable operational progress.', 'points': ['Timeline management', 'Cross-team execution', 'Risk-aware coordination'], 'image': '/manus-storage/project-management-elevate_77e42c7f.jpeg'},
-            'Engage': {'note': 'Create a healthier partnership by giving stakeholders a shared way to work, communicate, and make decisions.', 'points': ['Stakeholder coordination', 'Meeting cadence design', 'Collaboration structure'], 'image': '/manus-storage/project-management-engage_db63666f.jpeg'},
+            'Educate': {'note': 'Teach teams how structured delivery works so responsibilities, milestones, and expectations become clearer.', 'points': ['Delivery education', 'Role clarity', 'Project literacy'], 'image': '/manus-storage/project-management-educate_464d8e84.jpg'},
+            'Empower': {'note': 'Use project-management framing to turn strategic ambition into a phased, achievable plan.', 'points': ['Milestone mapping', 'Strategic sequencing', 'Ownership definition'], 'image': '/manus-storage/project-management-empower_c9414cbd.jpg'},
+            'Elevate': {'note': 'Support active delivery through coordination systems, issue visibility, and measurable operational progress.', 'points': ['Timeline management', 'Cross-team execution', 'Risk-aware coordination'], 'image': '/manus-storage/project-management-elevate_0a1e56d2.jpg'},
+            'Engage': {'note': 'Create a healthier partnership by giving stakeholders a shared way to work, communicate, and make decisions.', 'points': ['Stakeholder coordination', 'Meeting cadence design', 'Collaboration structure'], 'image': '/manus-storage/project-management-engage_01ca1dc3.jpg'},
         },
     },
     {
@@ -589,10 +589,10 @@ services = [
         'closing_copy': 'Financial Management reinforces E4 Power’s role as a credible implementation partner by protecting the fiscal integrity behind ambitious work.',
         'related_links': [('Services Hub', '/services/'), ('Elevate', '/elevate/'), ('Contact Us', '/contact-us')],
         'pillars': {
-            'Educate': {'note': 'Teach teams the budget, stewardship, and accountability basics that support strong funded work.', 'points': ['Budget literacy', 'Stewardship education', 'Control awareness'], 'image': '/manus-storage/financial-management-educate_2ae0ca7e.jpeg'},
-            'Empower': {'note': 'Use strong fiscal systems to improve institutional credibility and support future opportunities.', 'points': ['Credibility building', 'Funding confidence', 'Strategic trust'], 'image': '/manus-storage/financial-management-empower_ecaf26d7.jpeg'},
-            'Elevate': {'note': 'Anchor operations in disciplined budget tracking, reporting, and audit-aware management.', 'points': ['Budget oversight', 'Allowable-cost awareness', 'Audit-conscious controls'], 'image': '/manus-storage/financial-management-elevate_b427e67a.jpeg'},
-            'Engage': {'note': 'Build client trust by showing that operational relationships will be handled with transparency and financial discipline.', 'points': ['Transparent stewardship', 'Relationship confidence', 'Clear financial communication'], 'image': '/manus-storage/financial-management-engage_ad0dfddb.jpeg'},
+            'Educate': {'note': 'Teach teams the budget, stewardship, and accountability basics that support strong funded work.', 'points': ['Budget literacy', 'Stewardship education', 'Control awareness'], 'image': '/manus-storage/financial-management-educate_e4e173a6.jpg'},
+            'Empower': {'note': 'Use strong fiscal systems to improve institutional credibility and support future opportunities.', 'points': ['Credibility building', 'Funding confidence', 'Strategic trust'], 'image': '/manus-storage/financial-management-empower_442d9b13.jpg'},
+            'Elevate': {'note': 'Anchor operations in disciplined budget tracking, reporting, and audit-aware management.', 'points': ['Budget oversight', 'Allowable-cost awareness', 'Audit-conscious controls'], 'image': '/manus-storage/financial-management-elevate_835b074e.jpg'},
+            'Engage': {'note': 'Build client trust by showing that operational relationships will be handled with transparency and financial discipline.', 'points': ['Transparent stewardship', 'Relationship confidence', 'Clear financial communication'], 'image': '/manus-storage/financial-management-engage_df889e8e.jpg'},
         },
     },
     {
@@ -603,10 +603,10 @@ services = [
         'closing_copy': 'Institutional Discovery is valuable because it gives organizations a lower-pressure starting point that still leads to concrete insight and stronger next-step clarity.',
         'related_links': [('Services Hub', '/services/'), ('Engage', '/engage/'), ('Contact Us', '/contact-us')],
         'pillars': {
-            'Educate': {'note': 'Use discovery to help teams understand their current condition, internal language, and development needs.', 'points': ['Current-state awareness', 'Team understanding', 'Learning-oriented diagnosis'], 'image': '/manus-storage/institutional-discovery-educate_f0ad9941.jpeg'},
-            'Empower': {'note': 'Turn early conversations into clearer strategic direction and more deliberate opportunity choices.', 'points': ['Needs clarification', 'Goal framing', 'Roadmap direction'], 'image': '/manus-storage/institutional-discovery-empower_21a8a9f3.jpg'},
-            'Elevate': {'note': 'Use discovery findings to shape more realistic operational plans and execution sequencing.', 'points': ['Execution baseline', 'Constraint mapping', 'Delivery readiness'], 'image': '/manus-storage/institutional-discovery-elevate_78d1bc20.jpeg'},
-            'Engage': {'note': 'Lead with trust, listening, and fit so the relationship begins with clarity rather than assumption.', 'points': ['Discovery meetings', 'Advisory entry point', 'Relationship-fit assessment'], 'image': '/manus-storage/institutional-discovery-engage_24bbc6a4.jpeg'},
+            'Educate': {'note': 'Use discovery to help teams understand their current condition, internal language, and development needs.', 'points': ['Current-state awareness', 'Team understanding', 'Learning-oriented diagnosis'], 'image': '/manus-storage/institutional-discovery-educate_a031e3d2.jpg'},
+            'Empower': {'note': 'Turn early conversations into clearer strategic direction and more deliberate opportunity choices.', 'points': ['Needs clarification', 'Goal framing', 'Roadmap direction'], 'image': '/manus-storage/institutional-discovery-empower_17cf85e3.jpg'},
+            'Elevate': {'note': 'Use discovery findings to shape more realistic operational plans and execution sequencing.', 'points': ['Execution baseline', 'Constraint mapping', 'Delivery readiness'], 'image': '/manus-storage/institutional-discovery-elevate_d69b2fc3.jpg'},
+            'Engage': {'note': 'Lead with trust, listening, and fit so the relationship begins with clarity rather than assumption.', 'points': ['Discovery meetings', 'Advisory entry point', 'Relationship-fit assessment'], 'image': '/manus-storage/institutional-discovery-engage_10839b6c.jpg'},
         },
     },
     {
@@ -617,10 +617,10 @@ services = [
         'closing_copy': 'Advisory Alignment helps E4 Power move from possibility into a more coherent working model by matching the right people to the right next steps.',
         'related_links': [('Services Hub', '/services/'), ('Engage', '/engage/'), ('Contact Us', '/contact-us')],
         'pillars': {
-            'Educate': {'note': 'Use alignment conversations to teach stakeholders what success requires and how responsibilities should be understood.', 'points': ['Expectation setting', 'Shared language', 'Role understanding'], 'image': '/manus-storage/advisory-alignment-educate_d766f47a.jpeg'},
-            'Empower': {'note': 'Clarify the strategic path by aligning leaders, specialists, and priorities before work accelerates.', 'points': ['Decision-maker alignment', 'Specialist matching', 'Strategic clarity'], 'image': '/manus-storage/advisory-alignment-empower_3011a00b.jpeg'},
-            'Elevate': {'note': 'Translate alignment into an actionable engagement model with clear responsibilities and momentum.', 'points': ['Action launch planning', 'Working-model definition', 'Operational checkpoints'], 'image': '/manus-storage/advisory-alignment-elevate_9d91f5cc.jpeg'},
-            'Engage': {'note': 'Use alignment as the partnership bridge that turns a first conversation into a durable advisory relationship.', 'points': ['Trust-building follow-through', 'Partnership structure', 'Collaborative planning'], 'image': '/manus-storage/advisory-alignment-engage_33608816.jpeg'},
+            'Educate': {'note': 'Use alignment conversations to teach stakeholders what success requires and how responsibilities should be understood.', 'points': ['Expectation setting', 'Shared language', 'Role understanding'], 'image': '/manus-storage/advisory-alignment-educate_1a41d707.jpg'},
+            'Empower': {'note': 'Clarify the strategic path by aligning leaders, specialists, and priorities before work accelerates.', 'points': ['Decision-maker alignment', 'Specialist matching', 'Strategic clarity'], 'image': '/manus-storage/advisory-alignment-empower_88d02727.jpg'},
+            'Elevate': {'note': 'Translate alignment into an actionable engagement model with clear responsibilities and momentum.', 'points': ['Action launch planning', 'Working-model definition', 'Operational checkpoints'], 'image': '/manus-storage/advisory-alignment-elevate_d42572ca.jpg'},
+            'Engage': {'note': 'Use alignment as the partnership bridge that turns a first conversation into a durable advisory relationship.', 'points': ['Trust-building follow-through', 'Partnership structure', 'Collaborative planning'], 'image': '/manus-storage/advisory-alignment-engage_399926cc.jpg'},
         },
     },
 ]

@@ -47,3 +47,6 @@
 - [ ] Source coordinated non-AI stock photography that matches the tone, composition, and subject matter of the user-approved service images.
 - [ ] Upload and map the selected stock photos into the remaining service records at the generator level so the replacements persist through rebuilds.
 - [ ] Verify the updated services catalog and a representative sample of service detail pages before saving the next checkpoint.
+- [ ] Replace the least representative remaining stock-photo selections with alternatives that show stronger Black representation across the service catalog.
+- [ ] Re-audit the remaining service cards for diversity balance after replacements, not just per page but across the full Services catalog.
+- [ ] Preserve the grayscale-to-color interaction while updating only the affected stock-photo mappings.
