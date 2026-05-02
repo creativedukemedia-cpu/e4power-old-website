@@ -43,3 +43,7 @@
 - [ ] Upload the new Grant Writing images to managed static storage and replace the placeholder card media on the relevant service page.
 - [ ] Reuse the grayscale-to-color hover treatment for the Grant Writing cards so they match the other updated service pages.
 - [ ] Verify the updated Grant Writing images and hover behavior in preview before saving the next checkpoint.
+- [ ] Audit the remaining service cards that still use placeholder imagery and group them by service for stock-photo replacement.
+- [ ] Source coordinated non-AI stock photography that matches the tone, composition, and subject matter of the user-approved service images.
+- [ ] Upload and map the selected stock photos into the remaining service records at the generator level so the replacements persist through rebuilds.
+- [ ] Verify the updated services catalog and a representative sample of service detail pages before saving the next checkpoint.
