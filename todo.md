@@ -39,3 +39,7 @@
 - [ ] Upload the new Technology & AI Literacy images to managed static storage and replace the placeholder card media on the relevant service page.
 - [ ] Reuse the grayscale-to-color hover treatment for the Technology & AI Literacy cards so they match the Speaking Engagements and Workshops interactions.
 - [ ] Verify the updated Technology & AI Literacy images and hover behavior in preview before saving the next checkpoint.
+- [ ] Map the provided Grant Writing images to the matching Educate, Empower, Elevate, and Engage cards based on the filenames.
+- [ ] Upload the new Grant Writing images to managed static storage and replace the placeholder card media on the relevant service page.
+- [ ] Reuse the grayscale-to-color hover treatment for the Grant Writing cards so they match the other updated service pages.
+- [ ] Verify the updated Grant Writing images and hover behavior in preview before saving the next checkpoint.

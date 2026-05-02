@@ -505,10 +505,10 @@ services = [
         'closing_copy': 'Grant Writing remains one of the clearest expressions of E4 Power’s value because it joins strategic opportunity, institutional storytelling, delivery discipline, and trust-building in one service.',
         'related_links': [('Services Hub', '/services/'), ('Empower', '/empower/'), ('Contact Us', '/contact-us')],
         'pillars': {
-            'Educate': {'note': 'Use grant-writing support to teach teams the language, structure, and habits behind stronger proposals.', 'points': ['Proposal education', 'Narrative coaching', 'Team writing readiness']},
-            'Empower': {'note': 'Drive competitive positioning through pre-award strategy, proposal development, and stronger submissions.', 'points': ['Opportunity scans', 'Narrative development', 'Submission support']},
-            'Elevate': {'note': 'Carry proposal work into delivery readiness by clarifying budgets, compliance expectations, and operational follow-through.', 'points': ['Budget discipline', 'Compliance preparation', 'Post-award handoff clarity']},
-            'Engage': {'note': 'Use grant-writing conversations as an advisory front door that reveals fit, priorities, and institutional ambition.', 'points': ['Discovery conversations', 'Relationship-based planning', 'Trust-first scoping']},
+            'Educate': {'note': 'Use grant-writing support to teach teams the language, structure, and habits behind stronger proposals.', 'points': ['Proposal education', 'Narrative coaching', 'Team writing readiness'], 'image': '/manus-storage/GrantWritingEducate_c171d3af.jpg'},
+            'Empower': {'note': 'Drive competitive positioning through pre-award strategy, proposal development, and stronger submissions.', 'points': ['Opportunity scans', 'Narrative development', 'Submission support'], 'image': '/manus-storage/GrantwritingEmpower_25766faf.jpg'},
+            'Elevate': {'note': 'Carry proposal work into delivery readiness by clarifying budgets, compliance expectations, and operational follow-through.', 'points': ['Budget discipline', 'Compliance preparation', 'Post-award handoff clarity'], 'image': '/manus-storage/GrantwritingElevate_dbfa3042.jpg'},
+            'Engage': {'note': 'Use grant-writing conversations as an advisory front door that reveals fit, priorities, and institutional ambition.', 'points': ['Discovery conversations', 'Relationship-based planning', 'Trust-first scoping'], 'image': '/manus-storage/GrantwritingEngage_25ed8665.jpg'},
         },
     },
     {
