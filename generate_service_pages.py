@@ -589,7 +589,7 @@ services = [
         'closing_copy': 'Financial Management reinforces E4 Power’s role as a credible implementation partner by protecting the fiscal integrity behind ambitious work.',
         'related_links': [('Services Hub', '/services/'), ('Elevate', '/elevate/'), ('Contact Us', '/contact-us')],
         'pillars': {
-            'Educate': {'note': 'Teach teams the budget, stewardship, and accountability basics that support strong funded work.', 'points': ['Budget literacy', 'Stewardship education', 'Control awareness'], 'image': '/manus-storage/financial-management-educate_e4e173a6.jpg'},
+            'Educate': {'note': 'Teach teams the budget, stewardship, and accountability basics that support strong funded work.', 'points': ['Budget literacy', 'Stewardship education', 'Control awareness'], 'image': '/manus-storage/financial-management-educate-v2_76674b6b.jpg'},
             'Empower': {'note': 'Use strong fiscal systems to improve institutional credibility and support future opportunities.', 'points': ['Credibility building', 'Funding confidence', 'Strategic trust'], 'image': '/manus-storage/financial-management-empower_442d9b13.jpg'},
             'Elevate': {'note': 'Anchor operations in disciplined budget tracking, reporting, and audit-aware management.', 'points': ['Budget oversight', 'Allowable-cost awareness', 'Audit-conscious controls'], 'image': '/manus-storage/financial-management-elevate_835b074e.jpg'},
             'Engage': {'note': 'Build client trust by showing that operational relationships will be handled with transparency and financial discipline.', 'points': ['Transparent stewardship', 'Relationship confidence', 'Clear financial communication'], 'image': '/manus-storage/financial-management-engage-v2_2b7701b5.jpg'},
@@ -604,7 +604,7 @@ services = [
         'related_links': [('Services Hub', '/services/'), ('Engage', '/engage/'), ('Contact Us', '/contact-us')],
         'pillars': {
             'Educate': {'note': 'Use discovery to help teams understand their current condition, internal language, and development needs.', 'points': ['Current-state awareness', 'Team understanding', 'Learning-oriented diagnosis'], 'image': '/manus-storage/institutional-discovery-educate_a031e3d2.jpg'},
-            'Empower': {'note': 'Turn early conversations into clearer strategic direction and more deliberate opportunity choices.', 'points': ['Needs clarification', 'Goal framing', 'Roadmap direction'], 'image': '/manus-storage/institutional-discovery-empower_17cf85e3.jpg'},
+            'Empower': {'note': 'Turn early conversations into clearer strategic direction and more deliberate opportunity choices.', 'points': ['Needs clarification', 'Goal framing', 'Roadmap direction'], 'image': '/manus-storage/institutional-discovery-empower-v2_aede0af7.jpeg'},
             'Elevate': {'note': 'Use discovery findings to shape more realistic operational plans and execution sequencing.', 'points': ['Execution baseline', 'Constraint mapping', 'Delivery readiness'], 'image': '/manus-storage/institutional-discovery-elevate-v2_ab07840a.jpg'},
             'Engage': {'note': 'Lead with trust, listening, and fit so the relationship begins with clarity rather than assumption.', 'points': ['Discovery meetings', 'Advisory entry point', 'Relationship-fit assessment'], 'image': '/manus-storage/institutional-discovery-engage-v2_c8bc48de.jpg'},
         },

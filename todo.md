@@ -59,3 +59,6 @@
 - [ ] Perform a broader visual duplicate audit across the full Services catalog to catch repeated or near-repeated photos the exact-path check misses.
 - [ ] Replace every remaining duplicate or overly similar service-card photo with a distinct non-AI stock image that preserves strong Black representation.
 - [ ] Rebuild and verify the updated catalog after the broader image cleanup before saving the next checkpoint.
+- [ ] Replace the low-resolution, watermarked Financial Management Educate image with a higher-quality non-AI stock photo.
+- [ ] Audit all service-card images for visible watermark artifacts or inadequate resolution before the next checkpoint.
+- [ ] Replace any additional low-resolution or watermarked service-card assets and re-verify the refreshed catalog.
