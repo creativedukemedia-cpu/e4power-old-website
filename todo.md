@@ -56,3 +56,6 @@
 - [ ] Replace the duplicate image currently shared by the Readiness Assessment Engage card and the Intellectual Property Empower card with a distinct non-AI stock photo.
 - [ ] Re-audit adjacent service-card imagery after that replacement so visually repeated photos do not remain nearby.
 - [ ] Keep the hard rule that every service card across the full catalog must use a unique photo.
+- [ ] Perform a broader visual duplicate audit across the full Services catalog to catch repeated or near-repeated photos the exact-path check misses.
+- [ ] Replace every remaining duplicate or overly similar service-card photo with a distinct non-AI stock image that preserves strong Black representation.
+- [ ] Rebuild and verify the updated catalog after the broader image cleanup before saving the next checkpoint.

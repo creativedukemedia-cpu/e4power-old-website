@@ -534,7 +534,7 @@ services = [
         'related_links': [('Services Hub', '/services/'), ('Empower', '/empower/'), ('Contact Us', '/contact-us')],
         'pillars': {
             'Educate': {'note': 'Teach researchers and teams how innovation protection works in practical, decision-oriented language.', 'points': ['Inventor education', 'Protection basics', 'Innovation literacy'], 'image': '/manus-storage/intellectual-property-educate_15920b4d.jpg'},
-            'Empower': {'note': 'Use IP strategy to improve competitive position, strengthen value creation, and support opportunity development.', 'points': ['Protection strategy', 'Commercial positioning', 'Research-value framing'], 'image': '/manus-storage/intellectual-property-empower-replacement_64bb49e5.jpg'},
+            'Empower': {'note': 'Use IP strategy to improve competitive position, strengthen value creation, and support opportunity development.', 'points': ['Protection strategy', 'Commercial positioning', 'Research-value framing'], 'image': '/manus-storage/intellectual-property-empower-v2_e222db35.jpg'},
             'Elevate': {'note': 'Support the operational side of innovation by aligning process, documentation, and execution pathways.', 'points': ['Documentation readiness', 'Workflow coordination', 'Execution support'], 'image': '/manus-storage/intellectual-property-elevate_1840c229.jpg'},
             'Engage': {'note': 'Open relationship-led conversations around innovation ecosystems, partnerships, and institutional growth.', 'points': ['Innovation advisory entry', 'Partnership conversations', 'Long-term strategic fit'], 'image': '/manus-storage/intellectual-property-engage_f87e60f0.jpg'},
         },
@@ -592,7 +592,7 @@ services = [
             'Educate': {'note': 'Teach teams the budget, stewardship, and accountability basics that support strong funded work.', 'points': ['Budget literacy', 'Stewardship education', 'Control awareness'], 'image': '/manus-storage/financial-management-educate_e4e173a6.jpg'},
             'Empower': {'note': 'Use strong fiscal systems to improve institutional credibility and support future opportunities.', 'points': ['Credibility building', 'Funding confidence', 'Strategic trust'], 'image': '/manus-storage/financial-management-empower_442d9b13.jpg'},
             'Elevate': {'note': 'Anchor operations in disciplined budget tracking, reporting, and audit-aware management.', 'points': ['Budget oversight', 'Allowable-cost awareness', 'Audit-conscious controls'], 'image': '/manus-storage/financial-management-elevate_835b074e.jpg'},
-            'Engage': {'note': 'Build client trust by showing that operational relationships will be handled with transparency and financial discipline.', 'points': ['Transparent stewardship', 'Relationship confidence', 'Clear financial communication'], 'image': '/manus-storage/financial-management-engage_df889e8e.jpg'},
+            'Engage': {'note': 'Build client trust by showing that operational relationships will be handled with transparency and financial discipline.', 'points': ['Transparent stewardship', 'Relationship confidence', 'Clear financial communication'], 'image': '/manus-storage/financial-management-engage-v2_2b7701b5.jpg'},
         },
     },
     {
@@ -605,8 +605,8 @@ services = [
         'pillars': {
             'Educate': {'note': 'Use discovery to help teams understand their current condition, internal language, and development needs.', 'points': ['Current-state awareness', 'Team understanding', 'Learning-oriented diagnosis'], 'image': '/manus-storage/institutional-discovery-educate_a031e3d2.jpg'},
             'Empower': {'note': 'Turn early conversations into clearer strategic direction and more deliberate opportunity choices.', 'points': ['Needs clarification', 'Goal framing', 'Roadmap direction'], 'image': '/manus-storage/institutional-discovery-empower_17cf85e3.jpg'},
-            'Elevate': {'note': 'Use discovery findings to shape more realistic operational plans and execution sequencing.', 'points': ['Execution baseline', 'Constraint mapping', 'Delivery readiness'], 'image': '/manus-storage/institutional-discovery-elevate_d69b2fc3.jpg'},
-            'Engage': {'note': 'Lead with trust, listening, and fit so the relationship begins with clarity rather than assumption.', 'points': ['Discovery meetings', 'Advisory entry point', 'Relationship-fit assessment'], 'image': '/manus-storage/institutional-discovery-engage_10839b6c.jpg'},
+            'Elevate': {'note': 'Use discovery findings to shape more realistic operational plans and execution sequencing.', 'points': ['Execution baseline', 'Constraint mapping', 'Delivery readiness'], 'image': '/manus-storage/institutional-discovery-elevate-v2_ab07840a.jpg'},
+            'Engage': {'note': 'Lead with trust, listening, and fit so the relationship begins with clarity rather than assumption.', 'points': ['Discovery meetings', 'Advisory entry point', 'Relationship-fit assessment'], 'image': '/manus-storage/institutional-discovery-engage-v2_c8bc48de.jpg'},
         },
     },
     {
@@ -618,9 +618,9 @@ services = [
         'related_links': [('Services Hub', '/services/'), ('Engage', '/engage/'), ('Contact Us', '/contact-us')],
         'pillars': {
             'Educate': {'note': 'Use alignment conversations to teach stakeholders what success requires and how responsibilities should be understood.', 'points': ['Expectation setting', 'Shared language', 'Role understanding'], 'image': '/manus-storage/advisory-alignment-educate_1a41d707.jpg'},
-            'Empower': {'note': 'Clarify the strategic path by aligning leaders, specialists, and priorities before work accelerates.', 'points': ['Decision-maker alignment', 'Specialist matching', 'Strategic clarity'], 'image': '/manus-storage/advisory-alignment-empower_88d02727.jpg'},
+            'Empower': {'note': 'Clarify the strategic path by aligning leaders, specialists, and priorities before work accelerates.', 'points': ['Decision-maker alignment', 'Specialist matching', 'Strategic clarity'], 'image': '/manus-storage/advisory-alignment-empower-v2_987b7c4d.jpg'},
             'Elevate': {'note': 'Translate alignment into an actionable engagement model with clear responsibilities and momentum.', 'points': ['Action launch planning', 'Working-model definition', 'Operational checkpoints'], 'image': '/manus-storage/advisory-alignment-elevate_d42572ca.jpg'},
-            'Engage': {'note': 'Use alignment as the partnership bridge that turns a first conversation into a durable advisory relationship.', 'points': ['Trust-building follow-through', 'Partnership structure', 'Collaborative planning'], 'image': '/manus-storage/advisory-alignment-engage_399926cc.jpg'},
+            'Engage': {'note': 'Use alignment as the partnership bridge that turns a first conversation into a durable advisory relationship.', 'points': ['Trust-building follow-through', 'Partnership structure', 'Collaborative planning'], 'image': '/manus-storage/advisory-alignment-engage-v2_0e9aea2b.jpg'},
         },
     },
 ]
