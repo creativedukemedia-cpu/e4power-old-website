@@ -534,7 +534,7 @@ services = [
         'related_links': [('Services Hub', '/services/'), ('Empower', '/empower/'), ('Contact Us', '/contact-us')],
         'pillars': {
             'Educate': {'note': 'Teach researchers and teams how innovation protection works in practical, decision-oriented language.', 'points': ['Inventor education', 'Protection basics', 'Innovation literacy'], 'image': '/manus-storage/intellectual-property-educate_15920b4d.jpg'},
-            'Empower': {'note': 'Use IP strategy to improve competitive position, strengthen value creation, and support opportunity development.', 'points': ['Protection strategy', 'Commercial positioning', 'Research-value framing'], 'image': '/manus-storage/intellectual-property-empower_7ace54f6.jpg'},
+            'Empower': {'note': 'Use IP strategy to improve competitive position, strengthen value creation, and support opportunity development.', 'points': ['Protection strategy', 'Commercial positioning', 'Research-value framing'], 'image': '/manus-storage/intellectual-property-empower-replacement_64bb49e5.jpg'},
             'Elevate': {'note': 'Support the operational side of innovation by aligning process, documentation, and execution pathways.', 'points': ['Documentation readiness', 'Workflow coordination', 'Execution support'], 'image': '/manus-storage/intellectual-property-elevate_1840c229.jpg'},
             'Engage': {'note': 'Open relationship-led conversations around innovation ecosystems, partnerships, and institutional growth.', 'points': ['Innovation advisory entry', 'Partnership conversations', 'Long-term strategic fit'], 'image': '/manus-storage/intellectual-property-engage_f87e60f0.jpg'},
         },

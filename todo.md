@@ -50,3 +50,9 @@
 - [ ] Replace the least representative remaining stock-photo selections with alternatives that show stronger Black representation across the service catalog.
 - [ ] Re-audit the remaining service cards for diversity balance after replacements, not just per page but across the full Services catalog.
 - [ ] Preserve the grayscale-to-color interaction while updating only the affected stock-photo mappings.
+- [ ] Audit the current services catalog for duplicate photos across service cards and list each repeated asset before replacing it.
+- [ ] Replace duplicate service-card imagery with distinct non-AI stock photos while maintaining stronger Black representation across the catalog.
+- [ ] Verify that no repeated photos remain across the updated services pages before saving the next checkpoint.
+- [ ] Replace the duplicate image currently shared by the Readiness Assessment Engage card and the Intellectual Property Empower card with a distinct non-AI stock photo.
+- [ ] Re-audit adjacent service-card imagery after that replacement so visually repeated photos do not remain nearby.
+- [ ] Keep the hard rule that every service card across the full catalog must use a unique photo.
