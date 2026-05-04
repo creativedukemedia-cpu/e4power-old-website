@@ -783,6 +783,21 @@ document.addEventListener("DOMContentLoaded", init);
         : '<div class="hero-service-empty">Tap a pillar to preview services</div>';
     }
 
+    function getEntryTitle(entry){
+      if(mode === 'desktop') return 'Explore the ' + entry.kicker.replace(' Services', '') + ' service group';
+      return entry.title;
+    }
+
+    function isDesktopPointer(event){
+      return mode === 'desktop' && (!event.pointerType || event.pointerType === 'mouse' || event.pointerType === 'pen');
+    }
+
+    function openDesktopPreview(key){
+      if(mode !== 'desktop') return;
+      clearTimeout(hideTimer);
+      render(key);
+    }
+
     function render(key){
       var entry = data[key];
       if(!entry) return;
@@ -796,8 +811,9 @@ document.addEventListener("DOMContentLoaded", init);
       var items = entry.items.map(function(item){
         return '<article class="hero-service-item"><h4>' + item.title + '</h4><p>' + item.copy + '</p></article>';
       }).join('');
-      panel.innerHTML = '<div class="hero-service-top"><div><div class="hero-service-kicker">' + entry.kicker + '</div><h3 class="hero-service-title">' + entry.title + '</h3></div><div class="hero-service-header-actions"><a class="hero-service-link" href="' + entry.href + '">' + entry.label + '</a><button class="hero-service-dismiss" type="button" aria-label="Close services preview">×</button></div></div><div class="hero-service-grid">' + items + '</div>';
+      panel.innerHTML = '<div class="hero-service-top"><div><div class="hero-service-kicker">' + entry.kicker + '</div><h3 class="hero-service-title">' + getEntryTitle(entry) + '</h3></div><div class="hero-service-header-actions"><a class="hero-service-link" href="' + entry.href + '">' + entry.label + '</a><button class="hero-service-dismiss" type="button" aria-label="Close services preview">×</button></div></div><div class="hero-service-grid">' + items + '</div>';
       panel.classList.add('is-active');
+      panel.setAttribute('aria-hidden', 'false');
       shell.classList.add('is-open');
       var dismiss = panel.querySelector('.hero-service-dismiss');
       if(dismiss){ dismiss.addEventListener('click', closePanel); }
@@ -808,6 +824,7 @@ document.addEventListener("DOMContentLoaded", init);
       clearTimeout(hideTimer);
       clearActiveTarget();
       panel.classList.remove('is-active');
+      panel.setAttribute('aria-hidden', 'true');
       shell.classList.remove('is-open');
       panel.innerHTML = emptyMessage();
     }
@@ -815,19 +832,25 @@ document.addEventListener("DOMContentLoaded", init);
     function scheduleHide(){
       if(mode !== 'desktop') return;
       clearTimeout(hideTimer);
-      hideTimer = setTimeout(closePanel, 180);
+      hideTimer = setTimeout(closePanel, 320);
     }
 
     targets.forEach(function(target){
       var key = target.getAttribute('data-pillar');
-      target.addEventListener('mouseenter', function(){ if(mode === 'desktop'){ clearTimeout(hideTimer); render(key); } });
+      target.addEventListener('pointerenter', function(event){ if(isDesktopPointer(event)) openDesktopPreview(key); });
+      target.addEventListener('mouseenter', function(){ openDesktopPreview(key); });
       target.addEventListener('focus', function(){ clearTimeout(hideTimer); render(key); });
+      target.addEventListener('pointerleave', function(event){ if(isDesktopPointer(event)) scheduleHide(); });
       target.addEventListener('mouseleave', scheduleHide);
       target.addEventListener('blur', scheduleHide);
       target.addEventListener('click', function(event){
-        if(mode === 'desktop') return;
-        event.preventDefault();
         clearTimeout(hideTimer);
+        if(mode === 'desktop'){
+          event.preventDefault();
+          render(key);
+          return;
+        }
+        event.preventDefault();
         if(activeKey === key && panel.classList.contains('is-active')) closePanel();
         else render(key);
       });
@@ -841,7 +864,10 @@ document.addEventListener("DOMContentLoaded", init);
       });
     });
 
+    panel.setAttribute('aria-hidden', 'true');
+    panel.addEventListener('pointerenter', function(event){ if(isDesktopPointer(event)) clearTimeout(hideTimer); });
     panel.addEventListener('mouseenter', function(){ if(mode === 'desktop') clearTimeout(hideTimer); });
+    panel.addEventListener('pointerleave', function(event){ if(isDesktopPointer(event)) scheduleHide(); });
     panel.addEventListener('mouseleave', scheduleHide);
     backdrop.addEventListener('click', closePanel);
     document.addEventListener('click', function(event){
