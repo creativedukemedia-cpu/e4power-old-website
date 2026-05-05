@@ -198,7 +198,7 @@ custom_css = '''
   transform: translateY(-6px);
 }
 .ref-card-media {
-  aspect-ratio: 3 / 4.35;
+  aspect-ratio: 3 / 4.05;
   background-size: cover;
   background-position: center;
   border: 1px solid rgba(255,255,255,0.06);
@@ -219,8 +219,8 @@ custom_css = '''
   letter-spacing: .18em;
   font-size: .95rem;
   text-align: center;
-  padding: 1rem .8rem;
-  min-height: 4.25rem;
+  padding: .82rem .8rem;
+  min-height: 3.45rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -249,13 +249,13 @@ custom_css = '''
   gap: .8rem;
   align-items: start;
   color: #f5eee4;
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: .92rem;
+  font-size: 1.08rem;
+  line-height: 1.56;
+  margin-bottom: .86rem;
 }
 .ref-point-list svg {
-  width: 12px;
-  height: 12px;
+  width: 13px;
+  height: 13px;
   fill: #e2b24c;
   margin-top: .35rem;
 }

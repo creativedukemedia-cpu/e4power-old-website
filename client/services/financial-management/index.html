@@ -367,6 +367,126 @@ body.home-service-menu .hero-service-empty {
   }
 }
 </style>
+<style id="hero-services-marquee-styles">
+body.home-service-menu .hero-services-bar {
+  display: grid;
+  grid-template-columns: minmax(15rem, 24vw) minmax(0, 1fr);
+  align-items: stretch;
+  width: min(100%, 1600px);
+  margin: -2.75rem auto 0;
+  position: relative;
+  z-index: 28;
+  box-shadow: 0 22px 54px rgba(0,0,0,0.34);
+}
+body.home-service-menu .hero-services-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.3rem 1.5rem 1.15rem;
+  background: #d6a84d;
+  color: #110d08;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 1.35rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+body.home-service-menu .hero-services-marquee {
+  position: relative;
+  overflow: hidden;
+  background: rgba(5,5,5,0.96);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+body.home-service-menu .hero-services-marquee::before,
+body.home-service-menu .hero-services-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4rem;
+  z-index: 2;
+  pointer-events: none;
+}
+body.home-service-menu .hero-services-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, rgba(5,5,5,0.96), rgba(5,5,5,0));
+}
+body.home-service-menu .hero-services-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, rgba(5,5,5,0.96), rgba(5,5,5,0));
+}
+body.home-service-menu .hero-services-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: hero-services-scroll 34s linear infinite;
+}
+body.home-service-menu .hero-services-group {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  flex: 0 0 auto;
+  padding: 1.18rem 0 1.02rem;
+}
+body.home-service-menu .hero-services-item,
+body.home-service-menu .hero-services-separator {
+  flex: 0 0 auto;
+}
+body.home-service-menu .hero-services-item {
+  color: #f7f0e4;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  font-size: 1.28rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+body.home-service-menu .hero-services-separator {
+  color: rgba(214,168,77,0.82);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+@keyframes hero-services-scroll {
+  from { transform: translate3d(0,0,0); }
+  to { transform: translate3d(-50%,0,0); }
+}
+@media screen and (max-width: 991px) {
+  body.home-service-menu .hero-services-bar {
+    grid-template-columns: 1fr;
+    margin-top: -1.9rem;
+  }
+  body.home-service-menu .hero-services-label {
+    justify-content: flex-start;
+    padding-left: 1.3rem;
+    font-size: 1.05rem;
+  }
+  body.home-service-menu .hero-services-item {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  body.home-service-menu .hero-services-marquee::before,
+  body.home-service-menu .hero-services-marquee::after {
+    width: 2rem;
+  }
+  body.home-service-menu .hero-services-group {
+    gap: .8rem;
+    padding: .95rem 0 .88rem;
+  }
+  body.home-service-menu .hero-services-item {
+    font-size: .82rem;
+    letter-spacing: .06em;
+  }
+  body.home-service-menu .hero-services-separator {
+    font-size: .82rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.home-service-menu .hero-services-track {
+    animation: none;
+  }
+}
+</style>
 
 <style>
 .ref-page-shell {
@@ -533,7 +653,7 @@ body.home-service-menu .hero-service-empty {
   transform: translateY(-6px);
 }
 .ref-card-media {
-  aspect-ratio: 3 / 4.35;
+  aspect-ratio: 3 / 4.05;
   background-size: cover;
   background-position: center;
   border: 1px solid rgba(255,255,255,0.06);
@@ -554,8 +674,8 @@ body.home-service-menu .hero-service-empty {
   letter-spacing: .18em;
   font-size: .95rem;
   text-align: center;
-  padding: 1rem .8rem;
-  min-height: 4.25rem;
+  padding: .82rem .8rem;
+  min-height: 3.45rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -584,13 +704,13 @@ body.home-service-menu .hero-service-empty {
   gap: .8rem;
   align-items: start;
   color: #f5eee4;
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: .92rem;
+  font-size: 1.08rem;
+  line-height: 1.56;
+  margin-bottom: .86rem;
 }
 .ref-point-list svg {
-  width: 12px;
-  height: 12px;
+  width: 13px;
+  height: 13px;
   fill: #e2b24c;
   margin-top: .35rem;
 }
@@ -1054,6 +1174,21 @@ document.addEventListener("DOMContentLoaded", init);
         : '<div class="hero-service-empty">Tap a pillar to preview services</div>';
     }
 
+    function getEntryTitle(entry){
+      if(mode === 'desktop') return 'Explore the ' + entry.kicker.replace(' Services', '') + ' service group';
+      return entry.title;
+    }
+
+    function isDesktopPointer(event){
+      return mode === 'desktop' && (!event.pointerType || event.pointerType === 'mouse' || event.pointerType === 'pen');
+    }
+
+    function openDesktopPreview(key){
+      if(mode !== 'desktop') return;
+      clearTimeout(hideTimer);
+      render(key);
+    }
+
     function render(key){
       var entry = data[key];
       if(!entry) return;
@@ -1067,8 +1202,9 @@ document.addEventListener("DOMContentLoaded", init);
       var items = entry.items.map(function(item){
         return '<article class="hero-service-item"><h4>' + item.title + '</h4><p>' + item.copy + '</p></article>';
       }).join('');
-      panel.innerHTML = '<div class="hero-service-top"><div><div class="hero-service-kicker">' + entry.kicker + '</div><h3 class="hero-service-title">' + entry.title + '</h3></div><div class="hero-service-header-actions"><a class="hero-service-link" href="' + entry.href + '">' + entry.label + '</a><button class="hero-service-dismiss" type="button" aria-label="Close services preview">×</button></div></div><div class="hero-service-grid">' + items + '</div>';
+      panel.innerHTML = '<div class="hero-service-top"><div><div class="hero-service-kicker">' + entry.kicker + '</div><h3 class="hero-service-title">' + getEntryTitle(entry) + '</h3></div><div class="hero-service-header-actions"><a class="hero-service-link" href="' + entry.href + '">' + entry.label + '</a><button class="hero-service-dismiss" type="button" aria-label="Close services preview">×</button></div></div><div class="hero-service-grid">' + items + '</div>';
       panel.classList.add('is-active');
+      panel.setAttribute('aria-hidden', 'false');
       shell.classList.add('is-open');
       var dismiss = panel.querySelector('.hero-service-dismiss');
       if(dismiss){ dismiss.addEventListener('click', closePanel); }
@@ -1079,6 +1215,7 @@ document.addEventListener("DOMContentLoaded", init);
       clearTimeout(hideTimer);
       clearActiveTarget();
       panel.classList.remove('is-active');
+      panel.setAttribute('aria-hidden', 'true');
       shell.classList.remove('is-open');
       panel.innerHTML = emptyMessage();
     }
@@ -1086,19 +1223,25 @@ document.addEventListener("DOMContentLoaded", init);
     function scheduleHide(){
       if(mode !== 'desktop') return;
       clearTimeout(hideTimer);
-      hideTimer = setTimeout(closePanel, 180);
+      hideTimer = setTimeout(closePanel, 320);
     }
 
     targets.forEach(function(target){
       var key = target.getAttribute('data-pillar');
-      target.addEventListener('mouseenter', function(){ if(mode === 'desktop'){ clearTimeout(hideTimer); render(key); } });
+      target.addEventListener('pointerenter', function(event){ if(isDesktopPointer(event)) openDesktopPreview(key); });
+      target.addEventListener('mouseenter', function(){ openDesktopPreview(key); });
       target.addEventListener('focus', function(){ clearTimeout(hideTimer); render(key); });
+      target.addEventListener('pointerleave', function(event){ if(isDesktopPointer(event)) scheduleHide(); });
       target.addEventListener('mouseleave', scheduleHide);
       target.addEventListener('blur', scheduleHide);
       target.addEventListener('click', function(event){
-        if(mode === 'desktop') return;
-        event.preventDefault();
         clearTimeout(hideTimer);
+        if(mode === 'desktop'){
+          event.preventDefault();
+          render(key);
+          return;
+        }
+        event.preventDefault();
         if(activeKey === key && panel.classList.contains('is-active')) closePanel();
         else render(key);
       });
@@ -1112,7 +1255,10 @@ document.addEventListener("DOMContentLoaded", init);
       });
     });
 
+    panel.setAttribute('aria-hidden', 'true');
+    panel.addEventListener('pointerenter', function(event){ if(isDesktopPointer(event)) clearTimeout(hideTimer); });
     panel.addEventListener('mouseenter', function(){ if(mode === 'desktop') clearTimeout(hideTimer); });
+    panel.addEventListener('pointerleave', function(event){ if(isDesktopPointer(event)) scheduleHide(); });
     panel.addEventListener('mouseleave', scheduleHide);
     backdrop.addEventListener('click', closePanel);
     document.addEventListener('click', function(event){

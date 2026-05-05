@@ -68,3 +68,6 @@
 - [ ] Add a continuous services marquee beneath the homepage hero that flows under an Our Services label like the provided example.
 - [ ] Match the slider's desktop rhythm, typography, and color blocking to the example while preserving the site's branding.
 - [ ] Verify the new hero services slider in preview for continuous motion, clean looping, and responsive layout before saving the next checkpoint.
+- [ ] Shorten the Services page card height so more cards fit comfortably in view without feeling cramped.
+- [ ] Slightly increase the service bullet-point text size on the Services page for better readability.
+- [ ] Verify the updated Services page card spacing and bullet typography in preview before saving the next checkpoint.
