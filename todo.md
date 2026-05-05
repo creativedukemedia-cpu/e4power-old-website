@@ -65,3 +65,6 @@
 - [ ] Inspect the desktop hero section hover interaction and identify why the intended behavior is not currently working.
 - [ ] Repair the desktop hero hover effect without weakening the homepage design language or desktop responsiveness.
 - [ ] Verify the repaired hover behavior in preview before saving the next checkpoint.
+- [ ] Add a continuous services marquee beneath the homepage hero that flows under an Our Services label like the provided example.
+- [ ] Match the slider's desktop rhythm, typography, and color blocking to the example while preserving the site's branding.
+- [ ] Verify the new hero services slider in preview for continuous motion, clean looping, and responsive layout before saving the next checkpoint.
