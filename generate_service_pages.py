@@ -287,6 +287,126 @@ custom_css = '''
 .ref-secondary-link.primary {
   background: rgba(226,178,76,0.12);
 }
+.ref-detail-stack {
+  margin-top: 3.5rem;
+  display: grid;
+  gap: 1.6rem;
+}
+.ref-detail-panel {
+  border: 1px solid rgba(226,178,76,0.16);
+  background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.015));
+  padding: 1.65rem 1.55rem;
+}
+.ref-detail-panel--intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(18rem, .9fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+.ref-detail-kicker {
+  color: #e2b24c;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: .72rem;
+}
+.ref-detail-heading {
+  margin: .65rem 0 0;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: clamp(1.45rem, 2.4vw, 2.1rem);
+  line-height: 1.04;
+}
+.ref-detail-copy {
+  color: #dfd0bf;
+  font-size: 1.02rem;
+  line-height: 1.82;
+}
+.ref-detail-copy p {
+  margin: 0;
+}
+.ref-detail-copy p + p {
+  margin-top: .95rem;
+}
+.ref-badge-column {
+  display: grid;
+  gap: .8rem;
+}
+.ref-badge {
+  border: 1px solid rgba(226,178,76,0.24);
+  background: rgba(226,178,76,0.08);
+  color: #fff4df;
+  padding: .95rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: .8rem;
+  line-height: 1.5;
+}
+.ref-model-grid,
+.ref-tool-grid {
+  display: grid;
+  gap: 1rem;
+}
+.ref-model-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.ref-model-card {
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(0,0,0,0.18);
+  padding: 1.35rem 1.2rem 1.25rem;
+}
+.ref-model-card h4 {
+  margin: 0;
+  color: #fff3dd;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+.ref-model-card p {
+  margin: .75rem 0 0;
+  color: #d8cab8;
+  font-size: .98rem;
+  line-height: 1.72;
+}
+.ref-mini-list {
+  list-style: none;
+  padding: 0;
+  margin: .95rem 0 0;
+}
+.ref-mini-list li {
+  position: relative;
+  padding-left: 1rem;
+  color: #f3ebdf;
+  font-size: .97rem;
+  line-height: 1.62;
+}
+.ref-mini-list li + li {
+  margin-top: .45rem;
+}
+.ref-mini-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .65rem;
+  width: 6px;
+  height: 6px;
+  background: #e2b24c;
+  transform: rotate(45deg);
+}
+.ref-tool-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.ref-tool-pill {
+  border: 1px solid rgba(226,178,76,0.24);
+  background: rgba(255,255,255,0.03);
+  color: #f7f0e4;
+  padding: .9rem .85rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .8rem;
+  line-height: 1.4;
+}
 @media screen and (max-width: 1200px) {
   .ref-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -295,6 +415,11 @@ custom_css = '''
 @media screen and (max-width: 767px) {
   .ref-gallery-section {
     padding: 8.25rem 0 4.75rem;
+  }
+  .ref-detail-panel--intro,
+  .ref-model-grid,
+  .ref-tool-grid {
+    grid-template-columns: 1fr;
   }
   .ref-meta-row {
     grid-template-columns: 1fr;
@@ -378,6 +503,58 @@ def render_links(links):
     return ''.join(items)
 
 
+def render_detail_sections(service):
+    sections = []
+    intro_paragraphs = service.get('detail_paragraphs', [])
+    credentials = service.get('credentials', [])
+    if intro_paragraphs or credentials:
+        intro_copy = ''.join(f'<p>{html.escape(paragraph)}</p>' for paragraph in intro_paragraphs)
+        credential_html = ''.join(f'<div class="ref-badge">{html.escape(item)}</div>' for item in credentials)
+        sections.append(
+            '<section class="ref-detail-panel ref-detail-panel--intro">'
+            '<div>'
+            '<div class="ref-detail-kicker">How We Support</div>'
+            '<h3 class="ref-detail-heading">Flexible, end-to-end project leadership built for mission-driven work</h3>'
+            f'<div class="ref-detail-copy">{intro_copy}</div>'
+            '</div>'
+            '<div>'
+            '<div class="ref-detail-kicker">Certifications</div>'
+            f'<div class="ref-badge-column">{credential_html}</div>'
+            '</div>'
+            '</section>'
+        )
+    models = service.get('engagement_models', [])
+    if models:
+        model_html = ''.join(
+            '<article class="ref-model-card">'
+            f'<h4>{html.escape(model["title"])}</h4>'
+            f'<p>{html.escape(model["summary"])}</p>'
+            f'<ul class="ref-mini-list">{"".join(f"<li>{html.escape(point)}</li>" for point in model["points"])}</ul>'
+            '</article>'
+            for model in models
+        )
+        sections.append(
+            '<section class="ref-detail-panel">'
+            '<div class="ref-detail-kicker">Engagement Models</div>'
+            '<h3 class="ref-detail-heading">Support structured around how your organization needs to work</h3>'
+            f'<div class="ref-model-grid">{model_html}</div>'
+            '</section>'
+        )
+    tools = service.get('tools_used', [])
+    if tools:
+        tool_html = ''.join(f'<div class="ref-tool-pill">{html.escape(tool)}</div>' for tool in tools)
+        sections.append(
+            '<section class="ref-detail-panel">'
+            '<div class="ref-detail-kicker">Tools Used</div>'
+            '<h3 class="ref-detail-heading">Platforms that support planning, tracking, reporting, and execution visibility</h3>'
+            f'<div class="ref-tool-grid">{tool_html}</div>'
+            '</section>'
+        )
+    if not sections:
+        return ''
+    return f'<div class="ref-detail-stack">{"".join(sections)}</div>'
+
+
 def build_service_section(service, include_links=True):
     cards = []
     for pillar in PILLAR_ORDER:
@@ -431,9 +608,10 @@ def write_detail_page(service):
             'placeholder': f'{service["title"]} {pillar}',
             'image': detail.get('image'),
         })
+    detail_extras = render_detail_sections(service)
     body = f'''<!-- Design philosophy: Reference-led service detail page. Each service page keeps the example’s editorial layout while presenting the four pillars together under one service heading. -->
 {page_head}<body class="body ref-page-shell">{nav_html}
-<section class="ref-gallery-section"><div class="container"><div class="ref-top-block"><div class="ref-heading-stack"><div class="ref-heading-accent">Service</div><h1 class="ref-heading-main">{html.escape(service['title'])}</h1></div><div class="ref-meta-row"><div class="ref-divider-wrap"><div class="ref-divider"></div><div class="ref-overline">Meet the experts behind your success</div></div><img class="ref-mark" alt="E4 Power logo" src="{E4_LOGO}"/></div><div class="ref-subhead-row"><div><h2 class="ref-subtitle">Our expertise <span>Your advantage</span></h2><p class="ref-page-summary">{html.escape(service['detail_summary'])}</p></div><a class="ref-cta-button" href="/contact-us">Contact Us</a></div></div><div class="ref-grid">{render_cards(detail_cards)}</div><div class="ref-bottom-copy">{html.escape(service['closing_copy'])}</div><div class="ref-bottom-links">{render_links(service['related_links'])}</div></div></section>
+<section class="ref-gallery-section"><div class="container"><div class="ref-top-block"><div class="ref-heading-stack"><div class="ref-heading-accent">Service</div><h1 class="ref-heading-main">{html.escape(service['title'])}</h1></div><div class="ref-meta-row"><div class="ref-divider-wrap"><div class="ref-divider"></div><div class="ref-overline">Meet the experts behind your success</div></div><img class="ref-mark" alt="E4 Power logo" src="{E4_LOGO}"/></div><div class="ref-subhead-row"><div><h2 class="ref-subtitle">Our expertise <span>Your advantage</span></h2><p class="ref-page-summary">{html.escape(service['detail_summary'])}</p></div><a class="ref-cta-button" href="/contact-us">Contact Us</a></div></div><div class="ref-grid">{render_cards(detail_cards)}</div>{detail_extras}<div class="ref-bottom-copy">{html.escape(service['closing_copy'])}</div><div class="ref-bottom-links">{render_links(service['related_links'])}</div></div></section>
 {shared_footer}'''
     out_dir = BASE / 'services' / service['slug']
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -570,15 +748,40 @@ services = [
     {
         'slug': 'project-management',
         'title': 'Project Management',
-        'catalog_summary': 'Project Management should be grouped as its own service and then translated across all four pillars underneath it.',
-        'detail_summary': 'This page shows Project Management as more than delivery mechanics: it can educate teams, empower planning, elevate execution, and engage stakeholders in a clearer working model.',
-        'closing_copy': 'Project Management is essential when ambitious work needs more than strategy alone and requires disciplined coordination across people, timelines, and decisions.',
+        'catalog_summary': 'E4 provides flexible, end-to-end project management support designed to engage stakeholders, educate teams, elevate execution, and empower organizations to sustain impact.',
+        'detail_summary': 'E4 provides flexible, end-to-end project management support for nonprofits, universities, and community-based organizations that need structure, alignment, and execution support across complex or mission-driven work.',
+        'detail_paragraphs': [
+            'We partner with nonprofits, universities, and community-based organizations to plan, manage, and strengthen projects—especially those that are grant-funded, multi-stakeholder, or mission-driven.',
+            'Our work often includes strategic assessments such as SWOT analyses and the design of process improvement initiatives so projects are not only delivered, but delivered more effectively over time.',
+            'We understand the balance required between compliance, accountability, and real-world impact, and we build systems that actually work in practice, not just on paper.',
+            'Our approach goes beyond managing tasks. We create structure, clarity, and alignment while strengthening internal capacity, so organizations are not only successful in the moment, but more confident and equipped for what comes next.',
+        ],
+        'credentials': ['PMP Certified', 'SAFe Scrum Master Certified', 'Lean & Six Sigma Certified'],
+        'engagement_models': [
+            {
+                'title': 'Short-Term Engagements',
+                'summary': 'Targeted support for immediate or high-priority needs.',
+                'points': ['Project startup and planning (charter, scope, and work planning)', 'Project recovery or stabilization', 'Support for specific initiatives or grant-funded projects'],
+            },
+            {
+                'title': 'Long-Term Engagements',
+                'summary': 'Ongoing partnership to manage and sustain complex work.',
+                'points': ['End-to-end project management and oversight', 'Multi-phase or multi-year initiative management', 'Embedded or fractional project management support'],
+            },
+            {
+                'title': 'Capacity-Building Engagements',
+                'summary': 'Support that strengthens internal teams and systems over time.',
+                'points': ['Project management training and coaching', 'Development of internal tools, templates, and workflows', 'Support to build sustainable project management practices'],
+            },
+        ],
+        'tools_used': ['Smartsheet', 'MS Project', 'Notion', 'Monday', 'Excel', 'AppSheet'],
+        'closing_copy': 'Project Management is most valuable when organizations need more than coordination alone and want a partner who can build structure, strengthen execution, and leave behind systems their teams can sustain.',
         'related_links': [('Services Hub', '/services/'), ('Elevate', '/elevate/'), ('Contact Us', '/contact-us')],
         'pillars': {
-            'Educate': {'note': 'Teach teams how structured delivery works so responsibilities, milestones, and expectations become clearer.', 'points': ['Delivery education', 'Role clarity', 'Project literacy'], 'image': '/manus-storage/project-management-educate_464d8e84.jpg'},
-            'Empower': {'note': 'Use project-management framing to turn strategic ambition into a phased, achievable plan.', 'points': ['Milestone mapping', 'Strategic sequencing', 'Ownership definition'], 'image': '/manus-storage/project-management-empower_c9414cbd.jpg'},
-            'Elevate': {'note': 'Support active delivery through coordination systems, issue visibility, and measurable operational progress.', 'points': ['Timeline management', 'Cross-team execution', 'Risk-aware coordination'], 'image': '/manus-storage/project-management-elevate_0a1e56d2.jpg'},
-            'Engage': {'note': 'Create a healthier partnership by giving stakeholders a shared way to work, communicate, and make decisions.', 'points': ['Stakeholder coordination', 'Meeting cadence design', 'Collaboration structure'], 'image': '/manus-storage/project-management-engage_01ca1dc3.jpg'},
+            'Educate': {'note': 'Build knowledge and strengthen internal capacity. We educate teams so they can confidently manage projects and sustain success beyond our engagement.', 'points': ['Project management training (foundational and advanced)', 'Time management and productivity training', 'Tools and systems training (planning, tracking, and reporting)'], 'image': '/manus-storage/project-management-educate_464d8e84.jpg'},
+            'Empower': {'note': 'Enable organizations to lead, adapt, and sustain impact. We empower organizations by equipping teams with the tools, systems, and confidence to independently manage and grow their work.', 'points': ['SWOT analysis to assess organizational and project positioning', 'Process improvement initiatives to enhance efficiency and effectiveness', 'Development of project management frameworks, playbooks, and documentation'], 'image': '/manus-storage/project-management-empower_c9414cbd.jpg'},
+            'Elevate': {'note': 'Strengthen execution through structure, tools, and accountability. We elevate project performance by introducing clear processes, proactive planning, and data-driven tracking.', 'points': ['Development of detailed work plans (schedule management and milestone tracking)', 'Risk identification and mitigation planning', 'Performance metrics and KPI reporting'], 'image': '/manus-storage/project-management-elevate_0a1e56d2.jpg'},
+            'Engage': {'note': 'Establish clarity, alignment, and shared direction. We engage organizations by building strong project foundations and ensuring stakeholders are aligned from the start.', 'points': ['Project charter and scope definition', 'Stakeholder communication planning', 'Procurement and vendor coordination'], 'image': '/manus-storage/project-management-engage_01ca1dc3.jpg'},
         },
     },
     {
@@ -676,7 +879,7 @@ pillar_pages = [
         'button_href': '/contact-us',
         'cards': [
             {'title': 'Grant Management', 'label': 'Elevate', 'note': 'Post-award stewardship that protects credibility and momentum.', 'points': ['Reporting coordination', 'Compliance oversight', 'Award closeout support'], 'placeholder': 'Grant Management'},
-            {'title': 'Project Management', 'label': 'Elevate', 'note': 'Execution systems that keep complex initiatives coordinated.', 'points': ['Timeline management', 'Cross-team execution', 'Risk-aware coordination'], 'placeholder': 'Project Management'},
+            {'title': 'Project Management', 'label': 'Elevate', 'note': 'Execution systems that keep complex initiatives coordinated while strengthening accountability and internal delivery discipline.', 'points': ['Detailed work plans', 'Risk mitigation planning', 'KPI reporting'], 'placeholder': 'Project Management'},
             {'title': 'Financial Management', 'label': 'Elevate', 'note': 'Fiscal discipline aligned with funder expectations and operational trust.', 'points': ['Budget oversight', 'Audit-conscious controls', 'Financial communication'], 'placeholder': 'Financial'},
             {'title': 'IT Solutions', 'label': 'Elevate', 'note': 'Operational systems that improve visibility, workflows, and continuity.', 'points': ['Workflow automation', 'Dashboards', 'Maintenance planning'], 'placeholder': 'IT Elevate'},
         ],

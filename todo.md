@@ -71,3 +71,6 @@
 - [ ] Shorten the Services page card height so more cards fit comfortably in view without feeling cramped.
 - [ ] Slightly increase the service bullet-point text size on the Services page for better readability.
 - [ ] Verify the updated Services page card spacing and bullet typography in preview before saving the next checkpoint.
+- [ ] Replace the Project Management card bullets on the Services catalog page with the user-provided pillar-specific content.
+- [ ] Build out the full Project Management breakout page using the supplied overview, certifications, engagement models, and tools.
+- [ ] Regenerate and verify the updated Project Management catalog and solo page content in preview before saving the next checkpoint.
