@@ -77,3 +77,5 @@
 - [ ] Locate every current usage of Tamara Henry’s existing photo across the site.
 - [ ] Upload the newly provided Tamara Henry image to the project asset storage and replace all current references.
 - [ ] Verify the refreshed Tamara Henry image renders correctly anywhere it appears before saving the next checkpoint.
+- [ ] Replace Harold Lee’s existing bio copy with the new user-provided biography wherever it appears on the site.
+- [ ] Verify the updated Harold Lee bio in both source files and preview before saving the next checkpoint.
