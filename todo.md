@@ -74,3 +74,6 @@
 - [ ] Replace the Project Management card bullets on the Services catalog page with the user-provided pillar-specific content.
 - [ ] Build out the full Project Management breakout page using the supplied overview, certifications, engagement models, and tools.
 - [ ] Regenerate and verify the updated Project Management catalog and solo page content in preview before saving the next checkpoint.
+- [ ] Locate every current usage of Tamara Henry’s existing photo across the site.
+- [ ] Upload the newly provided Tamara Henry image to the project asset storage and replace all current references.
+- [ ] Verify the refreshed Tamara Henry image renders correctly anywhere it appears before saving the next checkpoint.
