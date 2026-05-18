@@ -41,6 +41,10 @@ custom_css = '''
 .ref-gallery-section {
   padding: 10rem 0 6rem;
 }
+.ref-gallery-section > .container {
+  width: min(100% - 6rem, 1280px);
+  margin: 0 auto;
+}
 .ref-top-block {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -447,6 +451,9 @@ custom_css = '''
 @media screen and (max-width: 767px) {
   .ref-gallery-section {
     padding: 8.25rem 0 4.75rem;
+  }
+  .ref-gallery-section > .container {
+    width: min(100% - 2.2rem, 1280px);
   }
   .ref-detail-panel--intro,
   .ref-model-grid,

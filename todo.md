@@ -92,3 +92,6 @@
 - [ ] Remove the repetitive four-pillar section from the shared service breakout-page template.
 - [ ] Regenerate the service breakout pages after removing the shared four-pillar block.
 - [ ] Verify in preview that the breakout pages now move directly from the hero into the unique service content.
+- [ ] Increase the horizontal buffer zone on generated pages so content sits farther from the viewport edges.
+- [ ] Align the generated page spacing treatment more closely with the home page container feel.
+- [ ] Regenerate and verify the updated page spacing in preview before saving the next checkpoint.
