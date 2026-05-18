@@ -230,6 +230,8 @@ body.home-service-menu .hero-service-panel.is-active {
 }
 body.home-service-menu .emblem-grid [data-pillar] {
   position: relative;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   transition: box-shadow .2s ease, background-color .2s ease, transform .2s ease;
 }
 body.home-service-menu .emblem-grid [data-pillar].is-service-active {
@@ -868,6 +870,7 @@ document.addEventListener("DOMContentLoaded", init);
     var hideTimer = null;
     var activeKey = null;
     var mode = 'desktop';
+    var lastTouchToggleAt = 0;
 
     targets.forEach(function(target){
       var key = target.getAttribute('data-pillar');
@@ -918,6 +921,20 @@ document.addEventListener("DOMContentLoaded", init);
       render(key);
     }
 
+    function toggleTouchPreview(event, key){
+      if(mode === 'desktop') return;
+      if(event){
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      var now = Date.now();
+      if(now - lastTouchToggleAt < 280) return;
+      lastTouchToggleAt = now;
+      clearTimeout(hideTimer);
+      if(activeKey === key && panel.classList.contains('is-active')) closePanel();
+      else render(key);
+    }
+
     function render(key){
       var entry = data[key];
       if(!entry) return;
@@ -959,10 +976,20 @@ document.addEventListener("DOMContentLoaded", init);
       var key = target.getAttribute('data-pillar');
       target.addEventListener('pointerenter', function(event){ if(isDesktopPointer(event)) openDesktopPreview(key); });
       target.addEventListener('mouseenter', function(){ openDesktopPreview(key); });
-      target.addEventListener('focus', function(){ clearTimeout(hideTimer); render(key); });
+      target.addEventListener('focus', function(){
+        if(mode !== 'desktop') return;
+        clearTimeout(hideTimer);
+        render(key);
+      });
       target.addEventListener('pointerleave', function(event){ if(isDesktopPointer(event)) scheduleHide(); });
       target.addEventListener('mouseleave', scheduleHide);
       target.addEventListener('blur', scheduleHide);
+      target.addEventListener('pointerup', function(event){
+        if(mode !== 'desktop' && event.pointerType === 'touch') toggleTouchPreview(event, key);
+      });
+      target.addEventListener('touchend', function(event){
+        if(mode !== 'desktop') toggleTouchPreview(event, key);
+      }, { passive: false });
       target.addEventListener('click', function(event){
         clearTimeout(hideTimer);
         if(mode === 'desktop'){
@@ -970,9 +997,11 @@ document.addEventListener("DOMContentLoaded", init);
           render(key);
           return;
         }
-        event.preventDefault();
-        if(activeKey === key && panel.classList.contains('is-active')) closePanel();
-        else render(key);
+        if(Date.now() - lastTouchToggleAt < 450){
+          event.preventDefault();
+          return;
+        }
+        toggleTouchPreview(event, key);
       });
       target.addEventListener('keydown', function(event){
         if(event.key === 'Enter' || event.key === ' '){
