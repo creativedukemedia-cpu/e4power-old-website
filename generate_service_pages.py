@@ -342,19 +342,25 @@ custom_css = '''
   line-height: 1.5;
 }
 .ref-model-grid,
-.ref-tool-grid {
+.ref-tool-grid,
+.ref-example-grid {
   display: grid;
   gap: 1rem;
 }
 .ref-model-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-.ref-model-card {
+.ref-example-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.ref-model-card,
+.ref-example-card {
   border: 1px solid rgba(255,255,255,0.08);
   background: rgba(0,0,0,0.18);
   padding: 1.35rem 1.2rem 1.25rem;
 }
-.ref-model-card h4 {
+.ref-model-card h4,
+.ref-example-card h4 {
   margin: 0;
   color: #fff3dd;
   text-transform: uppercase;
@@ -362,7 +368,8 @@ custom_css = '''
   font-size: 1rem;
   line-height: 1.3;
 }
-.ref-model-card p {
+.ref-model-card p,
+.ref-example-card p {
   margin: .75rem 0 0;
   color: #d8cab8;
   font-size: .98rem;
@@ -372,6 +379,9 @@ custom_css = '''
   list-style: none;
   padding: 0;
   margin: .95rem 0 0;
+}
+.ref-mini-list--wide {
+  max-width: 58rem;
 }
 .ref-mini-list li {
   position: relative;
@@ -407,6 +417,28 @@ custom_css = '''
   font-size: .8rem;
   line-height: 1.4;
 }
+.ref-outcome-panel {
+  display: grid;
+  grid-template-columns: minmax(10rem, .34fr) minmax(0, 1fr);
+  gap: 1.4rem;
+  align-items: start;
+  border: 1px solid rgba(226,178,76,0.2);
+  background: linear-gradient(180deg, rgba(8,8,8,0.96), rgba(18,18,18,0.9));
+  padding: 1.5rem 1.55rem;
+}
+.ref-outcome-label {
+  color: #e2b24c;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: .78rem;
+  line-height: 1.45;
+}
+.ref-outcome-panel p {
+  margin: 0;
+  color: #f5ede2;
+  font-size: 1.06rem;
+  line-height: 1.82;
+}
 @media screen and (max-width: 1200px) {
   .ref-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -418,7 +450,9 @@ custom_css = '''
   }
   .ref-detail-panel--intro,
   .ref-model-grid,
-  .ref-tool-grid {
+  .ref-tool-grid,
+  .ref-example-grid,
+  .ref-outcome-panel {
     grid-template-columns: 1fr;
   }
   .ref-meta-row {
@@ -507,20 +541,49 @@ def render_detail_sections(service):
     sections = []
     intro_paragraphs = service.get('detail_paragraphs', [])
     credentials = service.get('credentials', [])
+    intro_kicker = service.get('detail_intro_kicker', 'How We Support')
+    intro_heading = service.get('detail_intro_heading', 'Flexible, end-to-end project leadership built for mission-driven work')
+    credential_kicker = service.get('credentials_kicker', 'Certifications')
     if intro_paragraphs or credentials:
         intro_copy = ''.join(f'<p>{html.escape(paragraph)}</p>' for paragraph in intro_paragraphs)
         credential_html = ''.join(f'<div class="ref-badge">{html.escape(item)}</div>' for item in credentials)
         sections.append(
             '<section class="ref-detail-panel ref-detail-panel--intro">'
             '<div>'
-            '<div class="ref-detail-kicker">How We Support</div>'
-            '<h3 class="ref-detail-heading">Flexible, end-to-end project leadership built for mission-driven work</h3>'
+            f'<div class="ref-detail-kicker">{html.escape(intro_kicker)}</div>'
+            f'<h3 class="ref-detail-heading">{html.escape(intro_heading)}</h3>'
             f'<div class="ref-detail-copy">{intro_copy}</div>'
             '</div>'
             '<div>'
-            '<div class="ref-detail-kicker">Certifications</div>'
+            f'<div class="ref-detail-kicker">{html.escape(credential_kicker)}</div>'
             f'<div class="ref-badge-column">{credential_html}</div>'
             '</div>'
+            '</section>'
+        )
+    service_steps = service.get('service_steps', [])
+    if service_steps:
+        steps_html = ''.join(f'<li>{html.escape(step)}</li>' for step in service_steps)
+        sections.append(
+            '<section class="ref-detail-panel">'
+            f'<div class="ref-detail-kicker">{html.escape(service.get("service_steps_kicker", "What We Do"))}</div>'
+            f'<h3 class="ref-detail-heading">{html.escape(service.get("service_steps_heading", "Proposal development support that keeps strategy, compliance, and submission on track"))}</h3>'
+            f'<ul class="ref-mini-list ref-mini-list--wide">{steps_html}</ul>'
+            '</section>'
+        )
+    case_studies = service.get('case_studies', [])
+    if case_studies:
+        case_html = ''.join(
+            '<article class="ref-example-card">'
+            f'<h4>{html.escape(example["title"])}</h4>'
+            f'<p>{html.escape(example["summary"])}</p>'
+            '</article>'
+            for example in case_studies
+        )
+        sections.append(
+            '<section class="ref-detail-panel">'
+            f'<div class="ref-detail-kicker">{html.escape(service.get("case_studies_kicker", "Real-World Examples"))}</div>'
+            f'<h3 class="ref-detail-heading">{html.escape(service.get("case_studies_heading", "Selected wins that show how E4 translates strategy into funded outcomes"))}</h3>'
+            f'<div class="ref-example-grid">{case_html}</div>'
             '</section>'
         )
     models = service.get('engagement_models', [])
@@ -548,6 +611,14 @@ def render_detail_sections(service):
             '<div class="ref-detail-kicker">Tools Used</div>'
             '<h3 class="ref-detail-heading">Platforms that support planning, tracking, reporting, and execution visibility</h3>'
             f'<div class="ref-tool-grid">{tool_html}</div>'
+            '</section>'
+        )
+    key_outcome = service.get('key_outcome')
+    if key_outcome:
+        sections.append(
+            '<section class="ref-outcome-panel">'
+            '<div class="ref-outcome-label">Key Outcome</div>'
+            f'<p>{html.escape(key_outcome)}</p>'
             '</section>'
         )
     if not sections:
@@ -679,7 +750,38 @@ services = [
         'slug': 'grant-writing',
         'title': 'Grant Writing',
         'catalog_summary': 'Grant Writing should appear as a single named service with pillar-specific value cards underneath it, not as one item inside only Empower.',
-        'detail_summary': 'This page reframes Grant Writing through all four pillars so visitors can see both the direct proposal function and the broader institutional value around it.',
+        'detail_summary': 'E4 Power’s pre-award team guides institutions through every stage of proposal development—from opportunity identification to on-time submission—while helping clients compete more effectively across federal and foundation funding environments.',
+        'detail_intro_kicker': 'Pre-Award Support',
+        'detail_intro_heading': 'Proposal development support from opportunity identification to on-time submission',
+        'detail_paragraphs': [
+            'E4 Power’s pre-award team guides institutions through every stage of proposal development—from opportunity identification to on-time submission, with a 78% success rate across NSF, DoD, DoE, DoEd, and DoL.',
+        ],
+        'credentials_kicker': 'Performance Snapshot',
+        'credentials': ['78% success rate across NSF, DoD, DoE, DoEd, and DoL'],
+        'service_steps': [
+            'Funding opportunity identification & alignment',
+            'Needs assessment & feasibility analysis',
+            'Proposal narrative development',
+            'Budget creation & justification',
+            'Letters of support coordination',
+            'Internal review & compliance check',
+            'Final submission & follow-up',
+        ],
+        'case_studies': [
+            {
+                'title': 'NSF HBCU-UP Implementation',
+                'summary': 'Developed a $2M proposal for the UMES STEM program that was funded on first submission after more than 20 years without an NSF award.',
+            },
+            {
+                'title': 'EPA Biogenic Building Materials',
+                'summary': 'Led a $6.1M EPA proposal enabling robust EPDs for biogenic building materials with PI Jacob Waddell.',
+            },
+            {
+                'title': 'Costco Foundation',
+                'summary': 'Secured $140,000 for Mentor Washington to strengthen statewide mentorship program monitoring and impact tracking.',
+            },
+        ],
+        'key_outcome': 'Clients gain compelling, submission-ready grant proposals backed by subject-matter experts, tailored narratives, and airtight budgets—maximizing award probability from the very first submission.',
         'closing_copy': 'Grant Writing remains one of the clearest expressions of E4 Power’s value because it joins strategic opportunity, institutional storytelling, delivery discipline, and trust-building in one service.',
         'related_links': [('Services Hub', '/services/'), ('Empower', '/empower/'), ('Contact Us', '/contact-us')],
         'pillars': {

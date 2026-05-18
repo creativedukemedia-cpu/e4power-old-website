@@ -79,3 +79,13 @@
 - [ ] Verify the refreshed Tamara Henry image renders correctly anywhere it appears before saving the next checkpoint.
 - [ ] Replace Harold Lee’s existing bio copy with the new user-provided biography wherever it appears on the site.
 - [ ] Verify the updated Harold Lee bio in both source files and preview before saving the next checkpoint.
+- [ ] Assess whether the site can support an automatically updating LinkedIn feed that pulls recent posts from E4’s LinkedIn page.
+- [ ] Compare native, API-based, and third-party LinkedIn feed approaches for branding control, automatic updates, and mobile responsiveness.
+- [ ] Recommend the most practical LinkedIn feed implementation path for the current site architecture.
+- [ ] Clarify whether the LinkedIn feed can be built as a custom in-house widget instead of relying on a third-party provider.
+- [ ] Explain the architectural and platform constraints that determine when a custom LinkedIn feed is viable.
+- [ ] Assess whether an agent could monitor E4’s LinkedIn business page and manually keep post embeds on the site updated.
+- [ ] Evaluate the fragility, maintenance burden, and policy risk of an agent-driven manual embed-sync workflow.
+- [ ] Build out the Grant Writing breakout page using the E4 team’s provided slide content and example structure.
+- [ ] Translate the Grant Writing slide into polished web sections including overview, what we do, real-world examples, and key outcome.
+- [ ] Regenerate and verify the updated Grant Writing breakout page in preview before saving the next checkpoint.
