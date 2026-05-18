@@ -98,3 +98,5 @@
 - [ ] Redesign the Services page 'Open Service Page' buttons so they feel more appealing and more on-brand.
 - [ ] Update the button styling and interaction states in the generator so the new treatment persists through rebuilds.
 - [ ] Regenerate and verify the refreshed Services page buttons in preview before saving the next checkpoint.
+- [ ] Add a subtle pulse effect that sweeps through the Services page buttons about every 3 seconds.
+- [ ] Regenerate and verify the button pulse animation in preview before saving the next checkpoint.
