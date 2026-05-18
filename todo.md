@@ -100,3 +100,6 @@
 - [ ] Regenerate and verify the refreshed Services page buttons in preview before saving the next checkpoint.
 - [ ] Add a subtle pulse effect that sweeps through the Services page buttons about every 3 seconds.
 - [ ] Regenerate and verify the button pulse animation in preview before saving the next checkpoint.
+- [ ] Build out the Readiness Assessments breakout page using the user-provided slide content.
+- [ ] Translate the Readiness Assessments slide into polished web sections including what we do, real-world examples, and key outcome.
+- [ ] Regenerate and verify the updated Readiness Assessments breakout page in preview before saving the next checkpoint.
