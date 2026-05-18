@@ -95,3 +95,6 @@
 - [ ] Increase the horizontal buffer zone on generated pages so content sits farther from the viewport edges.
 - [ ] Align the generated page spacing treatment more closely with the home page container feel.
 - [ ] Regenerate and verify the updated page spacing in preview before saving the next checkpoint.
+- [ ] Redesign the Services page 'Open Service Page' buttons so they feel more appealing and more on-brand.
+- [ ] Update the button styling and interaction states in the generator so the new treatment persists through rebuilds.
+- [ ] Regenerate and verify the refreshed Services page buttons in preview before saving the next checkpoint.
