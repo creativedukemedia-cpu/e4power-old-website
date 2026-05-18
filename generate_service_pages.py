@@ -668,21 +668,10 @@ def write_catalog_page(page):
 def write_detail_page(service):
     page_head = base_head.replace('<title>E4 Power</title>', f'<title>{html.escape(service["title"])} | E4 Power</title>')
     page_head = page_head.replace('</head>', custom_css + '\n</head>')
-    detail_cards = []
-    for pillar in PILLAR_ORDER:
-        detail = service['pillars'][pillar]
-        detail_cards.append({
-            'title': pillar,
-            'label': service['title'],
-            'note': detail['note'],
-            'points': detail['points'],
-            'placeholder': f'{service["title"]} {pillar}',
-            'image': detail.get('image'),
-        })
     detail_extras = render_detail_sections(service)
-    body = f'''<!-- Design philosophy: Reference-led service detail page. Each service page keeps the example’s editorial layout while presenting the four pillars together under one service heading. -->
+    body = f'''<!-- Design philosophy: Reference-led service detail page. Each service page keeps the example’s editorial layout while moving directly from the hero into service-specific content. -->
 {page_head}<body class="body ref-page-shell">{nav_html}
-<section class="ref-gallery-section"><div class="container"><div class="ref-top-block"><div class="ref-heading-stack"><div class="ref-heading-accent">Service</div><h1 class="ref-heading-main">{html.escape(service['title'])}</h1></div><div class="ref-meta-row"><div class="ref-divider-wrap"><div class="ref-divider"></div><div class="ref-overline">Meet the experts behind your success</div></div><img class="ref-mark" alt="E4 Power logo" src="{E4_LOGO}"/></div><div class="ref-subhead-row"><div><h2 class="ref-subtitle">Our expertise <span>Your advantage</span></h2><p class="ref-page-summary">{html.escape(service['detail_summary'])}</p></div><a class="ref-cta-button" href="/contact-us">Contact Us</a></div></div><div class="ref-grid">{render_cards(detail_cards)}</div>{detail_extras}<div class="ref-bottom-copy">{html.escape(service['closing_copy'])}</div><div class="ref-bottom-links">{render_links(service['related_links'])}</div></div></section>
+<section class="ref-gallery-section"><div class="container"><div class="ref-top-block"><div class="ref-heading-stack"><div class="ref-heading-accent">Service</div><h1 class="ref-heading-main">{html.escape(service['title'])}</h1></div><div class="ref-meta-row"><div class="ref-divider-wrap"><div class="ref-divider"></div><div class="ref-overline">Meet the experts behind your success</div></div><img class="ref-mark" alt="E4 Power logo" src="{E4_LOGO}"/></div><div class="ref-subhead-row"><div><h2 class="ref-subtitle">Our expertise <span>Your advantage</span></h2><p class="ref-page-summary">{html.escape(service['detail_summary'])}</p></div><a class="ref-cta-button" href="/contact-us">Contact Us</a></div></div>{detail_extras}<div class="ref-bottom-copy">{html.escape(service['closing_copy'])}</div><div class="ref-bottom-links">{render_links(service['related_links'])}</div></div></section>
 {shared_footer}'''
     out_dir = BASE / 'services' / service['slug']
     out_dir.mkdir(parents=True, exist_ok=True)

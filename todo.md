@@ -89,3 +89,6 @@
 - [ ] Build out the Grant Writing breakout page using the E4 team’s provided slide content and example structure.
 - [ ] Translate the Grant Writing slide into polished web sections including overview, what we do, real-world examples, and key outcome.
 - [ ] Regenerate and verify the updated Grant Writing breakout page in preview before saving the next checkpoint.
+- [ ] Remove the repetitive four-pillar section from the shared service breakout-page template.
+- [ ] Regenerate the service breakout pages after removing the shared four-pillar block.
+- [ ] Verify in preview that the breakout pages now move directly from the hero into the unique service content.
