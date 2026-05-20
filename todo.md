@@ -109,3 +109,6 @@
 - [ ] Read the attached website update document and extract all requested changes except item 1.
 - [ ] Apply every remaining approved change from the update document across the website.
 - [ ] Verify the document-driven website updates in preview before saving the next checkpoint.
+- [ ] Read the two Financial Management source documents and extract the website-ready 4 E’s structure and supporting service language.
+- [ ] Build out the Financial Management breakout page using the condensed web version while aligning it with the broader financial operations overview.
+- [ ] Regenerate and verify the updated Financial Management breakout page in preview before saving the next checkpoint.
