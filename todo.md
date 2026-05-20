@@ -106,3 +106,6 @@
 - [ ] Investigate why the homepage pillar hover interaction does not work properly on mobile while desktop remains correct.
 - [ ] Implement a touch-friendly mobile interaction that preserves the current desktop hover behavior.
 - [ ] Verify the updated homepage pillar interaction in both mobile and desktop preview states before saving the next checkpoint.
+- [ ] Read the attached website update document and extract all requested changes except item 1.
+- [ ] Apply every remaining approved change from the update document across the website.
+- [ ] Verify the document-driven website updates in preview before saving the next checkpoint.
