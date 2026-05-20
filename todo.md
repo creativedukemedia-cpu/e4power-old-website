@@ -112,3 +112,6 @@
 - [ ] Read the two Financial Management source documents and extract the website-ready 4 E’s structure and supporting service language.
 - [ ] Build out the Financial Management breakout page using the condensed web version while aligning it with the broader financial operations overview.
 - [ ] Regenerate and verify the updated Financial Management breakout page in preview before saving the next checkpoint.
+- [ ] Remove the circular number treatment from the homepage stat band under the hero section.
+- [ ] Make the 80% stat panel visually consistent with the other homepage metrics.
+- [ ] Verify the updated homepage stat band in preview before saving the next checkpoint.
