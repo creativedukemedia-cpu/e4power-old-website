@@ -127,3 +127,6 @@
 - [ ] Align the homepage hover experience with the same 8 flyer services used on the Services page.
 - [ ] Update the hover cards, labels, and service names so they consistently reflect the flyer offerings.
 - [ ] Verify the updated homepage hover states in preview before saving the next checkpoint.
+- [ ] Build the Intellectual Property breakout page from the user-provided source material.
+- [ ] Build the Grant Management breakout page from the user-provided source material.
+- [ ] Regenerate and verify both updated breakout pages in preview before saving the next checkpoint.
