@@ -124,3 +124,6 @@
 - [ ] Align the Services page with the 8 current main offerings shown in the latest flyer.
 - [ ] Remove any extra main service from the catalog so the page shows only the flyer’s 8 core services.
 - [ ] Verify the updated 8-service catalog in preview before saving the next checkpoint.
+- [ ] Align the homepage hover experience with the same 8 flyer services used on the Services page.
+- [ ] Update the hover cards, labels, and service names so they consistently reflect the flyer offerings.
+- [ ] Verify the updated homepage hover states in preview before saving the next checkpoint.
