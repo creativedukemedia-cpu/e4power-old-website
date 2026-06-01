@@ -115,3 +115,6 @@
 - [ ] Remove the circular number treatment from the homepage stat band under the hero section.
 - [ ] Make the 80% stat panel visually consistent with the other homepage metrics.
 - [ ] Verify the updated homepage stat band in preview before saving the next checkpoint.
+- [ ] Remove the continuous services banner from the homepage hero area.
+- [ ] Replace the moving banner with a static services list styled like the provided reference image.
+- [ ] Verify the updated homepage hero services list in preview before saving the next checkpoint.
