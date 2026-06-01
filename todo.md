@@ -130,3 +130,6 @@
 - [ ] Build the Intellectual Property breakout page from the user-provided source material.
 - [ ] Build the Grant Management breakout page from the user-provided source material.
 - [ ] Regenerate and verify both updated breakout pages in preview before saving the next checkpoint.
+- [ ] Build the Speaking Engagements breakout page from the user-provided source material.
+- [ ] Map the Speaking Engagements workshop, keynote, and four-pillar content into the service-detail structure.
+- [ ] Regenerate and verify the updated Speaking Engagements breakout page in preview before saving the next checkpoint.
