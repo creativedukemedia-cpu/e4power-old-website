@@ -748,7 +748,22 @@ def build_service_section(service, include_links=True):
 def write_catalog_page(page):
     page_head = base_head.replace('<title>E4 Power</title>', f'<title>{html.escape(page["title"])}</title>')
     page_head = page_head.replace('</head>', custom_css + '\n</head>')
-    service_sections = ''.join(build_service_section(service) for service in services)
+    service_lookup = {service['slug']: service for service in services}
+    featured_service_slugs = [
+        'grant-writing',
+        'grant-management',
+        'project-management',
+        'readiness-assessments',
+        'intellectual-property',
+        'financial-management',
+        'speaking-engagements',
+        'it-app-development',
+    ]
+    service_sections = ''.join(
+        build_service_section(service_lookup[slug])
+        for slug in featured_service_slugs
+        if slug in service_lookup
+    )
     body = f'''<!-- Design philosophy: Reference-led service gallery. Organize the Services catalog by named service, then show the four pillar lenses together beneath each service heading. -->
 {page_head}<body class="body ref-page-shell">{nav_html}
 <section class="ref-gallery-section"><div class="container"><div class="ref-top-block"><div class="ref-heading-stack"><div class="ref-heading-accent">{html.escape(page['accent_word'])}</div><h1 class="ref-heading-main">{html.escape(page['main_word'])}</h1></div><div class="ref-meta-row"><div class="ref-divider-wrap"><div class="ref-divider"></div><div class="ref-overline">{html.escape(page['overline'])}</div></div><img class="ref-mark" alt="E4 Power logo" src="{E4_LOGO}"/></div><div class="ref-subhead-row"><div><h2 class="ref-subtitle">{page['subtitle']}</h2><p class="ref-page-summary">{html.escape(page['summary'])}</p></div><a class="ref-cta-button" href="{page['button_href']}">{html.escape(page['button_label'])}</a></div></div>{service_sections}<div class="ref-bottom-copy">{html.escape(page['closing_copy'])}</div><div class="ref-bottom-links">{render_links(page['secondary_links'])}</div></div></section>
@@ -938,7 +953,7 @@ services = [
     },
     {
         'slug': 'it-app-development',
-        'title': 'IT/AI Services',
+        'title': 'IT Solutions',
         'catalog_summary': 'IT Solutions should be presented exactly as a named service block with all four pillar cards beneath it, so visitors can see how one digital service supports the full E4 model.',
         'detail_summary': 'This page frames IT Solutions as a service that teaches teams, strengthens competitiveness, improves execution, and creates stronger partnership pathways through custom digital infrastructure.',
         'closing_copy': 'IT Solutions is strongest when E4 Power needs to turn advisory thinking into practical systems, whether that means education, workflow enablement, or full digital delivery.',
@@ -1120,7 +1135,7 @@ pillar_pages = [
         'cards': [
             {'title': 'Grant Writing (Pre-Award)', 'label': 'Empower', 'note': 'Proposal strategy and submission support with competitive focus.', 'points': ['Opportunity scans', 'Narrative development', 'Submission support'], 'placeholder': 'Grant Writing'},
             {'title': 'Intellectual Property Services', 'label': 'Empower', 'note': 'Innovation protection and commercialization-aware guidance.', 'points': ['Protection strategy', 'Commercial framing', 'Research-value alignment'], 'placeholder': 'IP'},
-            {'title': 'IT/AI Services', 'label': 'Empower', 'note': 'Digital systems that turn strategy into tangible infrastructure.', 'points': ['Custom portals', 'Web app delivery', 'Strategic buildouts'], 'placeholder': 'IT Solutions'},
+            {'title': 'IT Solutions', 'label': 'Empower', 'note': 'Digital systems that turn strategy into tangible infrastructure.', 'points': ['Custom portals', 'Web app delivery', 'Strategic buildouts'], 'placeholder': 'IT Solutions'},
             {'title': 'Readiness Assessments', 'label': 'Empower', 'note': 'Assessments that clarify what path can create momentum fastest.', 'points': ['Priority sequencing', 'Infrastructure mapping', 'Competitive baseline'], 'placeholder': 'Readiness'},
         ],
         'closing_copy': 'Use Empower when the focus is opportunity creation, strategic positioning, and the systems that help organizations move forward with greater confidence.',
@@ -1140,7 +1155,7 @@ pillar_pages = [
             {'title': 'Grant Management (Post-Award)', 'label': 'Elevate', 'note': 'Post-award stewardship that protects credibility and momentum.', 'points': ['Reporting coordination', 'Compliance oversight', 'Award closeout support'], 'placeholder': 'Grant Management'},
             {'title': 'Project Management', 'label': 'Elevate', 'note': 'Execution systems that keep complex initiatives coordinated while strengthening accountability and internal delivery discipline.', 'points': ['Detailed work plans', 'Risk mitigation planning', 'KPI reporting'], 'placeholder': 'Project Management'},
             {'title': 'Financial Management', 'label': 'Elevate', 'note': 'Fiscal discipline aligned with funder expectations and operational trust.', 'points': ['Budget oversight', 'Audit-conscious controls', 'Financial communication'], 'placeholder': 'Financial'},
-            {'title': 'IT/AI Services', 'label': 'Elevate', 'note': 'Operational systems that improve visibility, workflows, and continuity.', 'points': ['Workflow automation', 'Dashboards', 'Maintenance planning'], 'placeholder': 'IT Elevate'},
+            {'title': 'IT Solutions', 'label': 'Elevate', 'note': 'Operational systems that improve visibility, workflows, and continuity.', 'points': ['Workflow automation', 'Dashboards', 'Maintenance planning'], 'placeholder': 'IT Elevate'},
         ],
         'closing_copy': 'Use Elevate when clients need proof that E4 Power can move from planning into disciplined delivery, stewardship, and operational continuity.',
         'secondary_links': [('Services Hub', '/services/'), ('Educate', '/educate/'), ('Empower', '/empower/'), ('Engage', '/engage/')],
@@ -1159,7 +1174,7 @@ pillar_pages = [
             {'title': 'Institutional Discovery', 'label': 'Engage', 'note': 'Early conversations that clarify fit, priorities, and the best first move.', 'points': ['Discovery meetings', 'Needs clarification', 'Roadmap direction'], 'placeholder': 'Discovery'},
             {'title': 'Advisory Alignment', 'label': 'Engage', 'note': 'Alignment work that connects the right people to the right plan.', 'points': ['Decision-maker alignment', 'Partnership structure', 'Collaborative planning'], 'placeholder': 'Alignment'},
             {'title': 'Speaking Engagements', 'label': 'Engage', 'note': 'Visible thought leadership that opens trust-based relationships.', 'points': ['Thought-leadership entry', 'Trust-building presence', 'Advisory opening'], 'placeholder': 'Speaking Engage'},
-            {'title': 'IT/AI Services', 'label': 'Engage', 'note': 'Digital discovery conversations shaped around listening and institutional fit.', 'points': ['Discovery-led scoping', 'Stakeholder alignment', 'Partnership-first planning'], 'placeholder': 'IT Engage'},
+            {'title': 'IT Solutions', 'label': 'Engage', 'note': 'Digital discovery conversations shaped around listening and institutional fit.', 'points': ['Discovery-led scoping', 'Stakeholder alignment', 'Partnership-first planning'], 'placeholder': 'IT Engage'},
         ],
         'closing_copy': 'Use Engage when the work should begin with listening, advisory trust, and a deliberate pathway into broader support.',
         'secondary_links': [('Services Hub', '/services/'), ('Educate', '/educate/'), ('Empower', '/empower/'), ('Elevate', '/elevate/')],

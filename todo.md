@@ -121,3 +121,6 @@
 - [ ] Raise the homepage pillar hover popup above the static hero services text.
 - [ ] Adjust the hero z-index layering so hover content no longer conflicts with the static services list.
 - [ ] Verify the corrected hover layering in preview before saving the next checkpoint.
+- [ ] Align the Services page with the 8 current main offerings shown in the latest flyer.
+- [ ] Remove any extra main service from the catalog so the page shows only the flyer’s 8 core services.
+- [ ] Verify the updated 8-service catalog in preview before saving the next checkpoint.

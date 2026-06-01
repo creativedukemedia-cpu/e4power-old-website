@@ -191,7 +191,7 @@ body.home-service-menu .hero-service-hover-shell {
   bottom: 2rem;
   transform: translateX(-50%);
   width: min(92vw, 880px);
-  z-index: 20;
+  z-index: 40;
   pointer-events: none;
 }
 body.home-service-menu .hero-service-hover-shell.is-touch-mode {
@@ -370,122 +370,84 @@ body.home-service-menu .hero-service-empty {
 }
 </style>
 <style id="hero-services-marquee-styles">
-body.home-service-menu .hero-services-bar {
-  display: grid;
-  grid-template-columns: minmax(15rem, 24vw) minmax(0, 1fr);
-  align-items: stretch;
-  width: min(100%, 1600px);
-  margin: -2.75rem auto 0;
+body.home-service-menu .hero-container {
   position: relative;
+}
+body.home-service-menu .hero-services-panel {
+  position: absolute;
+  left: clamp(2.5rem, 6vw, 6rem);
+  bottom: clamp(2.75rem, 7vw, 5rem);
   z-index: 28;
-  box-shadow: 0 22px 54px rgba(0,0,0,0.34);
+  width: min(56rem, calc(100% - 5rem));
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 body.home-service-menu .hero-services-label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.3rem 1.5rem 1.15rem;
-  background: #d6a84d;
-  color: #110d08;
+  margin-bottom: .95rem;
+  color: #d6a84d;
   text-transform: uppercase;
   letter-spacing: .08em;
-  font-size: 1.35rem;
+  font-size: 1.18rem;
   line-height: 1;
-  white-space: nowrap;
+  font-weight: 700;
+  text-shadow: 0 8px 24px rgba(0,0,0,0.45);
 }
-body.home-service-menu .hero-services-marquee {
-  position: relative;
-  overflow: hidden;
-  background: rgba(5,5,5,0.96);
-  border-top: 1px solid rgba(255,255,255,0.08);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+body.home-service-menu .hero-services-list {
+  color: #f6efe3;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  font-size: .98rem;
+  line-height: 1.95;
+  text-shadow: 0 10px 24px rgba(0,0,0,0.55);
 }
-body.home-service-menu .hero-services-marquee::before,
-body.home-service-menu .hero-services-marquee::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 4rem;
-  z-index: 2;
-  pointer-events: none;
-}
-body.home-service-menu .hero-services-marquee::before {
-  left: 0;
-  background: linear-gradient(90deg, rgba(5,5,5,0.96), rgba(5,5,5,0));
-}
-body.home-service-menu .hero-services-marquee::after {
-  right: 0;
-  background: linear-gradient(270deg, rgba(5,5,5,0.96), rgba(5,5,5,0));
-}
-body.home-service-menu .hero-services-track {
-  display: flex;
-  width: max-content;
-  will-change: transform;
-  animation: hero-services-scroll 34s linear infinite;
-}
-body.home-service-menu .hero-services-group {
-  display: flex;
-  align-items: center;
-  gap: 1.15rem;
-  flex: 0 0 auto;
-  padding: 1.18rem 0 1.02rem;
-}
-body.home-service-menu .hero-services-item,
-body.home-service-menu .hero-services-separator {
-  flex: 0 0 auto;
+body.home-service-menu .hero-services-line {
+  display: block;
 }
 body.home-service-menu .hero-services-item {
-  color: #f7f0e4;
-  text-transform: uppercase;
-  letter-spacing: .07em;
-  font-size: 1.28rem;
-  line-height: 1;
   white-space: nowrap;
 }
 body.home-service-menu .hero-services-separator {
-  color: rgba(214,168,77,0.82);
-  font-size: 1.1rem;
-  line-height: 1;
-}
-@keyframes hero-services-scroll {
-  from { transform: translate3d(0,0,0); }
-  to { transform: translate3d(-50%,0,0); }
+  color: rgba(214,168,77,0.88);
+  margin: 0 .42rem;
 }
 @media screen and (max-width: 991px) {
-  body.home-service-menu .hero-services-bar {
-    grid-template-columns: 1fr;
-    margin-top: -1.9rem;
+  body.home-service-menu .hero-services-panel {
+    left: 1.4rem;
+    right: 1.4rem;
+    bottom: 1.5rem;
+    width: auto;
   }
   body.home-service-menu .hero-services-label {
-    justify-content: flex-start;
-    padding-left: 1.3rem;
-    font-size: 1.05rem;
-  }
-  body.home-service-menu .hero-services-item {
     font-size: 1rem;
+  }
+  body.home-service-menu .hero-services-list {
+    font-size: .82rem;
+    line-height: 1.8;
   }
 }
 @media screen and (max-width: 767px) {
-  body.home-service-menu .hero-services-marquee::before,
-  body.home-service-menu .hero-services-marquee::after {
-    width: 2rem;
+  body.home-service-menu .hero-services-panel {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    padding: .85rem .9rem .9rem;
+    background: linear-gradient(135deg, rgba(8,8,8,0.72), rgba(8,8,8,0.36));
+    border: 1px solid rgba(255,255,255,0.1);
   }
-  body.home-service-menu .hero-services-group {
-    gap: .8rem;
-    padding: .95rem 0 .88rem;
+  body.home-service-menu .hero-services-label {
+    margin-bottom: .65rem;
+    font-size: .92rem;
   }
-  body.home-service-menu .hero-services-item {
-    font-size: .82rem;
-    letter-spacing: .06em;
+  body.home-service-menu .hero-services-list {
+    font-size: .74rem;
+    line-height: 1.7;
+    letter-spacing: .035em;
   }
   body.home-service-menu .hero-services-separator {
-    font-size: .82rem;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  body.home-service-menu .hero-services-track {
-    animation: none;
+    margin: 0 .28rem;
   }
 }
 </style>
@@ -1030,7 +992,7 @@ body.home-service-menu .hero-services-separator {
 </style>
 
 </head><body class="body ref-page-shell"><nav class="navbar-logo-left"><div class="navbar-logo-left-container shadow-three w-nav" data-animation="over-right" data-collapse="all" data-duration="400" data-easing="ease" data-easing2="ease" role="banner"><div class="navbar-container"><div class="navbar-wrapper"><a class="navbar-brand w-nav-brand" href="/"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68bcc54da8714105bb252c7f_e4_logo_white.svg"/></a><div class="navbar-right-div"><div class="socials-div"><a class="social-link-block w-inline-block" href="https://www.instagram.com/e4power_?igsh=bXR4bThxMHh2dHNy&amp;utm_source=qr" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c4ee8e329fe01d525b_instagram.svg"/></a><a class="social-link-block w-inline-block" href="https://www.linkedin.com/company/e4-power-consulting/" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c46c9537fa67bb89bd_linkedin.svg"/></a><a class="social-link-block w-inline-block" href="https://www.tiktok.com/@e4powerconsulting?_t=ZT-90YVLBMkwaT&amp;_r=1" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68f66f4d7a2ffc0d86a72550_tiktok.svg"/></a><a class="social-link-block w-inline-block" href="https://www.facebook.com/profile.php?id=61573544665670&amp;mibextid=wwXIfr&amp;rdid=yOcyRogs7shBnrLD&amp;share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1775G2zRAh%2F%3Fmibextid%3DwwXIfr#" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c48dbb4dd69e849624_facebook.svg"/></a></div><a class="text-link" href="/contact-us">Contact Us</a><div class="menu-button w-nav-button"><div class="hamburger-icon w-icon-nav-menu"></div></div></div><nav class="nav-menu-wrapper w-nav-menu" role="navigation"><ul class="nav-menu-two w-list-unstyled" role="list"><li><a class="nav-link" href="/services/">SERVICES</a></li><li><a class="nav-link" href="/educate/">EDUCATE</a></li><li><a class="nav-link" href="/empower/">EMPOWER</a></li><li><a class="nav-link" href="/elevate/">ELEVATE</a></li><li><a class="nav-link" href="/engage/">ENGAGE</a></li></ul></nav></div></div></div></nav>
-<section class="ref-gallery-section"><div class="container"><div class="ref-top-block"><div class="ref-heading-stack"><div class="ref-heading-accent">Elevate</div><h1 class="ref-heading-main">Services</h1></div><div class="ref-meta-row"><div class="ref-divider-wrap"><div class="ref-divider"></div><div class="ref-overline">Meet the experts behind your success</div></div><img class="ref-mark" alt="E4 Power logo" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68bcc54da8714105bb252c7f_e4_logo_white.svg"/></div><div class="ref-subhead-row"><div><h2 class="ref-subtitle">Our expertise <span>Your advantage</span></h2><p class="ref-page-summary">Elevate remains the execution-facing pillar, showing how E4 Power supports operational discipline, stewardship, and measurable delivery after plans are made.</p></div><a class="ref-cta-button" href="/contact-us">Contact Us</a></div></div><div class="ref-grid"><article class="ref-card"><div class="ref-card-media" style="background-image:url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20900%201200%22%20role%3D%22img%22%20aria-label%3D%22GRANT%20MANAGEMENT%22%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23d8d8d8%22/%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22url%28%23g%29%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%2284%22%20width%3D%22744%22%20height%3D%22344%22%20rx%3D%2218%22%20fill%3D%22%23202020%22%20opacity%3D%220.92%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%22472%22%20width%3D%22744%22%20height%3D%22548%22%20rx%3D%2218%22%20fill%3D%22%23f5f5f5%22%20opacity%3D%220.9%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22128%22%20y%3D%22146%22%20width%3D%22210%22%20height%3D%22210%22%20rx%3D%2220%22%20fill%3D%22%233b3b3b%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22146%22%20width%3D%22378%22%20height%3D%2234%22%20rx%3D%2210%22%20fill%3D%22%235a5a5a%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22214%22%20width%3D%22294%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22268%22%20width%3D%22332%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22322%22%20width%3D%22238%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22548%22%20width%3D%22608%22%20height%3D%22320%22%20rx%3D%2218%22%20fill%3D%22%23b1b1b1%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22916%22%20width%3D%22480%22%20height%3D%2232%22%20rx%3D%2210%22%20fill%3D%22%23949494%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Ctext%20x%3D%22146%22%20y%3D%221090%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-size%3D%2264%22%20font-weight%3D%22700%22%20letter-spacing%3D%226%22%20fill%3D%22%231f1f1f%22%3EGRANT%20MANAGEMENT%3C/text%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ececec%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%2255%25%22%20stop-color%3D%22%23cfcfcf%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23adadad%22/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3C/svg%3E')"></div><div class="ref-card-titleband">Grant Management (Post-Award)</div><div class="ref-card-label">Elevate</div><p class="ref-card-note">Post-award stewardship that protects credibility and momentum.</p><ul class="ref-point-list"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Reporting coordination</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Compliance oversight</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Award closeout support</span></li></ul></article><article class="ref-card"><div class="ref-card-media" style="background-image:url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20900%201200%22%20role%3D%22img%22%20aria-label%3D%22PROJECT%20MANAGEMENT%22%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23d8d8d8%22/%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22url%28%23g%29%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%2284%22%20width%3D%22744%22%20height%3D%22344%22%20rx%3D%2218%22%20fill%3D%22%23202020%22%20opacity%3D%220.92%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%22472%22%20width%3D%22744%22%20height%3D%22548%22%20rx%3D%2218%22%20fill%3D%22%23f5f5f5%22%20opacity%3D%220.9%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22128%22%20y%3D%22146%22%20width%3D%22210%22%20height%3D%22210%22%20rx%3D%2220%22%20fill%3D%22%233b3b3b%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22146%22%20width%3D%22378%22%20height%3D%2234%22%20rx%3D%2210%22%20fill%3D%22%235a5a5a%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22214%22%20width%3D%22294%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22268%22%20width%3D%22332%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22322%22%20width%3D%22238%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22548%22%20width%3D%22608%22%20height%3D%22320%22%20rx%3D%2218%22%20fill%3D%22%23b1b1b1%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22916%22%20width%3D%22480%22%20height%3D%2232%22%20rx%3D%2210%22%20fill%3D%22%23949494%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Ctext%20x%3D%22146%22%20y%3D%221090%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-size%3D%2264%22%20font-weight%3D%22700%22%20letter-spacing%3D%226%22%20fill%3D%22%231f1f1f%22%3EPROJECT%20MANAGEMENT%3C/text%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ececec%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%2255%25%22%20stop-color%3D%22%23cfcfcf%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23adadad%22/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3C/svg%3E')"></div><div class="ref-card-titleband">Project Management</div><div class="ref-card-label">Elevate</div><p class="ref-card-note">Execution systems that keep complex initiatives coordinated while strengthening accountability and internal delivery discipline.</p><ul class="ref-point-list"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Detailed work plans</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Risk mitigation planning</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>KPI reporting</span></li></ul></article><article class="ref-card"><div class="ref-card-media" style="background-image:url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20900%201200%22%20role%3D%22img%22%20aria-label%3D%22FINANCIAL%22%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23d8d8d8%22/%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22url%28%23g%29%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%2284%22%20width%3D%22744%22%20height%3D%22344%22%20rx%3D%2218%22%20fill%3D%22%23202020%22%20opacity%3D%220.92%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%22472%22%20width%3D%22744%22%20height%3D%22548%22%20rx%3D%2218%22%20fill%3D%22%23f5f5f5%22%20opacity%3D%220.9%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22128%22%20y%3D%22146%22%20width%3D%22210%22%20height%3D%22210%22%20rx%3D%2220%22%20fill%3D%22%233b3b3b%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22146%22%20width%3D%22378%22%20height%3D%2234%22%20rx%3D%2210%22%20fill%3D%22%235a5a5a%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22214%22%20width%3D%22294%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22268%22%20width%3D%22332%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22322%22%20width%3D%22238%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22548%22%20width%3D%22608%22%20height%3D%22320%22%20rx%3D%2218%22%20fill%3D%22%23b1b1b1%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22916%22%20width%3D%22480%22%20height%3D%2232%22%20rx%3D%2210%22%20fill%3D%22%23949494%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Ctext%20x%3D%22146%22%20y%3D%221090%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-size%3D%2264%22%20font-weight%3D%22700%22%20letter-spacing%3D%226%22%20fill%3D%22%231f1f1f%22%3EFINANCIAL%3C/text%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ececec%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%2255%25%22%20stop-color%3D%22%23cfcfcf%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23adadad%22/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3C/svg%3E')"></div><div class="ref-card-titleband">Financial Management</div><div class="ref-card-label">Elevate</div><p class="ref-card-note">Fiscal discipline aligned with funder expectations and operational trust.</p><ul class="ref-point-list"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Budget oversight</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Audit-conscious controls</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Financial communication</span></li></ul></article><article class="ref-card"><div class="ref-card-media" style="background-image:url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20900%201200%22%20role%3D%22img%22%20aria-label%3D%22IT%20ELEVATE%22%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23d8d8d8%22/%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22url%28%23g%29%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%2284%22%20width%3D%22744%22%20height%3D%22344%22%20rx%3D%2218%22%20fill%3D%22%23202020%22%20opacity%3D%220.92%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%22472%22%20width%3D%22744%22%20height%3D%22548%22%20rx%3D%2218%22%20fill%3D%22%23f5f5f5%22%20opacity%3D%220.9%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22128%22%20y%3D%22146%22%20width%3D%22210%22%20height%3D%22210%22%20rx%3D%2220%22%20fill%3D%22%233b3b3b%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22146%22%20width%3D%22378%22%20height%3D%2234%22%20rx%3D%2210%22%20fill%3D%22%235a5a5a%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22214%22%20width%3D%22294%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22268%22%20width%3D%22332%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22322%22%20width%3D%22238%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22548%22%20width%3D%22608%22%20height%3D%22320%22%20rx%3D%2218%22%20fill%3D%22%23b1b1b1%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22916%22%20width%3D%22480%22%20height%3D%2232%22%20rx%3D%2210%22%20fill%3D%22%23949494%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Ctext%20x%3D%22146%22%20y%3D%221090%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-size%3D%2264%22%20font-weight%3D%22700%22%20letter-spacing%3D%226%22%20fill%3D%22%231f1f1f%22%3EIT%20ELEVATE%3C/text%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ececec%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%2255%25%22%20stop-color%3D%22%23cfcfcf%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23adadad%22/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3C/svg%3E')"></div><div class="ref-card-titleband">IT/AI Services</div><div class="ref-card-label">Elevate</div><p class="ref-card-note">Operational systems that improve visibility, workflows, and continuity.</p><ul class="ref-point-list"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Workflow automation</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Dashboards</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Maintenance planning</span></li></ul></article></div><div class="ref-bottom-copy">Use Elevate when clients need proof that E4 Power can move from planning into disciplined delivery, stewardship, and operational continuity.</div><div class="ref-bottom-links"><a class="ref-secondary-link primary" href="/services/">Services Hub</a><a class="ref-secondary-link" href="/educate/">Educate</a><a class="ref-secondary-link" href="/empower/">Empower</a><a class="ref-secondary-link" href="/engage/">Engage</a></div></div></section>
+<section class="ref-gallery-section"><div class="container"><div class="ref-top-block"><div class="ref-heading-stack"><div class="ref-heading-accent">Elevate</div><h1 class="ref-heading-main">Services</h1></div><div class="ref-meta-row"><div class="ref-divider-wrap"><div class="ref-divider"></div><div class="ref-overline">Meet the experts behind your success</div></div><img class="ref-mark" alt="E4 Power logo" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68bcc54da8714105bb252c7f_e4_logo_white.svg"/></div><div class="ref-subhead-row"><div><h2 class="ref-subtitle">Our expertise <span>Your advantage</span></h2><p class="ref-page-summary">Elevate remains the execution-facing pillar, showing how E4 Power supports operational discipline, stewardship, and measurable delivery after plans are made.</p></div><a class="ref-cta-button" href="/contact-us">Contact Us</a></div></div><div class="ref-grid"><article class="ref-card"><div class="ref-card-media" style="background-image:url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20900%201200%22%20role%3D%22img%22%20aria-label%3D%22GRANT%20MANAGEMENT%22%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23d8d8d8%22/%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22url%28%23g%29%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%2284%22%20width%3D%22744%22%20height%3D%22344%22%20rx%3D%2218%22%20fill%3D%22%23202020%22%20opacity%3D%220.92%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%22472%22%20width%3D%22744%22%20height%3D%22548%22%20rx%3D%2218%22%20fill%3D%22%23f5f5f5%22%20opacity%3D%220.9%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22128%22%20y%3D%22146%22%20width%3D%22210%22%20height%3D%22210%22%20rx%3D%2220%22%20fill%3D%22%233b3b3b%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22146%22%20width%3D%22378%22%20height%3D%2234%22%20rx%3D%2210%22%20fill%3D%22%235a5a5a%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22214%22%20width%3D%22294%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22268%22%20width%3D%22332%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22322%22%20width%3D%22238%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22548%22%20width%3D%22608%22%20height%3D%22320%22%20rx%3D%2218%22%20fill%3D%22%23b1b1b1%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22916%22%20width%3D%22480%22%20height%3D%2232%22%20rx%3D%2210%22%20fill%3D%22%23949494%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Ctext%20x%3D%22146%22%20y%3D%221090%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-size%3D%2264%22%20font-weight%3D%22700%22%20letter-spacing%3D%226%22%20fill%3D%22%231f1f1f%22%3EGRANT%20MANAGEMENT%3C/text%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ececec%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%2255%25%22%20stop-color%3D%22%23cfcfcf%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23adadad%22/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3C/svg%3E')"></div><div class="ref-card-titleband">Grant Management (Post-Award)</div><div class="ref-card-label">Elevate</div><p class="ref-card-note">Post-award stewardship that protects credibility and momentum.</p><ul class="ref-point-list"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Reporting coordination</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Compliance oversight</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Award closeout support</span></li></ul></article><article class="ref-card"><div class="ref-card-media" style="background-image:url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20900%201200%22%20role%3D%22img%22%20aria-label%3D%22PROJECT%20MANAGEMENT%22%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23d8d8d8%22/%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22url%28%23g%29%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%2284%22%20width%3D%22744%22%20height%3D%22344%22%20rx%3D%2218%22%20fill%3D%22%23202020%22%20opacity%3D%220.92%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%22472%22%20width%3D%22744%22%20height%3D%22548%22%20rx%3D%2218%22%20fill%3D%22%23f5f5f5%22%20opacity%3D%220.9%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22128%22%20y%3D%22146%22%20width%3D%22210%22%20height%3D%22210%22%20rx%3D%2220%22%20fill%3D%22%233b3b3b%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22146%22%20width%3D%22378%22%20height%3D%2234%22%20rx%3D%2210%22%20fill%3D%22%235a5a5a%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22214%22%20width%3D%22294%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22268%22%20width%3D%22332%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22322%22%20width%3D%22238%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22548%22%20width%3D%22608%22%20height%3D%22320%22%20rx%3D%2218%22%20fill%3D%22%23b1b1b1%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22916%22%20width%3D%22480%22%20height%3D%2232%22%20rx%3D%2210%22%20fill%3D%22%23949494%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Ctext%20x%3D%22146%22%20y%3D%221090%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-size%3D%2264%22%20font-weight%3D%22700%22%20letter-spacing%3D%226%22%20fill%3D%22%231f1f1f%22%3EPROJECT%20MANAGEMENT%3C/text%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ececec%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%2255%25%22%20stop-color%3D%22%23cfcfcf%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23adadad%22/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3C/svg%3E')"></div><div class="ref-card-titleband">Project Management</div><div class="ref-card-label">Elevate</div><p class="ref-card-note">Execution systems that keep complex initiatives coordinated while strengthening accountability and internal delivery discipline.</p><ul class="ref-point-list"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Detailed work plans</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Risk mitigation planning</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>KPI reporting</span></li></ul></article><article class="ref-card"><div class="ref-card-media" style="background-image:url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20900%201200%22%20role%3D%22img%22%20aria-label%3D%22FINANCIAL%22%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23d8d8d8%22/%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22url%28%23g%29%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%2284%22%20width%3D%22744%22%20height%3D%22344%22%20rx%3D%2218%22%20fill%3D%22%23202020%22%20opacity%3D%220.92%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%22472%22%20width%3D%22744%22%20height%3D%22548%22%20rx%3D%2218%22%20fill%3D%22%23f5f5f5%22%20opacity%3D%220.9%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22128%22%20y%3D%22146%22%20width%3D%22210%22%20height%3D%22210%22%20rx%3D%2220%22%20fill%3D%22%233b3b3b%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22146%22%20width%3D%22378%22%20height%3D%2234%22%20rx%3D%2210%22%20fill%3D%22%235a5a5a%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22214%22%20width%3D%22294%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22268%22%20width%3D%22332%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22322%22%20width%3D%22238%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22548%22%20width%3D%22608%22%20height%3D%22320%22%20rx%3D%2218%22%20fill%3D%22%23b1b1b1%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22916%22%20width%3D%22480%22%20height%3D%2232%22%20rx%3D%2210%22%20fill%3D%22%23949494%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Ctext%20x%3D%22146%22%20y%3D%221090%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-size%3D%2264%22%20font-weight%3D%22700%22%20letter-spacing%3D%226%22%20fill%3D%22%231f1f1f%22%3EFINANCIAL%3C/text%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ececec%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%2255%25%22%20stop-color%3D%22%23cfcfcf%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23adadad%22/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3C/svg%3E')"></div><div class="ref-card-titleband">Financial Management</div><div class="ref-card-label">Elevate</div><p class="ref-card-note">Fiscal discipline aligned with funder expectations and operational trust.</p><ul class="ref-point-list"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Budget oversight</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Audit-conscious controls</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Financial communication</span></li></ul></article><article class="ref-card"><div class="ref-card-media" style="background-image:url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20900%201200%22%20role%3D%22img%22%20aria-label%3D%22IT%20ELEVATE%22%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23d8d8d8%22/%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22url%28%23g%29%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%2284%22%20width%3D%22744%22%20height%3D%22344%22%20rx%3D%2218%22%20fill%3D%22%23202020%22%20opacity%3D%220.92%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%22472%22%20width%3D%22744%22%20height%3D%22548%22%20rx%3D%2218%22%20fill%3D%22%23f5f5f5%22%20opacity%3D%220.9%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22128%22%20y%3D%22146%22%20width%3D%22210%22%20height%3D%22210%22%20rx%3D%2220%22%20fill%3D%22%233b3b3b%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22146%22%20width%3D%22378%22%20height%3D%2234%22%20rx%3D%2210%22%20fill%3D%22%235a5a5a%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22214%22%20width%3D%22294%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22268%22%20width%3D%22332%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22322%22%20width%3D%22238%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22548%22%20width%3D%22608%22%20height%3D%22320%22%20rx%3D%2218%22%20fill%3D%22%23b1b1b1%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22916%22%20width%3D%22480%22%20height%3D%2232%22%20rx%3D%2210%22%20fill%3D%22%23949494%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Ctext%20x%3D%22146%22%20y%3D%221090%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-size%3D%2264%22%20font-weight%3D%22700%22%20letter-spacing%3D%226%22%20fill%3D%22%231f1f1f%22%3EIT%20ELEVATE%3C/text%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ececec%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%2255%25%22%20stop-color%3D%22%23cfcfcf%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23adadad%22/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3C/svg%3E')"></div><div class="ref-card-titleband">IT Solutions</div><div class="ref-card-label">Elevate</div><p class="ref-card-note">Operational systems that improve visibility, workflows, and continuity.</p><ul class="ref-point-list"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Workflow automation</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Dashboards</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Maintenance planning</span></li></ul></article></div><div class="ref-bottom-copy">Use Elevate when clients need proof that E4 Power can move from planning into disciplined delivery, stewardship, and operational continuity.</div><div class="ref-bottom-links"><a class="ref-secondary-link primary" href="/services/">Services Hub</a><a class="ref-secondary-link" href="/educate/">Educate</a><a class="ref-secondary-link" href="/empower/">Empower</a><a class="ref-secondary-link" href="/engage/">Engage</a></div></div></section>
 <footer class="section footer"><div class="container"><div class="footer-div"><a class="footer-logo w-inline-block" href="#"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68bcc54da8714105bb252c7f_e4_logo_white.svg"/></a><div class="footer-links-div">
 
 
