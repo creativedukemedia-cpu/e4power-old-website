@@ -118,3 +118,6 @@
 - [ ] Remove the continuous services banner from the homepage hero area.
 - [ ] Replace the moving banner with a static services list styled like the provided reference image.
 - [ ] Verify the updated homepage hero services list in preview before saving the next checkpoint.
+- [ ] Raise the homepage pillar hover popup above the static hero services text.
+- [ ] Adjust the hero z-index layering so hover content no longer conflicts with the static services list.
+- [ ] Verify the corrected hover layering in preview before saving the next checkpoint.
