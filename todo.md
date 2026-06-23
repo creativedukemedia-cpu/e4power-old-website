@@ -133,3 +133,6 @@
 - [ ] Build the Speaking Engagements breakout page from the user-provided source material.
 - [ ] Map the Speaking Engagements workshop, keynote, and four-pillar content into the service-detail structure.
 - [ ] Regenerate and verify the updated Speaking Engagements breakout page in preview before saving the next checkpoint.
+- [ ] Urgently remove the entire E4 Intellectual Property Services section from the website.
+- [ ] Remove related Intellectual Property references from the main Services catalog and relevant homepage and service surfaces.
+- [ ] Regenerate and verify that Intellectual Property Services no longer appears in preview before saving the next checkpoint.
