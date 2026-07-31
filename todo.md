@@ -136,3 +136,17 @@
 - [ ] Urgently remove the entire E4 Intellectual Property Services section from the website.
 - [ ] Remove related Intellectual Property references from the main Services catalog and relevant homepage and service surfaces.
 - [ ] Regenerate and verify that Intellectual Property Services no longer appears in preview before saving the next checkpoint.
+- [ ] Review the proposed traditional top-navigation and hero redesign plan against the current homepage structure and the provided reference direction.
+- [ ] Recommend a revised homepage information hierarchy that keeps the video background and visible services while clarifying audience, value proposition, and trust signals.
+- [ ] Assess whether light mode, dark mode, or a selectively brightened dark theme best fits the E4 brand and current implementation.
+- [ ] Outline CMS and content-publishing requirements for white papers, newsletters, funding opportunities, and recurring thought-leadership updates.
+- [ ] Evaluate the LinkedIn feed widget idea, including implementation approach, platform constraints, and whether a project upgrade is required.
+- [ ] Review revenue-channel opportunities for website fit, sequencing, and technical dependencies.
+- [ ] Save a stable pre-Phase-1 checkpoint before modifying the homepage or navigation so the redesign can be reverted safely if needed.
+- [ ] Read the relevant design guidance before implementing the Phase 1 homepage changes.
+- [ ] Redesign the homepage header into a more traditional top navigation while preserving E4 branding and responsive behavior.
+- [ ] Restructure the hero so it keeps the video background and visible services while making the value proposition clearer on first view.
+- [ ] Brighten the homepage presentation selectively without losing the dark editorial E4 look and gold accent identity.
+- [ ] Move trust signals such as partner logos, testimonials, and service emphasis higher in the homepage hierarchy.
+- [ ] Verify the redesigned homepage in preview before saving the next checkpoint.
+- [ ] Save a post-Phase-1 checkpoint once the redesign is working and visually validated.
