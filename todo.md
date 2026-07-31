@@ -150,3 +150,7 @@
 - [ ] Move trust signals such as partner logos, testimonials, and service emphasis higher in the homepage hierarchy.
 - [ ] Verify the redesigned homepage in preview before saving the next checkpoint.
 - [ ] Save a post-Phase-1 checkpoint once the redesign is working and visually validated.
+- [ ] Save a stable pre-hero-revision checkpoint before modifying the homepage again.
+- [ ] Rebuild only the homepage hero to follow the provided reference as closely as possible.
+- [ ] Preserve the video background and visible hero services while matching the reference composition, hierarchy, and tone more faithfully.
+- [ ] Verify the revised hero in preview against the provided reference before saving the next checkpoint.
