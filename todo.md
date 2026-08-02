@@ -167,3 +167,7 @@
 - [ ] Collapse the mobile navigation into a hamburger menu instead of showing all links inline.
 - [ ] Correct the social icons so they are visibly rendered in the hero header.
 - [ ] Verify both mobile and desktop header behavior after the fixes.
+- [ ] Restore visible social icon glyphs inside the four top navigation circles on mobile.
+- [ ] Make the hero background video visually perceptible behind the mobile overlay composition.
+- [ ] Redesign the mobile services panel at the bottom of the hero so the content fits cleanly and reads well.
+- [ ] Re-verify the mobile header and hero against the user's screenshot after the fixes.

@@ -460,12 +460,10 @@ body.home-service-menu .reference-topbar-brand{display:flex;align-items:center;g
 body.home-service-menu .reference-topbar-brand .brand-logo{display:flex;align-items:center;flex:0 0 auto;}
 body.home-service-menu .reference-topbar-brand .brand-logo img{width:3.15rem;filter:brightness(0) saturate(100%) invert(10%) sepia(9%) saturate(858%) hue-rotate(357deg) brightness(94%) contrast(93%);}
 body.home-service-menu .reference-socials{display:flex;align-items:center;gap:.95rem;}
-body.home-service-menu .reference-socials a{width:2.55rem;height:2.55rem;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(22,20,17,.92);}
-body.home-service-menu .reference-socials .social-icon-mask{display:block;width:1.22rem;height:1.22rem;background:#ffffff;}
-body.home-service-menu .reference-socials .social-icon-instagram{mask:url('https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c4ee8e329fe01d525b_instagram.svg') center / contain no-repeat;-webkit-mask:url('https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c4ee8e329fe01d525b_instagram.svg') center / contain no-repeat;}
-body.home-service-menu .reference-socials .social-icon-facebook{mask:url('https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c48dbb4dd69e849624_facebook.svg') center / contain no-repeat;-webkit-mask:url('https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c48dbb4dd69e849624_facebook.svg') center / contain no-repeat;}
-body.home-service-menu .reference-socials .social-icon-linkedin{mask:url('https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c46c9537fa67bb89bd_linkedin.svg') center / contain no-repeat;-webkit-mask:url('https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c46c9537fa67bb89bd_linkedin.svg') center / contain no-repeat;}
-body.home-service-menu .reference-socials .social-icon-tiktok{mask:url('https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68f66f4d7a2ffc0d86a72550_tiktok.svg') center / contain no-repeat;-webkit-mask:url('https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68f66f4d7a2ffc0d86a72550_tiktok.svg') center / contain no-repeat;}
+body.home-service-menu .reference-socials a{width:2.55rem;height:2.55rem;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(22,20,17,.92);box-shadow:0 0 0 1px rgba(255,255,255,.05) inset;}
+body.home-service-menu .reference-socials img{display:block;width:1.18rem;height:1.18rem;object-fit:contain;filter:brightness(0) invert(1);opacity:1;}
+body.home-service-menu .reference-socials svg{display:block;width:1.18rem;height:1.18rem;fill:none;stroke:#ffffff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;overflow:visible;}
+body.home-service-menu .reference-socials .icon-fill{fill:#ffffff;stroke:none;}
 body.home-service-menu .reference-topbar-toggle{display:none;appearance:none;border:1px solid rgba(255,255,255,.2);background:rgba(22,20,17,.92);border-radius:.5rem;width:2.8rem;height:2.8rem;padding:0;align-items:center;justify-content:center;cursor:pointer;}
 body.home-service-menu .reference-topbar-toggle .toggle-lines,body.home-service-menu .reference-topbar-toggle .toggle-lines::before,body.home-service-menu .reference-topbar-toggle .toggle-lines::after{display:block;content:'';width:1.2rem;height:2px;background:#ffffff;border-radius:999px;transition:transform .2s ease,opacity .2s ease;}
 body.home-service-menu .reference-topbar-toggle .toggle-lines{position:relative;}
@@ -478,9 +476,9 @@ body.home-service-menu .reference-topbar-nav{display:flex;align-items:center;jus
 body.home-service-menu .reference-topbar-nav a{color:#f6efe5;text-decoration:none;font-size:.74rem;letter-spacing:.07em;text-transform:uppercase;font-weight:700;white-space:nowrap;}
 body.home-service-menu .reference-topbar-nav a:hover,body.home-service-menu .reference-topbar-nav a:focus-visible{color:#e7be67;}
 body.home-service-menu .hero-container.reference-hero{min-height:100svh;padding:7.6rem 0 7rem;position:relative;overflow:hidden;background:#090806;}
-body.home-service-menu .hero-container.reference-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,8,6,.26) 0%,rgba(9,8,6,.56) 64%,rgba(9,8,6,.76) 100%);z-index:1;}
-body.home-service-menu .hero-container.reference-hero::after{content:'';position:absolute;left:0;right:0;bottom:7.25rem;height:4.5rem;background:linear-gradient(90deg,rgba(182,124,28,.34) 0%,rgba(182,124,28,.18) 48%,rgba(182,124,28,0) 100%);z-index:2;pointer-events:none;}
-body.home-service-menu .reference-hero-bridge{position:absolute;left:50%;top:52.5%;transform:translate(-50%,-50%);width:min(100vw,112rem);opacity:.7;z-index:3;pointer-events:none;mix-blend-mode:normal;}
+body.home-service-menu .hero-container.reference-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,8,6,.18) 0%,rgba(9,8,6,.38) 62%,rgba(9,8,6,.58) 100%);z-index:1;}
+body.home-service-menu .hero-container.reference-hero::after{content:'';position:absolute;left:0;right:0;bottom:7.25rem;height:4.5rem;background:linear-gradient(90deg,rgba(182,124,28,.24) 0%,rgba(182,124,28,.12) 48%,rgba(182,124,28,0) 100%);z-index:2;pointer-events:none;}
+body.home-service-menu .reference-hero-bridge{position:absolute;left:50%;top:52.5%;transform:translate(-50%,-50%);width:min(100vw,112rem);opacity:.58;z-index:3;pointer-events:none;mix-blend-mode:normal;}
 body.home-service-menu .reference-static-emblem{position:absolute;left:50%;top:30%;transform:translate(-50%,-50%);width:min(15.25rem,22vw);z-index:19;filter:drop-shadow(0 12px 28px rgba(0,0,0,.35));}
 body.home-service-menu .reference-hero-copy{position:absolute;left:50%;top:55.5%;transform:translate(-50%,-50%);width:min(90vw,51rem);z-index:18;text-align:center;}
 body.home-service-menu .reference-hero-title{margin:0;font-size:clamp(3rem,5.4vw,5rem);line-height:.96;letter-spacing:.01em;color:#fff7ec;text-transform:uppercase;font-weight:800;}
@@ -498,29 +496,40 @@ body.home-service-menu .hero-service-hover-shell{z-index:28;bottom:2rem;}
   body.home-service-menu .reference-topbar-nav{display:none;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:.9rem;padding:1rem 1.2rem 1.2rem;background:#1d1a17;border-top:1px solid rgba(255,255,255,.06);}
   body.home-service-menu.mobile-nav-open .reference-topbar-nav{display:flex;}
   body.home-service-menu .reference-topbar-nav a{font-size:.78rem;}
-  body.home-service-menu .hero-container.reference-hero{min-height:auto;padding:10.4rem 0 11rem;}
+  body.home-service-menu .hero-container.reference-hero{min-height:auto;padding:10.1rem 0 10.5rem;}
   body.home-service-menu .reference-static-emblem{top:28%;width:11rem;}
-  body.home-service-menu .reference-hero-copy{top:57%;width:min(92vw,38rem);}
+  body.home-service-menu .reference-hero-copy{top:56%;width:min(92vw,38rem);}
   body.home-service-menu .reference-hero-title{font-size:clamp(2.45rem,7.2vw,4rem);}
-  body.home-service-menu .reference-hero-support{font-size:1.08rem;line-height:1.46;}
-  body.home-service-menu .hero-services-panel{left:1rem;right:1rem;bottom:1.25rem;max-width:none;padding:1rem 1rem 1rem;}
-  body.home-service-menu .reference-hero-bridge{width:115vw;top:58%;opacity:.35;}
+  body.home-service-menu .reference-hero-support{font-size:1.04rem;line-height:1.42;}
+  body.home-service-menu .hero-services-panel{left:1rem;right:1rem;bottom:1rem;max-width:none;padding:.95rem .9rem 1rem;border-radius:1rem;background:rgba(11,10,8,.54);backdrop-filter:blur(8px);}
+  body.home-service-menu .hero-services-list{display:flex;flex-direction:column;gap:.55rem;font-size:.8rem;line-height:1.35;letter-spacing:.02em;}
+  body.home-service-menu .hero-services-line{display:flex;flex-wrap:wrap;gap:.55rem .6rem;justify-content:center;}
+  body.home-service-menu .hero-services-item{display:inline-flex;align-items:center;justify-content:center;padding:.48rem .6rem;border:1px solid rgba(255,255,255,.08);border-radius:.65rem;background:rgba(255,255,255,.05);text-align:center;white-space:normal;flex:1 1 calc(50% - .6rem);min-width:8.5rem;}
+  body.home-service-menu .hero-services-separator{display:none;}
+  body.home-service-menu .reference-hero-bridge{width:118vw;top:58%;opacity:.4;}
+  body.home-service-menu .background-video{opacity:1 !important;visibility:visible !important;}
+  body.home-service-menu .background-video video{display:block !important;opacity:1 !important;visibility:visible !important;object-fit:cover !important;filter:brightness(.62) contrast(1.02);}
 }
 @media screen and (max-width: 767px){
   body.home-service-menu .reference-topbar-brand{padding:.95rem 1rem;}
   body.home-service-menu .reference-socials{gap:.55rem;}
   body.home-service-menu .reference-socials a{width:2.2rem;height:2.2rem;}
-  body.home-service-menu .reference-socials .social-icon-mask{width:1rem;height:1rem;}
+  body.home-service-menu .reference-socials img, body.home-service-menu .reference-socials svg{width:.98rem;height:.98rem;}
   body.home-service-menu .reference-topbar-nav{gap:.7rem;padding:.85rem 1rem 1rem;}
-  body.home-service-menu .hero-container.reference-hero{padding:10rem 0 11.5rem;}
-  body.home-service-menu .reference-static-emblem{top:27%;width:8.4rem;}
-  body.home-service-menu .reference-hero-copy{top:58%;}
-  body.home-service-menu .reference-hero-support{font-size:.98rem;line-height:1.54;max-width:22rem;}
-  body.home-service-menu .hero-services-list{font-size:.82rem;line-height:1.7;}
+  body.home-service-menu .hero-container.reference-hero{padding:9.4rem 0 12.35rem;}
+  body.home-service-menu .reference-static-emblem{top:24.5%;width:7.9rem;}
+  body.home-service-menu .reference-hero-copy{top:54.5%;width:min(92vw,20rem);}
+  body.home-service-menu .reference-hero-title{font-size:clamp(2.5rem,10vw,3.5rem);line-height:.92;}
+  body.home-service-menu .reference-hero-support{font-size:1rem;line-height:1.48;max-width:19.75rem;}
+  body.home-service-menu .hero-services-panel{left:1rem;right:1rem;bottom:.85rem;padding:.85rem .75rem .9rem;border-radius:.9rem;}
+  body.home-service-menu .hero-services-label{font-size:.9rem;letter-spacing:.14em;margin-bottom:.5rem;}
+  body.home-service-menu .hero-services-list{font-size:.74rem;line-height:1.28;}
+  body.home-service-menu .hero-services-line{gap:.42rem;}
+  body.home-service-menu .hero-services-item{min-width:100%;flex-basis:100%;padding:.5rem .55rem;}
 }
 </style>
 
-</head><body class="body home-service-menu"><nav class="reference-topbar" role="navigation"><div class="reference-topbar-inner"><div class="reference-topbar-brand"><a aria-current="page" class="brand-logo" href="/"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68bcc54da8714105bb252c7f_e4_logo_white.svg"/></a><div class="reference-socials"><a aria-label="Instagram" href="https://www.instagram.com/e4power_?igsh=bXR4bThxMHh2dHNy&amp;utm_source=qr" target="_blank"><span class="social-icon-mask social-icon-instagram"></span></a><a aria-label="Facebook" href="https://www.facebook.com/profile.php?id=61573544665670&amp;mibextid=wwXIfr&amp;rdid=yOcyRogs7shBnrLD&amp;share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1775G2zRAh%2F%3Fmibextid%3DwwXIfr#" target="_blank"><span class="social-icon-mask social-icon-facebook"></span></a><a aria-label="LinkedIn" href="https://www.linkedin.com/company/e4-power-consulting/" target="_blank"><span class="social-icon-mask social-icon-linkedin"></span></a><a aria-label="TikTok" href="https://www.tiktok.com/@e4powerconsulting?_t=ZT-90YVLBMkwaT&amp;_r=1" target="_blank"><span class="social-icon-mask social-icon-tiktok"></span></a></div><button aria-expanded="false" aria-label="Open navigation menu" class="reference-topbar-toggle" onclick="document.body.classList.toggle('mobile-nav-open'); this.setAttribute('aria-expanded', document.body.classList.contains('mobile-nav-open') ? 'true' : 'false');"><span class="toggle-lines"></span></button></div><div class="reference-topbar-nav"><a href="#about-e4" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">ABOUT E4</a><a href="/services/" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">OUR SERVICES</a><a href="#empower" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">THE BRIDGE MODEL</a><a href="#engage" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">OUR TEAM</a><a href="/contact-us" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">CONTACT</a></div></div></nav><div class="w-embed"><style>
+</head><body class="body home-service-menu"><nav class="reference-topbar" role="navigation"><div class="reference-topbar-inner"><div class="reference-topbar-brand"><a aria-current="page" class="brand-logo" href="/"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68bcc54da8714105bb252c7f_e4_logo_white.svg"/></a><div class="reference-socials"><a aria-label="Instagram" href="https://www.instagram.com/e4power_?igsh=bXR4bThxMHh2dHNy&amp;utm_source=qr" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5.2"></rect><circle cx="12" cy="12" r="4.1"></circle><circle class="icon-fill" cx="17.5" cy="6.7" r="1.2"></circle></svg></a><a aria-label="Facebook" href="https://www.facebook.com/profile.php?id=61573544665670&amp;mibextid=wwXIfr&amp;rdid=yOcyRogs7shBnrLD&amp;share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1775G2zRAh%2F%3Fmibextid%3DwwXIfr#" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><path class="icon-fill" d="M13.4 20.5v-7h2.5l.4-3h-2.9V8.7c0-.9.3-1.5 1.6-1.5h1.5V4.6c-.7-.1-1.4-.2-2.1-.2-2.1 0-3.6 1.3-3.6 3.8v2.2H8.5v3h2.3v7h2.6z"></path></svg></a><a aria-label="LinkedIn" href="https://www.linkedin.com/company/e4-power-consulting/" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><rect class="icon-fill" x="4.1" y="9.2" width="3.1" height="10.3" rx=".4"></rect><circle class="icon-fill" cx="5.65" cy="5.95" r="1.75"></circle><path class="icon-fill" d="M10 9.2h3v1.4c.6-.9 1.7-1.7 3.5-1.7 3.3 0 3.9 2.2 3.9 5v5.6h-3.2v-5c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7v5.1H10V9.2z"></path></svg></a><a aria-label="TikTok" href="https://www.tiktok.com/@e4powerconsulting?_t=ZT-90YVLBMkwaT&amp;_r=1" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><path class="icon-fill" d="M14.8 4.2c.7 1.7 1.9 2.9 3.7 3.5v2.9c-1.4-.1-2.6-.6-3.7-1.3v5.1c0 3.2-2 5.4-5.2 5.4-2.6 0-4.7-1.9-4.7-4.5 0-2.9 2.3-4.9 5.3-4.9.4 0 .8 0 1.1.1v2.9c-.3-.1-.6-.1-1-.1-1.4 0-2.4.8-2.4 2 0 1.1.9 1.9 2 1.9 1.4 0 2.2-.9 2.2-2.6V4.2h2.7z"></path></svg></a></div><button aria-expanded="false" aria-label="Open navigation menu" class="reference-topbar-toggle" onclick="document.body.classList.toggle('mobile-nav-open'); this.setAttribute('aria-expanded', document.body.classList.contains('mobile-nav-open') ? 'true' : 'false');"><span class="toggle-lines"></span></button></div><div class="reference-topbar-nav"><a href="#about-e4" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">ABOUT E4</a><a href="/services/" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">OUR SERVICES</a><a href="#empower" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">THE BRIDGE MODEL</a><a href="#engage" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">OUR TEAM</a><a href="/contact-us" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">CONTACT</a></div></div></nav><div class="w-embed"><style>
 body {
  font-size: 0.9195402298850576vw;
 }
