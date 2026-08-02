@@ -10,3 +10,9 @@ The main remaining mismatch is vertical composition. The emblem is still overlap
 The current hero is substantially closer to the provided reference. The gold-left and dark-right top bar now mirrors the reference much more directly, the emblem sits above the headline instead of colliding with it, the bridge graphic is a primary visual layer, and the services remain visible in the lower hero area.
 
 The remaining differences are now mostly fine-grain rather than structural. The exact spacing and proportions still differ slightly from the reference, but the composition, hierarchy, and overall reading order now align much more closely with what the user requested.
+
+## August 2 reference-faithful hero verification
+
+The latest homepage pass now uses the uploaded emblem and uploaded bridge overlay, keeps the existing background video, and follows the supplied reference more closely than the previous attempt. The four social icons were corrected to the requested order of Instagram, Facebook, LinkedIn, and TikTok, and the top navigation was simplified to avoid wrapping while staying close to the reference composition.
+
+The main validation points at this stage are whether the enlarged emblem scale, tighter supporting-copy width, and simplified top-level links feel sufficiently close to the approved reference in final preview. Structurally, the hero is now aligned around the required headline, the requested BRIDGE emphasis, the dark video background, and the lower service panel.
