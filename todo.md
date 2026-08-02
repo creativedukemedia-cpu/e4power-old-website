@@ -154,3 +154,12 @@
 - [ ] Rebuild only the homepage hero to follow the provided reference as closely as possible.
 - [ ] Preserve the video background and visible hero services while matching the reference composition, hierarchy, and tone more faithfully.
 - [ ] Verify the revised hero in preview against the provided reference before saving the next checkpoint.
+- [ ] Revert the latest hero-only redesign to the stable pre-hero-revision checkpoint.
+- [ ] Prepare a precise input checklist for the user so the next hero pass can match the provided reference almost identically.
+- [ ] Use the exact hero headline "WE ARE E4POWER" with only "E4" in gold.
+- [ ] Use the exact hero body copy supplied by the user for the next reference-faithful pass.
+- [ ] Use the attached E4 emblem asset above the hero headline.
+- [ ] Use the attached bridge overlay asset over the darkened video background.
+- [ ] Keep the existing background video in place behind the overlay composition.
+- [ ] Reduce desktop nav-link size and include the key currently accessible site destinations in the top navigation.
+- [ ] Use white social icons for Instagram, Facebook, LinkedIn, and TikTok inside the four top circles.
