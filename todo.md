@@ -171,3 +171,6 @@
 - [ ] Make the hero background video visually perceptible behind the mobile overlay composition.
 - [ ] Redesign the mobile services panel at the bottom of the hero so the content fits cleanly and reads well.
 - [ ] Re-verify the mobile header and hero against the user's screenshot after the fixes.
+- [ ] Remove the obstructive mobile services panel treatment from the hero so the main hero message stays readable.
+- [ ] Choose a cleaner mobile-specific services presentation that does not cover the hero headline and copy.
+- [ ] Re-check the mobile hero against the latest user screenshot after the services redesign.
