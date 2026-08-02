@@ -163,3 +163,7 @@
 - [ ] Keep the existing background video in place behind the overlay composition.
 - [ ] Reduce desktop nav-link size and include the key currently accessible site destinations in the top navigation.
 - [ ] Use white social icons for Instagram, Facebook, LinkedIn, and TikTok inside the four top circles.
+- [ ] Fix the homepage so the hero background video remains active on mobile.
+- [ ] Collapse the mobile navigation into a hamburger menu instead of showing all links inline.
+- [ ] Correct the social icons so they are visibly rendered in the hero header.
+- [ ] Verify both mobile and desktop header behavior after the fixes.

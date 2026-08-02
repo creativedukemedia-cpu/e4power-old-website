@@ -16,3 +16,9 @@ The remaining differences are now mostly fine-grain rather than structural. The 
 The latest homepage pass now uses the uploaded emblem and uploaded bridge overlay, keeps the existing background video, and follows the supplied reference more closely than the previous attempt. The four social icons were corrected to the requested order of Instagram, Facebook, LinkedIn, and TikTok, and the top navigation was simplified to avoid wrapping while staying close to the reference composition.
 
 The main validation points at this stage are whether the enlarged emblem scale, tighter supporting-copy width, and simplified top-level links feel sufficiently close to the approved reference in final preview. Structurally, the hero is now aligned around the required headline, the requested BRIDGE emphasis, the dark video background, and the lower service panel.
+
+## Mobile fix verification notes
+
+The homepage header now includes a dedicated mobile-menu toggle, and the social links were rebuilt as masked icon elements so they do not rely on inconsistent image rendering. The hero video markup was also strengthened with autoplay, playsinline, preload, and replay logic intended to preserve mobile background playback more reliably.
+
+The latest visual review shows a cleaner desktop header with the simplified primary navigation intact. Structural validation also confirms the presence of the hamburger trigger, mobile navigation container, four social icon mask elements, and the hero video element with autoplay-oriented attributes in place.
