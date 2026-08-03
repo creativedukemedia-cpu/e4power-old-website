@@ -181,3 +181,7 @@
 - [ ] Add a slightly stronger dark overlay over the hero video for better text contrast.
 - [ ] Increase the mobile hero height and spacing so the content feels more breathable.
 - [ ] Re-verify the mobile hero against the latest screenshot after adjusting overlay and spacing.
+- [ ] Rearrange the homepage using only existing site content for Priority 1 and Priority 2 work.
+- [ ] Move an existing trust-oriented section directly under the hero without rewriting its content.
+- [ ] Reorder existing services, proof, partner, and testimonial sections to improve homepage clarity and credibility.
+- [ ] Avoid inventing, redesigning, or rewriting content during this homepage restructuring pass.
