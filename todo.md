@@ -185,3 +185,6 @@
 - [ ] Move an existing trust-oriented section directly under the hero without rewriting its content.
 - [ ] Reorder existing services, proof, partner, and testimonial sections to improve homepage clarity and credibility.
 - [ ] Avoid inventing, redesigning, or rewriting content during this homepage restructuring pass.
+- [ ] Move the existing rotating partner logo banner so it sits directly under the hero section.
+- [ ] Keep this change restructure-only without rewriting or redesigning the banner content.
+- [ ] Verify the new homepage order after the banner move.
