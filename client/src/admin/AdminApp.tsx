@@ -5,6 +5,7 @@ type CmsUser = {
   email: string;
   name: string;
   role: 'admin' | 'editor';
+  isActive?: boolean;
   lastSignedIn?: string | null;
 };
 
@@ -31,6 +32,13 @@ type CmsFormState = {
   coverImageUrl: string;
 };
 
+type StaffFormState = {
+  name: string;
+  email: string;
+  password: string;
+  role: 'admin' | 'editor';
+};
+
 const cardClass = 'rounded-3xl border border-white/10 bg-black/30 p-6 shadow-2xl backdrop-blur';
 const emptyForm: CmsFormState = {
   title: '',
@@ -40,6 +48,13 @@ const emptyForm: CmsFormState = {
   body: '',
   status: 'draft',
   coverImageUrl: '',
+};
+
+const emptyStaffForm: StaffFormState = {
+  name: '',
+  email: '',
+  password: '',
+  role: 'editor',
 };
 
 function formatContentType(value: string) {
@@ -53,6 +68,7 @@ export default function AdminApp() {
   const [requiresBootstrap, setRequiresBootstrap] = useState<boolean | null>(null);
   const [user, setUser] = useState<CmsUser | null>(null);
   const [items, setItems] = useState<CmsItem[]>([]);
+  const [staffUsers, setStaffUsers] = useState<CmsUser[]>([]);
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
   const [deleteBusyId, setDeleteBusyId] = useState<number | null>(null);
@@ -64,6 +80,8 @@ export default function AdminApp() {
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<'all' | 'draft' | 'published'>('all');
   const [typeFilter, setTypeFilter] = useState<'all' | string>('all');
+  const [staffBusy, setStaffBusy] = useState(false);
+  const [staffForm, setStaffForm] = useState<StaffFormState>(emptyStaffForm);
 
   const contentTypes = useMemo(
     () => [
@@ -115,6 +133,16 @@ export default function AdminApp() {
     setItems(data.items || []);
   }
 
+  async function loadStaffUsers() {
+    const res = await fetch('/api/cms/users', { credentials: 'include' });
+    if (!res.ok) {
+      setStaffUsers([]);
+      return;
+    }
+    const data = await res.json();
+    setStaffUsers(data.users || []);
+  }
+
   useEffect(() => {
     loadStatus().catch((err) => setError(err instanceof Error ? err.message : 'Failed to load CMS status'));
   }, []);
@@ -122,6 +150,11 @@ export default function AdminApp() {
   useEffect(() => {
     if (user) {
       loadItems().catch(() => undefined);
+      if (user.role === 'admin') {
+        loadStaffUsers().catch(() => undefined);
+      } else {
+        setStaffUsers([]);
+      }
     }
   }, [user]);
 
@@ -328,6 +361,67 @@ export default function AdminApp() {
     if (editingId === itemId) resetForm();
   }
 
+  async function submitStaffUser(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStaffBusy(true);
+    setError('');
+    const res = await fetch('/api/cms/users', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({
+        name: staffForm.name.trim(),
+        email: staffForm.email.trim().toLowerCase(),
+        password: staffForm.password,
+        role: staffForm.role,
+      }),
+    });
+    const data = await res.json();
+    setStaffBusy(false);
+    if (!res.ok) {
+      setError(data.error || 'Staff user creation failed');
+      return;
+    }
+    setStaffUsers((prev) => [data.user, ...prev]);
+    setStaffForm(emptyStaffForm);
+  }
+
+  async function updateStaffUserRole(userId: number, role: 'admin' | 'editor') {
+    setStaffBusy(true);
+    setError('');
+    const res = await fetch(`/api/cms/users/${userId}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({ role, isActive: 1 }),
+    });
+    const data = await res.json();
+    setStaffBusy(false);
+    if (!res.ok) {
+      setError(data.error || 'Staff role update failed');
+      return;
+    }
+    setStaffUsers((prev) => prev.map((entry) => (entry.id === userId ? data.user : entry)));
+  }
+
+  async function toggleStaffActive(userId: number, isActive: boolean, role: 'admin' | 'editor') {
+    setStaffBusy(true);
+    setError('');
+    const res = await fetch(`/api/cms/users/${userId}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({ role, isActive: isActive ? 1 : 0 }),
+    });
+    const data = await res.json();
+    setStaffBusy(false);
+    if (!res.ok) {
+      setError(data.error || 'Staff status update failed');
+      return;
+    }
+    setStaffUsers((prev) => prev.map((entry) => (entry.id === userId ? data.user : entry)));
+  }
+
   async function logout() {
     await fetch('/api/cms/logout', { method: 'POST', credentials: 'include' });
     setUser(null);
@@ -484,92 +578,198 @@ export default function AdminApp() {
               </form>
             </section>
 
-            <aside className={cardClass}>
-              <div className="flex items-center justify-between gap-3">
-                <p className="text-xs uppercase tracking-[0.35em] text-amber-300/80">Current items</p>
-                <span className="rounded-full border border-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-stone-300">{filteredItems.length} shown</span>
-              </div>
-              <div className="mt-5 grid gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                <label className="grid gap-2 text-xs uppercase tracking-[0.18em] text-stone-300">
-                  <span>Search</span>
-                  <input
-                    value={searchQuery}
-                    onChange={(event) => setSearchQuery(event.target.value)}
-                    placeholder="Find by title or slug"
-                    className="h-11 rounded-xl border border-white/10 bg-black/20 px-3 text-sm normal-case tracking-normal text-stone-100 outline-none placeholder:text-stone-500"
-                  />
-                </label>
-                <div className="grid gap-3 md:grid-cols-2">
-                  <label className="grid gap-2 text-xs uppercase tracking-[0.18em] text-stone-300">
-                    <span>Status</span>
-                    <select
-                      value={statusFilter}
-                      onChange={(event) => setStatusFilter(event.target.value as 'all' | 'draft' | 'published')}
-                      className="h-11 rounded-xl border border-white/10 bg-black/20 px-3 text-sm normal-case tracking-normal text-stone-100 outline-none"
-                    >
-                      <option value="all">All statuses</option>
-                      <option value="draft">Draft</option>
-                      <option value="published">Published</option>
-                    </select>
-                  </label>
-                  <label className="grid gap-2 text-xs uppercase tracking-[0.18em] text-stone-300">
-                    <span>Content type</span>
-                    <select
-                      value={typeFilter}
-                      onChange={(event) => setTypeFilter(event.target.value)}
-                      className="h-11 rounded-xl border border-white/10 bg-black/20 px-3 text-sm normal-case tracking-normal text-stone-100 outline-none"
-                    >
-                      <option value="all">All types</option>
-                      {contentTypes.map((option) => (
-                        <option key={option.value} value={option.value}>{option.label}</option>
-                      ))}
-                    </select>
-                  </label>
+            <aside className="grid gap-6">
+              <section className={cardClass}>
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-xs uppercase tracking-[0.35em] text-amber-300/80">Current items</p>
+                  <span className="rounded-full border border-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-stone-300">{filteredItems.length} shown</span>
                 </div>
-              </div>
-              <div className="mt-5 grid gap-3">
-                {filteredItems.length ? filteredItems.map((item) => (
-                  <article key={item.id} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    {item.coverImageUrl ? <img src={item.coverImageUrl} alt="" className="mb-4 h-36 w-full rounded-xl object-cover" /> : null}
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <h3 className="font-semibold text-stone-50">{item.title}</h3>
-                        <p className="mt-2 text-xs uppercase tracking-[0.18em] text-amber-200/80">{formatContentType(item.contentType)}</p>
-                        <p className="mt-2 text-sm text-stone-400">/{item.slug}</p>
+                <div className="mt-5 grid gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <label className="grid gap-2 text-xs uppercase tracking-[0.18em] text-stone-300">
+                    <span>Search</span>
+                    <input
+                      value={searchQuery}
+                      onChange={(event) => setSearchQuery(event.target.value)}
+                      placeholder="Find by title or slug"
+                      className="h-11 rounded-xl border border-white/10 bg-black/20 px-3 text-sm normal-case tracking-normal text-stone-100 outline-none placeholder:text-stone-500"
+                    />
+                  </label>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    <label className="grid gap-2 text-xs uppercase tracking-[0.18em] text-stone-300">
+                      <span>Status</span>
+                      <select
+                        value={statusFilter}
+                        onChange={(event) => setStatusFilter(event.target.value as 'all' | 'draft' | 'published')}
+                        className="h-11 rounded-xl border border-white/10 bg-black/20 px-3 text-sm normal-case tracking-normal text-stone-100 outline-none"
+                      >
+                        <option value="all">All statuses</option>
+                        <option value="draft">Draft</option>
+                        <option value="published">Published</option>
+                      </select>
+                    </label>
+                    <label className="grid gap-2 text-xs uppercase tracking-[0.18em] text-stone-300">
+                      <span>Content type</span>
+                      <select
+                        value={typeFilter}
+                        onChange={(event) => setTypeFilter(event.target.value)}
+                        className="h-11 rounded-xl border border-white/10 bg-black/20 px-3 text-sm normal-case tracking-normal text-stone-100 outline-none"
+                      >
+                        <option value="all">All types</option>
+                        {contentTypes.map((option) => (
+                          <option key={option.value} value={option.value}>{option.label}</option>
+                        ))}
+                      </select>
+                    </label>
+                  </div>
+                </div>
+                <div className="mt-5 grid gap-3">
+                  {filteredItems.length ? filteredItems.map((item) => (
+                    <article key={item.id} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                      {item.coverImageUrl ? <img src={item.coverImageUrl} alt="" className="mb-4 h-36 w-full rounded-xl object-cover" /> : null}
+                      <div className="flex items-start justify-between gap-3">
+                        <div>
+                          <h3 className="font-semibold text-stone-50">{item.title}</h3>
+                          <p className="mt-2 text-xs uppercase tracking-[0.18em] text-amber-200/80">{formatContentType(item.contentType)}</p>
+                          <p className="mt-2 text-sm text-stone-400">/{item.slug}</p>
+                        </div>
+                        <span className="rounded-full border border-white/10 px-2.5 py-1 text-[11px] uppercase tracking-[0.18em] text-stone-300">{item.status}</span>
                       </div>
-                      <span className="rounded-full border border-white/10 px-2.5 py-1 text-[11px] uppercase tracking-[0.18em] text-stone-300">{item.status}</span>
-                    </div>
-                    {item.excerpt ? <p className="mt-3 text-sm leading-6 text-stone-300">{item.excerpt}</p> : null}
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {item.status === 'published' ? (
-                        <a
-                          href={`/content/index.html?slug=${encodeURIComponent(item.slug)}`}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex h-10 items-center justify-center rounded-full border border-emerald-400/20 px-4 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-100 transition hover:border-emerald-300 hover:text-emerald-200"
+                      {item.excerpt ? <p className="mt-3 text-sm leading-6 text-stone-300">{item.excerpt}</p> : null}
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {item.status === 'published' ? (
+                          <a
+                            href={`/content/index.html?slug=${encodeURIComponent(item.slug)}`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex h-10 items-center justify-center rounded-full border border-emerald-400/20 px-4 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-100 transition hover:border-emerald-300 hover:text-emerald-200"
+                          >
+                            View live
+                          </a>
+                        ) : null}
+                        <button
+                          type="button"
+                          onClick={() => populateForm(item)}
+                          className="inline-flex h-10 items-center justify-center rounded-full border border-white/10 px-4 text-xs font-semibold uppercase tracking-[0.16em] text-stone-200 transition hover:border-amber-300 hover:text-amber-300"
                         >
-                          View live
-                        </a>
-                      ) : null}
-                      <button
-                        type="button"
-                        onClick={() => populateForm(item)}
-                        className="inline-flex h-10 items-center justify-center rounded-full border border-white/10 px-4 text-xs font-semibold uppercase tracking-[0.16em] text-stone-200 transition hover:border-amber-300 hover:text-amber-300"
-                      >
-                        Edit
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => removeItem(item.id)}
-                        disabled={deleteBusyId === item.id}
-                        className="inline-flex h-10 items-center justify-center rounded-full border border-red-400/20 px-4 text-xs font-semibold uppercase tracking-[0.16em] text-red-100 transition hover:border-red-300 hover:text-red-200 disabled:opacity-60"
-                      >
-                        {deleteBusyId === item.id ? 'Deleting…' : 'Delete'}
-                      </button>
+                          Edit
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => removeItem(item.id)}
+                          disabled={deleteBusyId === item.id}
+                          className="inline-flex h-10 items-center justify-center rounded-full border border-red-400/20 px-4 text-xs font-semibold uppercase tracking-[0.16em] text-red-100 transition hover:border-red-300 hover:text-red-200 disabled:opacity-60"
+                        >
+                          {deleteBusyId === item.id ? 'Deleting…' : 'Delete'}
+                        </button>
+                      </div>
+                    </article>
+                  )) : <div className="rounded-2xl border border-dashed border-white/10 bg-white/5 p-5 text-sm text-stone-400">No items match the current filters. Adjust the search or filter controls to broaden the list.</div>}
+                </div>
+              </section>
+
+              {user.role === 'admin' ? (
+                <section className={cardClass}>
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.35em] text-amber-300/80">Staff access</p>
+                      <h3 className="mt-2 text-2xl font-bold text-stone-50">Manage CMS users</h3>
                     </div>
-                  </article>
-                )) : <div className="rounded-2xl border border-dashed border-white/10 bg-white/5 p-5 text-sm text-stone-400">No items match the current filters. Adjust the search or filter controls to broaden the list.</div>}
-              </div>
+                    <span className="rounded-full border border-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-stone-300">{staffUsers.length} users</span>
+                  </div>
+
+                  <form className="mt-5 grid gap-3 rounded-2xl border border-white/10 bg-white/5 p-4" onSubmit={submitStaffUser}>
+                    <div className="grid gap-3 md:grid-cols-2">
+                      <label className="grid gap-2 text-xs uppercase tracking-[0.18em] text-stone-300">
+                        <span>Name</span>
+                        <input
+                          value={staffForm.name}
+                          onChange={(event) => setStaffForm((prev) => ({ ...prev, name: event.target.value }))}
+                          className="h-11 rounded-xl border border-white/10 bg-black/20 px-3 text-sm normal-case tracking-normal text-stone-100 outline-none"
+                          required
+                        />
+                      </label>
+                      <label className="grid gap-2 text-xs uppercase tracking-[0.18em] text-stone-300">
+                        <span>Email</span>
+                        <input
+                          type="email"
+                          value={staffForm.email}
+                          onChange={(event) => setStaffForm((prev) => ({ ...prev, email: event.target.value }))}
+                          className="h-11 rounded-xl border border-white/10 bg-black/20 px-3 text-sm normal-case tracking-normal text-stone-100 outline-none"
+                          required
+                        />
+                      </label>
+                    </div>
+                    <div className="grid gap-3 md:grid-cols-[1fr_0.7fr]">
+                      <label className="grid gap-2 text-xs uppercase tracking-[0.18em] text-stone-300">
+                        <span>Password</span>
+                        <input
+                          type="password"
+                          minLength={10}
+                          value={staffForm.password}
+                          onChange={(event) => setStaffForm((prev) => ({ ...prev, password: event.target.value }))}
+                          className="h-11 rounded-xl border border-white/10 bg-black/20 px-3 text-sm normal-case tracking-normal text-stone-100 outline-none"
+                          required
+                        />
+                      </label>
+                      <label className="grid gap-2 text-xs uppercase tracking-[0.18em] text-stone-300">
+                        <span>Role</span>
+                        <select
+                          value={staffForm.role}
+                          onChange={(event) => setStaffForm((prev) => ({ ...prev, role: event.target.value as 'admin' | 'editor' }))}
+                          className="h-11 rounded-xl border border-white/10 bg-black/20 px-3 text-sm normal-case tracking-normal text-stone-100 outline-none"
+                        >
+                          <option value="editor">Editor</option>
+                          <option value="admin">Admin</option>
+                        </select>
+                      </label>
+                    </div>
+                    <button disabled={staffBusy} className="inline-flex h-11 items-center justify-center rounded-full bg-amber-400 px-5 text-sm font-bold uppercase tracking-[0.2em] text-stone-950 transition hover:bg-amber-300 disabled:opacity-60">
+                      {staffBusy ? 'Saving…' : 'Create staff user'}
+                    </button>
+                  </form>
+
+                  <div className="mt-5 grid gap-3">
+                    {staffUsers.map((staffUser) => (
+                      <article key={staffUser.id} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                        <div className="flex flex-wrap items-start justify-between gap-3">
+                          <div>
+                            <h4 className="font-semibold text-stone-50">{staffUser.name}</h4>
+                            <p className="mt-1 text-sm text-stone-400">{staffUser.email}</p>
+                            <p className="mt-2 text-xs uppercase tracking-[0.18em] text-stone-500">Last sign-in {staffUser.lastSignedIn ? new Date(staffUser.lastSignedIn).toLocaleString() : 'Not yet recorded'}</p>
+                          </div>
+                          <span className="rounded-full border border-white/10 px-2.5 py-1 text-[11px] uppercase tracking-[0.18em] text-stone-300">{staffUser.role} · {staffUser.isActive === false ? 'inactive' : 'active'}</span>
+                        </div>
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          <button
+                            type="button"
+                            disabled={staffBusy || staffUser.id === user.id || staffUser.role === 'admin'}
+                            onClick={() => updateStaffUserRole(staffUser.id, 'admin')}
+                            className="inline-flex h-10 items-center justify-center rounded-full border border-white/10 px-4 text-xs font-semibold uppercase tracking-[0.16em] text-stone-200 transition hover:border-amber-300 hover:text-amber-300 disabled:opacity-50"
+                          >
+                            Make admin
+                          </button>
+                          <button
+                            type="button"
+                            disabled={staffBusy || staffUser.id === user.id || staffUser.role === 'editor'}
+                            onClick={() => updateStaffUserRole(staffUser.id, 'editor')}
+                            className="inline-flex h-10 items-center justify-center rounded-full border border-white/10 px-4 text-xs font-semibold uppercase tracking-[0.16em] text-stone-200 transition hover:border-amber-300 hover:text-amber-300 disabled:opacity-50"
+                          >
+                            Make editor
+                          </button>
+                          <button
+                            type="button"
+                            disabled={staffBusy || staffUser.id === user.id}
+                            onClick={() => toggleStaffActive(staffUser.id, !(staffUser.isActive ?? true), staffUser.role)}
+                            className="inline-flex h-10 items-center justify-center rounded-full border border-red-400/20 px-4 text-xs font-semibold uppercase tracking-[0.16em] text-red-100 transition hover:border-red-300 hover:text-red-200 disabled:opacity-50"
+                          >
+                            {staffUser.isActive === false ? 'Reactivate access' : 'Deactivate access'}
+                          </button>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </section>
+              ) : null}
             </aside>
           </div>
         ) : requiresBootstrap ? (

@@ -234,3 +234,6 @@
 - [x] Fix the light-mode contrast in the E4 Team section so the supporting text beneath the team heading does not stay white on a light background.
 - [x] Repair the interior-page navbar styling in light mode so the navigation remains clean and readable away from the homepage.
 - [x] Verify the corrected light-mode behavior on the affected interior pages before the next checkpoint.
+- [x] Add admin-managed staff account creation so the CMS can support multiple users beyond the initial bootstrap account.
+- [x] Add role assignment controls for admin and editor staff users inside the CMS workspace.
+- [x] Verify the new staff-account management workflow with tests and preview before the next checkpoint.

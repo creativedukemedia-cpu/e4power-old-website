@@ -12,9 +12,11 @@ import {
   getCmsUserById,
   getPublishedCmsContentItemBySlug,
   listCmsContentItems,
+  listCmsUsers,
   listPublishedCmsContentItems,
   touchCmsUserSignIn,
   updateCmsContentItem,
+  updateCmsUser,
 } from './db';
 import type { InsertCmsContentItem } from '../drizzle/schema';
 import { getSessionCookieOptions } from './_core/cookies';
@@ -49,6 +51,7 @@ function sanitizeUser(user: NonNullable<Awaited<ReturnType<typeof getCmsUserFrom
     email: user.email,
     name: user.name,
     role: user.role,
+    isActive: Boolean(user.isActive),
     lastSignedIn: user.lastSignedIn,
   };
 }
@@ -201,6 +204,86 @@ export function registerCmsRoutes(app: Express) {
     }
     const items = await listCmsContentItems();
     res.json({ items });
+  });
+
+  app.get('/api/cms/users', async (req: Request, res: Response) => {
+    const user = await getCmsUserFromRequest(req);
+    if (!user) {
+      res.status(401).json({ error: 'Not authenticated' });
+      return;
+    }
+    if (user.role !== 'admin') {
+      res.status(403).json({ error: 'Admin access required' });
+      return;
+    }
+    const users = await listCmsUsers();
+    res.json({ users: users.map(sanitizeUser) });
+  });
+
+  app.post('/api/cms/users', async (req: Request, res: Response) => {
+    const user = await getCmsUserFromRequest(req);
+    if (!user) {
+      res.status(401).json({ error: 'Not authenticated' });
+      return;
+    }
+    if (user.role !== 'admin') {
+      res.status(403).json({ error: 'Admin access required' });
+      return;
+    }
+
+    const { email, password, name, role } = req.body ?? {};
+    if (!email || !password || !name) {
+      res.status(400).json({ error: 'name, email, and password are required' });
+      return;
+    }
+    if (String(password).length < 10) {
+      res.status(400).json({ error: 'Password must be at least 10 characters long' });
+      return;
+    }
+    const normalizedEmail = String(email).trim().toLowerCase();
+    const existingUser = await getCmsUserByEmail(normalizedEmail);
+    if (existingUser) {
+      res.status(409).json({ error: 'A CMS staff user with that email already exists' });
+      return;
+    }
+    const normalizedRole = role === 'editor' ? 'editor' : 'admin';
+    const passwordHash = await bcrypt.hash(String(password), 12);
+    const createdUser = await createCmsUser({
+      email: normalizedEmail,
+      name: String(name).trim(),
+      passwordHash,
+      role: normalizedRole,
+      isActive: 1,
+    });
+    res.json({ user: sanitizeUser(createdUser) });
+  });
+
+  app.put('/api/cms/users/:id', async (req: Request, res: Response) => {
+    const user = await getCmsUserFromRequest(req);
+    if (!user) {
+      res.status(401).json({ error: 'Not authenticated' });
+      return;
+    }
+    if (user.role !== 'admin') {
+      res.status(403).json({ error: 'Admin access required' });
+      return;
+    }
+
+    const userId = Number(req.params.id);
+    if (!Number.isFinite(userId)) {
+      res.status(400).json({ error: 'Invalid CMS user id' });
+      return;
+    }
+    const existingUser = await getCmsUserById(userId);
+    if (!existingUser) {
+      res.status(404).json({ error: 'CMS user not found' });
+      return;
+    }
+
+    const nextRole = req.body?.role === 'editor' ? 'editor' : 'admin';
+    const nextActive = req.body?.isActive === 0 || req.body?.isActive === '0' || req.body?.isActive === false ? 0 : 1;
+    const updatedUser = await updateCmsUser(userId, { role: nextRole, isActive: nextActive });
+    res.json({ user: sanitizeUser(updatedUser) });
   });
 
   app.post('/api/cms/content', async (req: Request, res: Response) => {

@@ -93,6 +93,19 @@ export async function getCmsUserById(id: number) {
   return rows[0] as CmsUser | undefined;
 }
 
+export async function listCmsUsers() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(cmsUsers).orderBy(desc(cmsUsers.updatedAt));
+}
+
+export async function updateCmsUser(id: number, user: Partial<InsertCmsUser>) {
+  const db = await getDb();
+  if (!db) throw new Error('Database unavailable');
+  await db.update(cmsUsers).set(user).where(eq(cmsUsers.id, id));
+  return getCmsUserById(id);
+}
+
 export async function touchCmsUserSignIn(id: number) {
   const db = await getDb();
   if (!db) return;

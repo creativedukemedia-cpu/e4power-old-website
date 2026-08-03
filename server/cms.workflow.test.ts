@@ -96,4 +96,23 @@ describe('cms content workflow source coverage', () => {
     expect(publicContentEntrySource).toContain('Clear search');
     expect(publicContentEntrySource).toContain('No published entries match the current search and filter settings yet.');
   });
+
+  it('registers admin-only CMS staff user management routes', () => {
+    expect(routesSource).toContain("app.get('/api/cms/users'");
+    expect(routesSource).toContain("app.post('/api/cms/users'");
+    expect(routesSource).toContain("app.put('/api/cms/users/:id'");
+    expect(routesSource).toContain('Admin access required');
+    expect(routesSource).toContain('A CMS staff user with that email already exists');
+  });
+
+  it('supports admin-side staff account management in the CMS interface', () => {
+    expect(adminAppSource).toContain('const [staffUsers, setStaffUsers] = useState<CmsUser[]>([]);');
+    expect(adminAppSource).toContain('const [staffForm, setStaffForm] = useState<StaffFormState>(emptyStaffForm);');
+    expect(adminAppSource).toContain('async function submitStaffUser(event: FormEvent<HTMLFormElement>)');
+    expect(adminAppSource).toContain('async function updateStaffUserRole(userId: number, role: \'admin\' | \'editor\')');
+    expect(adminAppSource).toContain('async function toggleStaffActive(userId: number, isActive: boolean, role: \'admin\' | \'editor\')');
+    expect(adminAppSource).toContain('Manage CMS users');
+    expect(adminAppSource).toContain('Create staff user');
+    expect(adminAppSource).toContain('Reactivate access');
+  });
 });
