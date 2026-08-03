@@ -214,3 +214,7 @@
 - [ ] Add CMS support for staff-managed image replacement so administrators can swap visuals without touching code.
 - [ ] Connect published CMS entries to public-facing site pages so approved white papers, newsletters, funding opportunities, and thought-leadership items can appear outside the admin area.
 - [ ] Verify the new image-management and public publishing workflow with tests and preview before the next checkpoint.
+- [ ] Add public-facing listing and detail routes for published CMS entries inside the full-stack site.
+- [ ] Expose only published CMS content to the public site while keeping drafts visible only in the admin area.
+- [ ] Render published cover images, titles, excerpts, and body content in the new public CMS pages.
+- [ ] Verify the public publishing flow with tests and preview before the next checkpoint.

@@ -34,7 +34,8 @@ export function resolveHtmlEntry(rootDir: string, rawUrl: string) {
 export function bustKnownEntryScripts(template: string) {
   return template
     .replace(`src="/src/main.tsx"`, `src="/src/main.tsx?v=${nanoid()}"`)
-    .replace(`src="/src/admin/main.tsx"`, `src="/src/admin/main.tsx?v=${nanoid()}"`);
+    .replace(`src="/src/admin/main.tsx"`, `src="/src/admin/main.tsx?v=${nanoid()}"`)
+    .replace(`src="/src/content/main.tsx"`, `src="/src/content/main.tsx?v=${nanoid()}"`);
 }
 
 export async function setupVite(app: Express, server: Server) {

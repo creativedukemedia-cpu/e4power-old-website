@@ -105,6 +105,34 @@ export async function listCmsContentItems() {
   return db.select().from(cmsContentItems).orderBy(desc(cmsContentItems.updatedAt));
 }
 
+export async function listPublishedCmsContentItems(contentType?: CmsContentItem['contentType']) {
+  const db = await getDb();
+  if (!db) return [];
+
+  const baseQuery = db
+    .select()
+    .from(cmsContentItems)
+    .where(
+      contentType
+        ? and(eq(cmsContentItems.status, 'published'), eq(cmsContentItems.contentType, contentType))
+        : eq(cmsContentItems.status, 'published')
+    )
+    .orderBy(desc(cmsContentItems.publishedAt), desc(cmsContentItems.updatedAt));
+
+  return baseQuery;
+}
+
+export async function getPublishedCmsContentItemBySlug(slug: string) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const rows = await db
+    .select()
+    .from(cmsContentItems)
+    .where(and(eq(cmsContentItems.slug, slug), eq(cmsContentItems.status, 'published')))
+    .limit(1);
+  return rows[0] as CmsContentItem | undefined;
+}
+
 export async function createCmsContentItem(item: InsertCmsContentItem) {
   const db = await getDb();
   if (!db) throw new Error('Database unavailable');

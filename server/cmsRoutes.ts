@@ -10,7 +10,9 @@ import {
   getCmsContentItemById,
   getCmsUserByEmail,
   getCmsUserById,
+  getPublishedCmsContentItemBySlug,
   listCmsContentItems,
+  listPublishedCmsContentItems,
   touchCmsUserSignIn,
   updateCmsContentItem,
 } from './db';
@@ -75,6 +77,29 @@ function normalizeContentPayload(body: Record<string, unknown> | null | undefine
 }
 
 export function registerCmsRoutes(app: Express) {
+  app.get('/api/cms/public/content', async (req: Request, res: Response) => {
+    const contentType = typeof req.query.contentType === 'string' ? req.query.contentType : undefined;
+    const normalizedContentType = contentType && ['white-paper', 'newsletter', 'funding-opportunity', 'thought-leadership'].includes(contentType)
+      ? (contentType as InsertCmsContentItem['contentType'])
+      : undefined;
+    const items = await listPublishedCmsContentItems(normalizedContentType);
+    res.json({ items });
+  });
+
+  app.get('/api/cms/public/content/:slug', async (req: Request, res: Response) => {
+    const slug = String(req.params.slug || '').trim().toLowerCase();
+    if (!slug) {
+      res.status(400).json({ error: 'slug is required' });
+      return;
+    }
+    const item = await getPublishedCmsContentItemBySlug(slug);
+    if (!item) {
+      res.status(404).json({ error: 'Published content item not found' });
+      return;
+    }
+    res.json({ item });
+  });
+
   app.get('/api/cms/bootstrap-status', async (_req: Request, res: Response) => {
     const count = await countCmsUsers();
     res.json({ requiresBootstrap: count === 0 });
