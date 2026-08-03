@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs';
 import { parse as parseCookieHeader } from 'cookie';
 import type { Express, Request, Response } from 'express';
-import { createCmsContentItem, createCmsUser, countCmsUsers, getCmsUserByEmail, getCmsUserById, listCmsContentItems, touchCmsUserSignIn } from './db';
+import { createCmsContentItem, createCmsUser, countCmsUsers, deleteCmsContentItem, getCmsContentItemById, getCmsUserByEmail, getCmsUserById, listCmsContentItems, touchCmsUserSignIn, updateCmsContentItem } from './db';
 import { getSessionCookieOptions } from './_core/cookies';
 import { CMS_SESSION_COOKIE, getCmsSessionMaxAge, issueCmsSession, verifyCmsSession } from './cmsAuth';
 
@@ -162,5 +162,68 @@ export function registerCmsRoutes(app: Express) {
     });
 
     res.json({ item });
+  });
+
+  app.put('/api/cms/content/:id', async (req: Request, res: Response) => {
+    const user = await getCmsUserFromRequest(req);
+    if (!user) {
+      res.status(401).json({ error: 'Not authenticated' });
+      return;
+    }
+
+    const itemId = Number(req.params.id);
+    if (!Number.isFinite(itemId)) {
+      res.status(400).json({ error: 'Invalid content item id' });
+      return;
+    }
+
+    const existing = await getCmsContentItemById(itemId);
+    if (!existing) {
+      res.status(404).json({ error: 'Content item not found' });
+      return;
+    }
+
+    const { title, slug, contentType, excerpt, body, status } = req.body ?? {};
+    if (!title || !slug || !contentType) {
+      res.status(400).json({ error: 'title, slug, and contentType are required' });
+      return;
+    }
+
+    const normalizedStatus = status === 'published' ? 'published' : 'draft';
+    const item = await updateCmsContentItem(itemId, {
+      title: String(title).trim(),
+      slug: String(slug).trim().toLowerCase(),
+      contentType,
+      excerpt: excerpt ? String(excerpt) : null,
+      body: body ? String(body) : null,
+      status: normalizedStatus,
+      updatedByUserId: user.id,
+      publishedAt: normalizedStatus === 'published' ? existing.publishedAt ?? new Date() : null,
+    });
+
+    res.json({ item });
+  });
+
+  app.delete('/api/cms/content/:id', async (req: Request, res: Response) => {
+    const user = await getCmsUserFromRequest(req);
+    if (!user) {
+      res.status(401).json({ error: 'Not authenticated' });
+      return;
+    }
+
+    const itemId = Number(req.params.id);
+    if (!Number.isFinite(itemId)) {
+      res.status(400).json({ error: 'Invalid content item id' });
+      return;
+    }
+
+    const existing = await getCmsContentItemById(itemId);
+    if (!existing) {
+      res.status(404).json({ error: 'Content item not found' });
+      return;
+    }
+
+    await deleteCmsContentItem(itemId);
+    res.json({ success: true });
   });
 }

@@ -203,3 +203,7 @@
 - [x] Move the theme toggle into the mobile hamburger menu so the mobile top bar is less crowded.
 - [x] Keep the desktop theme toggle in the top navigation while using a mobile-only menu placement for phones.
 - [x] Verify the corrected light mode and mobile menu layout against the reported visibility issues before the next checkpoint.
+- [ ] Build the first usable CMS workflow for staff to create, edit, and delete structured content entries after login.
+- [ ] Connect the CMS admin interface to the existing content tables so white papers, newsletters, funding opportunities, and thought-leadership items can be managed from the dashboard.
+- [ ] Add published and draft state handling to the initial CMS workflow so staff can control visibility safely.
+- [ ] Verify the new CMS content-management flow with tests and preview before the next checkpoint.

@@ -112,3 +112,23 @@ export async function createCmsContentItem(item: InsertCmsContentItem) {
   const rows = await db.select().from(cmsContentItems).where(eq(cmsContentItems.slug, item.slug)).limit(1);
   return rows[0] as CmsContentItem | undefined;
 }
+
+export async function getCmsContentItemById(id: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const rows = await db.select().from(cmsContentItems).where(eq(cmsContentItems.id, id)).limit(1);
+  return rows[0] as CmsContentItem | undefined;
+}
+
+export async function updateCmsContentItem(id: number, item: Partial<InsertCmsContentItem>) {
+  const db = await getDb();
+  if (!db) throw new Error('Database unavailable');
+  await db.update(cmsContentItems).set(item).where(eq(cmsContentItems.id, id));
+  return getCmsContentItemById(id);
+}
+
+export async function deleteCmsContentItem(id: number) {
+  const db = await getDb();
+  if (!db) throw new Error('Database unavailable');
+  await db.delete(cmsContentItems).where(eq(cmsContentItems.id, id));
+}
