@@ -174,3 +174,7 @@
 - [ ] Remove the obstructive mobile services panel treatment from the hero so the main hero message stays readable.
 - [ ] Choose a cleaner mobile-specific services presentation that does not cover the hero headline and copy.
 - [ ] Re-check the mobile hero against the latest user screenshot after the services redesign.
+- [ ] Make the mobile services section collapsed by default so it does not obstruct the hero.
+- [ ] Diagnose why the hero background video is not visibly playing on both mobile and desktop.
+- [ ] Fix the hero video visibility/playback issue before making any further stylistic tweaks.
+- [ ] Re-verify the mobile hero against the latest screenshot after the collapsed services fix.
