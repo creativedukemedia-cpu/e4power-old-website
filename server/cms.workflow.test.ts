@@ -88,4 +88,12 @@ describe('cms content workflow source coverage', () => {
     expect(publicContentEntrySource).toContain('This page only surfaces items marked as published in the staff admin workspace.');
     expect(publicContentEntrySource).toContain('This published content item could not be found.');
   });
+
+  it('supports public Insights search and clearer listing feedback', () => {
+    expect(publicContentEntrySource).toContain("const search = query.get('q')?.trim().toLowerCase() || '';");
+    expect(publicContentEntrySource).toContain('Search by title, slug, or excerpt');
+    expect(publicContentEntrySource).toContain("filteredItems.length === 1 ? '' : 's'");
+    expect(publicContentEntrySource).toContain('Clear search');
+    expect(publicContentEntrySource).toContain('No published entries match the current search and filter settings yet.');
+  });
 });

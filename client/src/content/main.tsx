@@ -53,6 +53,7 @@ function ContentHubApp() {
   const query = useQueryState();
   const slug = query.get('slug')?.trim() || '';
   const filter = query.get('type')?.trim() || 'all';
+  const search = query.get('q')?.trim().toLowerCase() || '';
 
   useEffect(() => {
     let active = true;
@@ -92,6 +93,11 @@ function ContentHubApp() {
       active = false;
     };
   }, [slug, filter]);
+
+  const filteredItems = useMemo(() => {
+    if (!search) return items;
+    return items.filter((entry) => entry.title.toLowerCase().includes(search) || entry.slug.toLowerCase().includes(search) || (entry.excerpt || '').toLowerCase().includes(search));
+  }, [items, search]);
 
   const pageTitle = slug && item ? `${item.title} | E4 Power Insights` : 'E4 Power Insights';
 
@@ -146,25 +152,49 @@ function ContentHubApp() {
                 <h2 className="mt-4 text-4xl font-black uppercase tracking-tight text-stone-950">White papers, newsletters, opportunities, and thought leadership</h2>
                 <p className="mt-4 text-base leading-8 text-stone-700">Browse the first public-facing CMS area. This page only surfaces items marked as published in the staff admin workspace.</p>
               </div>
-              <label className="grid gap-2 text-sm font-medium text-stone-700">
-                <span>Filter by content type</span>
-                <select
-                  className="h-11 rounded-full border border-black/10 bg-[#f5efdf] px-4 text-stone-900 outline-none"
-                  value={filter}
-                  onChange={(event) => {
-                    const next = event.target.value;
-                    const params = new URLSearchParams(window.location.search);
-                    if (next === 'all') params.delete('type');
-                    else params.set('type', next);
-                    const queryString = params.toString();
-                    window.location.href = `/content/index.html${queryString ? `?${queryString}` : ''}`;
-                  }}
-                >
-                  {typeOptions.map((option) => (
-                    <option key={option.value} value={option.value}>{option.label}</option>
-                  ))}
-                </select>
-              </label>
+              <div className="grid gap-4 md:min-w-[24rem]">
+                <label className="grid gap-2 text-sm font-medium text-stone-700">
+                  <span>Search published content</span>
+                  <input
+                    className="h-11 rounded-full border border-black/10 bg-[#f5efdf] px-4 text-stone-900 outline-none placeholder:text-stone-500"
+                    defaultValue={query.get('q') || ''}
+                    placeholder="Search by title, slug, or excerpt"
+                    onKeyDown={(event) => {
+                      if (event.key !== 'Enter') return;
+                      const next = (event.currentTarget as HTMLInputElement).value.trim();
+                      const params = new URLSearchParams(window.location.search);
+                      if (next) params.set('q', next);
+                      else params.delete('q');
+                      const queryString = params.toString();
+                      window.location.href = `/content/index.html${queryString ? `?${queryString}` : ''}`;
+                    }}
+                  />
+                </label>
+                <label className="grid gap-2 text-sm font-medium text-stone-700">
+                  <span>Filter by content type</span>
+                  <select
+                    className="h-11 rounded-full border border-black/10 bg-[#f5efdf] px-4 text-stone-900 outline-none"
+                    value={filter}
+                    onChange={(event) => {
+                      const next = event.target.value;
+                      const params = new URLSearchParams(window.location.search);
+                      if (next === 'all') params.delete('type');
+                      else params.set('type', next);
+                      const queryString = params.toString();
+                      window.location.href = `/content/index.html${queryString ? `?${queryString}` : ''}`;
+                    }}
+                  >
+                    {typeOptions.map((option) => (
+                      <option key={option.value} value={option.value}>{option.label}</option>
+                    ))}
+                  </select>
+                </label>
+              </div>
+            </div>
+
+            <div className="mt-5 flex items-center justify-between gap-4 px-2 text-sm text-stone-600">
+              <p>{filteredItems.length} result{filteredItems.length === 1 ? '' : 's'} shown</p>
+              {search ? <a className="font-semibold text-amber-700 transition hover:text-amber-800" href={filter === 'all' ? '/content/index.html' : `/content/index.html?type=${encodeURIComponent(filter)}`}>Clear search</a> : null}
             </div>
 
             <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -172,10 +202,10 @@ function ContentHubApp() {
                 <div className="rounded-[1.75rem] border border-black/10 bg-white/70 p-6 text-sm text-stone-500">Loading published content…</div>
               ) : error ? (
                 <div className="rounded-[1.75rem] border border-red-300 bg-red-50 p-6 text-sm text-red-700">{error}</div>
-              ) : items.length === 0 ? (
-                <div className="rounded-[1.75rem] border border-black/10 bg-white/70 p-6 text-sm text-stone-600">No published entries are available for this filter yet.</div>
+              ) : filteredItems.length === 0 ? (
+                <div className="rounded-[1.75rem] border border-black/10 bg-white/70 p-6 text-sm text-stone-600">No published entries match the current search and filter settings yet.</div>
               ) : (
-                items.map((entry) => (
+                filteredItems.map((entry) => (
                   <a
                     key={entry.id}
                     href={`/content/index.html?slug=${encodeURIComponent(entry.slug)}`}

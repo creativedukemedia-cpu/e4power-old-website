@@ -227,3 +227,6 @@
 - [x] Add a public-site navigation entry that links visitors to the new Insights content hub.
 - [x] Surface the Insights destination in a way that fits the existing site navigation without disrupting the current homepage hierarchy.
 - [x] Verify the new public-site entry into the CMS content hub with tests and preview before the next checkpoint.
+- [x] Add public-facing filters to the Insights hub so visitors can narrow published entries by content type.
+- [x] Improve the public Insights listing so visitors can scan entries more clearly before opening a detail page.
+- [x] Verify the new public content-hub browsing improvements with tests and preview before the next checkpoint.
