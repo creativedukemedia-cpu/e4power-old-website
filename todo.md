@@ -224,3 +224,6 @@
 - [x] Add admin-side content filters for status and content type so staff can quickly narrow the CMS list.
 - [x] Add a simple admin search field so staff can find content items by title or slug.
 - [x] Verify the new admin findability controls with tests and preview before the next checkpoint.
+- [x] Add a public-site navigation entry that links visitors to the new Insights content hub.
+- [x] Surface the Insights destination in a way that fits the existing site navigation without disrupting the current homepage hierarchy.
+- [x] Verify the new public-site entry into the CMS content hub with tests and preview before the next checkpoint.
