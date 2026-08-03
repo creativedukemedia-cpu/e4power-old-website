@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1785734404933,
+      "tag": "0000_purple_felicia_hardy",
+      "breakpoints": true
+    }
+  ]
+}

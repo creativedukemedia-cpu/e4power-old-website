@@ -1,0 +1,6 @@
+- Verified the homepage now shows a top-navbar theme toggle control next to the social icons.
+- Verified the new /admin/index.html route initially failed because the dev server always served client/index.html.
+- Corrected the Vite HTML-entry resolution so nested HTML entries are served by request path.
+- Verified the CMS admin route now loads its own bootstrap interface titled "E4 Power CMS" with name, email, and password fields for the first admin account.
+- Verified that the homepage navbar now renders a visible theme toggle button next to the social icons.
+- Verified that the Vite route fix now serves the dedicated CMS entry at /admin/index.html with the bootstrap admin-account form instead of the marketing homepage.

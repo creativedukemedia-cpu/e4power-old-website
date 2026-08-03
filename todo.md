@@ -193,3 +193,9 @@
 - [ ] Move only the rotating partner logo marquee directly under the hero.
 - [ ] Restore the Partners header text to the original partners area within the later section.
 - [ ] Verify in preview that the header remains later while only the moving logo strip appears under the hero.
+- [x] Add a light mode and dark mode toggle to the top navigation.
+- [x] Keep the metrics section where it is while introducing the theme toggle.
+- [x] Begin the CMS build after the theme toggle is in place.
+- [x] Use a username/password login approach for the CMS rather than Manus OAuth.
+- [x] Prefer an open-source authentication or CMS-compatible solution for staff access.
+- [x] Determine the project upgrade path required to support the CMS, database, and admin login.
