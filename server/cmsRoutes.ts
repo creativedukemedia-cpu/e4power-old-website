@@ -1,9 +1,28 @@
 import bcrypt from 'bcryptjs';
 import { parse as parseCookieHeader } from 'cookie';
 import type { Express, Request, Response } from 'express';
-import { createCmsContentItem, createCmsUser, countCmsUsers, deleteCmsContentItem, getCmsContentItemById, getCmsUserByEmail, getCmsUserById, listCmsContentItems, touchCmsUserSignIn, updateCmsContentItem } from './db';
+import multer from 'multer';
+import {
+  createCmsContentItem,
+  createCmsUser,
+  countCmsUsers,
+  deleteCmsContentItem,
+  getCmsContentItemById,
+  getCmsUserByEmail,
+  getCmsUserById,
+  listCmsContentItems,
+  touchCmsUserSignIn,
+  updateCmsContentItem,
+} from './db';
+import type { InsertCmsContentItem } from '../drizzle/schema';
 import { getSessionCookieOptions } from './_core/cookies';
 import { CMS_SESSION_COOKIE, getCmsSessionMaxAge, issueCmsSession, verifyCmsSession } from './cmsAuth';
+import { storagePut } from './storage';
+
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 5 * 1024 * 1024 },
+});
 
 async function getCmsUserFromRequest(req: Request) {
   const cookies = parseCookieHeader(req.headers.cookie || '');
@@ -30,6 +49,29 @@ function sanitizeUser(user: NonNullable<Awaited<ReturnType<typeof getCmsUserFrom
     role: user.role,
     lastSignedIn: user.lastSignedIn,
   };
+}
+
+function normalizeContentPayload(body: Record<string, unknown> | null | undefined, userId: number, existingPublishedAt?: Date | null) {
+  const { title, slug, contentType, excerpt, body: contentBody, status } = body ?? {};
+  if (!title || !slug || !contentType) {
+    return { error: 'title, slug, and contentType are required' } as const;
+  }
+
+  const normalizedStatus = status === 'published' ? 'published' : 'draft';
+  const normalizedContentType = String(contentType).trim() as InsertCmsContentItem['contentType'];
+  return {
+    value: {
+      title: String(title).trim(),
+      slug: String(slug).trim().toLowerCase(),
+      contentType: normalizedContentType,
+      excerpt: excerpt ? String(excerpt) : null,
+      body: contentBody ? String(contentBody) : null,
+      status: normalizedStatus,
+      updatedByUserId: userId,
+      publishedAt: normalizedStatus === 'published' ? existingPublishedAt ?? new Date() : null,
+      createdByUserId: userId,
+    },
+  } as const;
 }
 
 export function registerCmsRoutes(app: Express) {
@@ -143,24 +185,13 @@ export function registerCmsRoutes(app: Express) {
       return;
     }
 
-    const { title, slug, contentType, excerpt, body, status } = req.body ?? {};
-    if (!title || !slug || !contentType) {
-      res.status(400).json({ error: 'title, slug, and contentType are required' });
+    const normalized = normalizeContentPayload(req.body, user.id);
+    if ('error' in normalized) {
+      res.status(400).json({ error: normalized.error });
       return;
     }
 
-    const item = await createCmsContentItem({
-      title: String(title).trim(),
-      slug: String(slug).trim().toLowerCase(),
-      contentType,
-      excerpt: excerpt ? String(excerpt) : null,
-      body: body ? String(body) : null,
-      status: status === 'published' ? 'published' : 'draft',
-      createdByUserId: user.id,
-      updatedByUserId: user.id,
-      publishedAt: status === 'published' ? new Date() : null,
-    });
-
+    const item = await createCmsContentItem(normalized.value);
     res.json({ item });
   });
 
@@ -183,22 +214,77 @@ export function registerCmsRoutes(app: Express) {
       return;
     }
 
-    const { title, slug, contentType, excerpt, body, status } = req.body ?? {};
-    if (!title || !slug || !contentType) {
-      res.status(400).json({ error: 'title, slug, and contentType are required' });
+    const normalized = normalizeContentPayload(req.body, user.id, existing.publishedAt ?? null);
+    if ('error' in normalized) {
+      res.status(400).json({ error: normalized.error });
       return;
     }
 
-    const normalizedStatus = status === 'published' ? 'published' : 'draft';
+    const item = await updateCmsContentItem(itemId, normalized.value);
+    res.json({ item });
+  });
+
+  app.post('/api/cms/content/:id/cover-image', upload.single('coverImage'), async (req: Request, res: Response) => {
+    const user = await getCmsUserFromRequest(req);
+    if (!user) {
+      res.status(401).json({ error: 'Not authenticated' });
+      return;
+    }
+
+    const itemId = Number(req.params.id);
+    if (!Number.isFinite(itemId)) {
+      res.status(400).json({ error: 'Invalid content item id' });
+      return;
+    }
+
+    const existing = await getCmsContentItemById(itemId);
+    if (!existing) {
+      res.status(404).json({ error: 'Content item not found' });
+      return;
+    }
+
+    const file = req.file;
+    if (!file) {
+      res.status(400).json({ error: 'coverImage file is required' });
+      return;
+    }
+    if (!file.mimetype.startsWith('image/')) {
+      res.status(400).json({ error: 'coverImage must be an image file' });
+      return;
+    }
+
+    const safeName = file.originalname.replace(/[^a-zA-Z0-9._-]/g, '-').toLowerCase();
+    const stored = await storagePut(`cms/content-${itemId}/${safeName || 'cover-image'}`, file.buffer, file.mimetype);
     const item = await updateCmsContentItem(itemId, {
-      title: String(title).trim(),
-      slug: String(slug).trim().toLowerCase(),
-      contentType,
-      excerpt: excerpt ? String(excerpt) : null,
-      body: body ? String(body) : null,
-      status: normalizedStatus,
+      coverImageUrl: stored.url,
       updatedByUserId: user.id,
-      publishedAt: normalizedStatus === 'published' ? existing.publishedAt ?? new Date() : null,
+    });
+
+    res.json({ item });
+  });
+
+  app.delete('/api/cms/content/:id/cover-image', async (req: Request, res: Response) => {
+    const user = await getCmsUserFromRequest(req);
+    if (!user) {
+      res.status(401).json({ error: 'Not authenticated' });
+      return;
+    }
+
+    const itemId = Number(req.params.id);
+    if (!Number.isFinite(itemId)) {
+      res.status(400).json({ error: 'Invalid content item id' });
+      return;
+    }
+
+    const existing = await getCmsContentItemById(itemId);
+    if (!existing) {
+      res.status(404).json({ error: 'Content item not found' });
+      return;
+    }
+
+    const item = await updateCmsContentItem(itemId, {
+      coverImageUrl: null,
+      updatedByUserId: user.id,
     });
 
     res.json({ item });

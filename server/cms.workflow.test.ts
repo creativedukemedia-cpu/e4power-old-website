@@ -15,6 +15,14 @@ describe('cms content workflow source coverage', () => {
     expect(routesSource).toContain('deleteCmsContentItem(itemId)');
   });
 
+  it('registers cover-image upload and removal routes', () => {
+    expect(routesSource).toContain("app.post('/api/cms/content/:id/cover-image'");
+    expect(routesSource).toContain("app.delete('/api/cms/content/:id/cover-image'");
+    expect(routesSource).toContain('upload.single(\'coverImage\')');
+    expect(routesSource).toContain('storagePut(`cms/content-${itemId}/');
+    expect(routesSource).toContain('coverImageUrl: stored.url');
+  });
+
   it('supports content editing in the admin interface', () => {
     expect(adminAppSource).toContain('const [editingId, setEditingId] = useState<number | null>(null);');
     expect(adminAppSource).toContain("editingId ? `/api/cms/content/${editingId}` : '/api/cms/content'");
@@ -26,5 +34,13 @@ describe('cms content workflow source coverage', () => {
     expect(adminAppSource).toContain('async function removeItem(itemId: number)');
     expect(adminAppSource).toContain("method: 'DELETE'");
     expect(adminAppSource).toContain("{deleteBusyId === item.id ? 'Deleting…' : 'Delete'}");
+  });
+
+  it('supports cover-image upload and removal in the admin interface', () => {
+    expect(adminAppSource).toContain('const [coverImageFile, setCoverImageFile] = useState<File | null>(null);');
+    expect(adminAppSource).toContain('async function syncCoverImage(itemId: number)');
+    expect(adminAppSource).toContain("/api/cms/content/${itemId}/cover-image");
+    expect(adminAppSource).toContain('Upload a replacement image so staff can manage visuals without touching code.');
+    expect(adminAppSource).toContain('Remove image');
   });
 });

@@ -211,3 +211,6 @@
 - [ ] Add the theme toggle to the navigation flow on secondary pages, including mobile menu treatments where needed.
 - [ ] Fix unreadable light-mode contrast on the Team page and other affected interior sections shown in the latest screenshots.
 - [ ] Verify theme consistency across representative interior pages after the cross-page theme fix.
+- [ ] Add CMS support for staff-managed image replacement so administrators can swap visuals without touching code.
+- [ ] Connect published CMS entries to public-facing site pages so approved white papers, newsletters, funding opportunities, and thought-leadership items can appear outside the admin area.
+- [ ] Verify the new image-management and public publishing workflow with tests and preview before the next checkpoint.

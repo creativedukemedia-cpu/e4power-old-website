@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useMemo, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from 'react';
 
 type CmsUser = {
   id: number;
@@ -16,6 +16,7 @@ type CmsItem = {
   status: 'draft' | 'published';
   excerpt?: string | null;
   body?: string | null;
+  coverImageUrl?: string | null;
   updatedAt?: string;
   publishedAt?: string | null;
 };
@@ -27,6 +28,7 @@ type CmsFormState = {
   excerpt: string;
   body: string;
   status: 'draft' | 'published';
+  coverImageUrl: string;
 };
 
 const cardClass = 'rounded-3xl border border-white/10 bg-black/30 p-6 shadow-2xl backdrop-blur';
@@ -37,6 +39,7 @@ const emptyForm: CmsFormState = {
   excerpt: '',
   body: '',
   status: 'draft',
+  coverImageUrl: '',
 };
 
 function formatContentType(value: string) {
@@ -55,6 +58,9 @@ export default function AdminApp() {
   const [deleteBusyId, setDeleteBusyId] = useState<number | null>(null);
   const [editingId, setEditingId] = useState<number | null>(null);
   const [formState, setFormState] = useState<CmsFormState>(emptyForm);
+  const [coverImageFile, setCoverImageFile] = useState<File | null>(null);
+  const [coverImagePreviewUrl, setCoverImagePreviewUrl] = useState('');
+  const [removeCoverImage, setRemoveCoverImage] = useState(false);
 
   const contentTypes = useMemo(
     () => [
@@ -65,6 +71,14 @@ export default function AdminApp() {
     ],
     []
   );
+
+  useEffect(() => {
+    return () => {
+      if (coverImagePreviewUrl.startsWith('blob:')) {
+        URL.revokeObjectURL(coverImagePreviewUrl);
+      }
+    };
+  }, [coverImagePreviewUrl]);
 
   async function loadStatus() {
     const [statusRes, meRes] = await Promise.all([
@@ -98,9 +112,19 @@ export default function AdminApp() {
     }
   }, [user]);
 
+  function resetCoverImageState() {
+    if (coverImagePreviewUrl.startsWith('blob:')) {
+      URL.revokeObjectURL(coverImagePreviewUrl);
+    }
+    setCoverImageFile(null);
+    setCoverImagePreviewUrl('');
+    setRemoveCoverImage(false);
+  }
+
   function resetForm() {
     setEditingId(null);
     setFormState(emptyForm);
+    resetCoverImageState();
   }
 
   function populateForm(item: CmsItem) {
@@ -112,8 +136,37 @@ export default function AdminApp() {
       excerpt: item.excerpt || '',
       body: item.body || '',
       status: item.status,
+      coverImageUrl: item.coverImageUrl || '',
     });
+    resetCoverImageState();
+    setCoverImagePreviewUrl(item.coverImageUrl || '');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function handleCoverImageChange(event: ChangeEvent<HTMLInputElement>) {
+    const nextFile = event.target.files?.[0] || null;
+    if (coverImagePreviewUrl.startsWith('blob:')) {
+      URL.revokeObjectURL(coverImagePreviewUrl);
+    }
+    if (!nextFile) {
+      setCoverImageFile(null);
+      setCoverImagePreviewUrl(formState.coverImageUrl || '');
+      return;
+    }
+    const previewUrl = URL.createObjectURL(nextFile);
+    setCoverImageFile(nextFile);
+    setCoverImagePreviewUrl(previewUrl);
+    setRemoveCoverImage(false);
+  }
+
+  function clearCoverImage() {
+    if (coverImagePreviewUrl.startsWith('blob:')) {
+      URL.revokeObjectURL(coverImagePreviewUrl);
+    }
+    setCoverImageFile(null);
+    setCoverImagePreviewUrl('');
+    setFormState((prev) => ({ ...prev, coverImageUrl: '' }));
+    setRemoveCoverImage(true);
   }
 
   async function submitBootstrap(event: FormEvent<HTMLFormElement>) {
@@ -166,6 +219,37 @@ export default function AdminApp() {
     setUser(data.user);
   }
 
+  async function syncCoverImage(itemId: number) {
+    if (coverImageFile) {
+      const uploadForm = new FormData();
+      uploadForm.append('coverImage', coverImageFile);
+      const uploadRes = await fetch(`/api/cms/content/${itemId}/cover-image`, {
+        method: 'POST',
+        credentials: 'include',
+        body: uploadForm,
+      });
+      const uploadData = await uploadRes.json();
+      if (!uploadRes.ok) {
+        throw new Error(uploadData.error || 'Cover image upload failed');
+      }
+      return uploadData.item as CmsItem;
+    }
+
+    if (removeCoverImage && editingId) {
+      const clearRes = await fetch(`/api/cms/content/${itemId}/cover-image`, {
+        method: 'DELETE',
+        credentials: 'include',
+      });
+      const clearData = await clearRes.json();
+      if (!clearRes.ok) {
+        throw new Error(clearData.error || 'Cover image removal failed');
+      }
+      return clearData.item as CmsItem;
+    }
+
+    return null;
+  }
+
   async function submitContent(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setBusy(true);
@@ -177,26 +261,39 @@ export default function AdminApp() {
       excerpt: formState.excerpt.trim(),
       body: formState.body.trim(),
       status: formState.status,
+      coverImageUrl: formState.coverImageUrl.trim() || null,
     };
-    const res = await fetch(editingId ? `/api/cms/content/${editingId}` : '/api/cms/content', {
-      method: editingId ? 'PUT' : 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
-      body: JSON.stringify(payload),
-    });
-    const data = await res.json();
-    setBusy(false);
-    if (!res.ok) {
-      setError(data.error || 'Content save failed');
-      return;
-    }
-    if (data.item) {
-      setItems((prev) => {
-        const remaining = prev.filter((item) => item.id !== data.item.id);
-        return [data.item, ...remaining];
+
+    try {
+      const res = await fetch(editingId ? `/api/cms/content/${editingId}` : '/api/cms/content', {
+        method: editingId ? 'PUT' : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify(payload),
       });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || 'Content save failed');
+      }
+
+      let nextItem = data.item as CmsItem | undefined;
+      if (nextItem) {
+        const syncedItem = await syncCoverImage(nextItem.id);
+        if (syncedItem) nextItem = syncedItem;
+      }
+
+      if (nextItem) {
+        setItems((prev) => {
+          const remaining = prev.filter((item) => item.id !== nextItem?.id);
+          return [nextItem!, ...remaining];
+        });
+      }
+      resetForm();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Content save failed');
+    } finally {
+      setBusy(false);
     }
-    resetForm();
   }
 
   async function removeItem(itemId: number) {
@@ -232,7 +329,7 @@ export default function AdminApp() {
           <div>
             <p className="text-sm uppercase tracking-[0.35em] text-amber-300/80">E4 Power CMS</p>
             <h1 className="mt-3 text-4xl font-black uppercase tracking-tight text-stone-50">Content publishing workspace</h1>
-            <p className="mt-3 max-w-3xl text-sm leading-7 text-stone-300">This first CMS foundation supports staff username and password access, a protected admin area, and structured content types for white papers, newsletters, funding opportunities, and thought leadership.</p>
+            <p className="mt-3 max-w-3xl text-sm leading-7 text-stone-300">This workspace now supports staff username and password access, structured publishing, and image replacement for white papers, newsletters, funding opportunities, and thought leadership.</p>
           </div>
           {user ? (
             <button onClick={logout} className="inline-flex h-11 items-center justify-center rounded-full border border-white/15 px-5 text-sm font-semibold text-stone-100 transition hover:border-amber-300 hover:text-amber-300">Log out</button>
@@ -244,7 +341,7 @@ export default function AdminApp() {
         {requiresBootstrap === null ? (
           <div className={cardClass}>Loading CMS setup…</div>
         ) : user ? (
-          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
             <section className={cardClass}>
               <div className="mb-6 flex items-start justify-between gap-4">
                 <div>
@@ -331,6 +428,43 @@ export default function AdminApp() {
                     onChange={(event) => setFormState((prev) => ({ ...prev, body: event.target.value }))}
                   />
                 </label>
+                <div className="grid gap-4 lg:grid-cols-[1fr_0.92fr]">
+                  <label className="grid gap-2 text-sm">
+                    <span>Cover image</span>
+                    <input
+                      className="block h-11 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-stone-100 outline-none file:mr-3 file:rounded-full file:border-0 file:bg-amber-400 file:px-3 file:py-2 file:text-xs file:font-semibold file:uppercase file:tracking-[0.18em] file:text-stone-950"
+                      type="file"
+                      accept="image/*"
+                      onChange={handleCoverImageChange}
+                    />
+                    <span className="text-xs leading-6 text-stone-400">Upload a replacement image so staff can manage visuals without touching code.</span>
+                  </label>
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                    <div className="flex items-center justify-between gap-3">
+                      <p className="text-xs uppercase tracking-[0.18em] text-amber-200/80">Preview</p>
+                      {(coverImagePreviewUrl || formState.coverImageUrl) ? (
+                        <button
+                          type="button"
+                          onClick={clearCoverImage}
+                          className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-300 transition hover:text-red-200"
+                        >
+                          Remove image
+                        </button>
+                      ) : null}
+                    </div>
+                    {coverImagePreviewUrl || formState.coverImageUrl ? (
+                      <img
+                        src={coverImagePreviewUrl || formState.coverImageUrl}
+                        alt="Cover preview"
+                        className="mt-3 h-40 w-full rounded-xl object-cover"
+                      />
+                    ) : (
+                      <div className="mt-3 flex h-40 items-center justify-center rounded-xl border border-dashed border-white/10 text-xs uppercase tracking-[0.18em] text-stone-500">
+                        No cover image selected
+                      </div>
+                    )}
+                  </div>
+                </div>
                 <button disabled={busy} className="inline-flex h-12 items-center justify-center rounded-full bg-amber-400 px-6 text-sm font-bold uppercase tracking-[0.2em] text-stone-950 transition hover:bg-amber-300 disabled:opacity-60">
                   {busy ? 'Saving…' : editingId ? 'Update content item' : 'Create content item'}
                 </button>
@@ -345,6 +479,7 @@ export default function AdminApp() {
               <div className="mt-5 grid gap-3">
                 {items.length ? items.map((item) => (
                   <article key={item.id} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                    {item.coverImageUrl ? <img src={item.coverImageUrl} alt="" className="mb-4 h-36 w-full rounded-xl object-cover" /> : null}
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <h3 className="font-semibold text-stone-50">{item.title}</h3>
