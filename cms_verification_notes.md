@@ -10,3 +10,11 @@
 - Verified in light mode that the lower homepage content now renders with a pale section background and dark readable copy instead of dark-on-dark cards.
 - Verified that the previously problematic Elevate and partner-adjacent content is now visibly readable in the browser preview after the late theme patch.
 - The mobile toggle relocation is implemented in the markup and final CSS patch, but final confirmation still depends on a phone-width render rather than the desktop preview.
+
+The latest secondary-page verification shows that the Team page now inherits the persisted light theme instead of staying in dark mode. The desktop Team navigation also now includes the theme toggle, and the previously unreadable Team content is rendering with a light background and dark text.
+
+The remaining validation step is to confirm the mobile-menu placement on secondary pages under a phone-width render and to spot-check another representative interior page for the same contrast improvements.
+
+The latest cross-page verification confirms that the persisted light theme now reaches representative interior pages beyond the homepage. The Educate page now inherits the saved light theme and shows the desktop navigation theme toggle, and its major headings and introductory copy render with readable dark contrast instead of the previous washed-out white-on-cream appearance.
+
+The Kandy Rose team-member page now also inherits the light theme and no longer leaves the biography content inside a dark panel. Its member heading, role text, and long-form biography copy now render on a light surface with readable contrast, confirming that the secondary-page light-mode patch is working across both pillar pages and team-member detail pages.

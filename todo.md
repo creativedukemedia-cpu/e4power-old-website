@@ -203,7 +203,11 @@
 - [x] Move the theme toggle into the mobile hamburger menu so the mobile top bar is less crowded.
 - [x] Keep the desktop theme toggle in the top navigation while using a mobile-only menu placement for phones.
 - [x] Verify the corrected light mode and mobile menu layout against the reported visibility issues before the next checkpoint.
-- [ ] Build the first usable CMS workflow for staff to create, edit, and delete structured content entries after login.
-- [ ] Connect the CMS admin interface to the existing content tables so white papers, newsletters, funding opportunities, and thought-leadership items can be managed from the dashboard.
-- [ ] Add published and draft state handling to the initial CMS workflow so staff can control visibility safely.
-- [ ] Verify the new CMS content-management flow with tests and preview before the next checkpoint.
+- [x] Build the first usable CMS workflow for staff to create, edit, and delete structured content entries after login.
+- [x] Connect the CMS admin interface to the existing content tables so white papers, newsletters, funding opportunities, and thought-leadership items can be managed from the dashboard.
+- [x] Add published and draft state handling to the initial CMS workflow so staff can control visibility safely.
+- [x] Verify the new CMS content-management flow with tests and preview before the next checkpoint.
+- [ ] Make the light and dark mode toggle persist and apply across secondary pages, not just the homepage.
+- [ ] Add the theme toggle to the navigation flow on secondary pages, including mobile menu treatments where needed.
+- [ ] Fix unreadable light-mode contrast on the Team page and other affected interior sections shown in the latest screenshots.
+- [ ] Verify theme consistency across representative interior pages after the cross-page theme fix.
