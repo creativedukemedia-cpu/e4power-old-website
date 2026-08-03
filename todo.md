@@ -190,3 +190,6 @@
 - [ ] Verify the new homepage order after the banner move.
 - [ ] Correct the homepage order so the rotating partner logo banner actually appears immediately under the hero.
 - [ ] Verify the real on-page placement in preview after the fix instead of relying only on section order.
+- [ ] Move only the rotating partner logo marquee directly under the hero.
+- [ ] Restore the Partners header text to the original partners area within the later section.
+- [ ] Verify in preview that the header remains later while only the moving logo strip appears under the hero.
