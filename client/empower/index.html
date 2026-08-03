@@ -1004,6 +1004,7 @@ body.theme-light .section.dark-gray,
 body.theme-light .main-content-block,
 body.theme-light .main-content-block.gray,
 body.theme-light .smaller-container.gray,
+body.theme-light .smaller-container.smaller,
 body.theme-light .team-member,
 body.theme-light .member-bio,
 body.theme-light .member-bio.w-richtext,
@@ -1034,16 +1035,27 @@ body.theme-light .ref-pillar-card,
 body.theme-light .ref-stacked-card,
 body.theme-light .ref-surface,
 body.theme-light .ref-panel,
-body.theme-light .ref-cta-button,
 body.theme-light .ref-grid,
 body.theme-light .ref-body,
 body.theme-light .ref-summary,
 body.theme-light .ref-copy-block,
 body.theme-light .ref-column,
-body.theme-light .ref-band{
+body.theme-light .ref-band,
+body.theme-light .ref-gallery-section,
+body.theme-light .ref-top-block,
+body.theme-light .team-members-div,
+body.theme-light .team-members-collection-list,
+body.theme-light .team-picture-div,
+body.theme-light .w-dyn-item{
   background:#f5f0e6 !important;
   color:#1e1a16 !important;
 }
+body.theme-light p,
+body.theme-light li,
+body.theme-light label,
+body.theme-light input,
+body.theme-light textarea,
+body.theme-light select,
 body.theme-light .paragraph,
 body.theme-light .paragraph-2,
 body.theme-light .paragraph-3,
@@ -1087,7 +1099,6 @@ body.theme-light .subheading-div,
 body.theme-light .smaller-container,
 body.theme-light .container,
 body.theme-light .title,
-body.theme-light .team-members-div,
 body.theme-light .ref-kicker,
 body.theme-light .ref-copy,
 body.theme-light .ref-summary,
@@ -1099,6 +1110,21 @@ body.theme-light .ref-subhead,
 body.theme-light .ref-overline,
 body.theme-light .ref-caption,
 body.theme-light .ref-note,
+body.theme-light .ref-heading-main,
+body.theme-light .ref-heading-accent,
+body.theme-light .ref-subtitle,
+body.theme-light .ref-page-summary,
+body.theme-light .ref-service-title,
+body.theme-light .ref-service-kicker,
+body.theme-light .ref-card-titleband,
+body.theme-light .ref-card-label,
+body.theme-light .ref-card-note,
+body.theme-light .ref-point-list span,
+body.theme-light .ref-point-list li,
+body.theme-light .ref-service-link,
+body.theme-light .w-form label,
+body.theme-light .w-form input,
+body.theme-light .w-form textarea,
 body.theme-light.ref-page-shell p,
 body.theme-light.ref-page-shell li,
 body.theme-light.ref-page-shell span,
@@ -1127,6 +1153,8 @@ body.theme-light .small-heading,
 body.theme-light .ref-title,
 body.theme-light .ref-heading,
 body.theme-light .ref-display,
+body.theme-light .ref-heading-main,
+body.theme-light .ref-subtitle,
 body.theme-light strong{
   text-shadow:none !important;
 }
@@ -1139,8 +1167,10 @@ body.theme-light .small-heading span,
 body.theme-light .ref-kicker,
 body.theme-light .ref-accent,
 body.theme-light .ref-highlight,
-body.theme-light .ref-cta-button,
 body.theme-light .ref-pill,
+body.theme-light .ref-service-kicker,
+body.theme-light .ref-card-label,
+body.theme-light .ref-subtitle span,
 body.theme-light.ref-page-shell .gold,
 body.theme-light.ref-page-shell .orange,
 body.theme-light.ref-page-shell .accent{
@@ -1152,7 +1182,8 @@ body.theme-light .navbar-container,
 body.theme-light .navbar-wrapper,
 body.theme-light .nav-menu-wrapper,
 body.theme-light .w-nav-overlay,
-body.theme-light .w-nav-menu{
+body.theme-light .w-nav-menu,
+body.theme-light .navbar-right-div{
   background:#f5f0e6 !important;
 }
 body.theme-light .navbar-logo-left-container,
@@ -1160,8 +1191,8 @@ body.theme-light .navbar-wrapper,
 body.theme-light .nav-menu-wrapper,
 body.theme-light .main-content-block,
 body.theme-light .main-content-block.gray,
-body.theme-light .main-content-block.gray,
 body.theme-light .smaller-container.gray,
+body.theme-light .smaller-container.smaller,
 body.theme-light .team-member,
 body.theme-light .service-card,
 body.theme-light .relation-card,
@@ -1182,6 +1213,7 @@ body.theme-light .ref-panel,
 body.theme-light .ref-surface,
 body.theme-light .ref-copy-block,
 body.theme-light .ref-content-panel,
+body.theme-light .ref-gallery-section .container,
 body.theme-light .ref-page-shell img + div{
   border-color:rgba(30,26,22,.14) !important;
 }
@@ -1201,21 +1233,49 @@ body.theme-light .ref-stacked-card,
 body.theme-light .ref-panel,
 body.theme-light .ref-surface,
 body.theme-light .ref-copy-block,
-body.theme-light .ref-content-panel{
+body.theme-light .ref-content-panel,
+body.theme-light .smaller-container.gray,
+body.theme-light .smaller-container.smaller{
   box-shadow:0 14px 30px rgba(56,41,18,.08) !important;
 }
 body.theme-light .white-line{background:rgba(30,26,22,.18) !important;}
 body.theme-light .menu-button,
+body.theme-light .w-nav-button,
 body.theme-light .hamburger-icon,
 body.theme-light .w-icon-nav-menu,
 body.theme-light .text-link::after,
 body.theme-light .link-block::after,
 body.theme-light .cta-link::after{color:#1e1a16 !important;background:currentColor !important;}
+body.theme-light .menu-button,
+body.theme-light .w-nav-button{
+  border:1px solid rgba(30,26,22,.14) !important;
+  border-radius:999px !important;
+  background:rgba(255,255,255,.82) !important;
+}
+body.theme-light .navbar-wrapper{
+  gap:1rem !important;
+}
+body.theme-light .navbar-right-div{
+  display:flex !important;
+  align-items:center !important;
+  gap:1rem !important;
+}
+body.theme-light .nav-menu-two{
+  gap:0 !important;
+}
+body.theme-light .nav-menu-two .nav-link,
+body.theme-light .text-link{
+  color:#1e1a16 !important;
+}
+body.theme-light .nav-menu-wrapper{
+  box-shadow:0 16px 28px rgba(56,41,18,.08) !important;
+}
 body.theme-light .navbar-brand img,
 body.theme-light .small-logo,
 body.theme-light .image-6,
 body.theme-light .image-7,
-body.theme-light .image-8{filter:invert(1) brightness(.15) !important;}
+body.theme-light .image-8,
+body.theme-light .ref-mark{filter:invert(1) brightness(.15) !important;}
 body.theme-light .social-link-block{background:rgba(30,26,22,.06) !important;border-color:rgba(30,26,22,.12) !important;}
 body.theme-light .social-link-block img{filter:invert(1) brightness(.12) !important;}
 body.theme-light .theme-toggle-button{background:rgba(255,255,255,.88)!important;color:#1d1a17!important;border:1px solid rgba(29,26,23,.12)!important;}
@@ -1231,6 +1291,11 @@ body.theme-dark .theme-toggle-thumb{transform:none!important;}
 @media screen and (max-width: 991px){
   .navbar-right-div>.theme-toggle-button{display:none!important;}
   .nav-menu-wrapper .mobile-theme-toggle{display:inline-flex!important;justify-content:space-between;align-self:stretch;}
+  body.theme-light .nav-menu-wrapper,
+  body.theme-light .w-nav-overlay,
+  body.theme-light .w-nav-menu{
+    background:#f5f0e6 !important;
+  }
 }
 </style></head><body class="body ref-page-shell theme-dark"><nav class="navbar-logo-left"><div class="navbar-logo-left-container shadow-three w-nav" data-animation="over-right" data-collapse="all" data-duration="400" data-easing="ease" data-easing2="ease" role="banner"><div class="navbar-container"><div class="navbar-wrapper"><a class="navbar-brand w-nav-brand" href="/"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68bcc54da8714105bb252c7f_e4_logo_white.svg"/></a><div class="navbar-right-div"><div class="socials-div"><a class="social-link-block w-inline-block" href="https://www.instagram.com/e4power_?igsh=bXR4bThxMHh2dHNy&amp;utm_source=qr" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c4ee8e329fe01d525b_instagram.svg"/></a><a class="social-link-block w-inline-block" href="https://www.linkedin.com/company/e4-power-consulting/" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c46c9537fa67bb89bd_linkedin.svg"/></a><a class="social-link-block w-inline-block" href="https://www.tiktok.com/@e4powerconsulting?_t=ZT-90YVLBMkwaT&amp;_r=1" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68f66f4d7a2ffc0d86a72550_tiktok.svg"/></a><a class="social-link-block w-inline-block" href="https://www.facebook.com/profile.php?id=61573544665670&amp;mibextid=wwXIfr&amp;rdid=yOcyRogs7shBnrLD&amp;share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1775G2zRAh%2F%3Fmibextid%3DwwXIfr#" target="_blank"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68d9d0c48dbb4dd69e849624_facebook.svg"/></a></div><button aria-label="Toggle light and dark mode" class="theme-toggle-button" id="theme-toggle-button" type="button"><span class="theme-toggle-track"><span class="theme-toggle-thumb"></span></span><span class="theme-toggle-label">Theme</span></button><a class="text-link" href="/contact-us">Contact Us</a><div class="menu-button w-nav-button"><div class="hamburger-icon w-icon-nav-menu"></div></div></div><nav class="nav-menu-wrapper w-nav-menu" role="navigation"><button aria-label="Toggle light and dark mode" class="theme-toggle-button mobile-theme-toggle" id="mobile-theme-toggle-button" type="button"><span class="theme-toggle-label">Theme</span><span class="theme-toggle-track"><span class="theme-toggle-thumb"></span></span></button><ul class="nav-menu-two w-list-unstyled" role="list"><li><a class="nav-link" href="/services/">SERVICES</a></li><li><a class="nav-link" href="/educate/">EDUCATE</a></li><li><a class="nav-link" href="/empower/">EMPOWER</a></li><li><a class="nav-link" href="/elevate/">ELEVATE</a></li><li><a class="nav-link" href="/engage/">ENGAGE</a></li><li><a class="nav-link" href="/content/index.html">INSIGHTS</a></li></ul></nav></div></div></div></nav>
 <section class="ref-gallery-section"><div class="container"><div class="ref-top-block"><div class="ref-heading-stack"><div class="ref-heading-accent">Empower</div><h1 class="ref-heading-main">Services</h1></div><div class="ref-meta-row"><div class="ref-divider-wrap"><div class="ref-divider"></div><div class="ref-overline">Meet the experts behind your success</div></div><img class="ref-mark" alt="E4 Power logo" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68bcc54da8714105bb252c7f_e4_logo_white.svg"/></div><div class="ref-subhead-row"><div><h2 class="ref-subtitle">Our expertise <span>Your advantage</span></h2><p class="ref-page-summary">Empower remains the strategy and competitiveness pillar, showing how E4 Power strengthens positioning, innovation, and opportunity creation.</p></div><a class="ref-cta-button" href="/contact-us">Contact Us</a></div></div><div class="ref-grid"><article class="ref-card"><div class="ref-card-media" style="background-image:url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20900%201200%22%20role%3D%22img%22%20aria-label%3D%22GRANT%20WRITING%22%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23d8d8d8%22/%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22url%28%23g%29%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%2284%22%20width%3D%22744%22%20height%3D%22344%22%20rx%3D%2218%22%20fill%3D%22%23202020%22%20opacity%3D%220.92%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%22472%22%20width%3D%22744%22%20height%3D%22548%22%20rx%3D%2218%22%20fill%3D%22%23f5f5f5%22%20opacity%3D%220.9%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22128%22%20y%3D%22146%22%20width%3D%22210%22%20height%3D%22210%22%20rx%3D%2220%22%20fill%3D%22%233b3b3b%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22146%22%20width%3D%22378%22%20height%3D%2234%22%20rx%3D%2210%22%20fill%3D%22%235a5a5a%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22214%22%20width%3D%22294%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22268%22%20width%3D%22332%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22322%22%20width%3D%22238%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22548%22%20width%3D%22608%22%20height%3D%22320%22%20rx%3D%2218%22%20fill%3D%22%23b1b1b1%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22916%22%20width%3D%22480%22%20height%3D%2232%22%20rx%3D%2210%22%20fill%3D%22%23949494%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Ctext%20x%3D%22146%22%20y%3D%221090%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-size%3D%2264%22%20font-weight%3D%22700%22%20letter-spacing%3D%226%22%20fill%3D%22%231f1f1f%22%3EGRANT%20WRITING%3C/text%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ececec%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%2255%25%22%20stop-color%3D%22%23cfcfcf%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23adadad%22/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3C/svg%3E')"></div><div class="ref-card-titleband">Grant Writing (Pre-Award)</div><div class="ref-card-label">Empower</div><p class="ref-card-note">Proposal strategy and submission support with competitive focus.</p><ul class="ref-point-list"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Opportunity scans</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Narrative development</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Submission support</span></li></ul></article><article class="ref-card"><div class="ref-card-media" style="background-image:url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20900%201200%22%20role%3D%22img%22%20aria-label%3D%22FINANCIAL%20MANAGEMENT%22%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23d8d8d8%22/%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22url%28%23g%29%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%2284%22%20width%3D%22744%22%20height%3D%22344%22%20rx%3D%2218%22%20fill%3D%22%23202020%22%20opacity%3D%220.92%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%22472%22%20width%3D%22744%22%20height%3D%22548%22%20rx%3D%2218%22%20fill%3D%22%23f5f5f5%22%20opacity%3D%220.9%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22128%22%20y%3D%22146%22%20width%3D%22210%22%20height%3D%22210%22%20rx%3D%2220%22%20fill%3D%22%233b3b3b%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22146%22%20width%3D%22378%22%20height%3D%2234%22%20rx%3D%2210%22%20fill%3D%22%235a5a5a%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22214%22%20width%3D%22294%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22268%22%20width%3D%22332%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22322%22%20width%3D%22238%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22548%22%20width%3D%22608%22%20height%3D%22320%22%20rx%3D%2218%22%20fill%3D%22%23b1b1b1%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22916%22%20width%3D%22480%22%20height%3D%2232%22%20rx%3D%2210%22%20fill%3D%22%23949494%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Ctext%20x%3D%22146%22%20y%3D%221090%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-size%3D%2264%22%20font-weight%3D%22700%22%20letter-spacing%3D%226%22%20fill%3D%22%231f1f1f%22%3EFINANCIAL%20MANAGEMENT%3C/text%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ececec%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%2255%25%22%20stop-color%3D%22%23cfcfcf%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23adadad%22/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3C/svg%3E')"></div><div class="ref-card-titleband">Financial Management</div><div class="ref-card-label">Empower</div><p class="ref-card-note">Financial strategy that helps organizations connect opportunity ambition to practical stewardship.</p><ul class="ref-point-list"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Funding-readiness framing</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Budget strategy</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Financial decision support</span></li></ul></article><article class="ref-card"><div class="ref-card-media" style="background-image:url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20900%201200%22%20role%3D%22img%22%20aria-label%3D%22IT%20SOLUTIONS%22%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23d8d8d8%22/%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22url%28%23g%29%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%2284%22%20width%3D%22744%22%20height%3D%22344%22%20rx%3D%2218%22%20fill%3D%22%23202020%22%20opacity%3D%220.92%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%22472%22%20width%3D%22744%22%20height%3D%22548%22%20rx%3D%2218%22%20fill%3D%22%23f5f5f5%22%20opacity%3D%220.9%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22128%22%20y%3D%22146%22%20width%3D%22210%22%20height%3D%22210%22%20rx%3D%2220%22%20fill%3D%22%233b3b3b%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22146%22%20width%3D%22378%22%20height%3D%2234%22%20rx%3D%2210%22%20fill%3D%22%235a5a5a%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22214%22%20width%3D%22294%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22268%22%20width%3D%22332%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22322%22%20width%3D%22238%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22548%22%20width%3D%22608%22%20height%3D%22320%22%20rx%3D%2218%22%20fill%3D%22%23b1b1b1%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22916%22%20width%3D%22480%22%20height%3D%2232%22%20rx%3D%2210%22%20fill%3D%22%23949494%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Ctext%20x%3D%22146%22%20y%3D%221090%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-size%3D%2264%22%20font-weight%3D%22700%22%20letter-spacing%3D%226%22%20fill%3D%22%231f1f1f%22%3EIT%20SOLUTIONS%3C/text%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ececec%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%2255%25%22%20stop-color%3D%22%23cfcfcf%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23adadad%22/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3C/svg%3E')"></div><div class="ref-card-titleband">IT Solutions</div><div class="ref-card-label">Empower</div><p class="ref-card-note">Digital systems that turn strategy into tangible infrastructure.</p><ul class="ref-point-list"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Custom portals</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Web app delivery</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Strategic buildouts</span></li></ul></article><article class="ref-card"><div class="ref-card-media" style="background-image:url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20900%201200%22%20role%3D%22img%22%20aria-label%3D%22READINESS%22%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22%23d8d8d8%22/%3E%0A%20%20%20%20%3Crect%20width%3D%22900%22%20height%3D%221200%22%20fill%3D%22url%28%23g%29%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%2284%22%20width%3D%22744%22%20height%3D%22344%22%20rx%3D%2218%22%20fill%3D%22%23202020%22%20opacity%3D%220.92%22/%3E%0A%20%20%20%20%3Crect%20x%3D%2278%22%20y%3D%22472%22%20width%3D%22744%22%20height%3D%22548%22%20rx%3D%2218%22%20fill%3D%22%23f5f5f5%22%20opacity%3D%220.9%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22128%22%20y%3D%22146%22%20width%3D%22210%22%20height%3D%22210%22%20rx%3D%2220%22%20fill%3D%22%233b3b3b%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22146%22%20width%3D%22378%22%20height%3D%2234%22%20rx%3D%2210%22%20fill%3D%22%235a5a5a%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22214%22%20width%3D%22294%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22268%22%20width%3D%22332%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22374%22%20y%3D%22322%22%20width%3D%22238%22%20height%3D%2226%22%20rx%3D%2210%22%20fill%3D%22%23707070%22%20opacity%3D%220.58%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22548%22%20width%3D%22608%22%20height%3D%22320%22%20rx%3D%2218%22%20fill%3D%22%23b1b1b1%22%20opacity%3D%220.72%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22146%22%20y%3D%22916%22%20width%3D%22480%22%20height%3D%2232%22%20rx%3D%2210%22%20fill%3D%22%23949494%22%20opacity%3D%220.7%22/%3E%0A%20%20%20%20%3Ctext%20x%3D%22146%22%20y%3D%221090%22%20font-family%3D%22Arial%2C%20Helvetica%2C%20sans-serif%22%20font-size%3D%2264%22%20font-weight%3D%22700%22%20letter-spacing%3D%226%22%20fill%3D%22%231f1f1f%22%3EREADINESS%3C/text%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ececec%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%2255%25%22%20stop-color%3D%22%23cfcfcf%22/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23adadad%22/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3C/svg%3E')"></div><div class="ref-card-titleband">Readiness Assessments</div><div class="ref-card-label">Empower</div><p class="ref-card-note">Assessments that clarify what path can create momentum fastest.</p><ul class="ref-point-list"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Priority sequencing</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Infrastructure mapping</span></li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0 16 8 8 16 0 8Z"></path></svg><span>Competitive baseline</span></li></ul></article></div><div class="ref-bottom-copy">Use Empower when the focus is opportunity creation, strategic positioning, and the systems that help organizations move forward with greater confidence.</div><div class="ref-bottom-links"><a class="ref-secondary-link primary" href="/services/">Services Hub</a><a class="ref-secondary-link" href="/educate/">Educate</a><a class="ref-secondary-link" href="/elevate/">Elevate</a><a class="ref-secondary-link" href="/engage/">Engage</a></div></div></section>

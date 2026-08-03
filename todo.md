@@ -230,3 +230,7 @@
 - [x] Add public-facing filters to the Insights hub so visitors can narrow published entries by content type.
 - [x] Improve the public Insights listing so visitors can scan entries more clearly before opening a detail page.
 - [x] Verify the new public content-hub browsing improvements with tests and preview before the next checkpoint.
+- [x] Fix the light-mode contrast in the Sharpening Your Competitive Edge section so headings and body copy remain readable.
+- [x] Fix the light-mode contrast in the E4 Team section so the supporting text beneath the team heading does not stay white on a light background.
+- [x] Repair the interior-page navbar styling in light mode so the navigation remains clean and readable away from the homepage.
+- [x] Verify the corrected light-mode behavior on the affected interior pages before the next checkpoint.

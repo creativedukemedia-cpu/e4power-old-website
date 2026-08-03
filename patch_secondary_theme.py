@@ -40,6 +40,7 @@ body.theme-light .section.dark-gray,
 body.theme-light .main-content-block,
 body.theme-light .main-content-block.gray,
 body.theme-light .smaller-container.gray,
+body.theme-light .smaller-container.smaller,
 body.theme-light .team-member,
 body.theme-light .member-bio,
 body.theme-light .member-bio.w-richtext,
@@ -70,16 +71,27 @@ body.theme-light .ref-pillar-card,
 body.theme-light .ref-stacked-card,
 body.theme-light .ref-surface,
 body.theme-light .ref-panel,
-body.theme-light .ref-cta-button,
 body.theme-light .ref-grid,
 body.theme-light .ref-body,
 body.theme-light .ref-summary,
 body.theme-light .ref-copy-block,
 body.theme-light .ref-column,
-body.theme-light .ref-band{
+body.theme-light .ref-band,
+body.theme-light .ref-gallery-section,
+body.theme-light .ref-top-block,
+body.theme-light .team-members-div,
+body.theme-light .team-members-collection-list,
+body.theme-light .team-picture-div,
+body.theme-light .w-dyn-item{
   background:#f5f0e6 !important;
   color:#1e1a16 !important;
 }
+body.theme-light p,
+body.theme-light li,
+body.theme-light label,
+body.theme-light input,
+body.theme-light textarea,
+body.theme-light select,
 body.theme-light .paragraph,
 body.theme-light .paragraph-2,
 body.theme-light .paragraph-3,
@@ -123,7 +135,6 @@ body.theme-light .subheading-div,
 body.theme-light .smaller-container,
 body.theme-light .container,
 body.theme-light .title,
-body.theme-light .team-members-div,
 body.theme-light .ref-kicker,
 body.theme-light .ref-copy,
 body.theme-light .ref-summary,
@@ -135,6 +146,21 @@ body.theme-light .ref-subhead,
 body.theme-light .ref-overline,
 body.theme-light .ref-caption,
 body.theme-light .ref-note,
+body.theme-light .ref-heading-main,
+body.theme-light .ref-heading-accent,
+body.theme-light .ref-subtitle,
+body.theme-light .ref-page-summary,
+body.theme-light .ref-service-title,
+body.theme-light .ref-service-kicker,
+body.theme-light .ref-card-titleband,
+body.theme-light .ref-card-label,
+body.theme-light .ref-card-note,
+body.theme-light .ref-point-list span,
+body.theme-light .ref-point-list li,
+body.theme-light .ref-service-link,
+body.theme-light .w-form label,
+body.theme-light .w-form input,
+body.theme-light .w-form textarea,
 body.theme-light.ref-page-shell p,
 body.theme-light.ref-page-shell li,
 body.theme-light.ref-page-shell span,
@@ -163,6 +189,8 @@ body.theme-light .small-heading,
 body.theme-light .ref-title,
 body.theme-light .ref-heading,
 body.theme-light .ref-display,
+body.theme-light .ref-heading-main,
+body.theme-light .ref-subtitle,
 body.theme-light strong{
   text-shadow:none !important;
 }
@@ -175,8 +203,10 @@ body.theme-light .small-heading span,
 body.theme-light .ref-kicker,
 body.theme-light .ref-accent,
 body.theme-light .ref-highlight,
-body.theme-light .ref-cta-button,
 body.theme-light .ref-pill,
+body.theme-light .ref-service-kicker,
+body.theme-light .ref-card-label,
+body.theme-light .ref-subtitle span,
 body.theme-light.ref-page-shell .gold,
 body.theme-light.ref-page-shell .orange,
 body.theme-light.ref-page-shell .accent{
@@ -188,7 +218,8 @@ body.theme-light .navbar-container,
 body.theme-light .navbar-wrapper,
 body.theme-light .nav-menu-wrapper,
 body.theme-light .w-nav-overlay,
-body.theme-light .w-nav-menu{
+body.theme-light .w-nav-menu,
+body.theme-light .navbar-right-div{
   background:#f5f0e6 !important;
 }
 body.theme-light .navbar-logo-left-container,
@@ -196,8 +227,8 @@ body.theme-light .navbar-wrapper,
 body.theme-light .nav-menu-wrapper,
 body.theme-light .main-content-block,
 body.theme-light .main-content-block.gray,
-body.theme-light .main-content-block.gray,
 body.theme-light .smaller-container.gray,
+body.theme-light .smaller-container.smaller,
 body.theme-light .team-member,
 body.theme-light .service-card,
 body.theme-light .relation-card,
@@ -218,6 +249,7 @@ body.theme-light .ref-panel,
 body.theme-light .ref-surface,
 body.theme-light .ref-copy-block,
 body.theme-light .ref-content-panel,
+body.theme-light .ref-gallery-section .container,
 body.theme-light .ref-page-shell img + div{
   border-color:rgba(30,26,22,.14) !important;
 }
@@ -237,21 +269,49 @@ body.theme-light .ref-stacked-card,
 body.theme-light .ref-panel,
 body.theme-light .ref-surface,
 body.theme-light .ref-copy-block,
-body.theme-light .ref-content-panel{
+body.theme-light .ref-content-panel,
+body.theme-light .smaller-container.gray,
+body.theme-light .smaller-container.smaller{
   box-shadow:0 14px 30px rgba(56,41,18,.08) !important;
 }
 body.theme-light .white-line{background:rgba(30,26,22,.18) !important;}
 body.theme-light .menu-button,
+body.theme-light .w-nav-button,
 body.theme-light .hamburger-icon,
 body.theme-light .w-icon-nav-menu,
 body.theme-light .text-link::after,
 body.theme-light .link-block::after,
 body.theme-light .cta-link::after{color:#1e1a16 !important;background:currentColor !important;}
+body.theme-light .menu-button,
+body.theme-light .w-nav-button{
+  border:1px solid rgba(30,26,22,.14) !important;
+  border-radius:999px !important;
+  background:rgba(255,255,255,.82) !important;
+}
+body.theme-light .navbar-wrapper{
+  gap:1rem !important;
+}
+body.theme-light .navbar-right-div{
+  display:flex !important;
+  align-items:center !important;
+  gap:1rem !important;
+}
+body.theme-light .nav-menu-two{
+  gap:0 !important;
+}
+body.theme-light .nav-menu-two .nav-link,
+body.theme-light .text-link{
+  color:#1e1a16 !important;
+}
+body.theme-light .nav-menu-wrapper{
+  box-shadow:0 16px 28px rgba(56,41,18,.08) !important;
+}
 body.theme-light .navbar-brand img,
 body.theme-light .small-logo,
 body.theme-light .image-6,
 body.theme-light .image-7,
-body.theme-light .image-8{filter:invert(1) brightness(.15) !important;}
+body.theme-light .image-8,
+body.theme-light .ref-mark{filter:invert(1) brightness(.15) !important;}
 body.theme-light .social-link-block{background:rgba(30,26,22,.06) !important;border-color:rgba(30,26,22,.12) !important;}
 body.theme-light .social-link-block img{filter:invert(1) brightness(.12) !important;}
 body.theme-light .theme-toggle-button{background:rgba(255,255,255,.88)!important;color:#1d1a17!important;border:1px solid rgba(29,26,23,.12)!important;}
@@ -267,6 +327,11 @@ body.theme-dark .theme-toggle-thumb{transform:none!important;}
 @media screen and (max-width: 991px){
   .navbar-right-div>.theme-toggle-button{display:none!important;}
   .nav-menu-wrapper .mobile-theme-toggle{display:inline-flex!important;justify-content:space-between;align-self:stretch;}
+  body.theme-light .nav-menu-wrapper,
+  body.theme-light .w-nav-overlay,
+  body.theme-light .w-nav-menu{
+    background:#f5f0e6 !important;
+  }
 }
 </style>
 """.strip()
@@ -292,7 +357,7 @@ for path in TARGETS:
         classes = match.group(1).split()
         if 'theme-dark' not in classes and 'theme-light' not in classes:
             classes.append('theme-dark')
-        return '<body class="' + ' '.join(classes) + '">'
+        return '<body class="' + ' '.join(classes) + '">' 
 
     text = body_re.sub(add_theme_class, text, count=1)
 
