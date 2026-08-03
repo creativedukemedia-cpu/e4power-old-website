@@ -534,6 +534,7 @@ body.home-service-menu .hero-service-hover-shell{z-index:28;bottom:2rem;}
 }
 
 body.home-service-menu .theme-toggle-button{display:inline-flex;align-items:center;gap:.65rem;margin-left:1rem;padding:.35rem .55rem .35rem .4rem;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(22,20,17,.92);color:#f6efe5;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;cursor:pointer;}
+body.home-service-menu .reference-topbar-nav .mobile-theme-toggle{display:none;}
 body.home-service-menu .theme-toggle-button .theme-toggle-track{position:relative;display:inline-flex;align-items:center;width:2.5rem;height:1.4rem;border-radius:999px;background:rgba(255,255,255,.12);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);} 
 body.home-service-menu .theme-toggle-button .theme-toggle-thumb{position:absolute;left:.14rem;top:.14rem;width:1.12rem;height:1.12rem;border-radius:999px;background:#e7be67;transition:transform .22s ease;box-shadow:0 6px 14px rgba(0,0,0,.22);} 
 body.home-service-menu.theme-light .theme-toggle-button .theme-toggle-thumb{transform:translateX(1.08rem);background:#1d1a17;} 
@@ -560,11 +561,17 @@ body.home-service-menu.theme-light .white-line,body.home-service-menu.theme-ligh
 body.home-service-menu.theme-light .service-preview-shell,body.home-service-menu.theme-light .testimonial-card,body.home-service-menu.theme-light .dropdown-list,body.home-service-menu.theme-light .dropdown-toggle,body.home-service-menu.theme-light .hero-services-panel{background:rgba(255,255,255,.72)!important;color:#1d1a17!important;border-color:rgba(29,26,23,.08)!important;} 
 body.home-service-menu.theme-light .hero-services-item{background:rgba(29,26,23,.03)!important;border-color:rgba(29,26,23,.08)!important;color:#1d1a17!important;} 
 body.home-service-menu.theme-light .submit-button,body.home-service-menu.theme-light .service-preview-cta{background:#1d1a17!important;color:#f7f2e8!important;} 
-@media screen and (max-width: 991px){body.home-service-menu .theme-toggle-button{margin-left:auto;}.reference-topbar-brand .theme-toggle-button{order:3;}body.home-service-menu.theme-light .reference-topbar-nav{background:#f7f2e8;border-top:1px solid rgba(29,26,23,.06);}}
+body.home-service-menu.theme-light .main-content-block:not(.transparent),body.home-service-menu.theme-light .main-content-block.transparent .partners-marquee-card,body.home-service-menu.theme-light .testimonial-slide-wrapper,body.home-service-menu.theme-light .service-preview-card,body.home-service-menu.theme-light .dropdown-content,body.home-service-menu.theme-light .tab-content-wrap,body.home-service-menu.theme-light .bridge-content-card{background:#fffaf2!important;color:#1d1a17!important;box-shadow:inset 0 0 0 1px rgba(29,26,23,.08)!important;} 
+body.home-service-menu.theme-light .main-content-block:not(.transparent) .h3,body.home-service-menu.theme-light .main-content-block:not(.transparent) p,body.home-service-menu.theme-light .main-content-block:not(.transparent) li,body.home-service-menu.theme-light .main-content-block:not(.transparent) .paragraph,body.home-service-menu.theme-light .main-content-block:not(.transparent) .elevate-paragraph,body.home-service-menu.theme-light .main-content-block:not(.transparent) .testimonial-text,body.home-service-menu.theme-light .main-content-block:not(.transparent) .bridge-heading,body.home-service-menu.theme-light .main-content-block:not(.transparent) .hero-text-black,body.home-service-menu.theme-light .main-content-block:not(.transparent) .small-heading,body.home-service-menu.theme-light .main-content-block:not(.transparent) .heading,body.home-service-menu.theme-light .main-content-block:not(.transparent) .bookmark-text,body.home-service-menu.theme-light .main-content-block:not(.transparent) .client-name{color:#1d1a17!important;} 
+body.home-service-menu.theme-light .main-content-block:not(.transparent) .h3-orange,body.home-service-menu.theme-light .orange-text,body.home-service-menu.theme-light .hero-services-label,body.home-service-menu.theme-light .small-heading.bigger{color:#c8942f!important;} 
+body.home-service-menu.theme-light .main-content-block:not(.transparent) .small-logo{filter:brightness(0) saturate(100%) invert(10%) sepia(9%) saturate(858%) hue-rotate(357deg) brightness(94%) contrast(93%);} 
+body.home-service-menu.theme-light .marquee_logo{filter:none;} 
+@media screen and (max-width: 991px){body.home-service-menu .reference-topbar-brand > .theme-toggle-button{display:none;}body.home-service-menu .reference-topbar-nav{display:none;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:.9rem;padding:1rem 1.2rem 1.2rem;background:#1d1a17;border-top:1px solid rgba(255,255,255,.06);}body.home-service-menu .reference-topbar-nav .mobile-theme-toggle{display:inline-flex;margin:0 0 .35rem 0;align-self:stretch;justify-content:space-between;}body.home-service-menu.theme-light .reference-topbar-nav{background:#f7f2e8;border-top:1px solid rgba(29,26,23,.06);}}
+@media screen and (min-width: 992px){body.home-service-menu .reference-topbar-nav .mobile-theme-toggle{display:none!important;}}
 @media screen and (max-width: 767px){body.home-service-menu .theme-toggle-button{padding:.28rem .45rem .28rem .35rem;font-size:.62rem;}body.home-service-menu .theme-toggle-button .theme-toggle-track{width:2.25rem;height:1.28rem;}body.home-service-menu .theme-toggle-button .theme-toggle-thumb{width:1rem;height:1rem;}body.home-service-menu.theme-light .theme-toggle-button .theme-toggle-thumb{transform:translateX(.94rem);} }
 
 </style>
-</head><body class="body home-service-menu"><nav class="reference-topbar" role="navigation"><div class="reference-topbar-inner"><div class="reference-topbar-brand"><a aria-current="page" class="brand-logo" href="/"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68bcc54da8714105bb252c7f_e4_logo_white.svg"/></a><div class="reference-socials"><a aria-label="Instagram" href="https://www.instagram.com/e4power_?igsh=bXR4bThxMHh2dHNy&amp;utm_source=qr" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="17" rx="5.2" width="17" x="3.5" y="3.5"></rect><circle cx="12" cy="12" r="4.1"></circle><circle class="icon-fill" cx="17.5" cy="6.7" r="1.2"></circle></svg></a><a aria-label="Facebook" href="https://www.facebook.com/profile.php?id=61573544665670&amp;mibextid=wwXIfr&amp;rdid=yOcyRogs7shBnrLD&amp;share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1775G2zRAh%2F%3Fmibextid%3DwwXIfr#" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path class="icon-fill" d="M13.4 20.5v-7h2.5l.4-3h-2.9V8.7c0-.9.3-1.5 1.6-1.5h1.5V4.6c-.7-.1-1.4-.2-2.1-.2-2.1 0-3.6 1.3-3.6 3.8v2.2H8.5v3h2.3v7h2.6z"></path></svg></a><a aria-label="LinkedIn" href="https://www.linkedin.com/company/e4-power-consulting/" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><rect class="icon-fill" height="10.3" rx=".4" width="3.1" x="4.1" y="9.2"></rect><circle class="icon-fill" cx="5.65" cy="5.95" r="1.75"></circle><path class="icon-fill" d="M10 9.2h3v1.4c.6-.9 1.7-1.7 3.5-1.7 3.3 0 3.9 2.2 3.9 5v5.6h-3.2v-5c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7v5.1H10V9.2z"></path></svg></a><a aria-label="TikTok" href="https://www.tiktok.com/@e4powerconsulting?_t=ZT-90YVLBMkwaT&amp;_r=1" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path class="icon-fill" d="M14.8 4.2c.7 1.7 1.9 2.9 3.7 3.5v2.9c-1.4-.1-2.6-.6-3.7-1.3v5.1c0 3.2-2 5.4-5.2 5.4-2.6 0-4.7-1.9-4.7-4.5 0-2.9 2.3-4.9 5.3-4.9.4 0 .8 0 1.1.1v2.9c-.3-.1-.6-.1-1-.1-1.4 0-2.4.8-2.4 2 0 1.1.9 1.9 2 1.9 1.4 0 2.2-.9 2.2-2.6V4.2h2.7z"></path></svg></a></div><button aria-label="Toggle light and dark mode" class="theme-toggle-button" id="theme-toggle-button" type="button"><span class="theme-toggle-track"><span class="theme-toggle-thumb"></span></span><span class="theme-toggle-label">Theme</span></button><button aria-expanded="false" aria-label="Open navigation menu" class="reference-topbar-toggle" onclick="document.body.classList.toggle('mobile-nav-open'); this.setAttribute('aria-expanded', document.body.classList.contains('mobile-nav-open') ? 'true' : 'false');"><span class="toggle-lines"></span></button></div><div class="reference-topbar-nav"><a href="#about-e4" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">ABOUT E4</a><a href="/services/" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">OUR SERVICES</a><a href="#empower" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">THE BRIDGE MODEL</a><a href="#engage" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">OUR TEAM</a><a href="/contact-us" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">CONTACT</a></div></div></nav><div class="w-embed"><style>
+</head><body class="body home-service-menu"><nav class="reference-topbar" role="navigation"><div class="reference-topbar-inner"><div class="reference-topbar-brand"><a aria-current="page" class="brand-logo" href="/"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68ba0532388ab756f96c84d5/68bcc54da8714105bb252c7f_e4_logo_white.svg"/></a><div class="reference-socials"><a aria-label="Instagram" href="https://www.instagram.com/e4power_?igsh=bXR4bThxMHh2dHNy&amp;utm_source=qr" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="17" rx="5.2" width="17" x="3.5" y="3.5"></rect><circle cx="12" cy="12" r="4.1"></circle><circle class="icon-fill" cx="17.5" cy="6.7" r="1.2"></circle></svg></a><a aria-label="Facebook" href="https://www.facebook.com/profile.php?id=61573544665670&amp;mibextid=wwXIfr&amp;rdid=yOcyRogs7shBnrLD&amp;share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1775G2zRAh%2F%3Fmibextid%3DwwXIfr#" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path class="icon-fill" d="M13.4 20.5v-7h2.5l.4-3h-2.9V8.7c0-.9.3-1.5 1.6-1.5h1.5V4.6c-.7-.1-1.4-.2-2.1-.2-2.1 0-3.6 1.3-3.6 3.8v2.2H8.5v3h2.3v7h2.6z"></path></svg></a><a aria-label="LinkedIn" href="https://www.linkedin.com/company/e4-power-consulting/" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><rect class="icon-fill" height="10.3" rx=".4" width="3.1" x="4.1" y="9.2"></rect><circle class="icon-fill" cx="5.65" cy="5.95" r="1.75"></circle><path class="icon-fill" d="M10 9.2h3v1.4c.6-.9 1.7-1.7 3.5-1.7 3.3 0 3.9 2.2 3.9 5v5.6h-3.2v-5c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7v5.1H10V9.2z"></path></svg></a><a aria-label="TikTok" href="https://www.tiktok.com/@e4powerconsulting?_t=ZT-90YVLBMkwaT&amp;_r=1" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path class="icon-fill" d="M14.8 4.2c.7 1.7 1.9 2.9 3.7 3.5v2.9c-1.4-.1-2.6-.6-3.7-1.3v5.1c0 3.2-2 5.4-5.2 5.4-2.6 0-4.7-1.9-4.7-4.5 0-2.9 2.3-4.9 5.3-4.9.4 0 .8 0 1.1.1v2.9c-.3-.1-.6-.1-1-.1-1.4 0-2.4.8-2.4 2 0 1.1.9 1.9 2 1.9 1.4 0 2.2-.9 2.2-2.6V4.2h2.7z"></path></svg></a></div><button aria-label="Toggle light and dark mode" class="theme-toggle-button" id="theme-toggle-button" type="button"><span class="theme-toggle-track"><span class="theme-toggle-thumb"></span></span><span class="theme-toggle-label">Theme</span></button><button aria-expanded="false" aria-label="Open navigation menu" class="reference-topbar-toggle" onclick="document.body.classList.toggle('mobile-nav-open'); this.setAttribute('aria-expanded', document.body.classList.contains('mobile-nav-open') ? 'true' : 'false');"><span class="toggle-lines"></span></button></div><div class="reference-topbar-nav"><button aria-label="Toggle light and dark mode" class="theme-toggle-button mobile-theme-toggle" id="mobile-theme-toggle-button" type="button"><span class="theme-toggle-label">Theme</span><span class="theme-toggle-track"><span class="theme-toggle-thumb"></span></span></button><a href="#about-e4" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">ABOUT E4</a><a href="/services/" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">OUR SERVICES</a><a href="#empower" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">THE BRIDGE MODEL</a><a href="#engage" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">OUR TEAM</a><a href="/contact-us" onclick="document.body.classList.remove('mobile-nav-open'); document.querySelector('.reference-topbar-toggle')?.setAttribute('aria-expanded','false');">CONTACT</a></div></div></nav><div class="w-embed"><style>
 body {
  font-size: 0.9195402298850576vw;
 }
@@ -1120,4 +1127,72 @@ document.addEventListener("DOMContentLoaded", init);
   else boot();
 })();
 </script>
-<script>(function(){var body=document.body;var button=document.getElementById('theme-toggle-button');if(!body||!button)return;var key='e4-theme';var saved='';try{saved=localStorage.getItem(key)||'';}catch(e){}var darkClass='theme-dark';var lightClass='theme-light';var apply=function(theme){body.classList.remove(lightClass,darkClass);body.classList.add(theme==='light'?lightClass:darkClass);button.setAttribute('aria-pressed', theme==='light' ? 'true' : 'false');};apply(saved==='light'?'light':'dark');button.addEventListener('click',function(){var next=body.classList.contains(lightClass)?'dark':'light';apply(next);try{localStorage.setItem(key,next);}catch(e){}});})();</script></body></html>
+<style id="theme-light-final-patch">
+body.home-service-menu.theme-light{background:#f5f1e9!important;color:#1d1a17!important;}
+body.home-service-menu.theme-light .section,
+body.home-service-menu.theme-light .section.black,
+body.home-service-menu.theme-light .section.dark-gray,
+body.home-service-menu.theme-light .main-content-block:not(.transparent),
+body.home-service-menu.theme-light .testimonial-card,
+body.home-service-menu.theme-light .service-preview-shell,
+body.home-service-menu.theme-light .service-preview-card,
+body.home-service-menu.theme-light .dropdown-list,
+body.home-service-menu.theme-light .dropdown-toggle,
+body.home-service-menu.theme-light .dropdown-content,
+body.home-service-menu.theme-light .tab-content-wrap,
+body.home-service-menu.theme-light .bridge-content-card,
+body.home-service-menu.theme-light .hero-services-panel,
+body.home-service-menu.theme-light .reference-topbar-nav,
+body.home-service-menu.theme-light .container-hero .hero-block.black{background:#fffaf2!important;color:#1d1a17!important;}
+body.home-service-menu.theme-light .heading,
+body.home-service-menu.theme-light .h3,
+body.home-service-menu.theme-light .small-heading,
+body.home-service-menu.theme-light .paragraph,
+body.home-service-menu.theme-light .elevate-paragraph,
+body.home-service-menu.theme-light .testimonial-text,
+body.home-service-menu.theme-light .bridge-heading,
+body.home-service-menu.theme-light .service-preview-title,
+body.home-service-menu.theme-light .service-preview-copy,
+body.home-service-menu.theme-light .service-preview-kicker,
+body.home-service-menu.theme-light .hero-text,
+body.home-service-menu.theme-light .hero-text span,
+body.home-service-menu.theme-light .hero-text-black,
+body.home-service-menu.theme-light .bookmark-text,
+body.home-service-menu.theme-light .client-name,
+body.home-service-menu.theme-light .dropdown-toggle,
+body.home-service-menu.theme-light .dropdown-list,
+body.home-service-menu.theme-light .dropdown-content p,
+body.home-service-menu.theme-light .dropdown-content li,
+body.home-service-menu.theme-light .main-content-block:not(.transparent) p,
+body.home-service-menu.theme-light .main-content-block:not(.transparent) li{color:#1d1a17!important;}
+body.home-service-menu.theme-light .h3-orange,
+body.home-service-menu.theme-light .orange-text,
+body.home-service-menu.theme-light .hero-services-label,
+body.home-service-menu.theme-light .small-heading.bigger{color:#c8942f!important;}
+body.home-service-menu.theme-light .white-line,
+body.home-service-menu.theme-light .bridge-line{background:rgba(29,26,23,.18)!important;}
+body.home-service-menu.theme-light .reference-topbar-brand{background:linear-gradient(90deg,#d7aa4d 0%,#edc977 100%)!important;}
+body.home-service-menu.theme-light .reference-topbar-inner{background:#f7f2e8!important;border-bottom:1px solid rgba(29,26,23,.08)!important;}
+body.home-service-menu.theme-light .reference-topbar-nav a{color:#1d1a17!important;}
+body.home-service-menu.theme-light .reference-socials a,
+body.home-service-menu.theme-light .reference-topbar-toggle,
+body.home-service-menu.theme-light .theme-toggle-button{background:rgba(255,255,255,.88)!important;color:#1d1a17!important;border-color:rgba(29,26,23,.12)!important;}
+body.home-service-menu.theme-light .reference-socials svg{stroke:#1d1a17!important;}
+body.home-service-menu.theme-light .reference-socials .icon-fill{fill:#1d1a17!important;}
+body.home-service-menu.theme-light .reference-topbar-toggle .toggle-lines,
+body.home-service-menu.theme-light .reference-topbar-toggle .toggle-lines::before,
+body.home-service-menu.theme-light .reference-topbar-toggle .toggle-lines::after{background:#1d1a17!important;}
+body.home-service-menu.theme-light .theme-toggle-button .theme-toggle-track{background:rgba(29,26,23,.08)!important;box-shadow:inset 0 0 0 1px rgba(29,26,23,.08)!important;}
+body.home-service-menu.theme-light .theme-toggle-button .theme-toggle-thumb{background:#1d1a17!important;}
+body.home-service-menu.theme-light .hero-services-item{background:rgba(29,26,23,.03)!important;border-color:rgba(29,26,23,.08)!important;color:#1d1a17!important;}
+body.home-service-menu.theme-light .submit-button,
+body.home-service-menu.theme-light .service-preview-cta{background:#1d1a17!important;color:#f7f2e8!important;}
+@media screen and (max-width: 991px){
+  body.home-service-menu .reference-topbar-brand > .theme-toggle-button{display:none!important;}
+  body.home-service-menu .reference-topbar-nav .mobile-theme-toggle{display:inline-flex!important;align-self:stretch;justify-content:space-between;margin:0 0 .35rem 0!important;}
+}
+@media screen and (min-width: 992px){
+  body.home-service-menu .reference-topbar-nav .mobile-theme-toggle{display:none!important;}
+}
+</style>
+<script>(function(){var body=document.body;var buttons=[document.getElementById('theme-toggle-button'),document.getElementById('mobile-theme-toggle-button')].filter(Boolean);if(!body||!buttons.length)return;var key='e4-theme';var saved='';try{saved=localStorage.getItem(key)||'';}catch(e){}var darkClass='theme-dark';var lightClass='theme-light';var apply=function(theme){body.classList.remove(lightClass,darkClass);body.classList.add(theme==='light'?lightClass:darkClass);buttons.forEach(function(button){button.setAttribute('aria-pressed', theme==='light' ? 'true' : 'false');});};apply(saved==='light'?'light':'dark');buttons.forEach(function(button){button.addEventListener('click',function(){var next=body.classList.contains(lightClass)?'dark':'light';apply(next);try{localStorage.setItem(key,next);}catch(e){}});});})();</script></body></html>

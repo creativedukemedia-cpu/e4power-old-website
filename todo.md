@@ -199,3 +199,7 @@
 - [x] Use a username/password login approach for the CMS rather than Manus OAuth.
 - [x] Prefer an open-source authentication or CMS-compatible solution for staff access.
 - [x] Determine the project upgrade path required to support the CMS, database, and admin login.
+- [x] Extend light mode styling so lower homepage sections and text blocks remain visible with correct contrast.
+- [x] Move the theme toggle into the mobile hamburger menu so the mobile top bar is less crowded.
+- [x] Keep the desktop theme toggle in the top navigation while using a mobile-only menu placement for phones.
+- [x] Verify the corrected light mode and mobile menu layout against the reported visibility issues before the next checkpoint.

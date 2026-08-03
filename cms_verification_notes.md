@@ -4,3 +4,9 @@
 - Verified the CMS admin route now loads its own bootstrap interface titled "E4 Power CMS" with name, email, and password fields for the first admin account.
 - Verified that the homepage navbar now renders a visible theme toggle button next to the social icons.
 - Verified that the Vite route fix now serves the dedicated CMS entry at /admin/index.html with the bootstrap admin-account form instead of the marketing homepage.
+- Verified through browser inspection that the light-theme body class is now applying to the homepage.
+- Verified that the latest late-loading theme patch visibly switches the desktop homepage into a lighter presentation instead of staying dark.
+- Observed that the mobile-placement requirement still needs device-level confirmation because the desktop preview continues to show the topbar toggle, while the CSS now hides that brand toggle under the mobile breakpoint and exposes the in-menu mobile toggle.
+- Verified in light mode that the lower homepage content now renders with a pale section background and dark readable copy instead of dark-on-dark cards.
+- Verified that the previously problematic Elevate and partner-adjacent content is now visibly readable in the browser preview after the late theme patch.
+- The mobile toggle relocation is implemented in the markup and final CSS patch, but final confirmation still depends on a phone-width render rather than the desktop preview.
