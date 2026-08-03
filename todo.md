@@ -221,3 +221,6 @@
 - [x] Add direct public-view links for published CMS items inside the admin list so staff can verify live content quickly.
 - [x] Keep unpublished drafts from exposing a public-view link until they are published.
 - [x] Verify the new admin-side public-view shortcut with tests and preview before the next checkpoint.
+- [x] Add admin-side content filters for status and content type so staff can quickly narrow the CMS list.
+- [x] Add a simple admin search field so staff can find content items by title or slug.
+- [x] Verify the new admin findability controls with tests and preview before the next checkpoint.

@@ -51,6 +51,17 @@ describe('cms content workflow source coverage', () => {
     expect(adminAppSource).toContain('View live');
   });
 
+  it('supports admin-side content search and filters', () => {
+    expect(adminAppSource).toContain("const [searchQuery, setSearchQuery] = useState('')");
+    expect(adminAppSource).toContain("const [statusFilter, setStatusFilter] = useState<'all' | 'draft' | 'published'>('all')");
+    expect(adminAppSource).toContain("const [typeFilter, setTypeFilter] = useState<'all' | string>('all')");
+    expect(adminAppSource).toContain('const filteredItems = useMemo(() => {');
+    expect(adminAppSource).toContain('Find by title or slug');
+    expect(adminAppSource).toContain('All statuses');
+    expect(adminAppSource).toContain('All types');
+    expect(adminAppSource).toContain('No items match the current filters.');
+  });
+
   it('supports content deletion in the admin interface', () => {
     expect(adminAppSource).toContain('async function removeItem(itemId: number)');
     expect(adminAppSource).toContain("method: 'DELETE'");

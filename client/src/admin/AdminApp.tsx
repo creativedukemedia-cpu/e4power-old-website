@@ -61,6 +61,9 @@ export default function AdminApp() {
   const [coverImageFile, setCoverImageFile] = useState<File | null>(null);
   const [coverImagePreviewUrl, setCoverImagePreviewUrl] = useState('');
   const [removeCoverImage, setRemoveCoverImage] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [statusFilter, setStatusFilter] = useState<'all' | 'draft' | 'published'>('all');
+  const [typeFilter, setTypeFilter] = useState<'all' | string>('all');
 
   const contentTypes = useMemo(
     () => [
@@ -71,6 +74,16 @@ export default function AdminApp() {
     ],
     []
   );
+
+  const filteredItems = useMemo(() => {
+    const normalizedQuery = searchQuery.trim().toLowerCase();
+    return items.filter((item) => {
+      const matchesQuery = !normalizedQuery || item.title.toLowerCase().includes(normalizedQuery) || item.slug.toLowerCase().includes(normalizedQuery);
+      const matchesStatus = statusFilter === 'all' || item.status === statusFilter;
+      const matchesType = typeFilter === 'all' || item.contentType === typeFilter;
+      return matchesQuery && matchesStatus && matchesType;
+    });
+  }, [items, searchQuery, statusFilter, typeFilter]);
 
   useEffect(() => {
     return () => {
@@ -474,10 +487,48 @@ export default function AdminApp() {
             <aside className={cardClass}>
               <div className="flex items-center justify-between gap-3">
                 <p className="text-xs uppercase tracking-[0.35em] text-amber-300/80">Current items</p>
-                <span className="rounded-full border border-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-stone-300">{items.length} total</span>
+                <span className="rounded-full border border-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-stone-300">{filteredItems.length} shown</span>
+              </div>
+              <div className="mt-5 grid gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                <label className="grid gap-2 text-xs uppercase tracking-[0.18em] text-stone-300">
+                  <span>Search</span>
+                  <input
+                    value={searchQuery}
+                    onChange={(event) => setSearchQuery(event.target.value)}
+                    placeholder="Find by title or slug"
+                    className="h-11 rounded-xl border border-white/10 bg-black/20 px-3 text-sm normal-case tracking-normal text-stone-100 outline-none placeholder:text-stone-500"
+                  />
+                </label>
+                <div className="grid gap-3 md:grid-cols-2">
+                  <label className="grid gap-2 text-xs uppercase tracking-[0.18em] text-stone-300">
+                    <span>Status</span>
+                    <select
+                      value={statusFilter}
+                      onChange={(event) => setStatusFilter(event.target.value as 'all' | 'draft' | 'published')}
+                      className="h-11 rounded-xl border border-white/10 bg-black/20 px-3 text-sm normal-case tracking-normal text-stone-100 outline-none"
+                    >
+                      <option value="all">All statuses</option>
+                      <option value="draft">Draft</option>
+                      <option value="published">Published</option>
+                    </select>
+                  </label>
+                  <label className="grid gap-2 text-xs uppercase tracking-[0.18em] text-stone-300">
+                    <span>Content type</span>
+                    <select
+                      value={typeFilter}
+                      onChange={(event) => setTypeFilter(event.target.value)}
+                      className="h-11 rounded-xl border border-white/10 bg-black/20 px-3 text-sm normal-case tracking-normal text-stone-100 outline-none"
+                    >
+                      <option value="all">All types</option>
+                      {contentTypes.map((option) => (
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                      ))}
+                    </select>
+                  </label>
+                </div>
               </div>
               <div className="mt-5 grid gap-3">
-                {items.length ? items.map((item) => (
+                {filteredItems.length ? filteredItems.map((item) => (
                   <article key={item.id} className="rounded-2xl border border-white/10 bg-white/5 p-4">
                     {item.coverImageUrl ? <img src={item.coverImageUrl} alt="" className="mb-4 h-36 w-full rounded-xl object-cover" /> : null}
                     <div className="flex items-start justify-between gap-3">
@@ -517,7 +568,7 @@ export default function AdminApp() {
                       </button>
                     </div>
                   </article>
-                )) : <div className="rounded-2xl border border-dashed border-white/10 bg-white/5 p-5 text-sm text-stone-400">No content items yet. Create the first one from the form.</div>}
+                )) : <div className="rounded-2xl border border-dashed border-white/10 bg-white/5 p-5 text-sm text-stone-400">No items match the current filters. Adjust the search or filter controls to broaden the list.</div>}
               </div>
             </aside>
           </div>
