@@ -178,3 +178,6 @@
 - [ ] Diagnose why the hero background video is not visibly playing on both mobile and desktop.
 - [ ] Fix the hero video visibility/playback issue before making any further stylistic tweaks.
 - [ ] Re-verify the mobile hero against the latest screenshot after the collapsed services fix.
+- [ ] Add a slightly stronger dark overlay over the hero video for better text contrast.
+- [ ] Increase the mobile hero height and spacing so the content feels more breathable.
+- [ ] Re-verify the mobile hero against the latest screenshot after adjusting overlay and spacing.
