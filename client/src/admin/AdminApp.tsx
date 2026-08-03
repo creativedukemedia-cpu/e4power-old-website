@@ -490,6 +490,16 @@ export default function AdminApp() {
                     </div>
                     {item.excerpt ? <p className="mt-3 text-sm leading-6 text-stone-300">{item.excerpt}</p> : null}
                     <div className="mt-4 flex flex-wrap gap-2">
+                      {item.status === 'published' ? (
+                        <a
+                          href={`/content/index.html?slug=${encodeURIComponent(item.slug)}`}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex h-10 items-center justify-center rounded-full border border-emerald-400/20 px-4 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-100 transition hover:border-emerald-300 hover:text-emerald-200"
+                        >
+                          View live
+                        </a>
+                      ) : null}
                       <button
                         type="button"
                         onClick={() => populateForm(item)}

@@ -211,10 +211,13 @@
 - [ ] Add the theme toggle to the navigation flow on secondary pages, including mobile menu treatments where needed.
 - [ ] Fix unreadable light-mode contrast on the Team page and other affected interior sections shown in the latest screenshots.
 - [ ] Verify theme consistency across representative interior pages after the cross-page theme fix.
-- [ ] Add CMS support for staff-managed image replacement so administrators can swap visuals without touching code.
-- [ ] Connect published CMS entries to public-facing site pages so approved white papers, newsletters, funding opportunities, and thought-leadership items can appear outside the admin area.
-- [ ] Verify the new image-management and public publishing workflow with tests and preview before the next checkpoint.
-- [ ] Add public-facing listing and detail routes for published CMS entries inside the full-stack site.
-- [ ] Expose only published CMS content to the public site while keeping drafts visible only in the admin area.
-- [ ] Render published cover images, titles, excerpts, and body content in the new public CMS pages.
-- [ ] Verify the public publishing flow with tests and preview before the next checkpoint.
+- [x] Add CMS support for staff-managed image replacement so administrators can swap visuals without touching code.
+- [x] Connect published CMS entries to public-facing site pages so approved white papers, newsletters, funding opportunities, and thought-leadership items can appear outside the admin area.
+- [x] Verify the new image-management and public publishing workflow with tests and preview before the next checkpoint.
+- [x] Add public-facing listing and detail routes for published CMS entries inside the full-stack site.
+- [x] Expose only published CMS content to the public site while keeping drafts visible only in the admin area.
+- [x] Render published cover images, titles, excerpts, and body content in the new public CMS pages.
+- [x] Verify the public publishing flow with tests and preview before the next checkpoint.
+- [x] Add direct public-view links for published CMS items inside the admin list so staff can verify live content quickly.
+- [x] Keep unpublished drafts from exposing a public-view link until they are published.
+- [x] Verify the new admin-side public-view shortcut with tests and preview before the next checkpoint.

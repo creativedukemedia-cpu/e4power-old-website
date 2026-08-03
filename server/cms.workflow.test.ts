@@ -45,6 +45,12 @@ describe('cms content workflow source coverage', () => {
     expect(adminAppSource).toContain('onClick={() => populateForm(item)}');
   });
 
+  it('shows a public-view shortcut only for published items in the admin interface', () => {
+    expect(adminAppSource).toContain("item.status === 'published'");
+    expect(adminAppSource).toContain('href={`/content/index.html?slug=${encodeURIComponent(item.slug)}`}');
+    expect(adminAppSource).toContain('View live');
+  });
+
   it('supports content deletion in the admin interface', () => {
     expect(adminAppSource).toContain('async function removeItem(itemId: number)');
     expect(adminAppSource).toContain("method: 'DELETE'");
