@@ -188,3 +188,5 @@
 - [ ] Move the existing rotating partner logo banner so it sits directly under the hero section.
 - [ ] Keep this change restructure-only without rewriting or redesigning the banner content.
 - [ ] Verify the new homepage order after the banner move.
+- [ ] Correct the homepage order so the rotating partner logo banner actually appears immediately under the hero.
+- [ ] Verify the real on-page placement in preview after the fix instead of relying only on section order.

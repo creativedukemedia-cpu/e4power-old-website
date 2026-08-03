@@ -22,3 +22,7 @@ The main validation points at this stage are whether the enlarged emblem scale, 
 The homepage header now includes a dedicated mobile-menu toggle, and the social links were rebuilt as masked icon elements so they do not rely on inconsistent image rendering. The hero video markup was also strengthened with autoplay, playsinline, preload, and replay logic intended to preserve mobile background playback more reliably.
 
 The latest visual review shows a cleaner desktop header with the simplified primary navigation intact. Structural validation also confirms the presence of the hamburger trigger, mobile navigation container, four social icon mask elements, and the hero video element with autoplay-oriented attributes in place.
+
+## Partner banner placement correction
+
+After correcting the homepage structure, the live order now places the existing partners heading and rotating logo marquee immediately below the hero section. The proof metrics section follows after that banner, and the broader Elevate client-success section still remains later on the homepage.
