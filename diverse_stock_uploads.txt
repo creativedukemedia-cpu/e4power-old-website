@@ -1,0 +1,132 @@
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/advisory-alignment-educate.jpg (size: 50781 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/advisory-alignment-educate_1a41d707.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/advisory-alignment-elevate.jpg (size: 35335 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/advisory-alignment-elevate_d42572ca.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/advisory-alignment-empower.jpg (size: 70375 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/advisory-alignment-empower_88d02727.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/advisory-alignment-engage.jpg (size: 50781 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/advisory-alignment-engage_399926cc.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/financial-management-educate.jpg (size: 28408 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/financial-management-educate_e4e173a6.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/financial-management-elevate.jpg (size: 74933 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/financial-management-elevate_835b074e.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/financial-management-empower.jpg (size: 70375 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/financial-management-empower_442d9b13.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/financial-management-engage.jpg (size: 60501 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/financial-management-engage_df889e8e.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/grant-management-educate.jpg (size: 47234 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/grant-management-educate_e38adbf6.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/grant-management-elevate.jpg (size: 60015 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/grant-management-elevate_6fe29bfa.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/grant-management-empower.jpg (size: 38656 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/grant-management-empower_c2434eaf.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/grant-management-engage.jpg (size: 60804 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/grant-management-engage_eb2ba404.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/institutional-discovery-educate.jpg (size: 34961 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/institutional-discovery-educate_a031e3d2.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/institutional-discovery-elevate.jpg (size: 38656 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/institutional-discovery-elevate_d69b2fc3.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/institutional-discovery-empower.jpg (size: 43907 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/institutional-discovery-empower_17cf85e3.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/institutional-discovery-engage.jpg (size: 60501 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/institutional-discovery-engage_10839b6c.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/intellectual-property-educate.jpg (size: 230614 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/intellectual-property-educate_15920b4d.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/intellectual-property-elevate.jpg (size: 54716 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/intellectual-property-elevate_1840c229.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/intellectual-property-empower.jpg (size: 45177 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/intellectual-property-empower_7ace54f6.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/intellectual-property-engage.jpg (size: 38308 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/intellectual-property-engage_f87e60f0.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/it-solutions-educate.jpg (size: 56819 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/it-solutions-educate_6a8e2cf8.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/it-solutions-elevate.jpg (size: 41394 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/it-solutions-elevate_9fe8b38b.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/it-solutions-empower.jpg (size: 42220 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/it-solutions-empower_467be857.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/it-solutions-engage.jpg (size: 37109 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/it-solutions-engage_0f24fbf1.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/project-management-educate.jpg (size: 33412 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/project-management-educate_464d8e84.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/project-management-elevate.jpg (size: 58337 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/project-management-elevate_0a1e56d2.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/project-management-empower.jpg (size: 27624 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/project-management-empower_c9414cbd.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/project-management-engage.jpg (size: 60501 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/project-management-engage_01ca1dc3.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/readiness-assessments-educate.jpg (size: 44410 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/readiness-assessments-educate_8cfcac33.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/readiness-assessments-elevate.jpg (size: 68276 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/readiness-assessments-elevate_fdd3c036.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/readiness-assessments-empower.jpg (size: 55384 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/readiness-assessments-empower_45928b64.jpg
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/diverse-stock/readiness-assessments-engage.jpg (size: 45177 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/readiness-assessments-engage_a98215f4.jpg
+
+========== Upload Summary ==========
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/advisory-alignment-educate.jpg -> /manus-storage/advisory-alignment-educate_1a41d707.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/advisory-alignment-elevate.jpg -> /manus-storage/advisory-alignment-elevate_d42572ca.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/advisory-alignment-empower.jpg -> /manus-storage/advisory-alignment-empower_88d02727.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/advisory-alignment-engage.jpg -> /manus-storage/advisory-alignment-engage_399926cc.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/financial-management-educate.jpg -> /manus-storage/financial-management-educate_e4e173a6.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/financial-management-elevate.jpg -> /manus-storage/financial-management-elevate_835b074e.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/financial-management-empower.jpg -> /manus-storage/financial-management-empower_442d9b13.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/financial-management-engage.jpg -> /manus-storage/financial-management-engage_df889e8e.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/grant-management-educate.jpg -> /manus-storage/grant-management-educate_e38adbf6.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/grant-management-elevate.jpg -> /manus-storage/grant-management-elevate_6fe29bfa.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/grant-management-empower.jpg -> /manus-storage/grant-management-empower_c2434eaf.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/grant-management-engage.jpg -> /manus-storage/grant-management-engage_eb2ba404.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/institutional-discovery-educate.jpg -> /manus-storage/institutional-discovery-educate_a031e3d2.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/institutional-discovery-elevate.jpg -> /manus-storage/institutional-discovery-elevate_d69b2fc3.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/institutional-discovery-empower.jpg -> /manus-storage/institutional-discovery-empower_17cf85e3.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/institutional-discovery-engage.jpg -> /manus-storage/institutional-discovery-engage_10839b6c.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/intellectual-property-educate.jpg -> /manus-storage/intellectual-property-educate_15920b4d.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/intellectual-property-elevate.jpg -> /manus-storage/intellectual-property-elevate_1840c229.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/intellectual-property-empower.jpg -> /manus-storage/intellectual-property-empower_7ace54f6.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/intellectual-property-engage.jpg -> /manus-storage/intellectual-property-engage_f87e60f0.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/it-solutions-educate.jpg -> /manus-storage/it-solutions-educate_6a8e2cf8.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/it-solutions-elevate.jpg -> /manus-storage/it-solutions-elevate_9fe8b38b.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/it-solutions-empower.jpg -> /manus-storage/it-solutions-empower_467be857.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/it-solutions-engage.jpg -> /manus-storage/it-solutions-engage_0f24fbf1.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/project-management-educate.jpg -> /manus-storage/project-management-educate_464d8e84.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/project-management-elevate.jpg -> /manus-storage/project-management-elevate_0a1e56d2.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/project-management-empower.jpg -> /manus-storage/project-management-empower_c9414cbd.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/project-management-engage.jpg -> /manus-storage/project-management-engage_01ca1dc3.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/readiness-assessments-educate.jpg -> /manus-storage/readiness-assessments-educate_8cfcac33.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/readiness-assessments-elevate.jpg -> /manus-storage/readiness-assessments-elevate_fdd3c036.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/readiness-assessments-empower.jpg -> /manus-storage/readiness-assessments-empower_45928b64.jpg
+[SUCCESS] /home/ubuntu/webdev-static-assets/diverse-stock/readiness-assessments-engage.jpg -> /manus-storage/readiness-assessments-engage_a98215f4.jpg
+=====================================
+Total: 32, Success: 32, Failed: 0

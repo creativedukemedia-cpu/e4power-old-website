@@ -1,0 +1,239 @@
+- [ ] Inspect the current Educate, Empower, Elevate, and Engage pages to identify repeated hero, panel, and section patterns
+- [ ] Define a distinct visual direction for each pillar page using different emphasis, section rhythm, and supporting copy treatments
+- [ ] Update the page-generation source so each pillar has a more individual hero and content presentation
+- [ ] Validate the updated pillar pages in preview to ensure they feel distinct without breaking the shared site branding
+- [ ] Investigate why deployed /services/ on e4power.cdmtesting.site still renders like the homepage while local preview shows a distinct Services page
+- [ ] Compare deployed domain output, local generated client/services/index.html, and static build configuration to identify whether the issue is stale deployment, wrong build output, or routing fallback
+- [ ] Fix the Services-page regression at the source, rebuild if needed, and verify the corrected /services/ page on the live domain before reporting back
+- [ ] Verify the published Manus domain and the custom domain separately to determine whether the live regression affects one domain or both.
+- [ ] Inspect production responses for /services/ and /services/index.html to detect fallback-to-homepage behavior versus missing-file behavior.
+- [ ] Determine whether the latest published site is serving an older artifact, a cached artifact, or a routing fallback despite the current preview being correct.
+- [ ] Replace the homepage's large inserted service-preview sections with a compact hero interaction where each emblem pillar reveals its related services on hover.
+- [ ] Redesign the pillar breakout pages to follow the provided example layout more closely, using placeholder card media for now.
+- [ ] Add solid gold icons to the bullet-level feature lists on the breakout pages.
+- [ ] Verify the updated homepage hover interaction and the redesigned breakout pages in preview before saving a checkpoint.
+- [ ] Translate the homepage pillar hover interaction into a mobile-friendly tap interaction with a clear active state and one-open-at-a-time behavior.
+- [ ] Use breakpoint-specific behavior so tablets keep an anchored inline panel while small phones get a more compact disclosure treatment.
+- [ ] Verify the updated homepage pillar interaction on both desktop and mobile-sized preview states before saving a new checkpoint.
+- [ ] Rework the Services hub so it is categorized by service title in the same layout direction as the provided example.
+- [ ] Create service-specific breakout pages that match the example’s visual structure and editorial card layout.
+- [ ] Ensure the Services hub links each category card to its corresponding service breakout page.
+- [ ] Verify the updated Services hub and the new service breakout pages in preview before saving the next checkpoint.
+- [ ] Restructure the Services catalog so each named service is the main group and each group contains four pillar-specific cards together.
+- [ ] Replace the current pillar-first ordering in the Services catalog with a service-first sequence that mirrors the example’s grouped-card logic.
+- [ ] Update service page links and breakout architecture so each service block clearly branches into related detail pages from the new grouped layout.
+- [ ] Investigate why taps do not register on mobile on the published domain and determine whether a full-page overlay, hero layer, or menu container is intercepting pointer events.
+- [ ] Verify the homepage, navigation, and hero interactions in a mobile viewport on both preview and the published domain after applying the fix.
+- [ ] Save a checkpoint for the mobile tap fix once the published site is responsive to touch interactions again.
+- [ ] Update the Vite multipage build input so nested /services/* detail pages are emitted into dist/public for publish.
+- [ ] Rebuild and verify that the production artifact contains the new service-detail pages before checkpointing.
+- [ ] Map the provided Speaking Engagements images to the matching Educate, Empower, Elevate, and Engage cards based on the filenames.
+- [ ] Upload the new Speaking Engagements images to managed static storage and replace the placeholder card media on the relevant service page.
+- [ ] Add a default black-and-white treatment that transitions to full color on hover for the Speaking Engagements cards.
+- [ ] Verify the updated Speaking Engagements images and hover behavior in preview before saving the next checkpoint.
+- [ ] Map the provided Workshops images to the matching Educate, Empower, Elevate, and Engage cards based on the filenames.
+- [ ] Upload the new Workshops images to managed static storage and replace the placeholder card media on the relevant service page.
+- [ ] Reuse the grayscale-to-color hover treatment for the Workshops cards so they match the Speaking Engagements interaction.
+- [ ] Verify the updated Workshops images and hover behavior in preview before saving the next checkpoint.
+- [ ] Map the provided Technology & AI Literacy images to the matching Educate, Empower, Elevate, and Engage cards based on the filenames.
+- [ ] Upload the new Technology & AI Literacy images to managed static storage and replace the placeholder card media on the relevant service page.
+- [ ] Reuse the grayscale-to-color hover treatment for the Technology & AI Literacy cards so they match the Speaking Engagements and Workshops interactions.
+- [ ] Verify the updated Technology & AI Literacy images and hover behavior in preview before saving the next checkpoint.
+- [ ] Map the provided Grant Writing images to the matching Educate, Empower, Elevate, and Engage cards based on the filenames.
+- [ ] Upload the new Grant Writing images to managed static storage and replace the placeholder card media on the relevant service page.
+- [ ] Reuse the grayscale-to-color hover treatment for the Grant Writing cards so they match the other updated service pages.
+- [ ] Verify the updated Grant Writing images and hover behavior in preview before saving the next checkpoint.
+- [ ] Audit the remaining service cards that still use placeholder imagery and group them by service for stock-photo replacement.
+- [ ] Source coordinated non-AI stock photography that matches the tone, composition, and subject matter of the user-approved service images.
+- [ ] Upload and map the selected stock photos into the remaining service records at the generator level so the replacements persist through rebuilds.
+- [ ] Verify the updated services catalog and a representative sample of service detail pages before saving the next checkpoint.
+- [ ] Replace the least representative remaining stock-photo selections with alternatives that show stronger Black representation across the service catalog.
+- [ ] Re-audit the remaining service cards for diversity balance after replacements, not just per page but across the full Services catalog.
+- [ ] Preserve the grayscale-to-color interaction while updating only the affected stock-photo mappings.
+- [ ] Audit the current services catalog for duplicate photos across service cards and list each repeated asset before replacing it.
+- [ ] Replace duplicate service-card imagery with distinct non-AI stock photos while maintaining stronger Black representation across the catalog.
+- [ ] Verify that no repeated photos remain across the updated services pages before saving the next checkpoint.
+- [ ] Replace the duplicate image currently shared by the Readiness Assessment Engage card and the Intellectual Property Empower card with a distinct non-AI stock photo.
+- [ ] Re-audit adjacent service-card imagery after that replacement so visually repeated photos do not remain nearby.
+- [ ] Keep the hard rule that every service card across the full catalog must use a unique photo.
+- [ ] Perform a broader visual duplicate audit across the full Services catalog to catch repeated or near-repeated photos the exact-path check misses.
+- [ ] Replace every remaining duplicate or overly similar service-card photo with a distinct non-AI stock image that preserves strong Black representation.
+- [ ] Rebuild and verify the updated catalog after the broader image cleanup before saving the next checkpoint.
+- [ ] Replace the low-resolution, watermarked Financial Management Educate image with a higher-quality non-AI stock photo.
+- [ ] Audit all service-card images for visible watermark artifacts or inadequate resolution before the next checkpoint.
+- [ ] Replace any additional low-resolution or watermarked service-card assets and re-verify the refreshed catalog.
+- [ ] Inspect the desktop hero section hover interaction and identify why the intended behavior is not currently working.
+- [ ] Repair the desktop hero hover effect without weakening the homepage design language or desktop responsiveness.
+- [ ] Verify the repaired hover behavior in preview before saving the next checkpoint.
+- [ ] Add a continuous services marquee beneath the homepage hero that flows under an Our Services label like the provided example.
+- [ ] Match the slider's desktop rhythm, typography, and color blocking to the example while preserving the site's branding.
+- [ ] Verify the new hero services slider in preview for continuous motion, clean looping, and responsive layout before saving the next checkpoint.
+- [ ] Shorten the Services page card height so more cards fit comfortably in view without feeling cramped.
+- [ ] Slightly increase the service bullet-point text size on the Services page for better readability.
+- [ ] Verify the updated Services page card spacing and bullet typography in preview before saving the next checkpoint.
+- [ ] Replace the Project Management card bullets on the Services catalog page with the user-provided pillar-specific content.
+- [ ] Build out the full Project Management breakout page using the supplied overview, certifications, engagement models, and tools.
+- [ ] Regenerate and verify the updated Project Management catalog and solo page content in preview before saving the next checkpoint.
+- [ ] Locate every current usage of Tamara Henry’s existing photo across the site.
+- [ ] Upload the newly provided Tamara Henry image to the project asset storage and replace all current references.
+- [ ] Verify the refreshed Tamara Henry image renders correctly anywhere it appears before saving the next checkpoint.
+- [ ] Replace Harold Lee’s existing bio copy with the new user-provided biography wherever it appears on the site.
+- [ ] Verify the updated Harold Lee bio in both source files and preview before saving the next checkpoint.
+- [ ] Assess whether the site can support an automatically updating LinkedIn feed that pulls recent posts from E4’s LinkedIn page.
+- [ ] Compare native, API-based, and third-party LinkedIn feed approaches for branding control, automatic updates, and mobile responsiveness.
+- [ ] Recommend the most practical LinkedIn feed implementation path for the current site architecture.
+- [ ] Clarify whether the LinkedIn feed can be built as a custom in-house widget instead of relying on a third-party provider.
+- [ ] Explain the architectural and platform constraints that determine when a custom LinkedIn feed is viable.
+- [ ] Assess whether an agent could monitor E4’s LinkedIn business page and manually keep post embeds on the site updated.
+- [ ] Evaluate the fragility, maintenance burden, and policy risk of an agent-driven manual embed-sync workflow.
+- [ ] Build out the Grant Writing breakout page using the E4 team’s provided slide content and example structure.
+- [ ] Translate the Grant Writing slide into polished web sections including overview, what we do, real-world examples, and key outcome.
+- [ ] Regenerate and verify the updated Grant Writing breakout page in preview before saving the next checkpoint.
+- [ ] Remove the repetitive four-pillar section from the shared service breakout-page template.
+- [ ] Regenerate the service breakout pages after removing the shared four-pillar block.
+- [ ] Verify in preview that the breakout pages now move directly from the hero into the unique service content.
+- [ ] Increase the horizontal buffer zone on generated pages so content sits farther from the viewport edges.
+- [ ] Align the generated page spacing treatment more closely with the home page container feel.
+- [ ] Regenerate and verify the updated page spacing in preview before saving the next checkpoint.
+- [ ] Redesign the Services page 'Open Service Page' buttons so they feel more appealing and more on-brand.
+- [ ] Update the button styling and interaction states in the generator so the new treatment persists through rebuilds.
+- [ ] Regenerate and verify the refreshed Services page buttons in preview before saving the next checkpoint.
+- [ ] Add a subtle pulse effect that sweeps through the Services page buttons about every 3 seconds.
+- [ ] Regenerate and verify the button pulse animation in preview before saving the next checkpoint.
+- [ ] Build out the Readiness Assessments breakout page using the user-provided slide content.
+- [ ] Translate the Readiness Assessments slide into polished web sections including what we do, real-world examples, and key outcome.
+- [ ] Regenerate and verify the updated Readiness Assessments breakout page in preview before saving the next checkpoint.
+- [ ] Investigate why the homepage pillar hover interaction does not work properly on mobile while desktop remains correct.
+- [ ] Implement a touch-friendly mobile interaction that preserves the current desktop hover behavior.
+- [ ] Verify the updated homepage pillar interaction in both mobile and desktop preview states before saving the next checkpoint.
+- [ ] Read the attached website update document and extract all requested changes except item 1.
+- [ ] Apply every remaining approved change from the update document across the website.
+- [ ] Verify the document-driven website updates in preview before saving the next checkpoint.
+- [ ] Read the two Financial Management source documents and extract the website-ready 4 E’s structure and supporting service language.
+- [ ] Build out the Financial Management breakout page using the condensed web version while aligning it with the broader financial operations overview.
+- [ ] Regenerate and verify the updated Financial Management breakout page in preview before saving the next checkpoint.
+- [ ] Remove the circular number treatment from the homepage stat band under the hero section.
+- [ ] Make the 80% stat panel visually consistent with the other homepage metrics.
+- [ ] Verify the updated homepage stat band in preview before saving the next checkpoint.
+- [ ] Remove the continuous services banner from the homepage hero area.
+- [ ] Replace the moving banner with a static services list styled like the provided reference image.
+- [ ] Verify the updated homepage hero services list in preview before saving the next checkpoint.
+- [ ] Raise the homepage pillar hover popup above the static hero services text.
+- [ ] Adjust the hero z-index layering so hover content no longer conflicts with the static services list.
+- [ ] Verify the corrected hover layering in preview before saving the next checkpoint.
+- [ ] Align the Services page with the 8 current main offerings shown in the latest flyer.
+- [ ] Remove any extra main service from the catalog so the page shows only the flyer’s 8 core services.
+- [ ] Verify the updated 8-service catalog in preview before saving the next checkpoint.
+- [ ] Align the homepage hover experience with the same 8 flyer services used on the Services page.
+- [ ] Update the hover cards, labels, and service names so they consistently reflect the flyer offerings.
+- [ ] Verify the updated homepage hover states in preview before saving the next checkpoint.
+- [ ] Build the Intellectual Property breakout page from the user-provided source material.
+- [ ] Build the Grant Management breakout page from the user-provided source material.
+- [ ] Regenerate and verify both updated breakout pages in preview before saving the next checkpoint.
+- [ ] Build the Speaking Engagements breakout page from the user-provided source material.
+- [ ] Map the Speaking Engagements workshop, keynote, and four-pillar content into the service-detail structure.
+- [ ] Regenerate and verify the updated Speaking Engagements breakout page in preview before saving the next checkpoint.
+- [ ] Urgently remove the entire E4 Intellectual Property Services section from the website.
+- [ ] Remove related Intellectual Property references from the main Services catalog and relevant homepage and service surfaces.
+- [ ] Regenerate and verify that Intellectual Property Services no longer appears in preview before saving the next checkpoint.
+- [ ] Review the proposed traditional top-navigation and hero redesign plan against the current homepage structure and the provided reference direction.
+- [ ] Recommend a revised homepage information hierarchy that keeps the video background and visible services while clarifying audience, value proposition, and trust signals.
+- [ ] Assess whether light mode, dark mode, or a selectively brightened dark theme best fits the E4 brand and current implementation.
+- [ ] Outline CMS and content-publishing requirements for white papers, newsletters, funding opportunities, and recurring thought-leadership updates.
+- [ ] Evaluate the LinkedIn feed widget idea, including implementation approach, platform constraints, and whether a project upgrade is required.
+- [ ] Review revenue-channel opportunities for website fit, sequencing, and technical dependencies.
+- [ ] Save a stable pre-Phase-1 checkpoint before modifying the homepage or navigation so the redesign can be reverted safely if needed.
+- [ ] Read the relevant design guidance before implementing the Phase 1 homepage changes.
+- [ ] Redesign the homepage header into a more traditional top navigation while preserving E4 branding and responsive behavior.
+- [ ] Restructure the hero so it keeps the video background and visible services while making the value proposition clearer on first view.
+- [ ] Brighten the homepage presentation selectively without losing the dark editorial E4 look and gold accent identity.
+- [ ] Move trust signals such as partner logos, testimonials, and service emphasis higher in the homepage hierarchy.
+- [ ] Verify the redesigned homepage in preview before saving the next checkpoint.
+- [ ] Save a post-Phase-1 checkpoint once the redesign is working and visually validated.
+- [ ] Save a stable pre-hero-revision checkpoint before modifying the homepage again.
+- [ ] Rebuild only the homepage hero to follow the provided reference as closely as possible.
+- [ ] Preserve the video background and visible hero services while matching the reference composition, hierarchy, and tone more faithfully.
+- [ ] Verify the revised hero in preview against the provided reference before saving the next checkpoint.
+- [ ] Revert the latest hero-only redesign to the stable pre-hero-revision checkpoint.
+- [ ] Prepare a precise input checklist for the user so the next hero pass can match the provided reference almost identically.
+- [ ] Use the exact hero headline "WE ARE E4POWER" with only "E4" in gold.
+- [ ] Use the exact hero body copy supplied by the user for the next reference-faithful pass.
+- [ ] Use the attached E4 emblem asset above the hero headline.
+- [ ] Use the attached bridge overlay asset over the darkened video background.
+- [ ] Keep the existing background video in place behind the overlay composition.
+- [ ] Reduce desktop nav-link size and include the key currently accessible site destinations in the top navigation.
+- [ ] Use white social icons for Instagram, Facebook, LinkedIn, and TikTok inside the four top circles.
+- [ ] Fix the homepage so the hero background video remains active on mobile.
+- [ ] Collapse the mobile navigation into a hamburger menu instead of showing all links inline.
+- [ ] Correct the social icons so they are visibly rendered in the hero header.
+- [ ] Verify both mobile and desktop header behavior after the fixes.
+- [ ] Restore visible social icon glyphs inside the four top navigation circles on mobile.
+- [ ] Make the hero background video visually perceptible behind the mobile overlay composition.
+- [ ] Redesign the mobile services panel at the bottom of the hero so the content fits cleanly and reads well.
+- [ ] Re-verify the mobile header and hero against the user's screenshot after the fixes.
+- [ ] Remove the obstructive mobile services panel treatment from the hero so the main hero message stays readable.
+- [ ] Choose a cleaner mobile-specific services presentation that does not cover the hero headline and copy.
+- [ ] Re-check the mobile hero against the latest user screenshot after the services redesign.
+- [ ] Make the mobile services section collapsed by default so it does not obstruct the hero.
+- [ ] Diagnose why the hero background video is not visibly playing on both mobile and desktop.
+- [ ] Fix the hero video visibility/playback issue before making any further stylistic tweaks.
+- [ ] Re-verify the mobile hero against the latest screenshot after the collapsed services fix.
+- [ ] Add a slightly stronger dark overlay over the hero video for better text contrast.
+- [ ] Increase the mobile hero height and spacing so the content feels more breathable.
+- [ ] Re-verify the mobile hero against the latest screenshot after adjusting overlay and spacing.
+- [ ] Rearrange the homepage using only existing site content for Priority 1 and Priority 2 work.
+- [ ] Move an existing trust-oriented section directly under the hero without rewriting its content.
+- [ ] Reorder existing services, proof, partner, and testimonial sections to improve homepage clarity and credibility.
+- [ ] Avoid inventing, redesigning, or rewriting content during this homepage restructuring pass.
+- [ ] Move the existing rotating partner logo banner so it sits directly under the hero section.
+- [ ] Keep this change restructure-only without rewriting or redesigning the banner content.
+- [ ] Verify the new homepage order after the banner move.
+- [ ] Correct the homepage order so the rotating partner logo banner actually appears immediately under the hero.
+- [ ] Verify the real on-page placement in preview after the fix instead of relying only on section order.
+- [ ] Move only the rotating partner logo marquee directly under the hero.
+- [ ] Restore the Partners header text to the original partners area within the later section.
+- [ ] Verify in preview that the header remains later while only the moving logo strip appears under the hero.
+- [x] Add a light mode and dark mode toggle to the top navigation.
+- [x] Keep the metrics section where it is while introducing the theme toggle.
+- [x] Begin the CMS build after the theme toggle is in place.
+- [x] Use a username/password login approach for the CMS rather than Manus OAuth.
+- [x] Prefer an open-source authentication or CMS-compatible solution for staff access.
+- [x] Determine the project upgrade path required to support the CMS, database, and admin login.
+- [x] Extend light mode styling so lower homepage sections and text blocks remain visible with correct contrast.
+- [x] Move the theme toggle into the mobile hamburger menu so the mobile top bar is less crowded.
+- [x] Keep the desktop theme toggle in the top navigation while using a mobile-only menu placement for phones.
+- [x] Verify the corrected light mode and mobile menu layout against the reported visibility issues before the next checkpoint.
+- [x] Build the first usable CMS workflow for staff to create, edit, and delete structured content entries after login.
+- [x] Connect the CMS admin interface to the existing content tables so white papers, newsletters, funding opportunities, and thought-leadership items can be managed from the dashboard.
+- [x] Add published and draft state handling to the initial CMS workflow so staff can control visibility safely.
+- [x] Verify the new CMS content-management flow with tests and preview before the next checkpoint.
+- [ ] Make the light and dark mode toggle persist and apply across secondary pages, not just the homepage.
+- [ ] Add the theme toggle to the navigation flow on secondary pages, including mobile menu treatments where needed.
+- [ ] Fix unreadable light-mode contrast on the Team page and other affected interior sections shown in the latest screenshots.
+- [ ] Verify theme consistency across representative interior pages after the cross-page theme fix.
+- [x] Add CMS support for staff-managed image replacement so administrators can swap visuals without touching code.
+- [x] Connect published CMS entries to public-facing site pages so approved white papers, newsletters, funding opportunities, and thought-leadership items can appear outside the admin area.
+- [x] Verify the new image-management and public publishing workflow with tests and preview before the next checkpoint.
+- [x] Add public-facing listing and detail routes for published CMS entries inside the full-stack site.
+- [x] Expose only published CMS content to the public site while keeping drafts visible only in the admin area.
+- [x] Render published cover images, titles, excerpts, and body content in the new public CMS pages.
+- [x] Verify the public publishing flow with tests and preview before the next checkpoint.
+- [x] Add direct public-view links for published CMS items inside the admin list so staff can verify live content quickly.
+- [x] Keep unpublished drafts from exposing a public-view link until they are published.
+- [x] Verify the new admin-side public-view shortcut with tests and preview before the next checkpoint.
+- [x] Add admin-side content filters for status and content type so staff can quickly narrow the CMS list.
+- [x] Add a simple admin search field so staff can find content items by title or slug.
+- [x] Verify the new admin findability controls with tests and preview before the next checkpoint.
+- [x] Add a public-site navigation entry that links visitors to the new Insights content hub.
+- [x] Surface the Insights destination in a way that fits the existing site navigation without disrupting the current homepage hierarchy.
+- [x] Verify the new public-site entry into the CMS content hub with tests and preview before the next checkpoint.
+- [x] Add public-facing filters to the Insights hub so visitors can narrow published entries by content type.
+- [x] Improve the public Insights listing so visitors can scan entries more clearly before opening a detail page.
+- [x] Verify the new public content-hub browsing improvements with tests and preview before the next checkpoint.
+- [x] Fix the light-mode contrast in the Sharpening Your Competitive Edge section so headings and body copy remain readable.
+- [x] Fix the light-mode contrast in the E4 Team section so the supporting text beneath the team heading does not stay white on a light background.
+- [x] Repair the interior-page navbar styling in light mode so the navigation remains clean and readable away from the homepage.
+- [x] Verify the corrected light-mode behavior on the affected interior pages before the next checkpoint.
+- [x] Add admin-managed staff account creation so the CMS can support multiple users beyond the initial bootstrap account.
+- [x] Add role assignment controls for admin and editor staff users inside the CMS workspace.
+- [x] Verify the new staff-account management workflow with tests and preview before the next checkpoint.

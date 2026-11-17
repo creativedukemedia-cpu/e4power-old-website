@@ -1,0 +1,405 @@
+{
+  "count": 48,
+  "top_pairs": [
+    {
+      "score": 0.0,
+      "ahash_dist": 0,
+      "dhash_dist": 0,
+      "hist_dist": 0.0,
+      "a": "Readiness Assessments | Empower",
+      "b": "Intellectual Property | Empower",
+      "a_image": "/manus-storage/readiness-assessments-empower_45928b64.jpg",
+      "b_image": "/manus-storage/intellectual-property-empower-replacement_64bb49e5.jpg"
+    },
+    {
+      "score": 0.0,
+      "ahash_dist": 0,
+      "dhash_dist": 0,
+      "hist_dist": 0.0,
+      "a": "Grant Management | Empower",
+      "b": "Institutional Discovery | Elevate",
+      "a_image": "/manus-storage/grant-management-empower_c2434eaf.jpg",
+      "b_image": "/manus-storage/institutional-discovery-elevate_d69b2fc3.jpg"
+    },
+    {
+      "score": 0.0,
+      "ahash_dist": 0,
+      "dhash_dist": 0,
+      "hist_dist": 0.0,
+      "a": "Project Management | Engage",
+      "b": "Financial Management | Engage",
+      "a_image": "/manus-storage/project-management-engage_01ca1dc3.jpg",
+      "b_image": "/manus-storage/financial-management-engage_df889e8e.jpg"
+    },
+    {
+      "score": 0.0,
+      "ahash_dist": 0,
+      "dhash_dist": 0,
+      "hist_dist": 0.0,
+      "a": "Project Management | Engage",
+      "b": "Institutional Discovery | Engage",
+      "a_image": "/manus-storage/project-management-engage_01ca1dc3.jpg",
+      "b_image": "/manus-storage/institutional-discovery-engage_10839b6c.jpg"
+    },
+    {
+      "score": 0.0,
+      "ahash_dist": 0,
+      "dhash_dist": 0,
+      "hist_dist": 0.0,
+      "a": "Financial Management | Empower",
+      "b": "Advisory Alignment | Empower",
+      "a_image": "/manus-storage/financial-management-empower_442d9b13.jpg",
+      "b_image": "/manus-storage/advisory-alignment-empower_88d02727.jpg"
+    },
+    {
+      "score": 0.0,
+      "ahash_dist": 0,
+      "dhash_dist": 0,
+      "hist_dist": 0.0,
+      "a": "Financial Management | Engage",
+      "b": "Institutional Discovery | Engage",
+      "a_image": "/manus-storage/financial-management-engage_df889e8e.jpg",
+      "b_image": "/manus-storage/institutional-discovery-engage_10839b6c.jpg"
+    },
+    {
+      "score": -0.0,
+      "ahash_dist": 0,
+      "dhash_dist": 0,
+      "hist_dist": -0.0,
+      "a": "Advisory Alignment | Educate",
+      "b": "Advisory Alignment | Engage",
+      "a_image": "/manus-storage/advisory-alignment-educate_1a41d707.jpg",
+      "b_image": "/manus-storage/advisory-alignment-engage_399926cc.jpg"
+    },
+    {
+      "score": 0.1415,
+      "ahash_dist": 48,
+      "dhash_dist": 42,
+      "hist_dist": 0.0105,
+      "a": "Readiness Assessments | Empower",
+      "b": "Financial Management | Educate",
+      "a_image": "/manus-storage/readiness-assessments-empower_45928b64.jpg",
+      "b_image": "/manus-storage/financial-management-educate_e4e173a6.jpg"
+    },
+    {
+      "score": 0.1415,
+      "ahash_dist": 48,
+      "dhash_dist": 42,
+      "hist_dist": 0.0105,
+      "a": "Intellectual Property | Empower",
+      "b": "Financial Management | Educate",
+      "a_image": "/manus-storage/intellectual-property-empower-replacement_64bb49e5.jpg",
+      "b_image": "/manus-storage/financial-management-educate_e4e173a6.jpg"
+    },
+    {
+      "score": 0.3106,
+      "ahash_dist": 79,
+      "dhash_dist": 103,
+      "hist_dist": 0.1077,
+      "a": "Speaking Engagements | Educate",
+      "b": "Grant Management | Empower",
+      "a_image": "/manus-storage/SpeakingEngagementsEducate_c4effd85.jpg",
+      "b_image": "/manus-storage/grant-management-empower_c2434eaf.jpg"
+    },
+    {
+      "score": 0.3106,
+      "ahash_dist": 79,
+      "dhash_dist": 103,
+      "hist_dist": 0.1077,
+      "a": "Speaking Engagements | Educate",
+      "b": "Institutional Discovery | Elevate",
+      "a_image": "/manus-storage/SpeakingEngagementsEducate_c4effd85.jpg",
+      "b_image": "/manus-storage/institutional-discovery-elevate_d69b2fc3.jpg"
+    },
+    {
+      "score": 0.3129,
+      "ahash_dist": 62,
+      "dhash_dist": 103,
+      "hist_dist": 0.2354,
+      "a": "Readiness Assessments | Elevate",
+      "b": "Grant Management | Empower",
+      "a_image": "/manus-storage/readiness-assessments-elevate_fdd3c036.jpg",
+      "b_image": "/manus-storage/grant-management-empower_c2434eaf.jpg"
+    },
+    {
+      "score": 0.3129,
+      "ahash_dist": 62,
+      "dhash_dist": 103,
+      "hist_dist": 0.2354,
+      "a": "Readiness Assessments | Elevate",
+      "b": "Institutional Discovery | Elevate",
+      "a_image": "/manus-storage/readiness-assessments-elevate_fdd3c036.jpg",
+      "b_image": "/manus-storage/institutional-discovery-elevate_d69b2fc3.jpg"
+    },
+    {
+      "score": 0.3157,
+      "ahash_dist": 79,
+      "dhash_dist": 106,
+      "hist_dist": 0.1066,
+      "a": "Grant Management | Empower",
+      "b": "Project Management | Educate",
+      "a_image": "/manus-storage/grant-management-empower_c2434eaf.jpg",
+      "b_image": "/manus-storage/project-management-educate_464d8e84.jpg"
+    },
+    {
+      "score": 0.3157,
+      "ahash_dist": 79,
+      "dhash_dist": 106,
+      "hist_dist": 0.1066,
+      "a": "Project Management | Educate",
+      "b": "Institutional Discovery | Elevate",
+      "a_image": "/manus-storage/project-management-educate_464d8e84.jpg",
+      "b_image": "/manus-storage/institutional-discovery-elevate_d69b2fc3.jpg"
+    },
+    {
+      "score": 0.3213,
+      "ahash_dist": 69,
+      "dhash_dist": 111,
+      "hist_dist": 0.1592,
+      "a": "Workshops & Training | Engage",
+      "b": "Project Management | Educate",
+      "a_image": "/manus-storage/WorkshopsEngage_4153d98d.jpg",
+      "b_image": "/manus-storage/project-management-educate_464d8e84.jpg"
+    },
+    {
+      "score": 0.3249,
+      "ahash_dist": 62,
+      "dhash_dist": 117,
+      "hist_dist": 0.1724,
+      "a": "Workshops & Training | Elevate",
+      "b": "Readiness Assessments | Elevate",
+      "a_image": "/manus-storage/WorkshopsElevate_4dfab6d9.jpg",
+      "b_image": "/manus-storage/readiness-assessments-elevate_fdd3c036.jpg"
+    },
+    {
+      "score": 0.3323,
+      "ahash_dist": 85,
+      "dhash_dist": 108,
+      "hist_dist": 0.131,
+      "a": "Speaking Engagements | Engage",
+      "b": "Readiness Assessments | Engage",
+      "a_image": "/manus-storage/SpeakingEngagementsEngage_85977d11.jpg",
+      "b_image": "/manus-storage/readiness-assessments-engage_a98215f4.jpg"
+    },
+    {
+      "score": 0.3323,
+      "ahash_dist": 92,
+      "dhash_dist": 111,
+      "hist_dist": 0.057,
+      "a": "Grant Writing | Engage",
+      "b": "Financial Management | Educate",
+      "a_image": "/manus-storage/GrantwritingEngage_25ed8665.jpg",
+      "b_image": "/manus-storage/financial-management-educate_e4e173a6.jpg"
+    },
+    {
+      "score": 0.3328,
+      "ahash_dist": 104,
+      "dhash_dist": 103,
+      "hist_dist": 0.0478,
+      "a": "Grant Management | Engage",
+      "b": "Institutional Discovery | Empower",
+      "a_image": "/manus-storage/grant-management-engage_eb2ba404.jpg",
+      "b_image": "/manus-storage/institutional-discovery-empower_17cf85e3.jpg"
+    },
+    {
+      "score": 0.3367,
+      "ahash_dist": 84,
+      "dhash_dist": 123,
+      "hist_dist": 0.0281,
+      "a": "Readiness Assessments | Educate",
+      "b": "Advisory Alignment | Elevate",
+      "a_image": "/manus-storage/readiness-assessments-educate_8cfcac33.jpg",
+      "b_image": "/manus-storage/advisory-alignment-elevate_d42572ca.jpg"
+    },
+    {
+      "score": 0.3369,
+      "ahash_dist": 102,
+      "dhash_dist": 89,
+      "hist_dist": 0.205,
+      "a": "Speaking Engagements | Educate",
+      "b": "Project Management | Educate",
+      "a_image": "/manus-storage/SpeakingEngagementsEducate_c4effd85.jpg",
+      "b_image": "/manus-storage/project-management-educate_464d8e84.jpg"
+    },
+    {
+      "score": 0.3398,
+      "ahash_dist": 111,
+      "dhash_dist": 102,
+      "hist_dist": 0.0439,
+      "a": "Readiness Assessments | Empower",
+      "b": "Grant Management | Elevate",
+      "a_image": "/manus-storage/readiness-assessments-empower_45928b64.jpg",
+      "b_image": "/manus-storage/grant-management-elevate_6fe29bfa.jpg"
+    },
+    {
+      "score": 0.3398,
+      "ahash_dist": 111,
+      "dhash_dist": 102,
+      "hist_dist": 0.0439,
+      "a": "Intellectual Property | Empower",
+      "b": "Grant Management | Elevate",
+      "a_image": "/manus-storage/intellectual-property-empower-replacement_64bb49e5.jpg",
+      "b_image": "/manus-storage/grant-management-elevate_6fe29bfa.jpg"
+    },
+    {
+      "score": 0.345,
+      "ahash_dist": 99,
+      "dhash_dist": 103,
+      "hist_dist": 0.1431,
+      "a": "Speaking Engagements | Engage",
+      "b": "Readiness Assessments | Educate",
+      "a_image": "/manus-storage/SpeakingEngagementsEngage_85977d11.jpg",
+      "b_image": "/manus-storage/readiness-assessments-educate_8cfcac33.jpg"
+    },
+    {
+      "score": 0.3469,
+      "ahash_dist": 79,
+      "dhash_dist": 129,
+      "hist_dist": 0.0607,
+      "a": "Speaking Engagements | Elevate",
+      "b": "Workshops & Training | Educate",
+      "a_image": "/manus-storage/SpeakingEngagementsElevate_18d2199e.jpg",
+      "b_image": "/manus-storage/WorkshopsEducate_b45793c3.jpg"
+    },
+    {
+      "score": 0.3474,
+      "ahash_dist": 71,
+      "dhash_dist": 123,
+      "hist_dist": 0.1704,
+      "a": "Readiness Assessments | Elevate",
+      "b": "Financial Management | Elevate",
+      "a_image": "/manus-storage/readiness-assessments-elevate_fdd3c036.jpg",
+      "b_image": "/manus-storage/financial-management-elevate_835b074e.jpg"
+    },
+    {
+      "score": 0.3478,
+      "ahash_dist": 74,
+      "dhash_dist": 118,
+      "hist_dist": 0.1959,
+      "a": "Workshops & Training | Elevate",
+      "b": "IT Solutions | Elevate",
+      "a_image": "/manus-storage/WorkshopsElevate_4dfab6d9.jpg",
+      "b_image": "/manus-storage/it-solutions-elevate_9fe8b38b.jpg"
+    },
+    {
+      "score": 0.3494,
+      "ahash_dist": 99,
+      "dhash_dist": 119,
+      "hist_dist": 0.0242,
+      "a": "Intellectual Property | Elevate",
+      "b": "Project Management | Empower",
+      "a_image": "/manus-storage/intellectual-property-elevate_1840c229.jpg",
+      "b_image": "/manus-storage/project-management-empower_c9414cbd.jpg"
+    },
+    {
+      "score": 0.3497,
+      "ahash_dist": 93,
+      "dhash_dist": 119,
+      "hist_dist": 0.0667,
+      "a": "Grant Management | Educate",
+      "b": "Project Management | Elevate",
+      "a_image": "/manus-storage/grant-management-educate_e38adbf6.jpg",
+      "b_image": "/manus-storage/project-management-elevate_0a1e56d2.jpg"
+    },
+    {
+      "score": 0.3516,
+      "ahash_dist": 92,
+      "dhash_dist": 113,
+      "hist_dist": 0.1357,
+      "a": "Readiness Assessments | Engage",
+      "b": "Project Management | Educate",
+      "a_image": "/manus-storage/readiness-assessments-engage_a98215f4.jpg",
+      "b_image": "/manus-storage/project-management-educate_464d8e84.jpg"
+    },
+    {
+      "score": 0.3551,
+      "ahash_dist": 54,
+      "dhash_dist": 120,
+      "hist_dist": 0.3516,
+      "a": "Workshops & Training | Elevate",
+      "b": "Grant Management | Empower",
+      "a_image": "/manus-storage/WorkshopsElevate_4dfab6d9.jpg",
+      "b_image": "/manus-storage/grant-management-empower_c2434eaf.jpg"
+    },
+    {
+      "score": 0.3551,
+      "ahash_dist": 54,
+      "dhash_dist": 120,
+      "hist_dist": 0.3516,
+      "a": "Workshops & Training | Elevate",
+      "b": "Institutional Discovery | Elevate",
+      "a_image": "/manus-storage/WorkshopsElevate_4dfab6d9.jpg",
+      "b_image": "/manus-storage/institutional-discovery-elevate_d69b2fc3.jpg"
+    },
+    {
+      "score": 0.356,
+      "ahash_dist": 92,
+      "dhash_dist": 124,
+      "hist_dist": 0.0613,
+      "a": "Speaking Engagements | Empower",
+      "b": "Workshops & Training | Elevate",
+      "a_image": "/manus-storage/SpeakingEngagementsEmpower_3fc5583d.jpg",
+      "b_image": "/manus-storage/WorkshopsElevate_4dfab6d9.jpg"
+    },
+    {
+      "score": 0.3563,
+      "ahash_dist": 108,
+      "dhash_dist": 109,
+      "hist_dist": 0.0851,
+      "a": "Grant Management | Elevate",
+      "b": "Advisory Alignment | Educate",
+      "a_image": "/manus-storage/grant-management-elevate_6fe29bfa.jpg",
+      "b_image": "/manus-storage/advisory-alignment-educate_1a41d707.jpg"
+    },
+    {
+      "score": 0.3563,
+      "ahash_dist": 108,
+      "dhash_dist": 109,
+      "hist_dist": 0.0851,
+      "a": "Grant Management | Elevate",
+      "b": "Advisory Alignment | Engage",
+      "a_image": "/manus-storage/grant-management-elevate_6fe29bfa.jpg",
+      "b_image": "/manus-storage/advisory-alignment-engage_399926cc.jpg"
+    },
+    {
+      "score": 0.3577,
+      "ahash_dist": 95,
+      "dhash_dist": 106,
+      "hist_dist": 0.2075,
+      "a": "Workshops & Training | Empower",
+      "b": "Technology & AI Literacy | Empower",
+      "a_image": "/manus-storage/WorkshopsEmpower_1c7c419c.jpg",
+      "b_image": "/manus-storage/TechnologyEmpower_b7f31cc8.jpg"
+    },
+    {
+      "score": 0.3588,
+      "ahash_dist": 91,
+      "dhash_dist": 121,
+      "hist_dist": 0.1087,
+      "a": "Workshops & Training | Elevate",
+      "b": "Advisory Alignment | Elevate",
+      "a_image": "/manus-storage/WorkshopsElevate_4dfab6d9.jpg",
+      "b_image": "/manus-storage/advisory-alignment-elevate_d42572ca.jpg"
+    },
+    {
+      "score": 0.3589,
+      "ahash_dist": 69,
+      "dhash_dist": 125,
+      "hist_dist": 0.2242,
+      "a": "Workshops & Training | Elevate",
+      "b": "Project Management | Engage",
+      "a_image": "/manus-storage/WorkshopsElevate_4dfab6d9.jpg",
+      "b_image": "/manus-storage/project-management-engage_01ca1dc3.jpg"
+    },
+    {
+      "score": 0.3589,
+      "ahash_dist": 69,
+      "dhash_dist": 125,
+      "hist_dist": 0.2242,
+      "a": "Workshops & Training | Elevate",
+      "b": "Financial Management | Engage",
+      "a_image": "/manus-storage/WorkshopsElevate_4dfab6d9.jpg",
+      "b_image": "/manus-storage/financial-management-engage_df889e8e.jpg"
+    }
+  ]
+}
